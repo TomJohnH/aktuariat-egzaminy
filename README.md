@@ -1,2 +1,4 @@
-# life-egzaminy
-Matematyka ubezpieczeń życiowych - rozwiązania egzaminów. Polskie egzaminy aktuarialne.
+# Matematyka ubezpieczeń życiowych - rozwiązania egzaminów.
+Rozwiązania polskich egzaminów aktuarialnych.
+
+#life #aktuariusz
