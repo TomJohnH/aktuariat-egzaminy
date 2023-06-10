@@ -1,0 +1,529 @@
+%& --translate-file=cp1250pl
+
+\documentclass{article}
+\usepackage[cp1250]{inputenc}
+\usepackage{polski}
+\usepackage{lifecon}
+\newtheorem{tw}{Twierdzenie}[section]
+\usepackage{dsfont}
+\usepackage{fancyheadings}
+\newtheorem{zad}{Zadanie}[section]
+\newtheorem{roz}{Rozwi¹zanie}[section]
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[CO,CE]{Matematyka ubezpieczeñ ¿yciowych - wzory}
+Ostatni raz wygenerowano: \today. Kontakt: thasiow@onet.pl
+\section{Stopy procentowe}
+Czynnik dyskonta
+$$v=\frac{1}{1+i}$$
+$$d=\frac{i}{1+i}; \hspace{15pt} d=1-v$$
+$$1+i=\left(1+\frac{i^{(m)}}{m}\right)^m$$
+$$i^{(m)}=m\left( (1+i)^{\frac{1}{m}} -1\right)$$
+$$d^{(m)}=\frac{i^{(m)}}{1+\frac{i^{(m)}}{m}}$$
+Kapitalizacja ci¹g³a
+$$v^t = e^{-\delta t}; \hspace{15pt} i=e^\delta - 1$$
+\textbf{Szeregi}
+$$I_0(v)=\sum_{n=0}^\infty v^n = \frac{1}{1-v}$$
+$$I_1(v)=\sum_{n=1}^{\infty} n v^n =\frac{v}{(1-v)^2}$$
+$$I_2(v)=\sum_{n=1}^\infty n^2 v^n=\frac{v(v+1)}{(1-v)^3}$$
+\section{Renty}
+
+{\bf Renty ci¹g³e}
+Ci¹g³a renta bezterminowa
+$$\bar{a}_{\lcroof{\infty}}=\int_0^\infty e^{-\delta t}dt =\frac{1}{\delta}$$
+Obecna wartoœæ ci¹g³ej renty pewnej
+$$\bar{a}_{\lcroof{n}}=\int_0^n e^{-\delta t}dt=\frac{1}{\delta}(1-e^{-\delta n})$$
+Zakumulowana wartoœæ renty:
+$$\bar{s}_{\lcroof{n}}=\int_0^n e^{\delta(n-t)}dt=\frac{e^{\delta n}-1}{\delta}$$
+Zakumulowana wartoœæ renty (przypadek dyskretny)
+$$s_{\lcroof{n}}=(1+i)^{n-1}+\ldots+1=\frac{(1+i)^n-1}{i}$$
+$$\ddot{s}_{\lcroof{n}}=(1+i)^n+\ldots+(1+i)=\frac{(1+i)^n-1}{d}$$
+Renta rosn¹ca ci¹g³a:
+$$(\bar{I}\bar{a})_{\lcroof{\infty}}=\int_0^\infty t e^{-\delta t}dt=\frac{1}{\delta^2}$$
+$$(\bar{I}\bar{a})_{\lcroof{n}}=\frac{\bar{a}_{\lcroof{n}}-n\cdot v^n}{\delta}$$
+\section{Trwanie ¿ycia}
+Podstawowe definicje:\\
+\\
+Prawdopodobieñstwo warunkowe prze¿ycia kolejnych t lat, pod warunkiem, ¿e x-latek prze¿yje wczeœniej co najmniej s lat
+
+$${}_{t}p_{[x]+s}=\frac{{}_{s+t}p_{x}}{{}_{s}p_x}$$
+Wartoœæ oczekiwana przysz³ego czasu ¿ycia x latka
+
+$$\mathring{e}_{x}=E(T_x)=\int_0^{\infty} t f_x(t) dt$$
+$$\mathring{e}_{x}=\int_0^{\infty} {}_{t}p_{x} dt$$
+$$Var(T_x)=2\int_0^\infty t {}_{t}p_x-\mathring{e}_{x}^2$$
+$$e_x=\sum_{k=1}^\infty {}_{k}p_x$$
+$$e_x=p_x+p_xe_{x+1}$$
+$$\frac{d}{dx}(\mathring{e}_x)=\mathring{e}_x \cdot \mu_x - 1$$
+Pozosta³e:
+$$P(T_0>t)={}_{t}p_0=s(t)$$
+$${}_{t}p_x=\frac{s(x+t)}{s(x)}$$
+$$\mu_t=-\frac{s'(t)}{s(t)}$$
+$$\mu_{x+t}=\frac{d (-ln {}_{t}p_x)}{dt}$$
+$$1-F_x(t)={}_{t}p_x=\exp\left(- \int_{0}^t{\mu_{[x]+u}du}\right)$$
+$${}_{t}p_x=\exp\left(- \int_{x}^{x+t}{\mu_{s}ds}\right)$$
+$$F_x(t)={}_{t}q_x=\int_0^t{{}_{s}p_x \mu_{[x]+s}}ds$$
+$$f_x(t)=\mu_{[x]+t} \cdot {}_{t}p_x$$
+$$f_x(t)=\frac{d(-{}_{t}p_x)}{dt}$$
+$${}_{t}q_{[x]+s}=\frac{{}_{s|t}q_x}{{}_{s}p_x}$$
+Prawdopodobieñstwo, ¿e x-latek prze¿yje jeszcze s lat, a nastepnie umrze w przeci¹gu czasu t
+$${}_{s|t}q_x=Pr(s<T_x\le s+t)={}_{s}p_x - {}_{s+t}p_x$$
+$${}_{s|t}q_x={}_{s}p_x\cdot {}_{t}q_{[x]+s}$$
+inne:
+$${}_{k}p_x=p_x \prod_{i=1}^{k-1}p_{[x]+i}$$
+
+\section{Jednorazowe sk³adki netto (model ci¹g³y)}
+
+1. Ubezpieczenie na ca³e ¿ycie
+$$\bar{A}_{x}=E(v^{T_x})=\int_0^{\infty}{v^tf_x(t)dt}=\int_0^{\infty}{v^t {}_{t}p_{x} \mu_{[x]+t} dt}$$
+2. Ubezpieczenia terminowe
+$$\terminsc{x}{n}=\int_0^{n}{v^t {}_{t}p_{x} \mu_{[x]+t} dt}$$
+3. Czyste ubezpieczenie na do¿ycie
+$$\lcend{\bar{A}}{x}{n}=v^n {}_{n}p_{x}$$
+4. Ubezpieczenie na ¿ycie i do¿ycie (endowment)
+$$\bar{A}_{x:\lcroof{n}} = \terminsc{x}{n} + \lcend{\bar{A}}{x}{n}$$
+5. Odroczone ubezpieczenie na ca³e ¿ycie
+$${}_{m|}\bar{A}_{x}=\bar{A}_{x} - \terminsc{x}{m}$$
+$${}_{m|}\bar{A}_{x}=\int_m^\infty v^t {}_{t}p_x\mu_{x+t}dt$$
+6 Zale¿noœci
+$${}_{m|}\bar{A}_{x}={}_{m}p_{x} \cdot v^m \cdot \bar{A}_{[x]+m}$$
+gdzie $\bar{A}_{[x]+m} = \int_0^{\infty}{v^t {}_{t}p_{[x]+m} \mu_{[x]+m+t} dt}$
+$$\mathbf{ \frac{1}{\bar{a}_{x:\lcroof{m}}}}=\bar{P}(\bar{A}_{x:\lcroof{m}})+\delta$$
+Przy za³o¿eniu HU (UDD):
+$$\bar{A}_x=\frac{i}{\delta}A_x$$
+$$\terminsc{x}{n}=\frac{i}{\delta}\lcterm{A}{x}{n} $$
+\\
+\\
+7. Ubezpieczenie terminowe malej¹ce
+$$\lcterm{(D\bar{A})}{x}{n}=\int_0^n v^t {(n-\lfloor t \rfloor) {}_{t}p_x \mu_{[x]+t}dt}$$
+8. Ubezpieczenie rosn¹ce
+$$(\bar{I}\bar{A})_x=E(Tv^T)=\int_0^\infty t v^t {}_{t}p_x \mu_{[x]+t}$$
+\section{Jednorazowe sk³adki netto (model dyskretny)}
+Ubezpieczenie na ca³e ¿ycie (whole life insurance) gwarantuje wyp³atê sumy 1 na koniec roku œmierci ubezpieczonego. Obecna wartoœæ takiej polisy wynosi:
+$$Z=v^{K+1}$$
+1. Ubezpieczenie na ca³e ¿ycie
+$$A_{x} =E(v^{K+1})= \sum_{k=0}^{\infty}{v^{k+1}{}_{k}p_{x}q_{[x]+k}}$$
+2. Ubezpieczenie terminowe
+$$\lcterm{A}{x}{n}= \sum_{k=0}^{n-1}{v^{k+1}{}_{k}p_{x}q_{[x]+k}}$$
+3. Czyste ubezpieczenie na do¿ycie
+$$\pureend{x}{n} = \lcend{\bar{A}}{x}{n}=v^n {}_{n}p_{x}$$
+4. Ubezpieczenie na ¿ycie i do¿ycie (endowment)
+$$\insend{x}{n}=\lcterm{A}{x}{n}+\pureend{x}{n}$$
+5. Odroczone ubezpieczenie na ca³e ¿ycie
+$${}_{m|}A_{x}=A_x-\lcterm{A}{x}{m}$$
+6. Rosn¹ce ubezpieczenie na ca³e ¿ycie
+$$(IA)_x=E((K+1)\cdot v^{K+1})=\sum_{k=0}^\infty (k+1)v^{k+1}{}_{k}p_xq_{[x]+k}$$
+7. Rosn¹ce ubezpieczenie terminowe
+$$\lcterm{(IA)}{x}{n}=E((K+1)\cdot v^{K+1}\cdot \mathds{1}(K < n)
+)=\sum_{k=0}^{n-1} (k+1)v^{k+1}{}_{k}p_xq_{[x]+k}$$
+8. Malej¹ce ubezpieczenie terminowe
+$$\lcterm{(DA)}{x}{n}=\sum_{k=0}^{n-1}(n-k)v^{k+1}{}_{k}p_xq_{x+k}$$
+$$\lcterm{(DA)}{x}{n}=(n+1)\lcterm{A}{x}{n}-\lcterm{(IA)}{x}{n}$$
+9. Zale¿noœci
+$${}_{m|}A_{x}={}_{m}p_{x}v^{m}A_{x+m}$$
+$$\ddot{a}_x=\frac{1-A_x}{d}$$
+$$\ddot{a}_{x:\lcroof{n}}=\frac{1-\insend{x}{n}}{d}$$
+$${}_{m|}\ddot{a}_{x}=\sum_{k=m}^{\infty}{v^k {}_{k}p_{x}}=\frac{\insend{x}{m}-A_x}{d}$$
+$${}_{m|}\ddot{a}_{x}=\ddot{a}_{x}-\anndue{x}{m}$$
+$$A_x=vq_x+vp_xA_{x+1}$$
+$$A_x=\lcterm{A}{x}{n}+v^n{}_{n}p_xA_{x+n}$$
+$$(IA)_x=\sum_{m=0}^\infty {}_{m|}A_x$$
+$$A_x^{(m)}=\frac{i}{i^{m}}A_x$$
+$$\ddot{a}_x^{(m)}=\frac{1-A_x^{(m)}}{d^{(m)}}$$
+Przy HU:
+$$A_{x+u}=\frac{1-u}{1-uq_x}A_x+\frac{up_x}{1-uq_x}A_{x+1}$$
+$$(\bar{I}\bar{A})_x=\frac{i}{\delta}\left((IA)_x-\left(\frac{1}{d}-\frac{1}{\delta}\right)A_x\right)$$
+\section{Renty ¿yciowe (model ci¹³gy)}
+$$Y=\int_0^T v^t dt=\bar{a}_{\lcroof{T}}$$
+$$\bar{a}_{\lcroof{T}}=\frac{1-v^T}{\delta}$$
+1. Renta na ca³e ¿ycie
+$$\bar{a}_{x}=\int_0^{\infty}{v^t {}_{t}p_{x} dt}$$
+zwi¹zek: $$\bar{a}_{x}=\frac{1-\bar{A}_{x}}{\delta}$$
+2. Renta terminowa
+$$\bar{a}_{x:\lcroof{n}}=\int_0^{n}{v^t {}_{t}p_{x}} dt$$
+zwi¹zek: $$\anncon{x}{n}=\frac{1-\insendc{x}{n}}{\delta}$$
+3. Odroczona renta na ca³e ¿ycie
+$${}_{m|}\bar{a}_{x}=\bar{a}_{x}-\anncon{x}{m}$$
+zwi¹zki:
+$${}_{m|}\bar{a}_{x}=\frac{\insendc{x}{m}-\bar{A}_x}{\delta} ; \hspace{10pt} {}_{m|}\bar{a}_{x}= {}_{m}p_{x} \cdot v^m \cdot \bar{a}_{[x]+m}$$
+4. Odroczona renta terminowa (odroczona o $m$ lat renta na $n$ lat)
+$${}_{m|n}\bar{a}_{x}=\anncon{x}{m+n}-\anncon{x}{m}$$
+zwi¹zek:
+$${}_{m|n}\bar{a}_{x}=\frac{\insendc{x}{m}-\insendc{x}{m+n}}{\delta}$$
+\section{Renty ¿yciowe (model dyskretny)}
+Renta na ca³e ¿ycie z góry:
+$$Y=1+v+v^2+\ldots+v^K=\ddot{a}_{\lcroof{K+1}}$$
+jednorazowa sk³adka netto:
+$$\ddot{a}_x=\sum_{k=0}^\infty v^k {}_{k}p_x$$
+$$\ddot{a}_x=\frac{1-A_x}{d}$$
+$$Var(\ddot{a}_{\lcroof{K+1}})=\frac{{}_{}^2A_x-(A_x)^2}{d^2}$$
+Renta na ca³e ¿ycie z do³u:
+$$Y=v+v^2+\ldots + v^K = a_{\lcroof{K}}$$
+$$a_x=\ddot{a}_x-1$$
+$$a_x=\frac{1-(1+i)A_x}{i}$$
+Renta terminowa z góry:
+$$\ddot{a}_{x:\lcroof{n}}=\sum_{k=0}^{n-1}v^k {}_{k}p_x$$
+$$\ddot{a}_{x:\lcroof{n}}=\frac{1-A_{x:\lcroof{n}}}{d}$$
+$$Var(Y)=\frac{{}_{}^2A_{x:\lcroof{n}}-(A_{x:\lcroof{n}})^2}{d^2}$$
+Renta terminowa z do³u:
+$$a_{x:\lcroof{n}}=\sum_{k=1}^n v^k {}_{k}p_x$$
+Do¿ywotnia renta z góry odroczona o m:
+$${}_{m|}\ddot{a}_x=\sum_{k=m}^\infty v^k {}_{k}p_x$$
+$${}_{m|}\ddot{a}_x=v^m{}_{m}p_x\ddot{a}_{x+m}$$
+Renta rosn¹ca
+$$(I\ddot{a})_x=\sum_{k=0}^\infty(k+1)v^k{}_{k}p_x$$
+$$(I\ddot{a})_{x:\lcroof{n}}=\sum_{k=0}^{n-1}(k+1)v^k{}_{k}p_x$$
+$$(I\ddot{a})_x=\frac{\ddot{a}_x-(IA)_x}{d}$$
+Jednorazowa sk³adka netto renty na ca³e ¿ycie, p³atnej po $1/m$ z góry, m-krotnie w roku, wynosi:
+$$\ddot{a}_x^{(m)}=\frac{1}{m}\sum_{k=0}^\infty v^{k/m}{}_{k/m}p_x$$
+lub równowa¿nie 
+$$\ddot{a}_x^{(m)}=\frac{1-A_x^{(m)}}{d^{(m)}}$$
+Przybli¿enia (przy HU):
+$$\ddot{a}_x^{(m)}=\alpha(m)\ddot{a}_x-\beta(m)$$
+gdzie $\alpha(m)=\frac{id}{i^{(m)}d^{(m)}}$, $\beta(m)=\frac{i-i^{(m)}}{i^{(m)}d^{(m)}}$. Dla ma³ych stóp procentowych:
+$$\alpha(m)\rightarrow 1, \hspace{15pt} \beta(m)\rightarrow \frac{m-1}{2m}$$
+$$\ddot{a}_x^{(m)}\approx \ddot{a}_x-\frac{m-1}{2m}$$
+$$\ddot{a}_{x:\lcroof{n}}^{(m)}=\alpha(m)\ddot{a}_{x:\lcroof{n}}-\beta(m)(1-\pureend{x}{n})$$
+$${}_{m|}\ddot{a}_x^{(m)}=\alpha(m){}_{m|}\ddot{a}_x-\beta(m)\pureend{x}{n}$$
+Pozosta³e:
+$$\ddot{a}_x=1+v\cdot p_x\cdot \ddot{a}_{x+1}$$
+Przy HU:
+$$\ddot{a}_{x+u}=\frac{1}{1-uq_x}\left(\ddot{a}_x-\frac{u}{v}A_x\right)$$
+$$\ddot{a}_{x+u:\lcroof{n}}=\frac{1}{1-uq_x}\left(\ddot{a}_{x:\lcroof{n}}-\frac{u}{v}\lcterm{A}{x}{n} \right)$$
+$$P_{x+u}=\frac{A_{x+u}}{\ddot{a}_{x+u}}=\frac{(1-u)A_x+up_xA_{x+1}}{(1-u)\ddot{a}_x+u(1-q_x)\ddot{a}_{x+1}}$$
+\section{Sk³adki i rezerwy netto dla wybranych polis (model ci¹g³y)}
+B³aszczyszyn, Rolski (strona 190)\\
+\\
+1. Ubezpieczenie na ca³e ¿ycie. Sk³adka netto:
+$$\bar{P}\left( \bar{A}_{x} \right)=\frac{\bar{A}_{x}}{\bar{a}_x}$$
+Rezerwa:
+$${}_{t}\bar{V}(\bar{A}_{x})=\bar{A}_{[x]+t}-\bar{P}(\bar{A}_x)\bar{a}_{[x]+t}$$
+2. Ubezpieczenie terminowe na $n$ lat. Sk³adka netto:
+$$\bar{P}\left( \terminsc{x}{n} \right)=\frac{ \terminsc{x}{n} }{\bar{a}_{x:\lcroof{n}}}$$
+Rezerwa:
+$${}_{t}\bar{V}(\lcterm{\bar{A}}{x}{n})=\terminsc{[x]+t}{n-t}-\bar{P}(\terminsc{x}{n})\bar{a}_{[x]+t:\lcroof{n-t}}$$
+3. Czyste ubezpieczenie na do¿ycie na n lat. Sk³adka netto:
+$$\bar{P}\left( \lcend{\bar{A}}{x}{n} \right)=\frac{ \lcend{\bar{A}}{x}{n} }{\bar{a}_{x:\lcroof{n}}}$$
+Rezerwa:
+$${}_{t}\bar{V}(\lcend{\bar{A}}{x}{n})=\lcend{\bar{A}}{[x]+t}{n-t}-\bar{P}(\lcend{\bar{A}}{x}{n})\bar{a}_{[x]+t:\lcroof{n-t}}$$
+4. Ubezpieczenie na do¿ycie na n lat
+Sk³adka netto:
+$$\bar{P}\left( \insendc{x}{n} \right)=\frac{\insendc{x}{n}}{\bar{a}_{x:\lcroof{n}}}$$
+Rezerwa:
+$${}_{t}\bar{V}(\insendc{x}{n})=\insendc{[x]+t}{n-t}-\bar{P}(\insendc{x}{n}) \bar{a}_{[x]+t:\lcroof{n-t}}$$
+5. Ubezpieczenie na ca³e ¿ycie, ze sk³adk¹ p³acon¹ przez pierwsze $h$ lat\\
+\\
+\\
+6. Ubezpieczenie na do¿ycie na n lat, ze sk³adk¹ p³acon¹ przez pierwsze $h$ lat $(h \le n)$\\
+\\
+\\
+7. Bezterminowa renta odroczona o m lat, ze sk³adk¹ p³acon¹ przez pierwsze $h$ lat $(h \le m)$. Sk³adka netto:
+$${}_{h}\bar{P}({}_{m|}\bar{a}_x)=\frac{{m|}\bar{a}_x}{\bar{a}_{x:\lcroof{h}}}$$
+dla $t \le h$ mamy
+$${}_{t}^h\bar{V}({}_{m|}\bar{a}_x)={}_{m-t|}\bar{a}_{[x]+t}-{}_{h}\bar{P}({}_{m|}\bar{a}_x)\bar{a}_{[x]+t:\lcroof{h-t}}$$
+dka $t > m$ mamy
+$${}_{t}^h\bar{V}({}_{m|}\bar{a}_x)=\bar{a}_{[x]+t}$$
+{\bf 8. Kontrakt ubezpieczeniowy ogólnego typu (dyskretny)}
+$${}_{k}V + \pi_k = v(c_{k+1} q_{x+k}+{}_{k+1}V\cdot p_{x+k})$$
+Interpretacja: W przypadku œmierci ubezpieczonego w tym roku ubezpieczyciel wyda $c_{k+1}$ na koniec roku - odpowiada temu sk³adnik aktuarialny $vc_{k+1}q_{x+k}$ po prawej stronie wzoru. W przypadku, gdy ubezpieczony prze¿yje najbli¿szy rok, ubezpieczyciel bêdzie potrzebowa³ rezerwy na poziomie ${}_{k+1}V$ - odpowiada temu sk³adnik $v\cdot {}_{k+1}V\cdot p_{x+k}$\\
+\\
+Inna postaæ zale¿noœci rekurencyjnej:
+$${}_{k}V+\pi_k=v({}_{k+1}V+(c_{k+1}-{}_{k+1}V)q_{x+k})$$
+Taki zapis oznacza, ¿e na bazie dzisiejszych zasobów (rezerwy i ostatniej dzisiejszej sk³adki) ubezpieczyciel funduje przysz³oroczn¹ rezerwê (tutaj rozwa¿an¹ w ka¿dej sytuacji - równie¿ w przypadku niedo¿ycia przez ubezpieczonego tej chwili!) oraz nadwy¿kê ewentualnego œwiadczenia nad tê rezerwê $(c_{k+1}-{}_{k+1}V)\cdot v q_{x+k}$; nadwy¿ka ta nosi nazwê ryzyka netto. Taka postaæ wzoru rekoruncyjnego uzasadnia wiêc bezpoœrednio nastêpuj¹cy podzia³ sk³adki $\pi_k$: 
+$$\pi_k=\pi_k^s+\pi_k^r$$
+na dwie sk³adowe:
+$$\pi_k^s:={}_{k+1}V \cdot v-{}_{k}V$$
+$$\pi_k^r:=(c_{k+1}-{}_{k+1}V)\cdot v \cdot q_{x+k}$$
+z których pierwsza nosi nazwê sk³adki oszczêdnoœciowej, a druga sk³adki pokrywaj¹cej bie¿¹ce ryzyko œmierci (ryzyko-sk³adki). Odnotujmy na koniec wzór:
+$${}_{j}V=\sum_{k=0}^{j-1}(1+i)^{j-k}\pi_k^s$$
+który potwierdza przypuszczenie, ¿e bie¿¹ca rezerwa jest wartoœci¹ zakumowaln¹ przysz³ych sk³adek oszczêdnoœciowych.\\
+\\
+{\bf 8.5 Podzia³ sk³adki w modelu ci¹g³ym}
+$$\bar{\pi}=\bar{\pi}^s(t)+\bar{\pi}^r(t)$$
+$$\bar{\pi}^s(t)=\frac{d{}_{t}\bar{V}}{dt}-\delta {}_{t}\bar{V}$$
+$$\bar{\pi}^r(t)=(b(t)-{}_{t}\bar{V})\mu_{x+t}$$
+9. Zwi¹zki dla modelu dyskretnego (polisa bezterminowa):
+$${}_{k}V_x=1-(P_x+d)\ddot{a}_{x+k}$$
+$${}_{k}V_x=\left(1-\frac{P_x}{P_{x+k}}\right)A_{x+k}$$
+$${}_{k}V_x=(P_{x+k}-P_x)\ddot{a}_{x+k}$$
+$${}_{k}V_x=1-\frac{\ddot{a}_{x+k}}{\ddot{a}_{x}}$$
+$${}_{k}V_x=\frac{P_{x+k}-P_x}{P_{x+k}+d}$$
+$${}_{k}V_x=\frac{A_{x+k}-A_x}{1-A_x}$$
+Polisa terminowa
+$${}_{k}V_{x:\lcroof{n}}=1-\frac{\ddot{a}_{x+k:\lcroof{n-k}}}{\ddot{a}_{x:\lcroof{n}}}$$
+{\bf 10. Przy za³o¿eniu HU (UDD) strona 223, B³aszczyszyn}
+$${}_{k+u}V=\frac{v^{1-u}}{1-u\cdot q_{[x]+k}}(q_{[x]+k}\cdot b_{k+1}(1-u)+p_{[x]+k}\cdot {}_{k+1}V)$$
+$${}_{k+u}V=\frac{v^{1-u}}{1-u\cdot q_{[x]+k}}((1-u)({}_{k}V+\pi_k)(1+i)+u\cdot p_{[x]+k}\cdot {}_{k+1}V)$$
+
+\section{Ubezpieczenia wieloopcyjne}
+$$f_x(t,j)={}_{t}p_x^{(\tau)}\mu_{x+t}^{(j)}$$
+$$Pr(J_x=j)=\int_0^\infty f_x(t,j)dt$$
+1. Prawodpodobieñstwo wyjœcia ze statusu dla x-latka przed up³ywam czasu t:
+$${}_{t}q_{x}^{(\tau)}=Pr(T_x \le t)$$
+2. Prawdopodobieñstwo pozostania w statusie dla x-latka przez czas t:
+$${}_{t}p_{x}^{(\tau)}=1-{}_{t}q_{x}^{(\tau)}$$
+3. Prawdopodobieñstwo wyjœcia ze statusu dla x-latka przed up³ywem czasu t z przyczyny j
+$${}_{t}q_{x}^{(j)}=Pr(T_x \le t, J_x=j)$$
+$J_x$ - rodzaj zdarzenia\\
+\\
+4. Przy za³o¿eniu HCFM-D zachodzi wzór:
+$${}_{u}q_x^{(j)}=\frac{\mu_x^{(j)}}{\mu_{x}^{(\tau)}}{}_{u}q_x^{(\tau)} \hspace{15pt} 0 \le u <1$$
+Zachodz¹ nastêpuj¹ce w³asnoœci:
+$${}_{t}q_x^{(j)}=\int_0^t {}_{s}p_x^{(\tau)}\mu_{[x]+s}^{(j)}ds$$
+$${}_{t}p_x^{(\tau)}=e^{-\int_0^t \mu_{[x]+s}^{(\tau)}ds}$$
+$$\mu_{[x]+t}^{(\tau)}=\sum_{j=1}^m \mu_{[x]+t}^{(j)}$$
+{\bf Stowarzyszony model jednoopcyjny}\\
+B³aszczyszyn, Rolski (s. 315)
+$${}_{t}p_{x}^{'(j)} = \exp{ \left(-\int_0^t{\mu_{[x]+s}^{(j)}}ds \right)}$$
+$${}_{t}p_{x}^{'(j)}=1-{}_{t}q_{x}^{'(j)}$$
+Wielkoœæ ${}_{t}q_{x}^{'(j)}$ nazywamy absolutnym wskaŸnikiem wychodzenia ze statusu z powodu ryzka j (z opcja) j lub prawdopodobieñstwem netto wyjœcia ze statusu z powodu j.\\
+\\
+{\bf Wzory:}
+$${}_{t}p_{x}^{(\tau)}=\prod_{j=1}^m {}_{t}p_{x}^{'(j)}$$
+Przy za³o¿eniu HU-D
+$$ {}_{s}p_{x}^{'(j)}=\left(  {}_{s}p_{x}^{(\tau)} \right)^{\frac{q_x^{(j)}}{q_x^{(\tau)}}}$$
+
+$$q_x^{(j)}=\frac{\log{p_x^{' (j)}}}{\log{ p_x^{(\tau)}}}q_x^{(\tau)}$$
+
+\section{Analityczne prawa œmiertelnoœci}
+B³aszczyszyn, Rolski (str 56)
+Niech 
+Funkcja prze¿ycia:
+$$Pr(T_0 > t)=s(t)$$
+$$\mu_t=-\frac{s'(t)}{s(t)}$$
+$$s(t)=\exp{\left( -\int_0^t \mu_u du \right)}$$
+$${}_{t}p_{[x]+u}=\frac{s(x+u+t)}{s(x+u)}$$
+$$\mu_{[x]+t}=-\frac{s'(x+t)}{s(x+t)}$$
+{\bf Prawo de Moivre'a}
+Maksymalny wiek jednostki $\omega=100$ lat. Rozk³ad $T_0$ jest jednostajny na przedziale $[0,\omega]$. Mamy:
+$$s(t)=1-\frac{t}{\omega}$$
+$$\mu_t=\frac{1}{\omega-t}$$
+$${}_{t}p_{x}=\frac{s(x+t)}{s(x)}=1-\frac{t}{\omega-x}$$
+{\bf Prawo Gompertza}\\
+Natê¿enie zgonów jest wyk³adnicze postaci $\mu_t=Bc^t$. Mamy:
+$$s(t)=exp(-m(c^t-1))$$
+gdzie $m=\frac{B}{\ln{c}}$
+$${}_{t}p_{x}={\exp{(-m(c^{t+x}-c^x)})}$$
+{\bf Prawo Makehema}\\
+Natê¿enie zgonów wyk³adnicze, powiêkszone o pewn¹ sta³¹, która ma interpretacje wypadkowej intensywnoœci zgonów
+$$\mu_t=A+Bc^t$$
+$$s(t)=\exp{(-At-m(c^t-1)))}$$
+gdzie $m=\frac{B}{\ln{c}}$
+$${}_{t}p_{x}=\exp{(-At-m(c^{t+x}-c^x))}$$
+{\bf Prawo Weibulla}\\ 
+Natê¿enie zgonów roœnie jak pewna potêga t:
+$$\mu_t=kt^n$$
+$$s(t)=\exp{(-ut^{n+1})}$$
+gdzie $u=\frac{k}{n+1}$
+$${}_{t}p_{x}=\exp{(-u((t+x)^{n+1}-x^{n+1}))}$$
+{\bf Wyk³adniczy rozk³ad œmiertelnoœci}
+Przypuœæmy, ¿e $T_x$ ma rozk³ad wyk³adniczy z gêstoœci¹ $\mu e^{-\mu t}$. Wtedy
+$${}_{t}p_{x}=e^{-\mu t}$$
+$$\mu_{[x]+t}=\frac{\mu e^{-\mu t}}{e^{- \mu t}}=\mu$$
+
+\section{Hipotezy interpolacyjne}
+{\bf Hipoteza jednostajnoœci (HU; UDD)}\\
+Funkcja ${}_{t}p_x$ zmiennej $t$ jest ci¹g³a i liniowa w przedzia³ach $[n,n+1)$
+$${}_{n+u}p_x=(1-u){}_{n}p_x+u\cdot {}_{n+1}p_x, \hspace{15pt} 0 \le u < 1$$
+$$\mu_{[x]+n+u}=\frac{q_{[x]+n}}{1-u\cdot q_{[x]+n}}$$
+$${}_{n+u}p_x={}_{n}p_x(1-u\cdot q_{[x]+n})$$
+$${}_{u}p_x=1-u \cdot q_x$$
+$${}_{u}q_x=u\cdot q_x$$
+{\bf Hipoteza przedzia³ami sta³ego natê¿enia zgonów (HCFM)}
+powiemy, ¿e rozk³ad $T_x$ spe³nia hipotezê przedzia³ami sta³ego natê¿enia zgonów (constant force of mortality), je¿eli $\mu_{[x]+t}$ jest sta³¹ funkcj¹ zmiennej t w przedzia³ach $(n,n+1)$, $(n=0,1,\ldots)$; tj.
+$$\mu_{[x]+n+u}=\mu_{[x]+n}, \hspace{15pt} 0 \le u < 1$$
+Przy za³o¿eniu HCFM:
+$$\mu_{[x]+n+u}=\mu_{[x]+n}=-\log{p_{[x]+n}}, \hspace{15pt} 0 \le u < 1$$
+$${}_{n+u}p_x={}_{n}p_x(p_{[x]+n})^u$$
+$${}_{u}p_x=(p_x)^u$$
+$${}_{u}q_x=1-(p_x)^u$$
+dla $0 \le u <1 $\\
+\\
+{\bf Hipoteza Balducciego}
+Rozk³ad $T_x$ spe³nia hipotezê Balducciego dla wieku x, je¿eli:
+$${}_{1-u}q_{[x]+n+u}=(1-u)q_{[x]+n}$$
+HB mówi, ¿e prawdopodobieñstwo tego, i¿ x-latek umrze przed koñcem n-tego roku, pod warunkiem, ¿e prze¿yje czeœæ u tego roku, jest proporcjonalne do pozosta³ej czêœci roku, tj. $1-u$
+Wzory:
+$${}_{n+u}p_x=\frac{{}_{n+1}p_{x}}{1-(1-u)q_{[x]+n}}$$
+$$\mu_{[x]+n+u}=\frac{q_{[x]+n}}{1-(1-u)q_{[x]+n}}$$
+$${}_{n+1}p_x={}_{n+u}p_x\cdot{}_{1-u}p_{[x]+n+u}$$
+$${}_{u}p_x=\frac{p_x}{u+(1-u)p_x}$$
+$${}_{u}q_x=\frac{uq_x}{u+(1-u)p_x}$$
+\section{Funkcje komutacyjne - renty}
+1. $$D_x=v^xl_x$$
+2. $$N_x=\sum_{k=0}^{\infty}{D_{x+k}}$$
+3. $$\ddot{a}_x=\frac{N_x}{D_x}$$
+$$a_x=\frac{N_{x+1}}{D_x}$$
+4. $$\anndue{x}{n}=\frac{N_x-N_{x+n}}{D_x}$$
+5. $${}_{n|}\ddot{a}_{x}=\frac{N_{x+n}}{D_x}$$
+6. $${}_{n|}{a}_{x}=\frac{N_{x+n+1}}{D_x}$$
+7. $$M_x=D_x-d \cdot N_x$$
+8. $$S_x=\sum_{k=0}^{\infty} N_{x+k}$$
+9. $$(Ia)_x=\frac{S_{x+1}}{D_x}$$
+10. $$(I\ddot{a})_x=\frac{S_{x}}{D_x}$$
+11. $$D_{x+k}=N_{x+k}-N_{x+k+1}$$
+12. $$\lcterm{(I\ddot{a})}{x}{n}=\frac{S_x-S_{x+n}-nN_{x+n}}{D_x}$$
+
+\section{Funkcje komutacyjne - JSN}
+1. $${}_{n}p_x=\frac{l_{x+n}}{l_x}$$
+$$q_x=\frac{d_x}{l_x}$$
+$$d_x=l_x-l_{x+1}$$
+2. $$\pureend{x}{n}=v^n {}_{n}p_x = \frac{D_{x+n}}{D_x}$$
+3. $$C_x=v^{x+1}d_x$$
+4. $$M_x=\sum_{k=0}^{\infty}{C_{x+k}}$$
+5. $$A_x=\frac{M_x}{D_x}$$
+6. $$\termins{x}{n}=\frac{M_x-M_{x+n}}{D_x}$$
+7. $${}_{n|}{A}_{x}=\frac{M_{x+n}}{D_x}$$
+8. $$\insend{x}{n}=\frac{M_x-M_{x+n}+D_{x+n}}{D_x}$$
+9. $$R_x=\sum_{h=0}^\infty M_{x+h}$$
+10. $$R_x=\sum_{h=0}^\infty (h+1)C_{x+h}$$
+11. $$(IA)_x=\frac{R_x}{D_x}$$
+12. $$\lcterm{(IA)}{x}{n}=\frac{R_x-R_{x+n}-n\cdot M_{x+n}}{D_x}$$
+
+
+\section{Statusy prze¿yciowe}
+$${}_{t}p_{x:y}={}_{t}p_x{}_{t}p_y$$
+$$\mu_{(x:y)+t}=\mu_{x+t}+\mu_{y+t}$$
+$$\bar{A}_{\stackrel{1}{x}y}=\int_0^\infty v^s\cdot {}_{s}p_y\cdot {}_{s}p_x \cdot \mu_{x+s}ds$$
+
+$$\bar{A}_{x \stackrel{2}{y}}=\int_0^\infty v^t \cdot {}_{t}q_x \cdot {}_{t}p_y \cdot \mu_{y+t}=\bar{A}_y-\bar{A}_{x \stackrel{1}{y}}$$
+Renta wdowia (otrzymuje y po œmierci x):
+$$\bar{a}_{x|y}=\bar{a}_y-\bar{a}_{x:y}$$
+Emerytura ma³¿eñska: mê¿owi i ¿onie, obecnie w wieku x i y, wyp³aca siê rentê ¿yciow¹ z p³atnoœciami w wysokosci A, a¿ do pierwszej œmierci, a potem w wysokoœci B co rok - owdowia³ej osobie, a¿ do jej œmierci.
+$$SJN=(A-B)\ddot{a}_{x:y}+B\ddot{a}_{\overline{x:y}}=A\ddot{a}_{x:y}+B(\ddot{a}_{\overline{x:y}}-\ddot{a}_{x:y})$$
+W statusie niesymetrycznym:
+$${}_{s}q_{\stackrel{1}{x}:y}=Pr(T(x)\le s, T(x)\le T(y))$$
+$${}_{s}q_{\stackrel{1}{x}:y}=\int_0^s {}_{t}p_x\mu_{[x]+t}dt\int_t^\infty {}_{u}p_y \mu_{[y]+u}du=\int_0^s{}_{t}p_x\mu_{[x]+t}{}_{t}p_ydt=\int_0^s {}_{t}p_{x:y}\mu_{[x]+t}dt$$
+oczywiœcie $${}_{\infty}q_{\stackrel{1}{x}:y}=\int_0^\infty {}_{t}p_{x:y}\mu_{[x]+t}dt$$
+jest prawdopodobieñstwiem, ¿e (x) umrze wczeœniej ni¿ (y). 
+$${}_{s}q_{\stackrel{2}{x}:y}=Pr(T(y)<T(x)\le s)={}_{s}q_x-{}_{s}q_{\stackrel{1}{x}:y}$$
+$${}_{s}q_{\stackrel{2}{x}:y}=\int_0^s (1-{}_{t}p_y){}_{t}p_x \mu_{[x]+t}dt$$
+Zwi¹zki:
+$$\ddot{a}_{x:y}+\ddot{a}_{\overline{x:y}}=\ddot{a}_x+\ddot{a}_y$$
+$$A_{x:y}+A_{\overline{x:y}}=A_x+A_y$$
+$${}_{t}p_{x:y}+{}_{t}p_{\overline{x:y}}={}_{t}p_x+{}_{t}p_y$$
+$$\mathring{e}_{x:y}+\mathring{e}_{\overline{x:y}}=\mathring{e}_x+\mathring{e}_y$$
+Jeœli u jest statusem prze¿yciowym, to:
+$$\bar{A}_u+\delta \bar{a}_u=1$$
+$$\bar{A}_u+d \ddot{a}_u=1$$
+\section{Pochodne}
+$$\frac{d}{dx}\bar{A}_x=(\delta+\mu_x)\bar{A}_x-\mu_x$$
+$$\frac{d}{dx}\bar{P}_x=(\bar{P}_x-\mu_x)(\bar{P}_x+\delta)$$
+Zapamietaæ to¿samosæ:
+$$\frac{1}{\bar{a}_x}=\bar{P}_x+\delta$$
+$$\frac{1}{\bar{a}_{x:\lcroof{n}}}=\bar{P}(\bar{A}_{x:\lcroof{n}})+\delta$$
+$$\frac{d}{dx}\terminsc{x}{n}=(\mu_x+\delta)\terminsc{x}{n}+\mu_{x+n}\cdot\lcend{\bar{A}}{x}{n}-\mu_x$$
+$$\frac{d}{d\delta}\terminsc{x}{n}=-\lcterm{(\bar{I}\bar{A})}{x}{n}$$
+$$\frac{d}{dn}\terminsc{x}{n}=e^{-\delta n}\cdot{}_{n}p_x\cdot \mu_{x+n}=\pureend{x}{n}\cdot \mu_{x+n}$$
+$$\frac{d}{dx}\bar{a}_x=(\mu_x+\delta)\bar{a}_x-1$$
+$$\frac{d}{dx}\bar{a}_{x:\lcroof{n}}=(\mu_x+\delta)\bar{a}_{x:\lcroof{n}}-(1-\pureend{x}{n})$$
+$$\frac{d}{d\delta}\bar{a}_x=-(\bar{I}\bar{a})_x$$
+$$\frac{d}{dm}{}_{m|}\bar{a}_x=-\pureend{x}{m}$$
+$$\frac{d}{dm}\bar{a}_{x:\lcroof{m}}=\pureend{x}{m}$$
+$$\frac{d}{dx}{}_{t}p_x=\frac{d}{dx}e^{-\int_x^{x+t}\mu_s ds}={}_{t}p_x\cdot (\mu_x-\mu_{x+t})$$
+$$\frac{d}{dt}{}_{t}p_x=\frac{d}{dt}e^{-\int_0^t \mu_{x+s}ds}=-{}_{t}p_x\cdot \mu_{x+t}$$
+\section{Rozlokowanie straty na poszczególne lata}
+Strata z polisy w roku $k+1$ jej wa¿noœci $(k=0,1,\ldots)$ jest oznaczana 
+\begin{equation*}
+\Lambda_k = \left\{
+\begin{array}{rl}
+0 & \textrm{dla } K \le k-1,\\
+c_{k+1}\cdot v-({}_{k}V+\pi_k) & \textrm{dla } K = k,\\
+{}_{k+1}V\cdot v-({}_{k}V+\pi_k) & \textrm{dla } K \ge k+1
+\end{array} \right.
+\end{equation*}
+Wartoœæ ta jest obliczana na pocz¹tek roku (k+1).\\
+\\
+Strata ubezpieczyciela w chwili wystawienia polisy:
+$$L=c_{K+1}\cdot v^{K+1}-\sum_{k=0}^K \pi_k v^k$$
+mo¿e byæ zapisana równie¿ jako zdyskontowana suma strat ulokowanych w poszczególnych latach:
+$$L=\sum_{k=0}^\infty \Lambda_k v^k$$
+Mamy:
+$$E(\Lambda_k)=0$$
+$$Cov(\Lambda_k, \Lambda_j)=0 \hspace{15pt} \textrm{dl
+a k} \neq \textrm{j}$$
+$$Var(L)=\sum_{k=0}^\infty v^{2k}Var(\Lambda_k)$$
+Mamy:
+$$Var(\Lambda_k)=(c_{k+1}-{}_{k+1}V)^2\cdot v^2 \cdot {}_{k+1}p_x \cdot q_{x+k}$$
+oraz
+$$Var(L)=\sum_{k=0}^\infty v^{2k+2}(c_{k+1}-{}_{k+1}V)^2 {}_{k+1}p_x q_{x+k}$$
+Wariancja straty ubezpieczyciela po h latach wa¿noœci polisy
+$$Var({}_{h}L)=\sum_{k=0}^\infty v^{2k+2}(c_{h+k+1}-{}_{h+k+1}V)^2 {}_{k+1}p_{x+h}q_{x+h+k}$$
+\section{Pozosta³e}
+
+{\bf Równanie Thielego}
+
+$$\frac{d{}_{t}\bar{V}}{dt}=\bar{\pi}\left(t\right)+(\delta+\mu_{[x]+t}){}_{t}\bar{V}-b(t)\mu_{[x]+t}$$
+gdzie: $b(t)$ - suma ubezpieczenia, $\overline{\pi}(t)$ - intensywnoœæ p³acenia sk³adki\\
+\\ {\bf Wzór Taylora}
+$$f(x)=f(a)+\frac{x-a}{1!}f^{(1)}(a)+\frac{(x-a)^2}{2!}f^{(2)}(a)+ \ldots+R_n(x,a)$$
+dla funkcji dwóch zmiennych
+$$f(x,y)=f(x_0,y_0)+\frac{1}{1!}\frac{\partial f(x_0,y_0)}{\partial x}(x-x_0)+\frac{1}{1!}\frac{\partial f(x_0,y_0)}{\partial y}(y-y_0)+$$
+$$+\frac{1}{2}\left(\frac{\partial^2 f(x_0,y_0)}{\partial x^2}(x-x_0)^2+2\frac{\partial^2 f(x_0,y_0)}{\partial x\partial y}(x-x_0)(y-y_0)+\frac{\partial^2 f(x_0,y_0)}{\partial y^2}(y-y_0)^2\right)$$
+Zale¿noœci (w rozk³adzie wyk³adniczym):
+$$\bar{a}_x=\frac{1}{\delta+\mu}$$
+$$\bar{A}_x=\frac{\mu}{\delta+\mu}$$
+$${}_{}^2\bar{A}_x=\frac{\mu}{2\delta+\mu}$$
+$$Cov(X,Y)=E(X\cdot Y)-EX\cdot EY$$
+Dla ubezpieczenia z rosn¹c¹ sum¹ w rozk³adzie wyk³adniczym:
+$$EZ=\int_0^\infty t e^{-\delta t}\mu e^{-\mu t}dt=\frac{\mu}{(\mu+\delta)^2}$$
+$$EZ^2=\int_0^\infty t^2 e^{-2\delta t}\mu e^{-\mu t}dt=\frac{2\mu}{(\mu+2\delta)^3}$$
+{\bf Strata ubezpieczyciela}
+niech $P_x$ oznacza roczn¹ sk³adkê netto dla polisy znormalizowanej tego typu (bezterminowa polisa na zycie, z wyp³at¹ na koniec roku œmierci op³acana coroczn¹ sk³adk¹). Funkcja straty ubezpieczyciela L przyjmuje postaæ:
+$$L=v^{K+1}-P_x\ddot{a}_{\lcroof{K+1}}$$
+inny wzór:
+$$L=(1+\frac{P}{d})v^{K+1}-\frac{P}{d}$$
+Sprzedajemy polisê bezterminow¹ klientowi w wieku x. Za³ó¿my, ¿e po k latach ubezpieczony ¿yje i odpowiedni¹ rezerwê utworzon¹ na bazie jego przysz³ych sk³adek oznaczmy przez ${}_{k}V_x$. Liczbê pe³nych lat ¿ycia, które prze¿yje (x+k)-latek a¿ do œmierci, oznaczmy liter¹ J. Tak wiêc
+$$J=[T(x+k)]=K(x+k)$$
+Okreœlamy teraz stratê ${}_{k}L$ ubezpieczyciela po k latach od wystawienia polisy wzorem: BW w chwili t przysz³ych wyp³at - BW w chwili t przysz³ej sk³adki
+$${}_{k}L=v^{J+1}-P_x \ddot{a}_{\lcroof{J+1}}$$
+w chwili $J+1$ nastêpuje wyp³ata œwiadczenia.
+Rezerwê definiujemy jako wartoœæ przeciêtn¹ tej straty:
+$${}_{k}V_x=E({}_{k}L)=A_{x+k}-P_x\ddot{a}_{x+k}$$
+
+\newpage
+\section{Sk³adki i rezerwy brutto}
+Koszty ponoszone na bie¿¹co przez firmê ubezpieczeniow¹ mo¿na podzieliæ na trzy grupy:\\
+\begin{enumerate}
+\item Koszty akwizycji - koszty zwi¹zane poœrednio lub bezpoœrednio z wystawieniem nowej polisy. S¹ one proporcjonalne do sumy ubezpieczenia. Wspó³czynnik proporcjonalnoœci oznaczamy przez $\alpha$.
+\item Koszty pobierania sk³adki - koszty ponoszone tylko na pocz¹tku tych lat, w których rzeczywiœcie jest pobierana sk³adka. Zak³adamy, ¿e s¹ one proporcjonalne do aktualnie pobieranej sk³adki brutto. Wspó³czynnik proporcjonalnoœci oznaczamy przez $\beta$.
+\item Koszty administracyjne (zarz¹dzania polis¹) - wszystkie pozosta³e sk³adniki kosztów. Koszty administracyjne s¹ pobierane w a¹³ym okresie wa¿noœci polisy w wysokoœci proporcjonalnej do sumy ubezpieczenia - odpowiedni wspó³czynnik proporcjonalnoœci oznaczamy przez $\gamma$.
+\end{enumerate}
+{\bf Sk³adki brutto}\\
+\\
+Sk³adk¹ brutto nazywamy poziom sk³adki $P^{br}$ taki, który przeciêtnie wystarczy na pokrycie przysz³ych œwiadczeñ z tytu³u ubezpieczenia oraz wszystkich kosztów wymienionych wy¿ej.
+$$P^{br}=P+P^\alpha+P^\beta+P^\gamma$$
+1. Sk³adka brutto dla ubepieczenia na ¿ycie i do¿ycie spe³nia na mocy przyjêtej konwencji nastêpuj¹ce równanie:
+$$\ddot{a}_{x:\lcroof{n}} \cdot P^{br}_{x:\lcroof{n}}=A_{x:\lcroof{n}}+\alpha+\beta \cdot P^{br}_{x:\lcroof{n}}\ddot{a}_{x:\lcroof{n}}+\gamma \cdot \ddot{a}_{x:\lcroof{n}}$$
+Dalej:
+$$P^{br}_{x:\lcroof{n}}=\frac{A_{x:\lcroof{n}}+\alpha+\gamma\cdot \ddot{a}_{x:\lcroof{n}}}{(1-\beta)\ddot{a}_{x:\lcroof{n}}}$$
+Jeœli w powy¿szym wzorze zast¹pimy $\alpha$ przez $\alpha(A_{x:\lcroof{n}}+d\ddot{a}_{x:\lcroof{n}})$ mamy:
+$$P^{br}_{x:\lcroof{n}}=\frac{1+\alpha}{1-\beta}P_{x:\lcroof{n}}+\frac{\alpha\cdot d+\gamma}{1-\beta}$$
+Dalej
+$$P^{br}_{x:\lcroof{n}}=\underbrace{P_{x:\lcroof{n}}}_{P}+\underbrace{\frac{\alpha}{\ddot{a}_{x:\lcroof{n}}}}_{P^\alpha}+\underbrace{\beta\cdot P_{x:\lcroof{n}}^{br}}_{P^\beta}+\underbrace{\gamma}_{P^\gamma}$$
+2. Sk³adka brutto dla ubezpieczenia na ¿ycie i do¿ycie ze skróconym okresem p³acanie sk³adek $(m<n)$
+$$P^{br}\cdot \ddot{a}_{x:\lcroof{m}}=A_{x:\lcroof{n}}+\alpha+\beta \cdot P^{br}\cdot \ddot{a}_{x:\lcroof{m}}+\gamma \cdot \ddot{a}_{x:\lcroof{n}}$$
+{\bf Rezerwy brutto}\\
+\\
+Mamy
+$${}_{k}V^{br}={}_{k}V+{}_{k}V^\alpha+{}_{k}V^\gamma$$
+1. Rezerwa brutto dla ubezpieczenia na ¿ycie i do¿ycie. Akwizycyjny sk³adnik rezerwy ma postaæ:
+$${}_{k}V_{x:\lcroof{n}}^\alpha=-P^\alpha \cdot \ddot{a}_{x+k:\lcroof{n-k}}=-\alpha\frac{\ddot{a}_{x+k:\lcroof{n-k}}}{\ddot{a}_{x:\lcroof{n}}}=-\alpha(1-{}_{k}V_{x:\lcroof{n}})$$
+natomiast dla $k=1,2,\ldots,n$ mamy
+$${}_{k}V^\gamma \equiv 0$$
+Ostatecznie wiêc:
+$${}_{k}V^{br}_{x:\lcroof{n}}=(1+\alpha){}_{k}V_{x:\lcroof{n}}-\alpha$$
+2. Rezerwa brutto dla ubezpieczenia na ¿ycie i do¿ycie ze skróconym okresem p³acenia sk³adek. W tym przypadku dla $k=1,2,\ldots,m-1$:
+$${}_{k}V^\alpha=-P^\alpha \cdot \ddot{a}_{x+k:\lcroof{m-k}}=-\alpha (1 - {}_{k}V_{x:\lcroof{n}})$$
+oraz dla $k \ge m$
+$${}_{k}V^{\alpha}=0$$
+Rezerwa administracyjna ma postaæ dla $k=1,2,\ldots,m-1$:
+$${}_{k}{V^\gamma}=\gamma\cdot \ddot{a}_{x+k:\lcroof{n-k}}-P^\gamma \cdot\ddot{a}_{x+k:\lcroof{m-k}}$$
+oraz dla $k \ge m$:
+$${}_{k}V^\gamma=\gamma \cdot \ddot{a}_{x+k:\lcroof{n-k}}$$
+
+Zillmeryzacja: na koniec pierwszego roku rezerwa ma byæ nieujemna:
+$$\alpha=\frac{{}_{1}V_{x:\lcroof{n}}}{1-{}_{1}V_{x:\lcroof{n}}}$$
+\end{document}
