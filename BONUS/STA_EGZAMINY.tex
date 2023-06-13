@@ -1,0 +1,2516 @@
+%& --translate-file=cp1250pl
+\documentclass{article}
+\usepackage[cp1250]{inputenc}
+\usepackage{polski}
+\usepackage{synttree}
+\usepackage{lifecon}
+\usepackage{enumerate}
+\usepackage{fancyheadings}
+\newtheorem{tw}{Twierdzenie}[section]
+
+\newtheorem{zad}{Zadanie}[section]
+\newtheorem{roz}{Rozwi¹zanie}[section]
+
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[CO,CE]{Prawdopodobieñstwo i statystyka - egzaminy}
+Ostatni raz wygenerowano: \today. Kontakt: thasiow(at)onet.pl
+
+%------------------- EGZAMIN 26 paŸdziernika 1996 ------------------
+
+% zad 1
+
+\section{Egzamin z 26 paŸdziernika 1996}
+\begin{zad}\textnormal{
+Mamy dwoch strzelców. Prawdopodobieñstwo trafienia w cel pojedynczym strza³em dla lepszego z nich 0.8, a dla gorszego 0.4 Nie wiemy, który z nich jest gorszy, a który lepszy. Testujemy strzelców poddaj¹c ich ci¹gowi prób, z których kazda polega na oddaniu jednego strza³u przez kazdego z nich. Test przerywamy po pierwszej takiej próbie, w wyniki której jeden ze strzelców trafi³, a drugi spud³owa³. Nastepnie strzelec, który w ostatniej próbie trafi³, oddaje jeszcze jeden strza³. Jakie jest prawdopodobieñstwo, i¿ tym razem trafi³ w cel?
+}\end{zad}
+\begin{roz}
+To zadanie na prawdopodobieñstwo warunkowe. Niech zdarzenie A oznacza zdarzenie w którym strzelec, który trafi³ w 1 próbie trafi jeszcze raz, zdarzenie B natomiast niech oznacza, ¿e trafi³ dok³adnie jeden strzelec
+$$P(A|B)=\frac{P(A \land B)}{P(B)}$$
+Prawdopodobieñstwo, ¿e trafi³ jeden strzelec wynosi:\\
+\\
+Przypadek 1: trafia lepszy, nie trafia gorszy: $0.8\cdot 0.6=0.48$\\
+Przypadek 2: trafia gorszy, nie trafia lepszy: $0.4 \cdot 0.2=0.08$\\
+\\
+Prawdopodobieñstwo zdarzenia B wynosi wiêc $P(B)=0.48+0.08=0.56$\\
+\\
+Prawdopodobieñstwo zdarzenia $A \land B$: \\
+\\
+Przypadek 1 wraz z tym, ¿e lepszy trafi jeszcze raz: $0.48\cdot 0.8=0.384$\\
+Przypadek 2 wraz z tym, ¿e gorszy trafi jeszcze raz $0.08\cdot0.4=0.032$\\
+\\
+Czyli
+$$P(A|B)=\frac{0.384+0.032}{0.56}=\frac{26}{25}$$
+\end{roz}
+
+% zad 2
+
+\begin{zad}
+Tarczê strzelnicz¹ umieszczamy na p³aszczyŸnie ze œrodkiem tarczy..
+\end{zad}
+\begin{roz}
+Do rozwi¹zania.
+\end{roz}
+
+% zad 3
+
+\begin{zad}\textnormal{
+Oblicz $Pr(\min(k_1,k_2,k_3)=3)$, jesli $k_1,k_2,k_3$ to liczby oczek uzyskane w wyniku rzutu trzema (uczciwymi) kostkami.
+}\end{zad}
+
+\begin{roz}
+Rozpatrujemy wszystkie przypadki:
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+ & Kostka 1 & Kostka 2 & Kostka 3 & Liczba mo¿liwoœci\\ \hline
+Przypadek1 & 3 & (4,5,6) & (4,5,6) & $3\cdot 3 \cdot 3$ * \\ \hline
+Przypadek 2 & 3 & 3 & (4,5,6) & $3 \cdot 3$ \\ \hline
+Przypadek 3 & 3 & 3 & 3 & 1 \\ \hline
+\end{tabular}
+\end{table}
+*3 mo¿liwoœci u³o¿enia wyników dla kostek\\
+\\
+Razem wszystkich mo¿liwoœic jest $6\cdot 6 \cdot 6$, st¹d szukane prawdopodobieñstwo jest równe
+$$Pr(\min(k_1,k_2,k_3)=3)=\frac{3\cdot 3\cdot 3+3\cdot 3+1}{6\cdot 6\cdot 6}=\frac{37}{216}$$
+\end{roz}
+
+% zad 4
+
+\begin{zad}\textnormal{
+Funckja gêstoœci dana jest wzorem:
+\begin{equation*}
+ f_{X,Y}(x,y)=
+\begin{cases}
+x+y & \text{dla } (x,y) \in (0,1)x(0,1),\\
+0 & \text{poza tym }
+\end{cases}
+\end{equation*}
+$E(X|Y=\frac{1}{2})$ wynosi: ?.
+}\end{zad}
+
+\begin{roz}
+Rysujemy rysunek pomocniczy. Mamy:
+$$E(X|Y=1/2)=\frac{\int_0^1 x (x+1/2)dx}{\int_0^1 (x+1/2) dx}=\frac{7}{12}$$
+
+\end{roz}
+
+% zad 5
+
+\begin{zad}
+Do zrobienia.
+\end{zad}
+
+% zad 6
+
+\begin{zad}
+Do zrobienia.
+\end{zad}
+
+% zad 7
+
+\begin{zad}
+Do zrobienia.
+\end{zad}
+
+% zad 10
+
+\begin{zad}\textnormal{
+Niech $X$ ma funkcjê gêstoœci 
+\begin{equation*}
+ f_{X}(x)=
+\begin{cases}
+0.5\cdot x+0.5 & \text{dla } -1 \le x \le 1,\\
+0 & \text{poza tym }
+\end{cases}
+\end{equation*}
+gêstoœæ $f_Y(y)$ zmiennej losowej $Y=X^2$ dana jest dla $y \in (0,1)$ wzorem:?
+}\end{zad}
+
+\begin{zad}
+Tu nie mo¿emy skorzystaæ ze wzoru wykorzystuj¹cego Jakobian (pochodna siê zeruje w zerze). Wiêc zastosujemy podejœcie wykorzystuj¹ce dystrybuantê. Mamy:
+$$P(X^2<t)=P(\-\sqrt{t} \le X\le \sqrt{t})=\int_{-\sqrt{t}}^\int{\sqrt{t}}0.5x+0.5=\sqrt{t}$$
+Gêstoœæ:
+$$f(t)=\frac{\partial \sqrt{t}}{\partial t}=\frac{1}{2\sqrt{t}}$$
+\end{zad}
+
+
+%------------------- EGZAMIN 11 paŸdziernika 2004 ------------------
+\newpage
+\section{Egzamin z 11 paŸdziernika 2004}
+
+% zadanie 1
+
+\begin{zad}\textnormal{
+Obserwujemy dzia³anie pewnego urz¹dzenia w kolejnych chwilach $t=0,1,2,\ldots$. Dzia³anie tego urz¹dzenia zale¿y od pracy dwóch podzespo³ów A i B. Ka¿dy z nich moze ulec awarii w jednostce czasu z prawdopodobieñstwem $0.1$ niezale¿nie od drugiego. Je¿eli jeden z podzespo³ów ulega awarii, to urz¹dzenie nie jest naprawiane i dzia³a dalej wykorzystuj¹c drugi podzespó³. Je¿eli oba podzespo³y s¹ niesprawne w chwili t, to nastêpuje ich naprawa i w chwili $t+1$ oba s¹ sprawne. Prawdopodobieñstwo, ¿e podzespó³ B jest sprawny w chwili t d¹¿y, przy t d¹¿¹cym do nieskoñczonoœci, do nastêpuj¹cej liczby (z dok³adnoœci¹ do 0.001): ?.
+}\end{zad}
+
+\begin{roz}
+Mamy 4 stany:\\
+$A,B$ - oba urz¹dzenie dzia³aj¹\\
+$\sim{A},B$ - urz¹dzenie A uleg³o awarii\\
+$A,\sim{B}$ - urz¹dzenie B uleg³o awarii\\
+$\sim{A},\sim{B}$ - oba urz¹dzenia nie dzia³aj¹\\
+\\
+Macierz prawdopodobieñstw przejœcia stanów w jednym kroku:
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+ & $A,B$ & $\sim{A},B$ & $A,\sim{B}$ & $\sim{A},\sim{B}$\\ \hline
+$A,B$ & $0.9^2$ & 0.09 & 0.09 & 0.01 \\ \hline
+$\sim{A},B$ & 0 & 0.9 & 0 & 0.1 \\ \hline
+$A,\sim{B}$ & 0 & 0 & 0.9 & 0.1 \\ \hline
+$\sim{A},\sim{B}$ & 1 & 0 & 0 & 0 \\ \hline
+
+\end{tabular}
+\end{table}
+zauwa¿my, ¿e wiersze zawsze sumuj¹ siê do 1. Gybyœmy chcieli uzyskaæ prawdopobieñstwa przejœcia w 2 kroków to musielibyœmy zrobiæ iloczyn powy¿szej macierzy. W przypadku 3 kroków by³aby to macierz do potêgi 3-ciej. Definiujemy prawdopodobieñstwa, ¿e po nieskoñczenie d³ugim czasie jesteœmy w danym stanie (na egzaminach te prawdopodobieñstwa zawsze istniej¹, w teorii nie musz¹).\\
+\\
+Dla stanu $A,B$ definiujemy $P_1$\\
+Dla stanu $\sim{A},B$ definiujemy $P_2$\\
+Dla stanu $A,\sim{B}$ definiujemy $P_3$\\
+Dla stanu $\sim{A},\sim{B}$ definiujemy $P_4$\\
+\\
+Teraz zapisujemy wykorzystuj¹c informacje z kolumn (do zapamietania: odwrotnie ni¿ sumowanie do jedynki):
+$$P_1=0.81\cdot P_1+0\cdot P_2+0\cdot P_3+ 1 \cdot P_4$$
+$$P_2=0.09\cdot P_1+0.9 \cdot P_2$$
+$$P_3=0.09\cdot P_1+0.9\cdot P_3$$
+$$P_4=0.01\cdot P_1+0.1\cdot P_2+\cdot P_3$$
+oraz 
+$$P_1+P_2+P_3+P_4=1$$
+szukamy prawdopodobieñstwa, ¿e urz¹dzenie B jest sprawne, czyli 
+$$P_1+P_2=?$$
+Rozwi¹zuj¹c uk³ad równañ mamy:
+$$P_1+P_2=0.6354$$
+\end{roz}
+
+% zadanie 2
+
+\begin{zad}\textnormal{
+Niech $X_1,X_2,\ldots,X_n,\ldots$ bêd¹ niezale¿nymi zmiennymi losowymi o jednakowym rozk³adzie wyk³adniczym o gêstoœci
+\begin{equation*}
+ f(x)=
+\begin{cases}
+\alpha e^{-\alpha x} & \text{gdy } x>0\\
+0 & \text{gdy } x \le 0
+\end{cases}
+\end{equation*}
+gdzie $\alpha>0$ jest ustalonym parametrem.\\
+Niech N bêdzie zmienn¹ losow¹, niezale¿n¹ od $X_1,X_2,\ldots,X_n,\ldots,$ o rozkladzie ujemnym dwumianowym
+$$P(N=n)={n+r-1 \choose n}p^r(1-p)^n$$ dla $n=0,1,2,\ldots$ gdzie $r>0$ i $p \in(0;1)$ s¹ ustalonymi parametrami. Niech 
+\begin{equation*}
+ Z_N=
+\begin{cases}
+\min(X_1,X_2,\ldots,X_N) & \text{gdy } N>0\\
+0 & \text{gdy } N = 0
+\end{cases}
+\end{equation*}
+Oblicz $E(NZ_N)$ i $Var(NZ_N)$.
+}\end{zad}
+
+\begin{roz}
+Korzystaj¹c z w³asnoœci wartoœci oczekiwanej (Iteracyjnoœæ)
+$$E(E(Y|X))=EY$$
+mamy:
+$$E(NZ_N)=E[E(NZ_N|N=n)]$$
+W 1 kroku liczymy rozk³ad zmiennej $Z_n$, mamy:
+$$F(x)=\int_0^x \alpha e^{-\alpha s}ds=1-e^{-\alpha x}$$
+$$P(\min(X_1,\ldots,X_N)<t)=1-P(\min(X_1,\ldots,X_N)>t)=1-P(X_1>t)^n=$$
+$$=1-(1-(1-e^{-\alpha x}))^n=1-e^{-\alpha x n}$$
+$$f_{Z_N}(z)=\alpha\cdot n\cdot e^{-\alpha x n}$$
+czyli $Z_N$ ma rozk³ad wyk³adniczy z $\beta=\alpha n$, jego wartoœæ oczekiwana to $\frac{1}{\alpha n}$. St¹d mamy: 
+\begin{equation*}
+ E(N\cdot Z_N)=
+\begin{cases}
+\frac{1}{\alpha} & \text{z p-p } \sum_{n=1}^\infty {n+r-1 \choose n}p^r(1-p)^n=1-p^r\\
+0 & \text{dla } N = 0
+\end{cases}
+\end{equation*}
+w powy¿szym nale¿y zauwa¿yæ, ¿e w $\frac{1}{\alpha n}$ skróci³o siê $n$. Powy¿sza równoœæ wynika z faktu, ¿e w rozk³adzie ujemnym dwumianowym mamy:\\
+\\
+\textbf{Rozk³ad ujemny dwumianowy}
+$$p_k=\frac{\Gamma(r+k)}{\Gamma(r)k!}p^r(1-p)^k$$
+dla $k=0,1,\ldots$
+$$E(X)=\frac{r(1-p)}{p}$$
+$$VAR(X)=\frac{r(1-p)}{p^2}$$
+gdzie $$\frac{\Gamma(r+k)}{\Gamma(r)k!}=\frac{(r+k-1)!}{(r-1)!k!}={r+k-1 \choose k}$$
+st¹d suma po $p_k$ od $k=0$ daje 1, dla $k=0$ mamy $p^r$ st¹d ca³a suma daje $1-p^r$.\\
+\\
+Ostatecznie mamy:
+$$E(N\cdot Z_N)=\frac{1}{\alpha}\left(1-p^r\right)+0\cdot p^r=\frac{1}{\alpha}\left(1-p^r\right)$$
+drug¹ czêœci¹ zadania jest obliczenie wariancji. 
+$$E(N^2 \cdot Z_N^2)=?$$
+Wiemy, ¿e $Z_N$ ma rozk³ad wyk³adniczy z $\beta={\alpha n}$\\
+\\
+\textbf{Rozk³ad wyk³adniczy}
+$$f(x)=\beta e^{-\beta x}$$
+$$E(X)=\frac{1}{\beta}$$
+$$VAR(X)=\frac{1}{\beta^2}$$
+st¹d
+$$Var(Z_N)=\frac{1}{(\alpha n)^2}$$
+czyli 
+$$E(Z_N^2)=\frac{1}{(\alpha n)^2}+\frac{1}{(\alpha n)^2}=\frac{2}{(\alpha n)^2}$$
+\begin{equation*}
+ E(N^2\cdot Z_N^2)=
+\begin{cases}
+\frac{2}{\alpha^2} & \text{z p-p } \sum_{n=1}^\infty {n+r-1 \choose n}p^r(1-p)^n=1-p^r\\
+0 & \text{dla } N = 0
+\end{cases}
+\end{equation*}
+st¹d
+$$E(N^2Z_n^2)=\frac{2}{\alpha^2}(1-p^r)$$
+$$Var(NZ_N)=\frac{2}{\alpha^2}(1-p^r)-\frac{1}{\alpha^2}(1-p^r)^2=\frac{2(1-p^r)-(1-p^r)^2}{\alpha^2}=$$
+$$=\frac{1-p^{2r}}{\alpha^2}$$
+\end{roz}
+
+% zadanie 3
+
+\begin{zad}\textnormal{
+Niech $(X,Y)$ bêdzie dwumiarow¹ zmienn¹ losow¹ o funkcji gêstoœci 
+\begin{equation*}
+ f(x,y)=
+\begin{cases}
+e^{-x} & \text{ gdy } x>0 \text{ i } y\in(0;1)\\
+0 & \text{ w przeciwnym wypadku. }
+\end{cases}
+\end{equation*}
+Niech $Z=X+2Y$. Wtedy ³¹czny rozk³ad zmiennych $Z,X$ jest taki, ¿e:?
+}\end{zad}
+\begin{roz}
+W ogólnoœci: Niech $X$ - zmienna o gêstoœci $f$. ¯eby obliczyæ gêstoœæ zmiennej $Y$ zdefiniowanej jako:
+$$Y=g(x)$$
+u¿ywamy nastêpuj¹cego wzoru:
+$$g(y)=f(h(y))|h'(y)|$$
+gdzie $h$ - funkcja odwrotna do g (tzn. $h(g(t))=t)$. \\
+\\
+Robimy zamianê zmiennych ¿eby uzyskaæ ³aczny rozk³ad $g(z,x)$. \\
+\\Krok 1: funkcja/e odwrotna/e
+\begin{equation*}
+\begin{cases}
+Z=X+2Y \hspace{15pt}\rightarrow \hspace{15pt}Y=\frac{1}{2}Z-\frac{1}{2}V\\
+V=X
+\end{cases}
+\end{equation*}
+Krok 2: Jakobian i wyznacznik (Licz¹c jakobian: w pierwszym wierszu pochodne starej zmiennej po nowych zmiennych, w drugim wierszu pochodne drugiej starej zmiennej po nowych zmiennych). Mamy:
+\begin{equation*}
+J = \left|\left|
+\begin{matrix}
+\frac{\partial X}{\partial Z} & \frac{\partial X}{\partial V}\\
+\\
+\frac{\partial Y}{\partial Z} & \frac{\partial Y}{\partial V}
+\end{matrix} \right|\right|=
+ \left|\left|\begin{matrix}
+0 & 1\\
+\\
+\frac{1}{2} & -\frac{1}{2}
+\end{matrix} \right|\right|=\left|0-\frac{1}{2}\right|=\frac{1}{2}
+\end{equation*}
+Krok 3:
+$$g(y)=f(h(y))|h'(y)|$$
+czyli
+$$g(z,x)=e^{-v}\cdot \frac{1}{2}=\frac{1}{2}\cdot e^{-x}$$
+dla $x>0$ i $Y \in (0,1)$ st¹d dla $z \in (x,x+2)$.
+\end{roz}
+
+% zadanie 4
+
+\begin{zad}\textnormal{
+Dysponujemy $N+1$, $(N>1)$ identycznymi urnami. Ka¿da z nich zawiera $N$ kul bia³ych i czarnych. Liczba kul bia³ych w i-tej urnie jest równa $i-1$, gdzie $i=1,2,\ldots, N+1$. \\
+Losujemy urnê, a nastêpnie ci¹gniemy z niej jedn¹ kulê i okazuje siê, ¿e otrzymana kula jest bia³a. Oblicz prawdopodobieñstwo, ¿e ci¹gn¹c drug¹ kulê z tej samej urny (bez zwracania pierwszej) równie¿ otrzymamy kulê bia³¹.
+}\end{zad}
+\begin{roz}
+rozpatrujemy pierwsze zdanie: losujemy urnê i ci¹gniemy kulê, kula jest bia³a. Tu mamy prawdopodobieñstwo warunkowe
+$$P(A|B)=\frac{P(A\cap B)}{P(B)}$$
+gdzie A oznacza, ¿e wylosowaliœmy urnê z $n$ kulami bia³ami a $B$ oznacza prawdopodobieñstwo, ¿e wylosowaliœmy bia³¹ za pierwszym razem. Mamy (p-p wylosowania urny: $\frac{1}{N+1})$:
+$$P(B)=\frac{1}{N+1}\cdot \frac{0}{N}+\frac{1}{N+1}\frac{1}{N}+\ldots+\frac{1}{N+1}\cdot \frac{N}{N}=$$
+$$=\frac{1}{N+1}\cdot\frac{1}{N}\cdot\frac{0+N}{2}\cdot (N+1)=\frac{1}{2}$$
+$$P(A \cap B)=\frac{1}{N+1}\cdot \frac{n}{N}$$
+St¹d
+$$P(A|B)=\frac{2n}{N(N+1)}$$
+Teraz rozpatrzmy co dzieje siê w drugim losowaniu: gdy z tej samej urny chcemy wyslosowaæ równie¿ bia³¹ mamy 
+$$\frac{2n}{N(N+1)}\cdot \frac{n-1}{N-1}$$
+musimy wysumowaæ powy¿sze dla wszyskich mo¿liwych liczb kól bia³ych tj.:
+$$\sum_{n=1}^N \frac{2n}{N(N+1)}\cdot \frac{n-1}{N-1}=\frac{2}{N(N+1)(N-1)}\sum_{i=1}^N n(n-1)=$$
+$$=\frac{2(n-1)N(N+1)}{3N(N+1)(N-1)}=\frac{2}{3}$$
+\end{roz}
+
+%------------------- EGZAMIN 17 czerwca 2013 ------------------
+\newpage
+\section{Egzamin z 17 czerwca 2013}
+ 
+ % zadanie 1
+ 
+ \begin{zad}\textnormal{
+ Zak³adaj¹c, ¿e zmienne losowe $X_1,X_2,\ldots,X_{16}$ s¹ niezale¿ne i maj¹ rozk³ady normalne $X_i \sim N(m\sqrt{i},i)$, $i=1,2,\ldots,16$, zbudowano test jednostajnie najmocniejsz dla weryfikacji hipotezy $H_0:m=0$ przy alternatywie $H_1:m>0$ na poziomie istotnoœci $0.05$. W rzeczywistoœci okaza³o siê, ¿e wektor $(X_1,X_2,\ldots,X_{16})$ ma rozk³ad normalny taki, ¿e $EX_i=m\sqrt{i}$, $VarX_i=i$, \\ $i=1,2,\ldots,16$, oraz wspó³czynnik korelacji 
+\begin{equation*}
+ \rho(X_i,X_j)=
+\begin{cases}
+0.5 & \text{gdy } |i-j|=1\\
+1 & \text{poza tym } i=j\\
+0 & \text{w pp}
+\end{cases}
+\end{equation*}
+Wyznaczyæ rzeczywisty rozmiar testu.
+ }\end{zad}
+ \begin{roz}
+ Dla przypomnienia poziom istotnoœci (rozmiar testu): 
+ $$P_\theta(K)\le \alpha$$ 
+ gdzie $K=\lbrace T(x)>c \rbrace$. Test jednostajnie najmocniejszy $\rightarrow$ najmniejsze prawdopodobieñstwo b³edu drugiego rodzaju (nie odrzucenie $H_0$ gdy jest fa³szywa). Buduje siê siê go przez iloraz funkcji wiarygodnoœci w nast¹puj¹cy sposób:\\
+ \\
+ Przy $H_0$ mamy $$L_0=\prod_{i=1}^{16}f(x_i,0,i)$$
+ Przy $H_1$ mamy
+ $$L_1=\prod_{i=1}^{16}f(x_i,m\sqrt{i},i)$$
+ wiemy, ¿e 
+ $$N(\mu,\sigma^2)=\frac{1}{\sqrt{2\pi}\cdot \sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$ 
+ $$N(0,i)=\frac{1}{\sqrt{2\pi}\cdot \sqrt{i}}e^{-\frac{x^2}{2i}}$$ 
+  $$N(m\sqrt{i},i)=\frac{1}{\sqrt{2\pi}\cdot \sqrt{i}}e^{-\frac{(x-m\sqrt{i})^2}{2i}}$$ 
+ wtedy mamy
+ $$\frac{L_1}{L_0}\rightarrow \text{Je¿eli to jest zbyt du¿e to odrzucamy $H_0$}$$
+ st¹d
+ $$\frac{L_1}{L_0}=\frac{\prod_{i=1}^{16}\frac{1}{\sqrt{2\pi}\cdot \sqrt{i}}e^{-\frac{(x-m\sqrt{i})^2}{2i}}}{\prod_{i=1}^{16}\frac{1}{\sqrt{2\pi}\cdot \sqrt{i}}e^{-\frac{x^2}{2i}}}=e^{\sum_{i=1}^{16}-\frac{(x_i-m\sqrt{i})^2}{2i}+\frac{x_i^2}{2i}}=$$
+ $$=e^{\sum_{i=1}^{16}\frac{2x_im\sqrt{i}-m^2 i}{2i}}$$
+ $H_0$ odrzucamy, gdy
+ $$e^{\sum_{i=1}^{16}\frac{2x_im\sqrt{i}-m^2 i}{2i}}>t$$
+ $$\sum_{i=1}^{16}\frac{2x_im\sqrt{i}-m^2 i}{2i}>t' \rightarrow \sum_{i=1}^{16}\frac{2x_im\sqrt{i}-m^2 i}{i}>t'$$
+ Skoro test na poziomie istotnoœci $0.05$ to prawdopodobieñstwo odrzucenia $H_0$ przy jej prawdziwoœci
+ $$P\left(\sum_{i=1}^{16}\frac{2x_im\sqrt{i}-m^2 i}{i}>t'\right)=0.05$$
+ Dalej
+ $$P\left(\sum_{i=1}^{16}\frac{x_i\sqrt{i}}{i}>t'\right)=0.05$$
+ Z w³asnoœci rozk³adu normalnego:
+ $$aX+b\sim N(a\mu+b,(a\sigma)^2)$$
+ $$X_1+X_2\sim N(\mu_1+\mu_2,\sigma^2+\sigma^2)$$
+ mamy:
+ $$T=\sum_{i=1}^{16} \frac{x_i}{\sqrt{i}}\sim N(0,16)$$
+ bo
+ $$\frac{x_i}{\sqrt{i}}\sim N(0,\frac{i}{i})=N(0,1)$$
+ musimy unormowaæ sumê bo ma rozk³ad $N(0,16)$. mamy
+ $$Y=\frac{T-0}{\sigma}=\frac{T}{\sqrt{16}}\sim N(0,1)$$
+ st¹d 
+ $$P\left(\frac{T}{\sqrt{16}}>t\right)=0.05 \rightarrow P\left(\frac{T}{\sqrt{16}}<t\right)=0.95$$
+ z tablic 
+ $$t=1.645\rightarrow t''=1.645\cdot \sqrt{16}=6.58$$
+ st¹d, je¿eli $\sum_{i=1}^n \frac{x_i}{\sqrt{i}}>6.58$ to odrzucam $H_0$. Poziom istotnoœci testu = rozmiar testu. Zrobi³em test przy z³ym poziomie istotnoœci, czyli mam prawdopodobieñstwo odrzucenia $H_0$ je¿eli jest prawdziwa. Wiemy, ¿e $X_1,X_2,\ldots,X_{16}$ s¹ skorelowane. Rzeczywisty rozmiar testu bêdzie obliczony poprzez:
+ $$P\left(\sum_{i=1}^{16} \frac{x_i}{\sqrt{i}}>6.58\right)$$
+ przy $H_0$, gdzie $\sum_{i=1}^{16} \frac{x_i}{\sqrt{i}}=V$, a $x_i$ s¹ skorelowane. Wiemy, ¿e $V\sim N(0,?)$, czyli musimy obliczyæ
+ $$Var(\sum_{i=1}^{16} \frac{x_i}{\sqrt{i}})=?$$
+ Z w³asnoœci wariancji pamiêtamy, ¿e
+ 
+ % SPRAWDZIÆ CZY ZAPISANA JEST WE WZORACH (PEWNIE NIE)
+ 
+ $$Var(X+Y+Z)=Var(X)+Var(Y)+Var(Z)+2Cov(X,Y)+2Cov(X,Z)+2Cov(Y,Z)$$
+ wspo³czynnik korelacji
+ $$\rho=\frac{Cov(X,Y)}{\sigma_X\sigma_Y}$$
+ podobnie dla 16 zmiennych (uwzglêdniaj¹c przypadki zerowej kowariancji):
+ $$Var\left(\sum_{i=1}^{16} \frac{x_i}{\sqrt{i}}\right)=\sum_{i=1}^{16} \frac{x_i}{\sqrt{i}}+2\sum_{i=1}^{15}Cov\left(\frac{x_i}{\sqrt{i}},\frac{x_{i+1}}{\sqrt{i+1}}\right)=16+2\cdot 15 \cdot 0.5=31$$
+ Mamy:
+ $$V\sim N(0,31) \rightarrow S=\frac{V-0}{\sqrt{31}}$$
+ st¹d
+ $$P(V > 6.58)=P\left( \frac{V}{\sqrt{31}}>\frac{6.58}{\sqrt{31}}\right)=1-0.88136\approx 0.12$$
+ \end{roz}
+ 
+ % zadanie 3
+ 
+ \begin{zad}\textnormal{
+ Niech $X$ bêdzie pojedyncz¹ obserwacj¹ z rozk³adu o gêstoœci 
+\begin{equation*}
+p_\theta(x)=
+\begin{cases}
+\frac{1}{\theta^2}(\theta-|x|) & \text{gdy } x\in [-\theta,\theta]\\
+0 & \text{gdy } x \not\in [-\theta,\theta]
+\end{cases}
+\end{equation*}
+gdzie $\theta>0$ jest nieznanym parametrem. Weryfikujemy hipotezê $H_0:\theta=1$ przy alternatywie $H_1:\theta \neq 1$ za pomoc¹ testu opartego na ilorazie wiarygodnoœci na poziomie istotnoœci $0.20$. Moc tego testu przy alternatywie $\theta=4$ jest równa ?.
+ }\end{zad}
+ 
+ \begin{roz}
+ Dla przypomnienia:\\
+ \\
+B³¹d I rodzaju: \textbf{odrzucenie $H_0$, gdy jest prawdziwa}\\
+\\
+B³¹d II rodzaju: \textbf{nie odrzucenie $H_0$, gdy jest fa³szywa}\\
+\\
+ \textbf{Moc testu statystycznego rozumiana jest jako prawdopodobieñstwo nieodrzucenia $H_1$ przy jej prawdziwoœci (odrzucenie $H_0$ przy jej fa³szywoœci)}.\\
+ \\
+ Test jest oparty na ilorazie wiarygodnoœci wiêc potrzebujemy dwóch funkcji wiarygodnoœci (i ich pochodnych do policzenia supremum):
+ $$L_0(x,\theta=1)=\frac{1}{1}(1-|x|)=1-|x|$$
+ $$L_1(x,\theta \neq 1)=\frac{1}{\theta^2}(\theta-|x|)$$
+ bo test oparty na ilorazie wiarygodnoœci:
+ $$\frac{\sup_{\theta \in \Theta_1 }L(\theta,x)}{\sup_{\theta \in \theta_0}L(\theta,x)}$$
+ Test oparty na ilorazie wiarygodnoœci: gdy wynik $L_1/L_0$ jest wiêkszy od pewnej liczby to \textbf{odrzucamy} hipotezê zerow¹. Tym samym, gdy $L_0/L_1$ mniejsze od tej liczy to równie¿ odrzucamy.
+ $$\frac{L_1}{L_0}=\frac{\frac{1}{\theta^2}(\theta-|x|)}{1-|x|}$$
+ Do testu potrzebujemy supremum
+ $$\sup_{\theta \in \Theta_0} L_0=1-|x|$$
+ $$\sup_{\theta \in \Theta_1}L_1=?$$
+ $$\frac{\partial}{\partial \theta}\left(\frac{1}{\theta^2}(\theta-|x|)\right)=-\frac{1}{\theta^2}+2\frac{|x|}{\theta^3}=0\rightarrow \theta=2|x|$$
+ wstawiamy to do ilorazu wiarygodnoœci i mamy:
+ $$\frac{L_1}{L_0}=\frac{1}{4(|x|-|x|^2)}$$
+ $H_0$ odrzucimy gdy
+ $$\frac{1}{4(|x|-|x|^2)}>\gamma$$
+ czyli
+ $$4(|x|-|x|^2)<\gamma$$
+ Przy $H_0$ mamy:
+ $$P(4|x|-|x|^2<\gamma |\theta=1)=0.2$$
+ sprawdŸmy dla jakich $\gamma$ powy¿sze zachodzi
+ $$|x|-|x|^2<\gamma/4 \rightarrow |x|-|x|^2-\gamma/4<0$$
+ $$|x_1|=1/2-1/2\sqrt{1-\gamma}$$
+ $$|x_2|=1/2+1/2\sqrt{1-\gamma}$$
+ to oznacza, ¿e pomiêdzy tymi dwoma punktami funkcja kwadratowa jest wieksza od zera co oznacza, ¿e w tym obszarze przyjmujemy $H_0$. Test jest dwustronny (mamy wartoœci bezwzglêdne), wiêc o ile dla ca³ego obszaru $P(x \in D)=0.8$ to dla powy¿szego jest to po³owa $P(x \in D)=0.4$. St¹d
+ gêstoœæ:
+ $$\frac{1}{\theta^2}(\theta-|x|)$$
+ przy $H_0:\theta=1$ jest $1-|x|$, w po³owie obszaru $1-x$
+ $$\int_{1/2-1/2\sqrt{1-\gamma}}^{1/2+1/2\sqrt{1-\gamma}}(1-x)dx=0.4\rightarrow \sqrt{1-\gamma}=0.8$$
+ Moc testu to odrzucenie $H_0$ przy jej fa³szywoœci czyli, 1 - przyjêcie $H_0$ przy $\theta=4$ czyli
+ $$\int_{1/2-1/2\sqrt{1-\gamma}}^{1/2+1/2\sqrt{1-\gamma}}\frac{1}{4^2}(4-|x|)dx=0.35$$
+ $$ODP=1-0.35=0.65$$
+ \end{roz}
+ 
+ %------------------- EGZAMIN 23 marca 2015 ------------------
+ 
+\newpage
+\section{Egzamin z 10 marca 2014}
+
+% zadanie 1
+
+\begin{zad}\textnormal{
+Za³ó¿my, ¿e zmienne losowe $X_1,\ldots,X_5,X_6,\ldots,X_20$ s¹ niezale¿ne, o jednakowym rozk³adzie normalnym o wartoœci oczekiwanej 1 i wariancji 4, oraz przyjmijmy oznaczenia:
+$$S_5=X_1+\ldots+X_5$$
+$$S_{20}=X_1+\ldots+X_{20}$$
+Wtedy $E(S_5^2|S_{20}=16)$ jest równa ?.
+}\end{zad}
+
+\begin{roz}
+Liczenie bezpoœrednie nie jest dobrym pomys³em.
+$$E(S_5^2|S_{20})=?$$
+Tutaj jest ciekawy pomys³, ¿eby znaleŸæ rozbicie $S_5$ na takie zmienne, ¿eby uzyskaæ niezale¿noœæ od $S_{20}$.
+Ustalmy, $S_{15}=\sum_{i=6}^{}$
+\end{roz}
+
+%------------------- EGZAMIN 26 maja 2014 ------------------
+
+\newpage
+\section{Egzamin z 26 maja 2014}
+
+% zadanie 1
+
+\begin{zad}
+\textbf{Podobne do zadania z 1.10.2012}\\
+\\
+\textnormal{Niech $X_1,X_2,\ldots,X_n$, $n>2$, bêd¹ niezale¿nymi zmiennymi losowymi z rozk³adu jednostajnego na przedziale $(0,\theta_1)$, a $Y_1,Y_2,\ldots,Y_n$, niezale¿nymi zmiennymi losowymi z rozk³adu jednostajnego na przedziale $(0,\theta_2)$, gdzie $\theta_1,\theta_2$ s¹ niezale¿nymi prametrami dodatnimi. Wszystkie zmienne s¹ niezale¿ne. Niech $\hat{\theta}_1$, $\hat{\theta}_2$ bêd¹ estymatorami najwiêkszej wiarogodnoœci parametrów $\theta_1$ i $\theta_2$ w oparciu o próby $X_1,X_2,\ldots, X_n$ i  $Y_1,Y_2,\ldots, Y_n$ odpowiednio. Weryfikujemy hipotezê $H_0=\theta_1=\theta_2$ przy alternatywie $H_1:\theta_1=2\theta_2$ testem o obszarze krytycznym
+$$K=\left\lbrace \frac{\hat{\theta}_1}{\hat{\theta}_2}>c \right\rbrace$$,
+gdzie c jest sta³¹ dobran¹ tak, aby test mia³ rozmiar 0.1. Najmniejsze n, przy którym moc tego testu jest nie mniejsza ni¿ 0.9 jest równe: ?
+}\end{zad}
+\begin{roz}
+Nale¿y zauwa¿yæ, ¿e estymator najwiêkszej wiarogodnoœci dla rozk³adu jednostajnego na przedziale $[0,\theta]$ to maksimum z zmiennych losowych tj.
+$$\hat{\theta}=\max{\lbrace X_1,\ldots,X_n\rbrace }$$
+Wyt³umaczenie:\\
+First note that $f(x|\theta)=\frac{1}{\theta}$ , for $0\le x \le \theta$ and 0 elsewhere.
+Let $x_{(1)}\le x_{(2)} \le \ldots \le x_{(n)}$ be the order statistics. Then it is easy to see that the likelihood function is given by
+$$L(\theta|x)=\prod_{i=1}^n \frac{1}{\theta}=\theta^{-n} \hspace{10pt} (*)$$
+for $0 \le x_{(1)}$ and $\theta \ge x_{(n)}$ and 0 elsewhere
+Now taking the derivative of the log Likelihood wrt $\theta$ gives:
+$$\frac{d \ln{L(\theta|x)}}{d \theta}=-\frac{n}{\theta}<0$$
+So we can say that $L(\theta|x)=\theta^{-n}$ is a decreasing function for $\theta \ge x_{(n)}$. Using this information and (*) we see that $L(\theta|x)$ is maximized at $\theta=x_{(n)}$. Hence the maximum likelihood estimator for $\theta$ is given by
+$$\hat{\theta}=x_{(n)}$$
+Mamy:
+$$K=\left\lbrace \frac{\max{\lbrace X_1,\ldots,X_n\rbrace}}{\max{\lbrace Y_1,\ldots,Y_n\rbrace}} >c\right\rbrace$$
+Potrzebujemy wyznaczyæ rozk³ad $\max{\lbrace Y_1,\ldots,Y_n\rbrace}$. Wiemy, ¿e \\
+\\
+\textbf{Rozk³ad jednostajny ci¹g³y na przedziale $[a,b]$}
+$$f(x)=\frac{1}{b-a}$$
+$$F(x)=\frac{x-a}{b-a}$$
+$$E(X)=\frac{a+b}{2}$$
+$$VAR(X)=\frac{(b-a)^2}{12}$$
+czyli dla przedzia³u $[0,\theta]$ jest 
+$$F(x)=\frac{x}{\theta}$$ 
+mamy
+$$P(\underbrace{\max{\lbrace X_1,\ldots,X_n\rbrace}}_Z<x)=P(X_1<x)\cdot \ldots \cdot P(X_n<x)=\left(\frac{x}{\theta} \right )^n$$
+¯eby obliczyæ gêstoœæ liczymy pochodn¹:
+$$f(z)=n\frac{x^{n-1}}{\theta^n}$$
+przy $H_0$ mamy:
+$$P_0\left(\frac{X_{6:6}}{Y_{6:6}}>c\right)=P_0\left(X_{6:6} > cY_{6:6}\right)=P_0\left(Y_{6:6}<\frac{1}{c}X_{6:6}\right)=$$
+$$=\int_0^\theta \int_0^\frac{x}{c}f_{X_{6:6}}(x)f_{Y_{(6:6)}}(y)dydx=$$
+$$=\int_0^\theta \int_0^\frac{x}{c} n\frac{x^{n-1}}{\theta^n}n\frac{y^{n-1}}{\theta^n}dydx=n^2\frac{1}{\theta^{2n}}\int_0^\theta x^{n-1}\frac{(\frac{x}{c})^n}{n}dx=$$
+$$=n^2\frac{1}{\theta^{2n}}\frac{1}{c^n}\frac{\theta^{2n}}{n\cdot 2n}=0.1$$
+Równe $0.1$ bo poziom istotnoœci=rozmiar testu równy $0.1$, st¹d
+$$c^n=\frac{1}{0.2}=5$$
+Przy $H_1:\theta_1=2\theta_2$, st¹d $\theta_2=\frac{\theta_1}{2}$ mamy:
+$$P_0\left(\frac{X_{6:6}}{Y_{6:6}}>c\right)=P_0\left(Y_{6:6}<\frac{1}{c}X_{6:6}\right)=\int_0^?\int_0^? n\frac{x^{n-1}}{\theta^n}n\frac{y^{n-1}}{\left(\frac{\theta}{2}\right)^n}dydx$$
+¿eby okreœliæ przedzia³y ca³kowania dobrze jest zrobiæ rysunek pomocniczy. Wiemy z odpowiedzi, ¿e $n$ to co najmniej 4, st¹d $c$  jest mniejsze od $5^{1/4}=1.495$. Rysujemy $X$ i $Y$, zaznaczamy $\theta$, $\theta/2$ oraz wykreslamy $x/c$ , gdzie c mniejsze od $1.495$. Widaæ, ¿e w pewnym punkcie dochodzimy do granicy $\theta/2$ (bo $y$ maksymalnie mo¿e byæ $\theta/2$, ten punkt to $\frac{x}{c}=\frac{\theta}{2}\Rightarrow x=\frac{\theta c}{2}$. St¹d mo¿emy ca³kowaæ dla $x$ w przedziale od $0$ do $\frac{\theta c}{2}$ a dla $y$ od $0$ do $\frac{x}{c}$, natomiast kolejna ca³ka jest dla $x$ od $\frac{\theta c}{2}$ do $\theta$ i dla $y$ od $0$ do $\frac{\theta}{2}$
+
+ $$P_1\left(\frac{X_{6:6}}{Y_{6:6}}>c\right)=P_1\left(Y_{6:6}<\frac{1}{c}X_{6:6}\right)=$$
+ $$=\int_0^{\frac{\theta c}{2}}\int_0^\frac{x}{c} n\frac{x^{n-1}}{\theta^n}n\frac{y^{n-1}}{\left(\frac{\theta}{2}\right)^n}dydx+\int_{\frac{\theta c}{2}}^\theta \int_0^\frac{\theta}{2} n\frac{x^{n-1}}{\theta^n}n\frac{y^{n-1}}{\left(\frac{\theta}{2}\right)^n}dydx=$$
+ ca³ki s¹ doœæ ¿mudne
+ $$=\frac{c^n}{2^n \cdot 2 }+1-\frac{c^n}{2^n}=\frac{2^{n+1}-c^n}{2^{n+1}}=\frac{2^{n+1}-5}{2^{n+1}}$$
+ wynik to jest prawdopodobieñstwo odrzucenia $H_0$ przy jej fa³szywoœci. Moc testu statystycznego to:\\
+ \\
+ \textbf{Moc testu statystycznego rozumiana jest jako prawdopodobieñstwo nieodrzucenia $H_1$ przy jej prawdziwoœci (odrzucenie $H_0$ przy jej fa³szywoœci)}.\\
+ \\
+ ¯eby moc by³a wiêksza od $0.9$ to $n$ musi byæ conajmniej równe $5$
+ \\
+ \rule{\textwidth}{1pt}
+ Rozwi¹zanie przepisane przez przypadek drugi raz:\\
+ \\
+ Podobne do zadania z 1.10.2012\\
+\\
+\textbf{Rozk³ad jednostajny ci¹g³y na przedziale $[a,b]$}
+$$f(x)=\frac{1}{b-a}$$
+$$F(x)=\frac{x-a}{b-a}$$
+$$E(X)=\frac{a+b}{2}$$
+$$VAR(X)=\frac{(b-a)^2}{12}$$
+\textbf{Dla rozk³adu jednostajnego na przedziale $[0,\theta]$ estymator najwiêkszej wiarygodnoœci to: $\hat{\theta}=\max\{ x_1,\ldots,x_n \}$}\\
+\\
+ \textbf{Moc testu statystycznego rozumiana jest jako prawdopodobieñstwo nieodrzucenia $H_1$ przy jej prawdziwoœci (odrzucenie $H_0$ przy jej fa³szywoœci)}.\\
+ \\
+ W zadaniu mamy:
+ $$K=\left\{\frac{\max(X_1,\ldots,X_n)}{\max(Y_1,\ldots,Y_n)} >c\right\}=\left\{\frac{X_{6:6}}{Y_{6:6}}>c\right\}$$
+ Jaki rozk³ad ma maksimum?
+ $$P(\max(X_1,\ldots,X_N)<t)=P(X_1<t)\cdot \ldots \cdot P(X_n<t)=\left(\frac{t}{\theta}\right)^n$$
+ gêstoœæ:
+ $$f_{X_{6:6}}(t)=n\frac{t^{n-1}}{\theta}$$
+ Teraz wykorzystuj¹c informacjê o rozmiarze testu policzymy c (przy prawdziwoœci $H_0$:
+ $$P_0(K)=0.1$$
+ $$P_0\left(\frac{X_{6:6}}{Y_{6:6}}>c\right)=P_0\left(Y_{6:6}<\frac{1}{c}X_{6:6}\right)=(*)$$
+ mo¿na ma³y rysunek pomocniczy i mamy:
+ $$(*)=\int_0^\theta \int_0^\frac{x}{c}n\frac{x^{n-1}}{\theta^n}n\frac{y^{n-1}}{\theta^n}dydx=0.1$$
+ st¹d
+ $$c^n=\frac{1}{0.2}=5$$
+ Teraz przy prawdziwoœci $H_1$ mamy:
+ $$P_1\left(\frac{X_{6:6}}{Y_{6:6}}>c\right)=?$$
+ Tu nale¿y wykonaæ rysunek pomocniczy i mamy
+ $$P_1\left(\frac{X_{6:6}}{Y_{6:6}}>c\right)=\int_0^\frac{\theta c}{2}\int_0^\frac{x}{c}n\frac{x^{n-1}}{\theta^n}n\frac{y^{n-1}}{(\theta/2)^n}dydx+\int_{\frac{\theta c}{2}}^\theta\int_0^\frac{\theta}{2}n\frac{x^{n-1}}{\theta^n}n\frac{y^{n-1}}{(\theta/2)^n}dydx=$$
+ $$=\frac{c^n}{2^n\cdot 2}+\frac{2^n-c^n}{2^n}=\frac{2^{n+1}-c^n}{2^{n+1}}$$
+ $$\frac{2^{n+1}-\overbrace{c^n}^{=5}}{2^{n+1}}\ge 0.9\rightarrow 2^n \ge \frac{2.5}{0.1}=25$$
+ $$n\ge \frac{\ln(25)}{\ln(2)}=4.64$$
+ st¹d najmniejsze n równe 5.
+\end{roz}
+
+% zadanie 2
+
+\begin{zad}\textnormal{
+Rozwa¿amy model regresji liniowej postaci $Y_i=a+bx_i+\epsilon_i$, $i=1,2,3,4,5$, gdzie $a,b$ s¹ nieznanymi parametrami rzeczywistymi $x_1=x_2=1$, $x_3=3$, $x_4=x_5=5$, a $\epsilon_i$ s¹ niezale¿nymi zmiennymi losowymi o tym samym rozk³adzie normalnym o wartoœci oczekiwanej 0 i wariancji 9.\\
+Hipotezê $H_0:b=0$, przy alternatywie $H_1:b \neq 0$ weryfikujemy testem o obszarze krytycznym postaci $\lbrace|\hat{b}>c| \rbrace$, gdzie $\hat{b}$ jest estymatorem najwiêkszej wiarogodnoœci parametrów $b$, a sta³a c dobrana jest tak, aby test mia³ rozmiar $0.05$. Sta³a $c$ jest równa: ?
+}\end{zad}
+
+\begin{roz}
+PODOBNE 28.05.2012\\
+\\
+Dla przypomnienia w rozk³adzie normalnym:
+$$aX+b\sim N(a\mu+b,(a\sigma)^2)$$
+$$X_1+X_2\sim N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2)$$
+W rozk³adzie normalnym:
+$$f(y_i)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(y_i-\mu)^2}{2\sigma^2}}$$
+W regresji liniowej funkcja wiarygodnoœci jest postaci:
+$$L=\prod_{i=1}^5 \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(y_i-a-bx_i)^2}{2\sigma^2}}=\left( \frac{1}{\sqrt{2\pi}\sigma}\right)^5e^{\sum_{i=1}^5 -\frac{(y_i-a-bx_i)^2}{2\sigma^2}}$$
+Bierzemy logarytm z funkcji wiarygodnoœci:
+$$\ln L=-5\ln\sqrt{2\pi}-5\ln \sigma+$$
+$$-\frac{(y_1-a-b)^2+(y_2-a-b)^2+(y_3-a-3b)^2+(y_4-a-5b)^2+(y_5-a-5b)^2}{2\sigma^2}$$
+Pochodna po $b$:
+$$\frac{\partial \ln L}{\partial b}=$$
+$$-\frac{-2(y_1-a-b)-2(y_2-a-b)-2\cdot 3(y_3-a-b)-2\cdot 5(y_4-a-5b)+2\cdot 5(y_5-a-5b)}{2\sigma^2}=0$$
+st¹d
+$$61b=y_1+y_2+3y_3+5y_4+5y_5-15a$$
+Analogiczna pochodna po $a$ daje:
+$$y_1+y_2+y_3+y_4+y_5-15b=5a$$
+Podstawiamy do równiania z $b$ i mamy:
+$$16b=-2y_1-2y_2+2y_4+2y_5\rightarrow b=\frac{-y_1-y_2+y_4+y_5}{8}$$
+st¹d uwzglêdniaj¹c rozk³ad $\epsilon_i$ mamy:
+$$b\sim N\left(4\cdot \frac{9}{8^2}\right)=N\left(0,\frac{9\cdot 4}{64}\right)$$
+Test ma rozmiar $0.05$, ale to test dwustronny (rozk³ad normalny) wiêc
+$$P(b>c)=0.025$$
+$$P(b<c)=0.975$$
+Musimy unormowaæ b:
+$$\frac{b}{\frac{\sqrt{9}\cdot 2}{\sqrt{64}}}<\frac{c}{\frac{\sqrt{9}\cdot 2}{\sqrt{64}}}$$
+Kwantyl stopnia 0.975 wynosi $1.96$
+st¹d
+$$\frac{c}{\frac{\sqrt{9}\cdot 2}{\sqrt{64}}}=1.96\rightarrow c=1.47$$
+\rule{\textwidth}{1pt}
+\\
+Rozwi¹zanie przez przypadek przepisane drugi raz:\\
+\\
+Dla przypomnienia
+$$aX+b \sim N(a\mu+b,(a\sigma)^2)$$
+$$X_1+X_2\sim N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2)$$
+Rozk³ad normalny
+$$f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+Rozwi¹zuj¹c zadanie z regresj¹: reszty maj¹ rozk³ad normalny. St¹d funkcja wiarygodnoœci:
+$$L=\prod_{i=1}^5 \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(y_i-a-bx_i)^2}{2\sigma^2}}=\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^5 e^{\sum_{i=1}^5 }-\frac{(y_i-a-bx_i)^2}{2\sigma^2}$$
+bierzemy logarytm z funkcji wiarygodnoœci:
+$$\ln L=-5\ln \sqrt{2\pi}-5 \ln \sigma -\sum_{i=1}^5 \frac{(y_i-a-bx_i)^2}{2\sigma^2}=$$
+$$=-5\ln \sqrt{2\pi}-5 \ln \sigma-$$
+$$+\frac{(y_1-a-b)^2+(y_2-a-b)^2+(y_3-a-3b)^2+(y_4-a-5b)^2+(y_5-a-5b)^2}{2\sigma^2}$$
+Pochodna po $b$:
+$$\frac{\partial L}{\partial b}=$$
+$$-\frac{-2(y_1-a-b)-2(y_2-a-b)-6(y_3-a-3b)+-10(y_4-a-5b)-10(y_5-a-5b)}{2\sigma^2}=0$$
+st¹d
+$$61b=y_1+y_2+3y_3+5y_4+5y_5-15a$$
+liczymy analogicznie pochodn¹ po $a$ i mamy:
+$$y_1+y_2+y_3+y_4+y_5-15b=5a$$
+podstawiamy i mamy:
+$$\hat{b}=\frac{-y_1-y_2+y_4+y_5}{8}$$
+bior¹c pod uwagê $H_0:b=0$ oraz rozk³ad $\epsilon_i$, 
+$$\hat{b}\sim N(0,4\cdot \frac{9}{8^2})=N\left(0,\frac{9\cdot 4}{64}\right)$$
+Mamy test dwustronny, wiêc:
+$$P(\hat{b}>c)=0.025$$
+$$P(b<c)=0.975$$
+¿eby u¿yæ tablic rozk³adu normalnego musimy znormalizowaæ $\hat{b}$
+$$\frac{\hat{b}}{\frac{\sqrt{9}2}{\sqrt{64}}}<\frac{c}{\frac{\sqrt{9}2}{\sqrt{64}}}\rightarrow \frac{c}{\frac{\sqrt{9}2}{\sqrt{64}}}=1.96\rightarrow c=1.47$$
+\end{roz}
+
+% zadanie 3
+
+\begin{zad}\textnormal{
+Za³ó¿my, ¿e niezale¿ne zmienne losowe $X_1,X_2,\ldots,X_n$, $n>1$, maj¹ rozk³ady Pareto, zmienna $X_i$ rozk³ad o gêstosci
+\begin{equation*}
+f_i(x)
+\begin{cases}
+\frac{2i}{(1+x)^{2i+1}} & \text{dla } x>0\\
+0 & \text{dla } x \le 0
+\end{cases}
+\end{equation*}
+$i=1,2,\ldots,n.$\\
+Wtedy prawdopodobieñstwo $P(X_1=\min\{X_1,\ldots,X_n\})$ jest równe?
+}\end{zad}
+
+\begin{roz}
+Analogiczne do zadania 4 z 04.10.2010. \\
+\\Dla przypomnienienia:
+$$P(X\le Y)=\int_0^\infty \int_0^y f(x)f(y)dxdy$$
+Mamy:
+$$P(X_1=\min\{X_1,\ldots,X_n\})=P(X_1 \le X_1, X_1 \le X_2,\ldots, X_1 \le X_n)=$$
+$$P( X_1 \le X_2,\ldots X_1 \le X_n)=P(X_1 \le \min\{X_2,\ldots,X_n\})$$
+Jaki rozk³ad ma minimum?
+$$P(\underbrace{\min\{X_2,\ldots,X_n\}}_{=Z}\le t)=1-P(\min\{X_2,\ldots,X_n\} > t)=1-\prod_{i=2}^nP(X_i>t)=(*)$$
+liczymy dystrybuantê
+$$P(X_i <t)=\int_0^x \frac{2i}{(1+x)^{2i+1}}dx=1-(1+x)^{-2i}$$
+$$(*)=1-\prod_{i=2}^n (1+x)^{-2i}=1-\frac{1}{(1+x)^{2\sum_{i=2}^n i}}=1-\frac{1}{(1+x)^{n^2+n-2}}$$
+bo $2\sum_{i=2}^n=2\frac{2+n}{2}(n-1)=n^2+n-2$.\\
+\\
+Obliczyliœmy dystrybuantê dla minimum. Gêstoœæ to:
+$$f(z)=(n^2+n-2)\frac{1}{(1+x)^{n^2+n-1}}$$
+$$P(X_1 \le Z)=\int_0^\infty \int_0^z \frac{2}{(1+x)^3}\cdot (n^2+n-2)\cdot\frac{1}{(1+z)^{n^2+n-1}}dxdz=\ldots=$$
+$$=\frac{2}{n+n^2}$$
+\end{roz}
+
+% zadanie 4
+
+\begin{zad}\textnormal{
+Niech $X_1,X_2,\ldots,X_n$ bêd¹ niezale¿nymi zmiennymi losowymi takimi, ¿e $EX_i=im$ i $VarX_i=2i^2m^2$ dla $i=1,2,\ldots,n$, gdzie $m>0$ jest nieznanym parametrem. W klasie estymatorów parametru $m$ postaci $\hat{m}=\sum_{i=1}^n c_i X_i$ wyznaczono estymator o najmniejszym b³êdzie œredniokwadratowym. B³¹d œredniokwadratowy tego estymatora jest równy:?
+}\end{zad}
+
+\begin{roz}Analogiczne do zadania 9 z 3.10.2011\\
+\\
+\textbf{B³¹d œredniokwadratowy estymatora}
+$$\operatorname{MSE}(\hat{\theta})=\operatorname{E}((\hat{\theta}-\theta)^2)$$
+W zadaniu b³¹d œredniokwadratowy to
+$$E((m-\hat{m})^2)$$
+odwróciliœmy kolejnoœæ...bo tak. Nie wp³ywa to istotnie na dalsze obliczenia.\\
+\\
+1. Obliczmy b³¹d œredniokwadratowy:
+$$E((m-\hat{m})^2)=?$$
+Pamiêtamy, ¿e $VarX=EX^2-(EX)^2$ st¹d $EX^2=VarX+(EX)^2$
+$$E((m-\hat{m})^2)=(E(m-\hat{m}))^2+Var(m+\hat{m})=(E(m-\hat{m}))^2+Var(\hat{m})=(*)$$
+$m$ znika wariancji bo to wartoœæ liczbowa $m>0$ 
+$$(*)=(E(\hat{m}))^2-2E(\hat{m})\cdot m +m^2+Var(\hat{m})=(*)$$
+Liczymy:
+$$E(\hat{m})=\sum_{i=1}^n c_iE(X_i)=\sum_{i=1}^n c_i\cdot i\cdot m$$
+$$Var(\hat{m})=Var\left(\sum_{i=1}^n c_iX_i\right)=\sum_{i=1}^n c_i^2 Var(X_i)=\sum_{i=1}^n 2\cdot c_i^2 \cdot i^2 \cdot m^2$$
+$$(*)=(\sum_{i=1}^n c_i\cdot i\cdot m)^2-2m\cdot \sum_{i=1}^n c_i\cdot i\cdot m+m^2+\sum_{i=1}^n 2\cdot c_i^2 \cdot i^2 \cdot m^2$$
+W zadaniu mamy ca³¹ klasê estymatorów, które wyznaczane s¹ przez $c_i$. Niech b³¹d bêdzie funkcj¹ wszystkich $c_i$
+$$f(c_1,\ldots,c_n)=\left(\sum_{i=1}^n c_i\cdot i\cdot m\right)^2-2m\cdot \sum_{i=1}^n c_i\cdot i\cdot m+m^2+\sum_{i=1}^n 2\cdot c_i^2 \cdot i^2 \cdot m^2$$
+2. Minimalizacja polega na policzeniu pochodnych wzglêdem $c_i$ (pojedynczych $c_i)$. Mamy
+$$\frac{\partial{f}}{\partial c_i}=2 \sum_{i=1}^n(c_i\cdot i \cdot m)^2 \cdot i \cdot m-2\cdot m^2\cdot i +2\cdot 2 \cdot c_i \cdot i^2m^2=0$$
+dochodzimy do
+$$\sum c_i \cdot i-1 +2 c_i\cdot i =0$$
+niech teraz
+$$f(i)=\sum c_i \cdot i-1 + 2 c_i\cdot i$$
+3. Teraz niech 
+$$\sum_{i=1}^n f(i)=0$$
+st¹d
+$$\sum f(i)=n \sum c_i \cdot i -n+2 \sum c_i \cdot i =0$$
+$$(n+2)\sum c_i \cdot i =n$$
+$$\sum c_i \cdot i =\frac{n}{n+2}$$
+4. Wstawiamy wynik do $f(i)=0$
+$$\frac{n}{n+2}=1-2c_i \cdot i\rightarrow c_i \cdot i =\frac{1}{n+2}$$
+5. Liczymy b³¹d œredniokwadratowy
+$$E((m-\hat{m})^2)=m^2\left(\sum c_i \cdot i\right)^2-2m\sum c_i \cdot i+m^2+m^2 2\sum \left(c_i \cdot i \right)^2=$$
+podstawiamy wyliczone wczeœniej wartoœci
+$$=\frac{2m^2}{n+2}$$
+\end{roz}
+
+% zadanie 5
+
+\begin{zad}\textnormal{
+Mamy dwie urny: I i II. Na pocz¹tku doœwiadczenia w ka¿dej z urn znajduj¹ siê 2 kule bia³e i 2 czarne. Losujemy po jednej kuli z ka¿dej urny - po czym kulê wylosowan¹ z urny I wrzucamy do urny II, a tê wylosowan¹ z urny II wrzucamy do unry I. Czynnoœæ powtarzamy wielkrotnie. Niech $X_n$ oznacza zmienn¹ losow¹ równ¹ liczbie kul bia³ych w urnie I po n-tym powtórzeniu czynnoœci. Wtedy granica:
+$$\lim_{n\rightarrow \infty} E(X_n X_{n+1})$$
+jest równa ?.
+}\end{zad}
+
+\begin{roz}
+Identyczne jak 4 z 25.03.2013. Wykorzystamy ³añcuchy Markova i macierz prawdopodobieñstw przejœæ pomiêdzy stanami. Macierz p-p przejœæ przedstawia siê nastêpuj¹co:
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|} \hline
+  & 0 & 1 & 2 & 3 & 4 \\ \hline
+0 &   0 & 1  & 0  & 0  & 0  \\ \hline
+1 & 1/16  & 6/16  & 9/16  &  0 & 0  \\ \hline
+2 &  0 & 4/16  & 8/16  &  4/16 & 0  \\ \hline
+3 &  0 &  0 & 9/16  & 6/16  & 1/16  \\ \hline
+4 &  0 &  0 &  0 & 1  & 0 \\ \hline
+\end{tabular}
+\end{table}
+mamy wobec tego prawdopodobieñstwa ze po wielu próbach bêdziemy przebywali w danym stanie (tip: zapisujemy w odwrotnej kolejnoœci ni¿ sumowanie siê do jedynki (czyli kolumnami w naszym przypadku))
+$$P_0=1/16 P_1$$
+$$P_1= P_0+6/16 P_1 +4/16 P_2$$
+$$P_2=9/16 P_1+ 8/16 P_2+9/16 P_3$$
+$$P_3=9/16 P_2+6/16 P_3 +1/16 P_4 $$
+$$P_4=1/16 P_3$$
+$$P_0+P_1+P_2+P_3+P_4=1$$
+st¹d $P_0=1/70$, $P_1=16/70$, $P_2=36/70$, $P_3=16/70$, $P_4=1/70$
+macierz wartoœci $X_n X_{n+1}$
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|} \hline
+  & 0 & 1 & 2 & 3 & 4 \\ \hline
+0 &   0 & 0  & 0  & 0  & 0  \\ \hline
+1 & 0  & 1  & 2  &  3 & 4  \\ \hline
+2 &  0 & 2  & 4  &  6 & 8  \\ \hline
+3 &  0 &  3 & 6  & 9  & 12  \\ \hline
+4 &  0 &  4 &  8 & 12  & 16 \\ \hline
+\end{tabular}
+\end{table}
+$$\lim_{n \rightarrow \infty} E(X_n \cdot X_{n+1})=1 \cdot P_1 \cdot 6/16+2 \cdot P_1 \cdot 9/16+$$
+$$+2 \cdot P_2 \cdot 4/16 + 4\cdot P_2 \cdot 9/16 + 6\cdot  P_2 \cdot 4/16+$$
+$$6 \cdot P_3 \cdot 9/16+9 \cdot P_3 \cdot 6/16 +12 \cdot P_3 \cdot 1/16+$$
+$$+12 \cdot P_4 \cdot 1=30/7$$
+\end{roz}
+
+% zadanie 6
+
+\begin{zad}\textnormal{
+O zmiennych losowych $X_1,X_2,\ldots, X_{12}$ o tej samej wartoœci oczekiwanej równej 2 oraz tej samej wariancji równej 1, zak³adamy, i¿:
+$$COV(X_i,X_j)=\frac{1}{3}$$
+dla $i \neq j$.\\
+\\
+Zmienne losowe $\epsilon_1,\ldots \epsilon_{12}$ s¹ nawzajem niezale¿ne oraz niezale¿ne od zmiennych losowych $X_1,\ldots,X_{12}$ i maj¹ rozk³ady prawdopodobieñstwa postaci:
+$$P(\epsilon_i=1)=P(\epsilon_i=1/2)=P(\epsilon_i=0)=\frac{1}{3}$$
+Wariancja zmiennej losowej $S=\sum_{i=1}^{12} \epsilon_i\cdot X_i$ jest równa ?.
+}\end{zad}
+
+\begin{roz}
+Z definicji kowariancji:
+$$Cov(X,Y)=E(X\cdot Y)-EX\cdot EY$$
+$$Var(S)=Var\left(\sum_{i=1}^{12} \epsilon_i\cdot X_i\right)=E\left(\left(\sum_{i=1}^{12} \epsilon_i\cdot X_i\right)^2\right)-\left(E\left(\sum_{i=1}^{12} \epsilon_i\cdot X_i\right)\right)^2$$
+
+$$E\left(\left(\sum_{i=1}^{12} \epsilon_i\cdot X_i\right)^2\right)=$$
+rozpisujemy powy¿sze i wymna¿amy
+$$=12E(\epsilon_1^2)\cdot E(X_i^2)+12(12-1)E(\epsilon_i)E(\epsilon_j)+E(X_i X_j)=(*)$$
+ostatni czynnik zawiera zmienne skorelowane
+$$E(\epsilon_i)=1/2$$
+$$E(\epsilon_i^2)=1^2 \cdot 1/3 + (1/2)^2 \cdot 1/3 =5/12$$
+$$E(X_i^2)=Var(X_i)+(EX_i)^2=5$$
+$$E(\sum \epsilon_i X_i)=12 E(\epsilon_i X_i)=12$$
+$$Cov(X_i,X_j)=1/3=E(X_i X_j)-EX_i \cdot EX_j\rightarrow E(X_iX_j)=13/3$$
+$$(*)=12\cdot 5/12 \cdot 5 +12 \cdot 11 \cdot 1/2 \cdot 1/2 \cdot 13/3=168$$
+$$Var(S)=168-144=24$$
+\end{roz}
+
+% zadanie 7
+
+\begin{zad}\textnormal{
+Za³ózmy, ¿e $X_1,\ldots,X_5$ jest próbka z rozk³adu normalnego $N(\mu,\sigma^2)$ o nieznanej wartoœci oczekiwanej i nieznanej wariancji, zaœ $X_6$ jest zmienn¹ losow¹ z tego samego rozk³adu, niezale¿n¹ od próbki. Intepretujemy zmienn¹ $X_6$ jako kolejn¹ obserwacjê, ktora pojawi siê w przysz³oœci, ale obecnie jest nieznana.\\
+Zbuduj `przedzia³ ufnoœci' 
+$$[L,U]=[L(X_1,\ldots,X_5),U(X_1,\ldots,X_5)]$$
+oparty na próbce $X_1,\ldots X_5$ taki, ¿e
+$$Pr(L(X_1,\ldots,X_5)\le X_6 \le U(X_1,\ldots,X_5))=0.95$$
+przy tym ¿¹damy, ¿eby przedzia³ by³ symetryczny tzn. $\frac{1}{2}(L+U)=\bar{X}$. Uzywamy tutaj oznaczeñ:
+$$\bar{X}=\frac{1}{5}\sum_{i=1}^5 X_i$$
+$$S^2=\frac{1}{4}\sum_{i=1}^5 (X_i-\bar{X})^2$$
+}\end{zad}
+\begin{roz}
+Takie samo jak zadanie 6 z 17.05.2003\\
+\\
+Patrzymy na odpowiedzi i widzimy, ¿e mamy zbudowaæ symetryczny przedzia³ ufnoœci postaci:
+$$P(|X_6-\bar{X}|<cS)$$
+Wiemy, ¿e 
+$$\bar{X}\sim N(\mu,\frac{\sigma^2}{5})$$
+$$X_6-\bar{X}\sim N\left(0,\frac{6}{5}\sigma^2\right)$$
+Dla przypomnienia parê w³asnoœci:\\
+1. Dla rozk³adu normalnego $S^2$ jest niezale¿ne od $\bar{X}$.\\
+\\
+2. Je¿eli $Z\sim N(0,1)$ oraz ${Y}\sim \chi^2(n)$ to
+$$T=\frac{Z}{\sqrt{\frac{Y}{n}}}\sim T(n)$$
+3.Gdy $S^2=\frac{1}{n-1}\sum (X_i-\bar{X})^2$, $\bar{X}=\frac{1}{n}\sum X_i$
+$$\frac{\sqrt{n}(\bar{X}-\mu)}{S}\sim T(n-1)$$
+$$\frac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)\rightarrow \frac{1}{\sigma^2}\sum (X_i-\bar{X})^2 \sim \chi^2(n-1)$$
+W zadaniu widaæ, ¿e obie strony nalezy podzieliæ przez S a wtedy jestesmy blisko rozk³adu t-studenta. Zrobimy nastêpuj¹ce obliczenia korzystaj¹c z powy¿szych w³asnoœci:
+$$\frac{4\cdot S^2}{\sigma^2}\sim \chi^2{4}$$ zapiszmy:
+$$P\left(\frac{\frac{|X_6-\bar{X}|}{\sqrt{\frac{6}{5}\sigma^2}}}{\sqrt{\frac{\frac{4S^2}{\sigma^2}}{4}}}<\frac{cS}{\sqrt{\frac{\frac{4S^2}{\sigma^2}}{4}}\cdot \sqrt{\frac{6}{5}\sigma^2}}\right)=$$
+$$=P(\underbrace{|Z|}_{\sim T(4)}<c\frac{\sqrt{5}}{\sqrt{6}})=0.95$$
+oczywiœcie modu³ nie ma rozk³adu T studenta, ale w tablicach mamy wartoœci krytyczne dla poziomu $\alpha$ i testu dwustronnego, wiêc 
+$$c\frac{\sqrt{5}}{\sqrt{6}}=2.7764 \rightarrow c=3.04$$
+i to nale¿a³o znaleŸæ.
+\end{roz}
+
+% zadanie 8
+
+\begin{zad}\textnormal{
+Niech $N,X_1,X_2,\ldots$ bêd¹ niezale¿nymi zmiennymi losowymi przy $\Lambda=\lambda$. Zmienne $X_i$, $i=1,2,\ldots,$ maj¹ warunkowe rozklady wykladnicze o wartoœci oczekiwanej $\frac{1}{\lambda}$ przy $\Lambda=\lambda$. Warunkowy rozk³ad zmiennej losowej $N$ przy danym $\Lambda=\lambda$ jest rozkladem Poissona o wartoœci oczekiwanej $\lambda$. Rozk³ad brzegowy zmiennej $\Lambda$ jest rozk³adem gamma o gêstoœci:
+ \begin{equation*}
+ f(\lambda)=
+\begin{cases}
+\frac{8}{3}\lambda^3e^{-2\lambda} & \text{gdy } \lambda>0,\\
+0 & \text{gdy } \lambda \le 0.
+\end{cases}
+\end{equation*}
+niech 
+\begin{equation*}
+ S=
+\begin{cases}
+\sum_{i=1}^N X_i & \text{gdy } N>0,\\
+0 & \text{gdy } N= 0.
+\end{cases}
+\end{equation*}
+i
+\begin{equation*}
+ T=
+\begin{cases}
+\sum_{i=1}^N Y_i & \text{gdy } N>0,\\
+0 & \text{gdy } N= 0.
+\end{cases}
+\end{equation*}
+gdzie $Y_i=\min\{X_i,2\}$\\
+\\
+Oblicz wspó³czynnik kowariancji $Cov(S,T)$.
+}\end{zad}
+
+\begin{roz}
+Analogiczne do zadania 3 z 30.09.2013. Zadnie jest œrednio rozwi¹zywalne na egzaminie (za du¿o ca³ek)\\
+\\
+Z definicji
+$$Cov(S,T)=E(S\cdot T)-E(S)\cdot E(T)\cdot E(S)$$
+$$E(S)=E(E(S|N))$$
+$$E(S|N)=N\cdot E(X_1)=\frac{N}{\lambda}$$
+$$E(N/\lambda)=\frac{1}{\lambda}\cdot \lambda=1$$
+oczywiœcie powy¿sze równie¿ jest warunkowe przy znanym $\lambda$. Dalej mamy:
+$$E(T)=E\left(\sum_{i=1}^N \min{(X_i,2})\right)=N\cdot  E(\min(X_i,2))$$
+$$E(\min(X_i,2))=\int_0^2 x f(x) dx+ 2\cdot Pr(X_i>2)=(*)$$
+$X_i$ ma rozk³ad wyk³adniczy $f(x)=\lambda e^{-\lambda x}$, dystrybuanta: $F(x)=1-e^{-\lambda x}$
+$$\int_0^2 x\lambda e^{-\lambda x}dx=-2e^{-2\lambda}+\frac{1-e^{-\lambda 2}}{\lambda}=\frac{1-e^{-2\lambda}(1+2\lambda)}{\lambda}$$
+$$Pr(X_i>2)=e^{-2\lambda}$$
+wracaj¹c
+$$(*)=\frac{1-e^{-2\lambda}(1+2\lambda)}{\lambda}+2e^{-2\lambda}=\frac{1-e^{-2\lambda}}{\lambda}$$
+Wzglêdem $N$
+$$E\left(N\cdot\frac{1-e^{-2\lambda}}{\lambda}\right)=1-e^{-2\lambda}$$
+Wzglêdem $\lambda$
+$$E(1-e^{-2\lambda})=1-\int_0^\infty e^{-2\lambda}\frac{8}{3}\lambda^3 e^{-2\lambda}d\lambda=$$
+$$=1-\frac{8}{3}\int_0^\infty \lambda^3 e^{-4\lambda}d\lambda=(*)$$
+Z rozk³adu Gamma:\\
+\\
+\textbf{Rozklad Gamma}
+$$f(x)=\frac{\beta^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x} \hspace{15pt} x>0$$
+$$E(X)=\frac{\alpha}{\beta}$$
+$$Var(X)=\frac{\alpha}{\beta^2}$$
+Widzimy, ze $\alpha=4$, $\beta=4$ brakuje sk³adnika $$\frac{\beta^\alpha}{\Gamma(\alpha)}=\frac{4^4}{\Gamma(4)}=\frac{256}{3!}=\frac{256}{6}=\frac{128}{3}$$
+mamy:
+$$(*)=1-\frac{8}{3}\frac{3}{128}\underbrace{\int_0^\infty \frac{128}{3}\lambda^3e^{-4\lambda}d\lambda}_{=1}=\frac{15}{16}$$
+Teraz trzeba rozwa¿yæ
+$$E(S\cdot T)=N E(X_i \cdot \min(X_i,2))+N(N-1)E(X_i \cdot \min{(X_j,2)})=$$
+$$=N\cdot E(X_i \min(X_i,2)+N(N-1)\cdot \frac{1}{\lambda}\cdot E(\min{(X_j,2}))=(*)$$
+kluczowe jest:
+$$E(X_i \min(X_i,2))=\int_0^2 x^2 f(x)dx+\int_2^\infty 2x f(x) dx=$$
+$$=\frac{2-2e^{-2\lambda}(2\lambda^2+2\lambda+1)}{\lambda^2}+\frac{e^{-2\lambda}(4\lambda+2)}{\lambda}$$
+wracaj¹c
+$$(*)=N\cdot \frac{2-2\lambda e^{-2\lambda}-2e^{-2\lambda}}{\lambda^2}+N(N-1)\cdot \frac{1}{\lambda}\cdot \frac{1-e^{-2\lambda}}{\lambda}=\Delta$$
+$$E(\Delta)=\frac{2}{\lambda}-2e^{-2\lambda}-\frac{2}{\lambda}e^{-2\lambda}+1-e^{-2\lambda}=\Delta_2$$
+$$E(\Delta_2)=\frac{95}{48}$$
+Wynik:
+$$\frac{95}{48}-\frac{15}{16}=\frac{25}{24}$$
+\end{roz}
+
+% zadanie 9
+
+\begin{zad}\textnormal{
+Urna zawiera 5 kul o numerach 0,1,2,3,4. Z urny ci¹gniemy kulê, zapisujemy numer i kulê wrzucamy z powrotem do urny. Czynnoœæ tê powtarzamy, a¿ kule z numerami 1,2,3 zostan¹ wyci¹gniête co najmniej raz. Oblicz prawdopodobieñstwo zdarzenia, ¿e czynnoœæ powtórzymy 5 razy.
+}\end{zad}
+
+\begin{roz}
+Mamy 5 losowañ:
+$$[],[],[],[],[]$$
+Liczba wszystkich mo¿liwych wyników tego losowania to 
+$$5^5=3125.$$
+W 5 tym losowaniu musi zostaæ wyci¹gniêta kula o numerze 1 lub 2 lub 3 ¿eby zakoñczyæ proces. Dla ustalenia uwagi przyjmijmy, ¿e to 1. (potem odpowiednie kombinacje pomno¿ymy razy 3 mo¿liwoœci, widaæ od razu, ¿e odpowiedzi A i E odpadaj¹ bo licznik nie dzieli siê przez 3). Do zadania podejdziemy w nastêpuj¹cy sposób: gdy wiemy, jak koñczy siê uk³ad losowañ to pozosta³ych razem jest $4^4=256$ mo¿liwoœci. Wœród tych mo¿liwoœci znajdziemy zdarzenia niesprzyjaj¹ce.\\
+\\
+1. Losowania w których nie ma 1,2,3: 
+$$[0/4],[0/4],[0/4],[0/4]$$
+razem $2^4=16$ sposobów.\\
+\\
+2. Je¿eli wylosowaliœmy dwójkê, ale nie wylosowaliœmy trójki:
+$$[2],[0/4],[0/4],[0/4]\rightarrow {4 \choose 1}2^3=32 \text{ sposobów}$$
+$$[2],[2],[0/4],[0/4]\rightarrow {4 \choose 2}2^2=24 \text{ sposobów}$$
+$$[2],[2],[2],[0/4]\rightarrow {4 \choose 3}2^1=8 \text{ sposobów}$$
+$$[2],[2],[2],[2]\rightarrow 1 \text{ sposób}$$
+razem: 65 sposób
+3. Analogicznie je¿eli wylosowaliœmy trójkê, ale nie wylosowaliœmy dwójki mamy 65 sposobów.\\
+\\
+Wobec tego niesprzyjaj¹cych zdarzeñ jest $65+65+16=146$, odejmujemy od wszystkich mo¿liwoœci w tym podzbiorze zdarzeñ i mamy: $256-146=110$ sprzyjaj¹cych sposobów. Wobec tego je¿eli uwzglêdnimy mno¿enie przez 3 z pocz¹tku mamy $330$ sprzyjajacych zdarzeñ. St¹d prawdopodobieñstwo jest równe:
+$$\frac{330}{5^5}$$
+\end{roz}
+
+\begin{zad}\textnormal{
+Niech $X_1,X_2,X_3,X_4$ ... zadanie analogiczne do zadania 1 z 15.03.2010.
+}\end{zad}
+
+%------------------- EGZAMIN 29 wrzeœnia 2014 ------------------
+
+\newpage
+\section{Egzamin z 29 wrzeœnia 2014}
+
+
+% Zadanie 1
+
+\begin{zad}\textnormal{\textbf{Identyczne jak w 13.10.2001 }\\
+Niech $N_0=N-N_1$ oraz
+\begin{equation*}
+ N_1=
+\begin{cases}
+\sum_{i=1}^N X_i & \text{gdy } N>0,\\
+0 & \text{gdy } N = 0.
+\end{cases}
+\end{equation*}
+gdzie $N$ jest zmienn¹ losow¹ o rozk³adzie ujemnym dwumianowym:
+$$P(N=n)=(n+1)\left(\frac{1}{3}\right)^2\left(\frac{2}{3} \right)^n$$
+gdzie $n=0,1,2,\ldots$
+zaœ $X_1,X_2,\ldots, X_n, \ldots$ s¹ zmiennymi losowymi niezale¿nymi od $N$ i od siebie nawzajem. Zak³adamy, ¿e ka¿da ze zmiennych $X_i$ ma rozk³ad Bernoulliego: $P(X_i=1)=\frac{3}{4}$ i $P(X_i=0)=\frac{1}{4}$. Wtedy:
+$$E\left(\frac{N_1}{N_0+1}\right)=?$$
+}\end{zad}
+\begin{roz}
+Mamy: $E\left(\frac{N_1}{N_0+1}\right)$, $N_1$ oraz $N_0$ zale¿ne jest od wartoœci $N$. Dla przypomnienia:\\
+\\
+\textbf{Law of total expectation:}
+$$\operatorname{E} (X) = \sum_{i=1}^{n}{\operatorname{E}(X \mid A_i) \operatorname{P}(A_i)}.$$
+Z w³asnoœci warunkowej wartoœci oczekiwanej $E(X)=E(E(X|Y)). $Przyk³ad: $E(T)=E(E(T|N))=\sum_{n=0}^\infty E(T|N=n)P(N=n)$\\
+\\
+The following formulation of the law of iterated expectations plays an important role in many economic and finance models:
+$$\operatorname{E} (X \mid I_1) = \operatorname{E} ( \operatorname{E} ( X \mid I_2) \mid I_1),$$
+ wiêc w pierwszym kroku:
+$$E\left(\frac{N_1}{N_0+1}\right)=\sum_{k=1}^N E\left(\frac{N_1}{N_0+1} \mid N=n \right) \cdot P(N=n)=$$
+zaczynamy od $n=1$ ze wzglêdu na fakt, ¿e gdy $N=0$ to mamy 0.
+$$=\sum_{n=1}^N E\left(\frac{N_1}{N_0+1}\mid N=n\right) \cdot (n+1)\left(\frac{1}{3}\right)^2\left(\frac{2}{3} \right)^n=(*)$$
+Dla przypomnienia:\\
+\\
+\textbf{Rozk³ad dwumianowy}
+$$p_k={n \choose k} p^k(1-p)^{n-k}$$
+gdzie $k=0,1,\ldots,n$
+$$E(X)=np$$
+$$Var(X)=np(1-p)$$
+przy ustalonym $N$ jest
+$$ E\left(\frac{N_1}{N_0+1}\mid N=k\right)= E\left(\frac{\sum_{i=1}^n X_i}{n-\sum_{i=1}^n X_i}\right)$$
+Suma zmiennych losowych o rozk³adzie zero-jedynkowym na rozk³ad dwumianowym. Równoczeœnie korzystamy z prawa leniwego statystyka i mamy:
+$$(*)=\left(\frac{1}{3}\right)^2 \sum_{n=1}^\infty\left( (n+1)\left(\frac{2}{3}\right)^n \sum_{k=0}^n \frac{k}{n-k+1}{n \choose k} \left(\frac{3}{4}\right)^k \left(\frac{1}{4}\right)^{n-k}\right)=$$
+zauwa¿my, ¿e dla $k=0$ jest zero mamy:
+$$=\left(\frac{1}{3}\right)^k \sum_{n=1}^\infty\left( (n+1)\left(\frac{2}{3}\right)^n \sum_{k=1}^n \frac{k}{n-k+1}{n \choose k} \left(\frac{3}{4}\right)^k \left(\frac{1}{4}\right)^{n-k}\right)=$$
+Teraz bêdziemy starali siê przesun¹æ wszystko tak ¿eby otrzymaæ rozkad dwumianowy i go zwin¹æ do jedynki (suma po funkcji rozk³adu daje jeden)
+$$=\left(\frac{1}{3}\right)^2 \sum_{n=1}^\infty\left( (n+1)\left(\frac{2}{3}\right)^n \sum_{k=0}^n \underbrace{\frac{k}{n-k+1}\frac{n!}{k!(n-k)!}}_{=\frac{n!}{(k-1)!(n-k+1)!)}} \left(\frac{3}{4}\right)^k \underbrace{\left(\frac{1}{4}\right)^{n-k}}_{(\frac{3}{4})^{k-1}(\frac{1}{4})^{n-k+1}\cdot \frac{3}{4}\cdot4}\right)=$$
+$$=\left(\frac{1}{3}\right)^2 \sum_{n=1}^\infty\left( (n+1)\left(\frac{2}{3}\right)^n \cdot 3 \cdot \underbrace{\sum_{k=0}^{n-1} {n \choose k} \left(\frac{3}{4}\right)^k \left(\frac{1}{4}\right)^{n-k}}_{1-(3/4)^k}\right)=$$
+$$=3\cdot \frac{1}{3^2}\left(\sum_{n=1}^\infty n (2/3)^n = \sum_{n=1}^\infty n (1/2)^n + \sum_{n=1}^\infty (2/3)^n-\sum_{n=1}^\infty (1/2)^n \right)=(*)$$
+Dla przypomnienia wzory:
+$$I_0(v)=\sum_{n=0}^\infty v^n=\frac{1}{1-v}$$
+$$I_1(v)=\sum_{n=1}^\infty n v^n = \frac{v}{(1-v)^2}$$
+$$I_2(v)=\sum_{n=1}^\infty n^2 v^n =\frac{v(v+1}{(1-v)^3}$$
+po podstawieniach:
+$$(*)=\frac{5}{3}$$
+\end{roz}
+
+% Zadanie 2
+
+\begin{zad}\textnormal{
+Podobne do 3 z 5.06.2006 inne eg 49/10\\
+\\
+Niech $X_1,\ldots,X_{10}$ bêd¹ niezale¿nymi zmiennymi losowymi z rozk³adu prawdopodobieñstwa o gêstoœci
+\begin{equation*}
+f_{\theta_\alpha}(x)=
+\begin{cases}
+\frac{1}{\alpha}e^{-(x-\theta)/\alpha}  & \text{dla } x\ge>\theta,\\
+0 & \text{dla } x<\theta.
+\end{cases}
+\end{equation*}
+Wyznaczono estymator najwiêkszej wiarygodnoœci $(\hat{\theta},\hat{\alpha})$ parametrów $(\theta,\alpha)$ w sytuacji, gdy oba parametry s¹ nieznane $\alpha>0$. A nastêpnie zbudowano przedzia³ ufnoœci dla parametru $\alpha$, w oparciu o estymator $\hat{\alpha}$, postaci $[c\hat{\alpha},d\hat{\alpha}]$, taki, ¿e:
+$$P_{\theta,\alpha}(\alpha<c \hat{\alpha})=P_{\theta,\alpha}(\alpha>d\hat{\alpha})=0.05.$$ 
+Liczba $c$ jest równa: ?.
+}\end{zad}
+\begin{roz}
+Podany w zadaniu rozk³ad to przesuniêty rozk³ad wyk³adniczy (szukaæ shifted exponential; two parameter exponential). Dla przypomnienia:\\
+\\
+\textbf{Rozk³ad wyk³adniczy}
+$$f(x)=\beta e^{-\beta x}$$
+$$E(X)=\frac{1}{\beta}$$
+$$VAR(X)=\frac{1}{\beta^2}$$
+W³asnoœci:\\
+\\
+(1) gdy $X\sim Exp(\beta)$ to $kX\sim Exp(\beta/k)$.\\
+(2) gdy $X\sim Exp(\beta)$ i $Y\sim Exp(\beta)$ to $X+Y \sim G(1+1,\beta)$\\
+\\
+W zadaniu nale¿y wyznaczyæ estymator $\alpha$. Estymator najwiêkszej wiarygodnoœci uzyskujemy przy pomocy funkcji wiarygodnoœci:
+$$L=\prod_{i=1}^{10}\frac{1}{\alpha}e^{\frac{-(x_i-\theta)}{\alpha}}=\prod_{i=1}^{10}=\left(\frac{1}{\alpha}\right)^{10}e^{-\sum_{i=1}^{10}\frac{x_i-\theta}{\alpha}}$$
+logarytmujemy:
+$$\ln{L}=\underbrace{10\ln\frac{1}{\alpha}}_{-10\ln\alpha}-\sum_{i=1}^{10}\frac{x_i-\theta}{\alpha}$$
+liczymy pochodn¹ po $\alpha$
+$$\frac{\partial L}{\partial \alpha}=-10\frac{1}{\alpha}+\alpha^{-2}\sum_{i=1}^{10}(x_i-\theta)=0$$
+st¹d
+$$\alpha=\bar{X}-\theta$$
+wiêc potrzebny nam jest równie¿ estymator $\theta$, $\frac{\partial L}{\partial \theta}$ nic nam nie da, ale wiemy, ¿e $x_i \ge \theta$ oraz znamy postaæ funkcji wiarygodnoœci. Przy ustalonym $\alpha$ maksymalizacja funkcji wiarygodnoœci nastêpuje gdy czynnik $\frac{\theta}{\alpha}$ jest mo¿liwie najwiêkszy. Skoro $\theta$ mniejsza lub równa od ka¿dego $x_i$ to estymatorem najwiêkszej wiarygodnoœci bêdzie $\min(x_1,\ldots,x_{10})$. St¹d:
+$$\hat{\alpha}=\bar{X}-\min(x_1,\ldots,x_{10})$$
+\textbf{Przydatne w³asnoœci}\\
+\\
+Przy u¿yciu powy¿szych, gdy $X_i\sim Exp(\beta)$
+$$\sum_{i=1}^n X_i \sim Gamma(n,\beta)$$
+$$\beta\bar{X}_n \sim Gamma(n,n)$$
+ gdy $X\sim Gamma(a,b) \rightarrow 2\cdot b \cdot X \sim \chi^2(n)$, $n=2\cdot a$ bo gdy $\alpha=\frac{n}{2}$ oraz $\beta=\frac{1}{2}$ to mamy rozk³ad ch-kwadrat z n stopniami swobody\\
+ st¹d
+ $$2n\beta \bar{X}_n\sim \chi^2(2n)$$
+Wracaj¹c do zadania. Mamy 
+$$P(\alpha<c\hat{\alpha})=P\left(\frac{1}{c}<\frac{1}{\alpha}\left(\bar{X}-X_{1:10}\right)\right)=0.05$$
+musimy wyznaczyæ rozk³ad. Nale¿y zwróciæ uwagê, ¿e zmienne powy¿ej pochodz¹ z przesuniêtego rozk³adu wyk³adniczego. ¯eby operowaæ na zmiennych ze zwyk³ego rozk³adu wyk³adniczego potrzebujemy $X'=X-\theta$ bo korzystaj¹c z transformacji zmiennych, gdy $Y=aX+b$ to $g(y)=f\left(\frac{y-b}{a}\right)\frac{1}{|a|}$. Mamy:
+$$\bar{X}-X_{1:10}=\bar{x}-\min(X_1,\ldots,X_{10})=\bar{X}-\theta-(\min{(X_1,\ldots,X_{10})}-\theta)=$$
+$$\frac{1}{10}\sum_{i=1}^{10}(X_i-\theta)-\min{(X_1-\theta,\ldots,X_{10}-\theta)}=$$
+$$=\frac{1}{10}\sum_{i=1}^{10}X_i'-\min{(X_1',\ldots,x_{10}')}$$
+Korzystaj¹c z w³asnoœci rozk³adów:
+$$\frac{1}{10}X_i' \sim Exp(10\cdot\beta)$$
+$$\min{(X_1',\ldots,X_{10}')} \sim Exp(10\cdot \beta)$$
+Dalej:
+$$\frac{1}{10}\sum_{i=1}^{10} X_i' - \min{(X_1',\ldots X_{10}')}\sim Gamma(9,10\beta)$$
+Z treœci $\beta=\frac{1}{\alpha}$, st¹d
+$$\frac{1}{\alpha}\left(\frac{1}{10}\sum_{i=1}^{10} X_i' - \min{(X_1',\ldots X_{10}')}\right)\sim Gamma(9,10)$$
+Mamy:
+$$P\left(\underbrace{\frac{1}{\alpha}(\bar{X}-\min{(X_1,\ldots,X_{10})})}_{\sim Gamma(9,10)}>\frac{1}{c}\right)=0.05$$
+Jako, ¿e dostaniemy tablice chi-kwadrat a nie gamma, robimy transformacjê zgodnie z powy¿szymi wzorami.$\alpha=\frac{n}{2}$, $\beta=\frac{1}{2}$:
+$$P\left(\underbrace{\frac{20}{\alpha}(\bar{X}-\min{(X_1,\ldots,X_{10})})}_{\sim \chi^2(18)}>\frac{20}{c}\right)=0.05$$
+Odczytujemy z tablic wartoœæ krytyczn¹ dla 0.05 i mamy:
+$$\frac{20}{c}=28.8693 \rightarrow c\approx 0.69$$
+\end{roz}
+
+% Zadanie 3
+
+\begin{zad}\textnormal{
+Niech $(X,Y)$ bêdzie dwuwymiarow¹ zmienn¹ losow¹ o funkcji gêstoœci:
+\begin{equation*}
+ f(x,y)=
+\begin{cases}
+e^{-x} & \text{gdy } x>0, y \in(0;1),\\
+0 & \text{w przeciwnym wypadku }. 
+\end{cases}
+\end{equation*}
+Niech $Z=X+2Y$. Wtedy $E(X|Z=3)$ jest równa?
+}\end{zad}
+\begin{roz}
+Warunkowa wartoœæ oczekiwana:
+$$E(X|Y=y)=\int_{-\infty}^{\infty} x f(x|y)dx=\frac{1}{f_Y(y)}\int_{-\infty}^{\infty} xf(x,y)=\frac{\int_{-\infty}^{\infty}xf(x,y)dx}{\int_{-\infty}^{\infty}f(x,y)dx}$$
+Z treœci zadania:
+$$E(X|X+2Y=3)=E(X|Y=\frac{3}{2}-\frac{1}{2}X)$$
+Tu potrzebny jest rysunek pomocniczy, który pozwala stwierdziæ, ¿e $x\in(1,3)$ (bo z treœci $y\in(0,1)$ ). St¹d
+$$E(X|X+2Y=3)=\frac{\int_{1}^{3}xe^{-x}dx}{\int_{1}^{3}e^{-x}dx}=\frac{2-4e^{-2}}{1-e^{-2}}$$
+
+\end{roz}
+
+% Zadanie 4
+
+\begin{zad}\textnormal{
+Podobne do z 10 z 11.10.2004\\
+\\
+Niech $X_1,X_2,X_3,X_4$ bêdzie prób¹ z rozk³adu jednostajnego o gêstoœci
+\begin{equation*}
+ f_\theta(x)=
+\begin{cases}
+\frac{1}{\theta} & \text{gdy } x\in(0,\theta)\\
+0 & \text{w przeciwnym wypadku}. 
+\end{cases}
+\end{equation*}
+Zak³adamy, ¿e nieznany parametr $\theta$ jest zmienn¹ losow¹ o rozk³adzie z funkcj¹ gêstoœci dan¹ wzorem
+\begin{equation*}
+ \pi(\theta)=
+\begin{cases}
+\frac{4}{3}\theta^4e^{-2\theta} & \text{gdy }\theta>0\\
+0 & \text{ gdy} \theta \le 0.
+\end{cases}
+\end{equation*}
+Hipotezê $H_0:\theta \le 3$ przy alternatywnie $H_1:\theta>3$ odrzucamy dla tych wartoœci $(x_1,x_2,x_3,x_4)$, dla których prawdopodobieñstwo a posteriori zbioru $\theta:\theta>3$ jest wiêksze ni¿ $\frac{1}{2}$. Rozmiar tego testu jest równy: ?.
+}\end{zad}
+
+\begin{roz}
+Kilka uwag poczatkowych: rozmiar testu = poziom istotnoœci, $x \in (0,\theta)$ oznacza, ¿e $\theta \ge \max(x_1,\ldots,x_4)$. Bayesowski przedzia³ ufnoœci $[\theta_1,\theta_2]$ na poziomie 
+$$\alpha=\int_{\theta_1}^{\theta_2} f(\theta | x) dx$$ 
+gdzie $f(\theta|x)$ - gêstoœæ a posteriori dla $\theta$. Rozwi¹zanie:\\
+\\
+Wyznaczamy gêstoœæ rozk³adu a posteriori parametru $\theta$, czyli:
+$$f_{\theta|X}(\theta |x)=\frac{f(x_1,\ldots,x_4;\theta)}{f(x_1,\ldots,x_4)}=?$$
+¯eby policzyæ coœ takiego najpierw liczymy odwrotny warunek:
+$$f(x|\theta)=\frac{f(x,\theta)}{f(\theta)} \rightarrow f(x,\theta)=f(x|\theta)f(\theta)=$$
+$$=f(x_1,\ldots,x_4|\theta)f(\theta)=\left(\prod_{i=1}^4 f(x_1|\theta) \right)\underbrace{f(\theta)}_{=\pi(\theta)}=$$
+$$=\frac{1}{\theta^4}\cdot \chi_{X_{4:4}}(0,\theta)\cdot\frac{4}{3}\theta^4e^{-2\theta}=\frac{4}{3}e^{-2\theta}\chi_{X_{4:4}}(0,\theta)$$
+gdzie $\chi_{X_{4:4}}(0,\theta)$ to funkcja indykatorowa pokazuj¹ca dla jakiego $\theta$ pochodna jest niezerowa tj. $\theta$ musi byæ wiêksza maksimum z próby. Wiemy, ¿e $f(x_1,\ldots,x_4)$ to rozk³ad brzegowy gêstoœci ³¹cznej $f(x_1,\ldots,x_4,\theta)$, st¹d:
+$$f(x_1,\ldots,x_4)=\int_0^\infty \frac{4}{3}e^{-2\theta}\chi_{X_{4:4}}(0,\theta)d\theta=$$
+bior¹c pod uwagê, ¿e $\theta \ge \max(x_1,\ldots,x_4)$ to mamy:
+$$\int_{X_{4:4}}^\infty \frac{4}{3}e^{-2\theta}d\theta=\frac{4}{3} \frac{e^{-2\theta}}{-2}|_{\underbrace{x_{m}}_{=x_{max}}}^\infty=\frac{2}{3}e^{-2x_m}$$
+$$f(\theta|x)=\frac{\frac{4}{3}e^{-2\theta}\chi_{X_{4:4}}(0,\theta)}{\frac{2}{3}e^{-2x_m}}=2e^{-2\theta}e^{2x_m}\chi_{X_{4:4}}(0,\theta)=$$
+$$=2e^{-2\theta}e^{2x_m} \hspace{10pt} \text{ dla } \theta>x_m$$
+Z treœci, prawdopodobieñstwo a posteriori (po tym gdy wiem, co siê wylosowa³o) ma byæ wiêksze od $1/2$ czyli:
+$$P(\theta>3|x_1,\ldots,x_4)>\frac{1}{2}$$
+mamy
+$$P(\theta>3|x_1,\ldots,x_4)=\int_3^\infty 2 e^{-2\theta}e^{2 x_m}d\theta=e^{2x_m}e^{-6}$$
+czyli mamy warunek
+$$\underbrace{e^{2x_m}e^{-6}>\frac{1}{2}}_{\text{obszar krytyczny}} \rightarrow x_m>3-\frac{\ln2}{2}$$
+czyli
+$$K=\lbrace x_m>3-\frac{\ln 2}{2}\rbrace$$
+Dla przypomnienia poziom istotnoœci (rozmiar testu): $P_\theta(K)\le \alpha$
+$$P\left(x_m>3-\frac{\ln2}{2}\right)=?$$
+$$P\left(\max(x_1,\ldots,x_4) \right<x)=P(x_1<x)\cdot \ldots \cdot P(x_4<x)=(\frac{x}{\theta})^4$$
+czyli 
+$$f_{x_m}=4\left(\frac{x}{\theta}\right)^3$$
+$$P(x_m>3-\frac{\ln2}{2})=1-P(x_m<3-\left(\frac{\ln2}{2})=1-\frac{3-\frac{\ln2}{2}}{\theta}\right)^4=(*)$$
+gdy $\theta=3$ mamy
+$$(*)\approx 0.388$$
+\end{roz}
+
+% Zadanie 5
+
+\begin{zad}\textnormal{
+Podobne do z 6 z 30.11.2009\\
+Za³ó¿my, ¿e $X_1,\ldots,X_n,\ldots$ s¹ niezale¿nymi zmiennymi losowymi o jednakowym ci¹glym rozk³adzie prawdopodobieñstwa, maj¹cym momenty rzêdu 1,2 i 3. Znamy
+$$\mu=E(X_i) \hspace{15pt} \sigma^2=Var(X_i).$$
+Niech $f(x)$ oznacza gêstoœæ rozk³adu pojedynczej zmiennej $X_i$. Wiemy, ¿e rozk³ad jest symetryczny w tym sensie, ¿e $f(\mu+x)=f(\mu-x)$ dla ka¿dego $x$. Niech
+\begin{equation*}
+S_N=
+\begin{cases}
+X_1+\ldots+X_n & \text{gdy } N=n>0\\
+0 & \text{ gdy} N=0. 
+\end{cases}
+\end{equation*}
+gdzie $N$ jest zmienn¹ o rozk³adzie Poissona o wartoœci oczekiwanej 1. Trzeci moment $E(S_N^3)$ jest równy=?
+}\end{zad}
+\begin{roz}
+\textbf{Momenty i wspó³czynniki}\\
+\\
+Moment zwyk³y rzêdu k:
+$$m_k=E(X^k)=\int_{-\infty}^\infty x^k f(x)dx$$
+Moment centralny rzêdu $k$
+$$\mu_k=E((X-(EX))^k)$$
+Wspo³czynnik asymetrii:
+$$A=\frac{M_3}{\sigma^3}$$
+gdzie $M_3$ - 3 moment centralny, $s$ - odchylenie standardowe 
+\\
+\\
+Kurtoza:
+$$K=\frac{M_4}{\sigma^4}-3$$
+W³asnoœci:\\
+\\
+(1) je¿eli $X$ i $Y$ niezale¿ne to 3 moment centralny ich sumy równa siê sumie trzecich momentów centralnych. Czyli $E((X+Y-E(X+Y))^3)=E((X-EX)^3)+E((Y-EY)^3)$\\
+\\
+Rozwi¹zanie:\\
+\\
+Dla $X_i$ mamy 
+$$\mu_3=E((X-EX)^3)=E(X^3-3X^2EX+3X(EX)^2-(EX)^3)=$$
+$$=E(X^3)-3E(X^2)\cdot EX+3(EX)^3-(EX)^3=m_3-3m_2\cdot \mu+2\mu^3$$
+Z powy¿szego:
+$$m_3=\mu_3+3m_2\mu-2\mu^3 \hspace{10pt} (*)$$
+Wzór wy¿ej patrz Otto s 46. Korzystaj¹c z wzoru na wspó³czynnik asymetrii:
+$$A=\gamma_x=\frac{\mu_{3,x}}{\mu_{2,x}^\frac{3}{2}}$$
+gdzie indeks $x$ oznacza wartoœæ wskaŸnika dla zmiennej $x$. Dla sumy
+$$\gamma_{S_N}=\frac{\mu_{3,S_N}}{\mu_{2,S_N}^{3/2}}=\frac{\sum_{i=1}^N\overbrace{\mu_{3,x}}^{=\gamma_i\cdot \sigma^3}}{\left(\sum_{i=1}^N \mu_{2,x}\right)^{3/2}}=\frac{\sum_{i=1}^N\gamma_i\cdot \sigma_i^3}{\left(\sum_{i=1}^N \sigma_i^2\right)^{3/2}}=0$$
+z w³asnoœci (1) oraz z faktu, ¿e $Var(X+Y)=VarX + VarY + 2Cov(X,Y)$, a gdy zmienne niezale¿ne to $Cov(X,Y)=0$ oraz z treœci zadania (rozk³ad jest symetryczny, moment centralny rzêdu 3 równy zero). Dalej
+$$\mu_{3,S_N}=\gamma_{S_N}\cdot (\sigma_{S_N})^3=0$$
+Korzystaj¹c z $(*)$ mamy
+$$E(S_n^3)=\mu_{3,S_N}+3\mu_{S_N}m_{2,S_N}-2\mu_{S_N}^2=$$
+$$=\gamma_{S_N}\sigma_{S_N}^3+3\mu_{S_N}m_{2,S_N}-2\mu_{S_N}^3=(*)$$
+pamiêtamy, ¿e $m_{2,S_N}=Var(S_N)+(E(S_N))^2$ innymi symbolami: \\$m_{2,S_N}=\sigma_{S_N}^2+(\mu_{S_N})^2$
+$$(*)=\gamma_{S_N}\sigma_{S_N}^2+\mu_{S_N}^3(\sigma_{S_N}^2+\mu_{S_N}^2)-2\mu_{S_N}^3=$$
+$$=\gamma_{S_N}\sigma_{S_N}^3+\mu_{S_N}^3+3\mu_{S_N}\cdot \sigma_{S_N}^2=(*)$$
+Mamy $\mu_{S_N}=N\cdot \mu$, $\sigma_{S_N}^2=N\sigma^2$
+$$(*)=\underbrace{\gamma_{S_N}\sigma_{S_N}}_{=0}+N^3\mu^3+3N^2\mu\sigma^2=N^2\mu(N\mu^2+3\sigma^2)$$
+Potrzebujemy rozk³ad Poissona\\
+\\
+\textbf{Rozk³ad Poissona}
+$$f(k,\lambda)=\frac{\lambda^k e^-\lambda}{k!}$$
+gdzie $k=0,1,2,\ldots$
+$$E(X)=\lambda$$
+$$Var(x)=\lambda$$
+W zadaniu $\lambda=1$. Bior¹c pod uwagê, ¿e $N$ ma rozk³ad Poissona mamy: 
+$$E(N^3\mu^3+3N^2\mu\sigma^2)=\mu^3E(N^3)+3\mu\sigma^2E(N^2)=(\Delta)$$
+Wiemy, ¿e $e^x=\sum_{n=0}^\infty \frac{x^n}{n}$
+$$E(N^3)=\sum_{n=1}^\infty n^3\frac{\lambda^ne^{-\lambda}}{n!}=\lambda e^{-\lambda}\sum_{n=1}^\infty n^2 \frac{\lambda^{n-1}}{(n-1)!}=\lambda e^{-\lambda}\sum_{n=0}^\infty (n+1)^2\frac{\lambda^n}{n!}=$$
+$$=\lambda e^{-\lambda}\sum_{n=0}^\infty (n^2+2n+1)\frac{\lambda^n}{n!}=\lambda e^{-\lambda}\sum_{n=0}^\infty n^2\frac{\lambda^n}{n!}+2\lambda e^{-\lambda}\sum_{n=0}^\infty n \frac{\lambda^n}{n!}+\lambda e^{-\lambda}e^{\lambda}=(*^2)$$
+gdzie $\sum_{n=0}^\infty n \frac{\lambda^ne^{-\lambda}}{n!}=\lambda$ z wartoœci oczekiwanej. Dalej
+$$\sum_{n=1}^\infty n^2\frac{\lambda^n}{n!}e^{-\lambda}=\lambda e^{-\lambda} \sum_{n=1}^\infty n \frac{\lambda^{n-1}}{(n-1)!}=\ldots=\lambda^2+\lambda$$
+Wracaj¹c do gwiazdki 2:
+$$(*^2)=\lambda^3+3\lambda^2+\lambda\underbrace{=}_{\lambda=1}=5$$
+St¹d odpowiedŸ 
+$$(\Delta)=5\mu^3+6\mu \sigma^2$$
+\end{roz}
+
+% zadanie 6
+
+\begin{zad}\textnormal{
+Pan A przeznaczy³ 6 z³ na pewn¹ grê. W pojedycznej kolejce gry pan A wygrywa 1 z³ z prawdopodobieñstwem $1/3$ lub przegrywa 1 z³ z prawdopodobieñstwem $2/3$. Pan A koñczy grê, gdy wszystko przegra lub gdy bêdzie mia³ 9 z³.\\
+Prawdopodobieñstwo, ¿e pan A wszystko przegra jest równe:?
+}\end{zad}
+
+\begin{roz}
+Analogiczne jak 10 z 30.11.2009\\
+\\
+Niech $p_i$ oznacza prawdopodobieñstwo, ¿e startuj¹c ze stanu i z³ dojdziemy do stanu 0 z³ (przegramy):
+\begin{enumerate}
+\item $p_8=\frac{2}{3} p_7$
+\item $p_7=\frac{1}{3}p_8+\frac{2}{3}p_6$
+\item $p_6=\frac{1}{3}p_7+\frac{2}{3}p_5$
+\item $p_5=\frac{1}{3}p_6+\frac{2}{3}p_4$
+\item $p_4=\frac{1}{3}p_5+\frac{2}{3}p_3$
+\item $p_3=\frac{1}{3}p_4+\frac{2}{3}p_2$
+\item $p_2=\frac{1}{3}p_3+\frac{2}{3}p_1$
+\item $p_1=\frac{1}{3}p_2+\frac{2}{3}$
+\end{enumerate}
+Musimy wyznaczyæ $p_6$. Nale¿y wyznaczyæ $p_7$ wtedy:
+$$p_7=\frac{1}{3}\cdot \frac{2}{3}\cdot p_7+\frac{2}{3}\cdot p_6\rightarrow p_7=\frac{6}{7}p_6$$
+Z drugiej strony 
+$$p_6=\frac{1}{3}p_7+\frac{2}{3}p_5$$
+nale¿y cofn¹c siê z prawodpodobieñstwami tak, ¿eby wyznaczyæ $p_5$, po tym kroku mamy:
+$$p_5=\frac{31}{63}p_6+\frac{32}{63}$$
+Podstawiaj¹c mamy:
+$$p_6=\frac{1}{3}\cdot \frac{6}{7}p_6+\frac{2}{3}\left(\frac{31}{63}p_6+\frac{32}{63}\right)$$
+st¹d
+$$p_6=\frac{64}{73}\approx0.88$$
+\end{roz}
+
+% zadanie 7
+
+\begin{zad}\textnormal{
+Rozwa¿my nastêpuj¹cy schemat urnowy:\\
+\\
+W ka¿dej z 10 urn znajduj¹ siê 2 kule, oznaczone liczbami:
+\begin{itemize}
+\item W urnie 1 znajduj¹ siê 2 kule oznaczone liczb¹ 1,
+\item w urnie 2 znajduj¹ siê 2 kule oznaczone liczb¹ 2,
+\item ...
+\item w urnie 10 znajduj¹ siê 2 kule oznaczone liczb¹ 10.
+\end{itemize}
+Losujemy kulê z urny 1 i przek³adamy j¹ do urny 2. Nastêpnie (po wymieszaniu kul) losujemy kulê z urny 2 i przek³adamy do urny 3, itd., kulê wylosowan¹ z urny 9 przek³adamy do urny 10, wreszcie losujemy kulê z urny 10. Jakie jest prawdopodobieñstwo, ¿e ta ostatnia wylosowana kula ma numer wiêkszy ni¿ 6?
+}\end{zad}
+
+\begin{roz}
+Zadanie mo¿na rozpoczaæ od 7 urny, która bêdzie mia³a w œrodku 1 kulê wiêksz¹ od 6 i dwie mniejsze. Dalej to typowe drzewko:
+\begin{enumerate}
+\item z p-p $1/3$ kula mniejsza l¹duje w kolejnych urnach z p-p $2/3$ kula wiêksza i wtedy koniec (bo dalej ju¿ siê losuje tylko z wiêkszych
+\item dalej drzewko...
+\end{enumerate}
+sumujemy œcie¿ki które doprowadzj¹ nast do wyniku:
+$$\frac{2}{3}+\frac{1}{3}\frac{2}{3}+\left(\frac{1}{3}\right)^2\cdot \frac{2}{3}+\left(\frac{1}{3}\right)^3\cdot \frac{2}{3}=\frac{80}{81}$$
+\end{roz}
+
+% zadanie 9
+
+\begin{zad}\textnormal{
+Niech $Z_1,Z_2,\ldots,Z_n$ bed¹ niezale¿nymi zmiennymi losowymi z rozk³adu jednostajnego na przedziale $(0,1)$. Niech $Z_{1:n}=\min\{Z_1,Z_2,\ldots,Z_n\}$.\\
+Wtedy $E(Z_1+Z_2+\ldots+Z_n|Z_{1:n}=0.5)$ jest równa ?.
+}\end{zad}
+
+\begin{roz}
+Skoro $\min\{Z_1,\ldots,Z_n\}=0.5$ to znaczy, ¿e któraœ ze zmiennych $Z_i=0.5$
+$$E(Z_1+Z_2+\ldots+Z_n|Z_{1:n}=0.5)=(n-1)E(Z_i|Z_i \ge 0.5)+0.5$$
+Z wzoru na warunkow¹ wartoœæ oczekiwan¹:
+$$E(Z_i|Z_i \ge 0.5)=\frac{\int_{0.5}^1 x\cdot 1 dx}{\int_{0.5}^1 1 \cdot dx}=\frac{3}{4}$$
+czyli mamy:
+$$(n-1)\frac{3}{4}+\frac{2}{4}=\frac{3n-1}{4}$$
+\end{roz}
+
+%------------------- EGZAMIN 8 grudnia 2014 ------------------
+
+\newpage
+\section{Egzamin z 8 grudnia 2014}
+
+% zadanie 1
+
+\begin{zad}\textnormal{
+\textbf{Identyczne jak w 13.10.2001 }\\
+\\
+Mamy 5 niezale¿nych próbek z tego samego rozk³adu normalnego $N(\mu,\sigma^2)$ z nieznan¹ wartoœci¹ oczekiwan¹ $\mu$ i znan¹ wariancj¹ $\sigma^2$, przy tym ka¿da z tych próbek ma t¹ sam¹ liczebnoœæ $n$. Dla ka¿dej z 5 próbek oddzielnie wyznaczamy w standardowy sposób przedzia³ ufnoœci. Niech
+$$\left[\bar{X}_i-0.8416 \frac{\sigma}{\sqrt{n}},\bar{X}_i+0.8416 \frac{\sigma}{\sqrt{n}} \right ]$$
+bêdzie przedzia³em obliczonym na podstawie i-tej próbki.\\
+Nastêpnie, przedzia³ ufnoœci oparty na wszystkich 5n obserwacjach wyznaczamy w sposób niestandardowy: za œrodek przedzia³u wybieramy medianê
+$$m=med{(\bar{X}_1,\bar{X}_2,\bar{X}_3,\bar{X}_4,\bar{X}_5)}$$
+Oblicz
+$$c=Pr\left(m-0.8416 \frac{\sigma}{\sqrt{n}} \le \mu \le m+0.8416 \frac{\sigma}{\sqrt{n}}\right)$$
+}
+\end{zad}
+
+\begin{roz}
+\textbf{Przedzia³ ufnoœci dla wartoœci oczekiwanej}\\
+\\
+Jeœli $X$ jest prób¹ prost¹ z rozk³adu normalnego z nieznanym parametrem $\mu$ i znanym $\sigma$ , to przedzia³ ufnoœci dla $\mu$ na poziomie $1-\alpha$ ma postaæ:
+$$\bar{X}_n \pm u_{1-\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}}$$
+czyli
+$$P\left( \overline{X}_n - u_{1-\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}} < \mu < \overline{X}_n + u_{1-\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}} \right) = 1 - \alpha$$
+gdzie $u_p$ oznacza kwantyl rzêdu $p$ w rozk³adzie normalnym $N(0,1)$.\\
+\\
+Z tablic wiemy, ¿e $u_{0.8}=0.8416$ st¹d $1-\frac{\alpha}{2}=0.8 \Rightarrow \alpha=0.4$. Co daje poziom ufnoœci $1-\alpha=0.6$ Przedzia³ jest symetryczny wiêc
+$$Pr\left(\mu<\bar{X}_i-0.8416\frac{\sigma}{\sqrt{n}}\right)=Pr\left(\mu>\bar{X}_i+0.8416\frac{\sigma}{\sqrt{n}}\right)=1-0.8=0.2$$
+\textbf{Statystyki pozycyjne}\\
+\\
+Niech $X_{1:n}\le X_{2:n}\le \ldots \le X_{n:n}$ bêdzie ci¹giem zmiennych losowych powsta³ych z $X_1,\ldots,X_n$, po ich uporz¹dkowaniu w ci¹g niemalej¹cy. Zmienn¹ $X_{k:n}$, $k=1,\ldots,n$, nazywamy k-t¹ statystyk¹ pozycyjn¹. W szczególnoœci
+$$X_{1:n}=\min{(X_1,\ldots,X_n)}$$
+$$X_{n:n}=\max{(X_1,\ldots,X_n)}$$
+k-ta statystyka pozycyjna ma dystrybuantê:
+$$F_{k:n}(x)=P(X_{k:n}\le x)=\sum_{i=k}^n {n \choose i}F(x)^i(1-F(x))^{n-i}$$
+W naszym przypadku mediana jest 3 statystyk¹ pozycyjn¹. Wobec tego mamy:
+$$Pr\left(m-0.8416 \frac{\sigma}{\sqrt{n}} \le \mu \le m+0.8416 \frac{\sigma}{\sqrt{n}}\right)=$$
+$$Pr\left(m \le \mu+0.8416 \frac{\sigma}{\sqrt{n}} \wedge m \ge \mu-0.8416 \frac{\sigma}{\sqrt{n}}\right)=$$
+$$Pr\left(m \in (\mu-0.8416 \frac{\sigma}{\sqrt{n}},\mu+0.8416 \frac{\sigma}{\sqrt{n}})\right)=$$
+$$Pr\left(X_{3:5} \le \mu+0.8416 \frac{\sigma}{\sqrt{n}}\right)-Pr\left(X_{3:5} \le \mu-0.8416 \frac{\sigma}{\sqrt{n}}\right)$$
+gdzie $X_{3:5}$ to 3cia statystyka pozycjna dla $N(\mu,\frac{\sigma^2}{n})$ (bo oparta na œrednich). Dla przypomnienia:
+$$X\sim N(\mu,\sigma^2) \Rightarrow aX+b \sim N(a\mu+b,(a\sigma)^2)$$
+$$X_1+X_2\sim N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2)$$
+Korzystaj¹c z pocz¹tku zadania:
+$$Pr\left(\bar{X}_i\le \mu+0.8416\frac{\sigma}{\sqrt{n}}\right)=0.8$$
+oraz
+$$Pr\left(\bar{X}_i\le \mu-0.8416\frac{\sigma}{\sqrt{n}}\right)=0.2$$
+st¹d
+$$F_{3:5}\left(\mu+0.8416\frac{\sigma}{\sqrt{n}}\right)-F_{3:5}\left(\mu-0.8416\frac{\sigma}{\sqrt{n}}\right)=$$
+$$=\sum_{i=3}^5{5 \choose i}(0.8)^i(0.2)^{5-i}-\sum_{i=3}^5{5 \choose i}(0.2)^i(0.8)^{5-i}=0.88416$$
+\end{roz}
+
+% zadanie 2
+
+\begin{zad}\textnormal{
+Niech $X_1,X_2,\ldots,X_n,\ldots$ bêd¹ niezale¿nymi zmiennymi losowymi z rozk³adu o gêstoœci 
+\begin{equation*}
+ f(x)=
+\begin{cases}
+3x^2 & \text{gdy } (x) \in (0,1)\\
+0 & \text{gdy } x \neq (0,1)
+\end{cases}
+\end{equation*}
+Niech $T_n=\prod_{i=1}^n X_i^{\frac{3}{n}}$.
+Które z poni¿szych stwierdzeñ jest prawdziwe? ...\\
+\\
+(prawdziwa jest odpowiedŸ $\lim_{n \rightarrow \infty}P(|T_n-e_1|\sqrt{n}>2e^{-1})=0.046$
+}\end{zad}
+
+\begin{roz}
+Widzimy, ¿e $T_n$ to iloczyn, wiêc rozpatrzmy zmienn¹ $\ln T_n$
+$$\ln T_n=\sum_{i=1}^n \frac{3}{n}\ln X_i$$
+Jaki rozk³ad ma $\ln X_i$? Robimy transformacjê zmiennych losowych
+$$Y=\ln X \rightarrow X=e^Y$$
+$$g(y)=3e^{2y}\cdot e^y=3e^{3y}$$
+widaæ, ¿e to NIE jest rozk³ad wyk³adniczny dlatego musimy rozpatrzyæ
+$$\ln T_n=-\frac{3}{n}\sum \underbrace{-\ln X_i}_{Y}$$
+wtedy wg wzoru $g(y)=f(h(y))|h'(y)|$
+$$Y=-\ln X\rightarrow X=e^{-Y}$$
+$$g(y)=3e^{-2y}\cdot e^{-y}=3e^{-3y}$$
+czyli rozk³ad wyk³adniczy z $\beta=3$ i $E(Y)=\frac{1}{3}$, $Var(Y)=\frac{1}{9}$
+Korzystaj¹c z centralnego twierdzenia granicznego wiemy, ¿e przy $n\rightarrow \infty$ suma $n$ zmiennych losowych d¹zy do rozk³adu normalnego, czyli 
+$$\sum_{i=1}^n -\ln X_i\sim N\left(n\cdot \frac{1}{3},n\cdot \frac{1}{9}\right)$$
+Z w³asnoœci rozk³adu normalnego:
+$$\ln T_n=-\frac{3}{n}\sum_{i=1}^n -\ln X_i\sim N\left(-\frac{3}{n}\cdot n\cdot \frac{1}{3},\left(\frac{3^2}{n^2}\right)\cdot n\frac{1}{9}\right)\sim N\left(-1,\frac{1}{n}\right)$$
+Odpowiedzi s¹ postaci:
+$$P((T_n-a)\sqrt{n}>b)=x$$
+oczywiœcie trzeba uwa¿aæ na wartoœæ bezwzglêdn¹ (¿eby j¹ zdj¹æ trzeba podzieliæ $x$ przez $2$). Wewn¹trz prawdopodbieñstwa:
+$$\ln T_n>\ln\left(\frac{b+a\sqrt{n}}{\sqrt{n}}\right)$$
+musimy wystadaryzowaæ $\ln T_n$, mamy:
+$$\underbrace{(\ln T_n+1)\sqrt{n}}_{\sim N(0,1)}>\ln\left(a+\frac{b}{\sqrt{n}}\right)^{\sqrt{n}}+1\cdot \sqrt{n}$$
+Wiemy, ¿e 
+$$\lim_{n \rightarrow \infty}\left(1+\frac{1}{n}\right)^n=e$$
+korzystamy z tej w³asnoœci i mamy
+$$(\ln T_n+1)\sqrt{n}>\ln a^{\sqrt{n}}+\frac{b}{a}+\sqrt{n}$$
+$$(\ln T_n+1)\sqrt{n}>\sqrt{n}\cdot\ln a+\frac{b}{a}+\sqrt{n}$$
+Po prawej stronie widaæ, ¿e ¿eby znik³o $\sqrt{n}$ a musi byæ $e^{-1}$\\
+\\
+Przy odpowiedzi D (dystrybuanta równa 1-0.046/2=0.977) kwantyl wynosi 2, w zwi¹zku z tym $b$ musi byæ równe $2e^{-1}$
+\end{roz}
+
+% zadanie 3
+
+\begin{zad}\textnormal{
+Za³ó¿my, ¿e dysponujemy pojedyncz¹ obserwacj¹ $X$ z rozk³adu $Laplace'a$ $L(\mu,\lambda)$ o gêstoœci
+$$f_{\mu,\lambda}(x)=\frac{1}{2\lambda}\exp\left(-\frac{x-\mu}{\lambda}\right)$$
+gdzie $\mu \in R, \lambda>0$ s¹ nieznanymi parametrami.\\
+Rozwa¿my zadanie testowania hipotezy:
+$$H_0:\mu=1 \text{ i } \lambda=2$$
+$$H_1:\mu=2 \text{ i } \lambda=1$$
+Najmocniejszy test na pewnym poziomie istotnoœci jest postaci:\\
+\\
+Odrzuæ $H_0$, gdy $x \in \left(\frac{5}{3},b\right)$.
+Moc tego testu jest równa: ?
+}\end{zad}
+
+\begin{roz}
+Moc testu: prawdopodobieñstwo odrzucenia hipotezy zerowej przy jej fa³szywoœci.\\
+\\
+Zbudujemy test najmocniejszy poprzez zbadanie ilorazu wiarygodnoœci, gdy:
+$$\frac{L_1}{L_0}>c$$
+to odrzucamy $H_0$. St¹d
+$$\frac{L_1}{L_0}=\frac{\frac{1}{2\cdot 1}\exp\left(-\frac{|x-2|}{1}\right)}{\frac{1}{2\cdot 2}\exp\left(-\frac{|x-1|}{2}\right)}>c$$
+$$e^{-\frac{|x-2|}{1}+\frac{|x-1|}{2}}>c$$
+$$|x-1|-2|x-2|>c$$ 
+Rozwi¹¿my to wzglêdem $x$
+1. dla $x\ge 2$
+$$x-1-2x+4>c$$
+$$x<3-c$$
+2. dla $x<2$ i $x \ge 2$
+$$x-1+2(x-2)>c$$
+$$x \ge \frac{5}{3}+\frac{1}{3}c$$
+3. dla $x<1$
+$$-x+1+2x-4>c$$
+$$x>3+c$$
+Z punktu 2 i tresci zadania $x \in (5/3,b)$ z punktu drugiego widzimy, ¿e $x\ge 5/3+1/3c$ st¹d prosty wniosek, ¿e $c=0$, z powy¿szych równañ wynika równie¿, ¿e dla $x\ge 2$ mamy $x<3-0$, czyli $b$ musi równac siê $3$. Moc testu to prawdopodobieñstwo odrzucenia $H_0$ gdy jest fa³szywa, czyli: 
+$$\int_{5/3}^3 f_{\mu_1,\lambda_1}(x)dx=\int_{5/3}^3 \frac{1}{2}e^{-\frac{|x-2|}{1}}dx$$
+widaæ, ¿e trzeba rozdzieliæ na dwie ca³ki:
+$$\int_{5/3}^2 \frac{1}{2}e^{x-2}dx+\int_2^3 e^{-(x-2)}dx=0.458$$
+\end{roz}
+
+% zadanie 5
+
+\begin{zad}\textnormal{
+Niech $X_1,X_2,\ldots,X_6,Y_1,_2,\ldots,Y_{10}$ bêd¹ niezale¿nymi zmiennymi losowymi o tym samym rozk³adzie Pareto o gêstoœci:
+\begin{equation*}
+ p_\theta(x)=
+\begin{cases}
+\frac{\theta}{(1+x)^{\theta+1}} & \text{gdy } x>0\\
+0 & \text{w przeciwnym przypadku }
+\end{cases}
+\end{equation*}
+gdzie $\theta>0$ jest nieznanym parametrem. Osobno, na podstawie prób losowych $X_1,X_2,\ldots,X_6$ i $Y_1,Y_2,\ldots,Y_{10}$, wyznaczono estymary najwiêkszej wiarogodnoœci $T_X$ i $T_Y$ parametru $\theta$.\\
+Prawdopodobieñstwo $P(T_X<T_Y)$ jest równe: ?.
+}\end{zad}
+
+\begin{roz}
+Policzymy estymatory najwiêkszej wiarygodnoœci. Najpierw $T_X$.
+$$L=\prod_{i=1}^6\frac{\theta}{(1+x_i)^{\theta+1}}=\frac{\theta^6}{\prod_{i=1}^6 (1+x_i)^{\theta+1}}$$
+$$\ln L=6\ln(\theta) - \sum_{i=1}^6 (\theta+1)\ln(1+x_i)$$
+Maksymalizujemy $L$
+$$\frac{\partial L}{\partial \theta}=\frac{6}{\theta}-\sum_{i=1}^6 \ln(1+x_i)=0$$
+$$\hat{\theta}=\frac{6}{\sum_{i=1}^6\ln(1+x_i)}\rightarrow T_X=\frac{6}{\sum_{i=1}^6\ln(1+x_i)}$$
+natomiast $T_Y$
+$$T_Y=\frac{10}{\sum_{i=1}^{10}\ln(1+y_i)}$$
+Czyli mamy obliczyæ p-p
+$$P\left(\frac{6}{\sum_{i=1}^6\ln(1+x_i)}<\frac{10}{\sum_{i=1}^{10}\ln(1+y_i)}\right)$$
+jaki rozk³ad ma $\ln(1+x_i)$? Zastosujemy wzory na trasnformacjê zmiennych
+$$Y=\ln(1+X)\rightarrow X=e^Y-1$$
+$$g(y)=f(h(y))|h'(y)|$$
+$$g(y)=\frac{\theta}{(1+e^y-1)^{\theta+1}}\cdot e^y=\theta e^{-\theta y}$$
+czyli to ma rozk³ad wyk³adniczy. Suma zmiennych bêdzie mia³a rozklad Gamma
+$$\sum_{i=1}^6 \ln(1+x_i)\sim G(6,\theta)$$
+$$\sum_{i=1}^{10} \ln(1+y_i)\sim G(10,\theta)$$
+¿eby pozbyæ siê theta zamienimy na rozk³ady chi-kwadrat (rozk³ad $G\left(\frac{n}{2}, \frac{1}{2}\right)$ to $\chi^2(n)$):
+$$Z_1=2\theta\cdot \sum_{i=1}^6 \ln(1+x_i)\sim G\left(6,\frac{\theta}{2/\theta}\right)\sim \chi^2(12)$$
+$$Z_2=2\theta \cdot \sum_{i=1}^{10} \ln(1+y_i)\sim G\left(10,\frac{\theta}{2/\theta}\right)\sim \chi^2(20)$$
+widaæ, ¿e mamy 
+$$P\left(\frac{6}{Z_1}<\frac{10}{Z_2}\right)=(*)$$
+tutaj widziemy, ¿e trzeba bêdzie skorzystaæ z rozk³adu F-Snedecora\\
+\\
+\textbf{Rozk³ad F Snedecora}\\
+\\
+Je¿eli X i Y s¹ niezale¿ne oraz  $X \sim \chi^2(n_1)$  i $ Y \sim \chi^2(n_2)$ , to:
+ $$\frac{\frac{X}{n_1}}{\frac{Y}{n_2}} \sim F(n_1,n_2)$$
+ $$(*)=P\left(\frac{12}{Z_1}<\frac{20}{Z_2}\right)=P\left(\frac{\frac{Z_2}{20}}{\frac{Z_1}{12}}<1\right)$$, mamy rozk³ad F Snedecora $F(20,12)$ z tablic (albo Excela =F.DIST(1,20,12,1)):
+ $$F(20,12)=0.482684448$$
+\end{roz}
+
+% zadanie 6
+
+\begin{zad}\textnormal{
+Niech $(X,Y)$ bêdzie dwuwymiarow¹ zmienn¹ losowa o funkcji gêstoœci:
+\begin{equation*}
+f(x,y)=
+\begin{cases}
+\frac{2}{\pi} & \text{gdy } x>0 \text{ i } x^2+y^2=1\\
+0 & \text{w przeciwnym przypadku }
+\end{cases}
+\end{equation*}
+Niech $Z=\frac{Y}{X}$ i $V=X^2+Y^2$. Wtedy ³¹czny rozk³ad zmiennych $Z,V$ jest taki, ¿e:
+\begin{enumerate}[(a)] % (a), (b), (c), ...
+\item $EZ=0$
+\item funkcja gêstoœci rozk³adu brzegowego zmiennej Z wyra¿a siê wzorem $g(z)=\frac{2}{\pi(1+z^2)}$ dla $z\in(0,+\infty)$
+\item mediana rozk³adu brzegowego zmiennej Z jest równa $\frac{\sqrt{2}}{2}$
+\item zmienne $Z$ i $V$ s¹ zale¿ne
+\item kwantyl rzêdu $0.25$ rozk³adu brzegowego zmiennej $Z$ jest równy $-1$
+\end{enumerate}
+}\end{zad}
+
+\begin{roz}
+Trzeba tu zauwa¿yæ, ze mamy do czynienia z rozk³adem na okrêgu czyli tak naprawdê mamy:
+$$x=r\cos\alpha$$
+$$y=r\sin \alpha$$
+wtedy rozk³ad $g(r,\alpha)$ wg wzoru $$g(y)=f(h(y))|h'(y)|$$
+\begin{equation*}
+g(r,\alpha)=\frac{2}{\pi}\cdot \left|\left|
+\begin{array}{cc}
+\frac{dx}{dr} &  \frac{dx}{d\alpha} \\
+\frac{dy}{dr} & \frac{dy}{d\alpha}
+\end{array}\right|\right|=\frac{2}{\pi}\cdot r
+\end{equation*}
+Wobec powy¿szego nasze zmienne to:
+$$Z=\tg\alpha$$
+$$V=r^2$$
+Wiemy, ¿e $r$ i $\alpha$ s¹ niezalezne st¹d odpowiedŸ (d) odpada.\\
+\\
+W odpowiedziach widaæ, ¿e potrzebujemy rozk³adu brzegowego zmiennej Z. Wiêc najpierw policzymy rozk³ad brzegowy od $\alpha$ z $g(r,\alpha)$, czyli ca³kê z rozk³adu ³¹cznego po $r$
+$$f(\alpha)=\int_0^1 g(r,\alpha) dr=\int_0^1 \frac{2}{\pi}\cdot rdr=\frac{1}{\pi}$$
+teraz okreœlimy gêstoœæ $Z=\tg\alpha$ ponownie u¿ywaj¹c wzoru na transformacjê zmiennych
+$$Z=\tg\alpha \rightarrow \alpha=arctg(Z)$$
+$$g(z)=\frac{1}{\pi}\cdot arctg'(z)=\frac{1}{\pi(1+z^2)}$$
+St¹d widaæ, ¿e odpada odpowiedŸ (b).\\
+\\
+Gdybyœmy chcieli teraz policzyæ:
+$$EZ=\int_{-\infty}^{+\infty} \frac{1}{\pi(1+z^2)}dz=?$$
+OdpowiedŸ jest taka, ¿e ta wartoœæ oczekiwana \textbf{NIE ISTNIEJE}. Podobnie jest w rozk³adach Couchy'ego. Dalej
+$$\int_{-\infty}^{mediana} g(z)=\frac{1}{2}$$
+gdy $mediana=0$ to:
+$$\int_{-\infty}^0 \frac{1}{\pi(1+z^2)} dz=\frac{1}{\pi}arctg(z)|_{-\infty}^0=\frac{1}{\pi}\left(0-\left(-\frac{\pi}{2}\right)\right)=\frac{1}{2}$$
+wobec tego mediana równa zero a nie $\frac{\sqrt{2}}{2}$. OdpowiedŸ (c) odpada.
+Zostaje odpowiedŸ (e). SprawdŸmy:
+$$\int_{-\infty}^{-1}g(z)=0.25$$
+$$\int_{-\infty}^{-1} \frac{1}{\pi(1+z^2)} dz=\frac{1}{\pi}arctg(z)|_{-\infty}^{-1}=\frac{1}{\pi}\left(-\frac{\pi}{4}-\left(-\frac{\pi}{2}\right)\right)=0.25$$
+Co nale¿a³o udowodniæ
+\end{roz}
+
+% zadanie 7
+
+\begin{zad}\textnormal{
+Za³ó¿my, ze $X_1,\ldots,X_n,\ldots$ jest ci¹giem niezale¿nych, dodatnich zmiennych losowych o jednakowym rozk³adzie o gêstoœci
+$$f(x)=x\exp(-x) \hspace{15pt}\text{ dla } x>0$$
+Niech $S_0=0$ i $S_n=X_1+\ldots+X_n$ dla $n>0$. Okreœlmy zmienn¹ losow¹ N w nastêpuj¹cy sposób:
+$$N=max\{n \ge 0:S_n\le 4\}$$
+Oblicz $P(N=2)$.
+}\end{zad}
+
+\begin{roz}
+$$S_0=0$$
+$$S_1=X_1$$
+$$S_2=X_1+X_2$$
+$$S_3=X_1+X_2+X_3$$
+czyli prawdopodobieñstwo, ¿e 
+$$P(N=2)=P(X_1+X_2\le4 \land X_1+X_2+X_3 >4)=$$
+Niech $X_1+X_2=Z$ wtedy 
+$$P(Z\le 4 \land Z+X_3>4)$$
+$$X_i$$ ma gêstoœæ $Gamma(2,1)$ bo dla Gamma mamy
+$$f(x)=\frac{\beta^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x} \hspace{15pt} x>0$$
+$$f(x)=\frac{1^2}{\Gamma(2)}x^{2-1}e^{-1\cdot x}=xe^{-x}$$
+Czyli $$Z\sim Gamma(4,1)$$
+$$f(z)=\frac{1^4}{\Gamma(4)}z^{4-1}e^{-1\cdot z}=\frac{1}{6}z^3e^{-z}$$
+$Z$ i $X_3$ s¹ niezale¿ne. Rysujemy rysunek pomocznicy i obliczamy prawdopodobieñstwo:
+$$P(Z\le 4 \land Z+X_3>4)$$
+$$\int_0^4 \int_{4-z}^\infty x e^{-x}\cdot \frac{1}{6}z^3e^{-z}dxdz=$$
+$$=\int_0^4 \frac{1}{6}z^3 e^{-z}\left((4-z)e^{-(4-z)}+e^{-(4-z)}\right)dz=0.35166=\frac{96}{5}e^{-4}$$ 
+\end{roz}
+
+% zadanie 9 
+
+\begin{zad}\textnormal{
+Obserwujemy niezale¿ne zmienne losowe $X_1,X_2,X_3,X_4,Y_1,Y_2,Y_3,Y_4,Y_5,Y_6$. Zmienne losowe $X_1,X_2,X_3,X_4$ maj¹ ten sam rozk³ad o dystrybuancie $F_{\mu_1}$, a zmienne losowe $Y_1,Y_2,Y_3,Y_4,Y_5,Y_6$ maj¹ ten sam rozk³ad o dystrybuancie $F_{\mu_2}$. Dystrybuanta $F_\mu$ spe³nia warunek:
+$$F_\mu(x)=F(x-\mu)$$
+dla pewnej ustalonej, nieznanej, ci¹g³ej, œciœle rosn¹cej dystrybuanty F. Weryfikujemy hipotezê $H_0:\mu_1=\mu_2$ przy alternatywie $H_1:\mu_1>\mu_2$ stosuj¹c test o obszarze krytycznym 
+$$K=\{S:S \ge 19\}$$
+gdzie S jest sum¹ rang tych spoœród zmiennych $X_1,X_2,X_3,X_4$, w próce z³o¿onej ze wszystkich obserwacji ustawnionych w ci¹g rosn¹cy, które s¹ wiêksze od $\max\{Y_1,Y_2,Y_3,Y_4,Y_5,Y_6\}$. Wyznaczyæ rozmiar testu.
+}\end{zad}
+
+\begin{roz}
+Warunek podany na pocz¹tku zadania oznacza, ¿e rozk³ady maj¹ ten sam kszta³t (s¹ przesuniête), przy takiej samej wartoœci oczekiwanej ($H_0$) te rozk³ady s¹ identyczne. Ranga w wylosowanej próbce to pozycja zmiennej w próbce. Np.gdy
+$$X_1,Y_1,X_2,Y_3,...$$
+to $Y_3$ ma rangê 4. My mamy wyznaczyæ rozmiar testu czyli:
+$$P(K)=P(S\ge 19)=?$$
+¿eby suma rang by³a wiêksza od 19 to mamy nastêpuj¹ce przypadki ($Y_m$ to maksymalne $Y_i$):
+$$[],[],[],[],[],[],[],[Y_m],[X],[X]\rightarrow S=19$$
+$$[],[],[],[],[],[],[Y_m],[X],[X],[X]\rightarrow S=27$$
+$$[],[],[],[],[],[Y_m],[X],[X],[X],[X]\rightarrow S=34$$
+w powy¿szym nale¿y zauwa¿yæ, ¿e $Y_m$ mo¿e byæ co najmniej na 6 pozycji! Wiemy, ¿e skoro rozk³ady s¹ takie, to wszystkie losowania s¹ jednakowo prawdopodobne. Zdefinijmy wobec tego wszystkie mo¿liwe u³o¿enia (tu w ogole nie musimy patrzyæ na numery zmiennych, mamy ci¹gi $X,X,Y,X,Y,\ldots$). Wszystkie mo¿liwe uk³ady (permutacje z powtórzeniami):
+$$\frac{10!}{6!4!}=210$$
+Dla przypadku pierwszego zostaj¹ nam uk³ady gdzie zostaje 7 miejsc do u³o¿enia i 5 zmiennych Y oraz 2 zmienne X
+$$\frac{7!}{5!2!}=21$$
+Przypadek drugi:
+$$\frac{6!}{5!1!}=6$$
+Przypadek trzeci (tylko jedna permutacja same Yki)
+$$1$$
+Szukane prawdopodobieñstwo:
+$$P(S\ge 19)=\frac{21+6+1}{210}=\frac{14}{105}$$
+Do zadania mo¿na podejœæ te¿ inaczej. Prawdopodobieñstwo przypadku 1 to (losujemy najpierw X, potem X, potem Y; losujemy `od koñca'):
+$$\frac{4}{10}\cdot \frac{3}{9}\cdot \frac{6}{8}=\frac{1}{10}$$
+Przypadek dwa (losujemy X,X,X,Y)
+$$\frac{4}{10}\cdot \frac{3}{9}\cdot \frac{2}{8}\cdot \frac{6}{7}=\frac{1}{35}$$
+Przypadek 3:
+$$\frac{4}{10}\cdot \frac{3}{9}\cdot \frac{2}{8}\cdot \frac{1}{7}\cdot \frac{6}{6}=\frac{1}{210}$$
+Sumuj¹c prawdopodobieñstwa dostajemy $\frac{14}{105}$.
+\end{roz}
+
+% zadanie 10
+
+\begin{zad}\textnormal{
+£añcuch Markowa ma trzy stany $E_1,E_2,E_3$ i macierz przejœcia:
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+1/3 & 2/3 & 0   \\ \hline
+1/4 & 1/4 & 1/2 \\ \hline
+1/2 & 0   & 1/2 \\ \hline
+\end{tabular}
+\end{table}
+Niech $X_n$ oznacza stan, w którym znajduje siê ³añcuch po dokonaniu $n$ kroków $n=0,1,\ldots$. Funkcjê $f$ na zbiorze stanów okreœlamy wzorem $f(E_i)=i-1$ dla $i=1,2,3$.\\
+Niech $c=\lim_{n \rightarrow \infty}Cov(f(X_n),f(X_{n+1}))$. Granica c jest równa: ?
+}\end{zad}
+
+\begin{roz}
+Z definicji kowariancji:
+$$Cov(f(X_n),f(X_{n+1})=E(f(X_n)\cdot f(X_{n+1}))-E(f(X_n))\cdot E(f(X_{n+1}))$$
+Obliczymy prawdopodobieñstwa bycia w stanie po $n$ krokach:
+$$p_1=\frac{1}{3}p_1+\frac{1}{4}p_2+\frac{1}{2}p_3$$
+$$p_2=\frac{2}{3}p_1+\frac{1}{4}p_2$$
+$$p3=\frac{1}{2}+\frac{1}{2}p_3$$
+$$p_1+p_2+p_3=1$$
+Po rozwi¹zaniu mamy: $p_1=\frac{9}{25}$, $p_2=\frac{8}{25}$, $p_3=\frac{8}{25}$. Dalej:
+$$f(E_1)=0$$
+$$f(E_2)=1$$
+$$f(E_3)=2$$
+mamy:
+$$E(f(X_n))=E(f(X_{n+1}))=1\cdot p_2+2\cdot p_3=\frac{24}{25}$$
+Mamy macierz wartoœci dla $f(X_n)\cdot f(X_{n+1})$
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+0 & 0 & 0   \\ \hline
+0 & 1 & 2 \\ \hline
+0 & 2   & 4 \\ \hline
+\end{tabular}
+\end{table}
+Bior¹c pod uwagê powy¿sz¹ tabelê mamy:
+$$E(f(X_n)\cdot f(X_{n+1}))=p_2\cdot 1 \cdot \frac{1}{4}+p_2\cdot 2 \cdot \frac{1}{2}+p_3\cdot 2 \cdot 0 +p_3\cdot 4 \cdot \frac{1}{2}=\frac{26}{25}$$
+$$Cov(f(X_n),f(X_{n+1})=\frac{26}{25}-\left(\frac{24}{25}\right)^2=\frac{74}{625}$$
+\end{roz}
+
+%------------------- EGZAMIN 23 marca 2015 ------------------
+\newpage
+\section{Egzamin z 23 marca 2015}
+
+
+% zadanie 1
+
+
+\begin{zad}\textnormal{
+Rozwa¿amy model regresji liniowej postaci $Y_i=a+bx_i+\epsilon_i$, $i=1,2,3,4,5$, gdzie $b$ jest nieznanym parametrem rzeczywistym, $x_1=x_2=1$, $x_3=2$, $x_4=x_5=3$, a $\epsilon_i$ s¹ niezale¿nymi zmiennymi losowymi o tym samym rozk³adzie normalnym o wartoœci oczekiwanej $0$ i nieznanej wariancji $\sigma^2>0$.\\
+Hipotezê $H_0:b=0$ przy alternatywie $H_1:b\neq 0$ weryfikujemy testem o obszarze krytycznym postaci $\lbrace |\frac{\hat{b}}{\hat{\sigma}}|>c\rbrace$, gdzie $\hat{b}$, $\hat{sigma}$, s¹ estymatorami najwiêkszej wiarygodnoœci parametrów $b$ i $\sigma$, a sta³a $c$ dobrana jest tak, aby test mia³ rozmiar $0.05$. Sta³a c jest równa:?
+}\end{zad}
+
+\begin{roz}
+PODOBNE zadanie 2, 26.05.2014, prawie identyczne jak zadanie 3, 28.05.2012\\
+\\
+Dla przypomnienia w rozk³adzie normalnym:
+$$aX+b\sim N(a\mu+b,(a\sigma)^2)$$
+$$X_1+X_2\sim N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2)$$
+W rozk³adzie normalnym:
+$$f(y_i)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(y_i-\mu)^2}{2\sigma^2}}$$
+W regresji liniowej funkcja wiarygodnoœci jest postaci:
+$$L=\prod_{i=1}^5 \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(y_i-a-bx_i)^2}{2\sigma^2}}=\left( \frac{1}{\sqrt{2\pi}\sigma}\right)^5e^{\sum_{i=1}^5 -\frac{(y_i-a-bx_i)^2}{2\sigma^2}}$$
+Bierzemy logarytm z funkcji wiarygodnoœci:
+$$\ln L=-5\ln\sqrt{2\pi}-5\ln \sigma+$$
+$$-\frac{(y_1-a-b)^2+(y_2-a-b)^2+(y_3-a-2b)^2+(y_4-a-3b)^2+(y_5-a-3b)^2}{2\sigma^2}$$
+Pochodne:
+$$\frac{\partial \ln L}{\partial b}=0$$
+$$\frac{\partial \ln L}{\partial b}=$$
+$$=-\frac{-2(y_1-a-b)-2(y_2-a-b)-2\cdot 2(y_3-a-2b)-2\cdot 3(y_4-a-3b)-2\cdot 3(y_5-a-3b)}{2\sigma^2}$$
+st¹d
+$$24b=y_1+y_2+2y_3+3y_4+3y_5-10a$$
+$$\frac{\partial \ln L}{\partial a}=0$$
+liczymy analogicznie jak wy¿ej i uzyskujemy:
+$$5a=y_1+y_2+y_3+y_4+y_5-10b$$
+wstawiamy do równania z $b$ i uzyskujemy:
+$$4b=-y_1-y_2+y_4+y_5\rightarrow b=\frac{-y_1-y_2+y_4+y_5}{4}$$
+St¹d uwzglêdniaj¹c rozk³ad $\epsilon_i$ 
+$$b\sim N\left(0,4\cdot \frac{\sigma^2}{4^2}\right)=N\left(0,\frac{\sigma^2}{4}\right)$$
+Jaki jest estymator odchylenia standardowego?
+$$\frac{\partial \ln L}{\partial \sigma}=0$$
+St¹d
+$$\sigma^2=\frac{1}{5}\sum_{i=1}^5 (y_i-a-bx_i)^2=$$
+$$=\frac{1}{5}\left((y_1-a-b)^2+(y_2-a-b)^2+(y_3-a-2b)^2+(y_4-a-3b)^2+(y_1-a-3b)^2\right)=$$
+mamy $(y_1-a-b)(y_1-a-b)=y_1^2-2y_1a-2y-1b+2ab+b^2$ TU SIE STRASZNIE KOMPLIKUJE\\
+\\
+$y_i\sim N(0,\sigma^2)$. Dowodzimy, ¿e $\frac{\hat{b}}{\hat{\sigma}}$ ma rozk³ad t-Studenta.\\
+\\
+DOKOÑCZYÆ
+\end{roz}
+
+% zadanie 2
+
+\begin{zad}\textnormal{
+Niech $X$ i $Y$ bêda niezaleznymi zmienymi losowymi ka¿da z rozk³adu wyk³adniczego o wartoœci oczekiwanej 1.\\
+Niech $U=2X+Y$ i $V=X-2Y$.\\
+Wtedy prawdopodobieñstwo $P(U \in (0,5) \land V \in (0,5))$ jest równe:?
+}\end{zad}
+
+\begin{roz}
+Rozpiszemy:
+$$P(2X+Y \in (0,5) \land X-2Y \in (0,5))=$$
+$$P(0<2X+Y<5 \land 0<X-2Y<5)=$$
+$$P\left(-2X<Y<5+2X \land \frac{X}{2}>Y>\frac{X-5}{2}\right)$$
+Rysujemy rysunek pomocniczy z obszarami i dostajemy ca³kê podwojn¹:
+$$\int_0^2 \int_0^{\frac{x}{2}}e^{-x}e^{-y}dydx+\int_2^{2.5}\int_0^{5-2x}e^{-x}e^{-y}dydx=$$
+$$=\frac{1}{3}-2e^{-2.5}+\frac{5}{3}e^{-3}$$
+\end{roz}
+
+% zadanie 3
+
+\begin{zad}\textnormal{
+Rozwa¿my nastepuj¹ce zagadnienie testowania hipotez statystycznych. Dysponujemy próbk¹ $X_1,\ldots,X_n$ z rozk³adu normalnego o nieznanej œredniej $\mu$ i znanej wariancji równej 9. Przeprowadzamy najmocniejszy test hipotezy $H_0:\mu=0$ przeciwko alternatywie $H_1:\mu=2$ na poziomie istotnoœci $\alpha=1/2$. Niech $\beta_n$ oznacza prawdopodobieñstwo b³êdu drugiego rodzaju, dla rozmiaru próbki $n$.\\
+Wybierz poprawne stwierdzenie:
+1.
+$$\lim_{n \rightarrow \infty} \beta_n \exp(\frac{2n}{9})\sqrt{2\pi}=1$$
+2.
+$$\lim_{n\rightarrow \infty }\beta_n \exp(\frac{2n}{9})\frac{2\sqrt{2\pi n}}{3}=1$$
+itd.
+}\end{zad}
+\begin{roz}
+Dla przypomnienia:\\
+\\
+B³¹d I rodzaju: \textbf{odrzucenie $H_0$, gdy jest prawdziwa}\\
+B³¹d II rodzaju: \textbf{nie odrzucenie $H_0$, gdy jest fa³szywa}\\
+\\
+\textbf{Moc testu statystycznego rozumiana jest jako prawdopodobieñstwo nieodrzucenia $H_1$ przy jej prawdziwoœci (odrzucenie $H_0$ przy jej fa³szywoœci)}. Jest to 1 - p-p b³êdu II rodzaju.\\
+\\
+Test najmocniejszy (o najmniejszym b³êdzie drugiego rodzaju) budujemy poprzez badanie:
+$$\frac{L_1}{L_0}>c$$
+wtedy odrzucamy $H_0$ przy jej prawdziwoœci. $L_1$ to funkcja wiarygodnoœci przy $H_1$, $L_0$ to funkcja wiarygodnoœci przy $H_0$ Mamy:
+$$\frac{L_1}{L_0}=\frac{(\frac{1}{\sqrt{2\pi}\sigma})^n\exp(-\sum_{i=1}^n \frac{(x_i-2)^2}{2\sigma^2} )}{(\frac{1}{\sqrt{2\pi}\sigma})^n\exp(-\sum_{i=1}^n \frac{x_i^2}{2\sigma^2})}>c$$
+$$\exp\left(-\sum_{i=1}^n \frac{(x_i-2)^2}{2\sigma^2}+\sum_{i=1}^n \frac{x_i^2}{2\sigma^2}+ \right)>c$$
+$$-\sum_{i=1}^n \frac{(x_i-2)^2}{2\sigma^2}+\sum_{i=1}^n \frac{x_i^2}{2\sigma^2} >c$$
+$$\sum_{i=1}^nx_i>c$$
+Jakie jest p-p, ¿e 
+$$P\left(\sum_{i=1}^n x_i>c\right)=0.5$$
+Suma ma rozk³ad $N(0,9n)$ mo¿na znormalizowaæ i mamy:
+$$P\left(\frac{\sum x_i}{\sqrt{9n}}>\frac{c}{\sqrt{9n}}\right)=0.5$$
+co oznacza, ¿e $\frac{c}{\sqrt{9n}}=0$
+czyli mamy:
+$$P(\frac{\sum x_i}{\sqrt{9n}}>0)=0.5$$
+co dalej daje np.
+$$P(\sum x_i>0)=0.5$$
+St¹d te¿ mo¿na dojœc do wniosku, ¿e 
+$$P(\bar{X}>0)=0.5$$
+czyli, ¿e œrednia te¿ jest testem najmocniejszym.\\
+\\
+Teraz chcemy policzyæ b³¹d drugiego rodzaju: `przyjêcie' $H_0$ gdy jest fa³szywa:
+$$P(\bar{X}<0|H_1)$$
+Œrednia przy $H_1$ ma rozk³ad $N(2,n\cdot \frac{9}{2})=N(2,\frac{9}{n})$. Normalizujemy:
+$$P\left(\frac{\bar{X}-2}{\sqrt{9/n}}<\frac{-2}{\sqrt{9/n}}\right)=\beta_n$$
+$$\beta_n=\int_{-\infty}^{-\frac{2}{\sqrt{9/n}}}\frac{1}{\sqrt{2\pi}\cdot 1}\exp\left(-\frac{x^2}{2}\right)dx=?$$
+tej ca³ki analitycznie nie policzymy. Widzimy, ¿e przy d¹¿eniu do nieskoñczonoœci $\beta_n$ d¹¿y do zera. W odpowiedziach mamy np
+$$\lim_{n\rightarrow \infty}\beta_n \cdot n$$
+wiêc mamy iloczyny czegoœ co d¹¿y do zera i drugiego czynnika d¹¿¹cego do nieskoñczonoœci. Bêdziemy stosowali twierdzenie de l'Hospitala. Policzymy pochodn¹ z $B_n$
+$$B_n'=-\frac{1}{3\sqrt{2\pi}\sqrt{n}}e^{-\frac{2n}{9}}$$
+i podstawiamy do odpowiedzi (mianownik przekszta³camy do postaci 1 / wyra¿enie. Wychodzi dobra odpowiedŸ:
+$$\lim_{n\rightarrow \infty }\beta_n \exp(\frac{2n}{9})\frac{2\sqrt{2\pi n}}{3}=1$$
+\end{roz}
+
+% zadanie 4
+
+\begin{zad}\textnormal{Na podstawie próby losowej $X_1,\ldots,X_n$ gdzie $X_i$, $i=1,\ldots,n$ s¹ niezale¿nymi zmiennymi losowymi o rozk³adzie jednostajnym na przedziale $(0,\theta)$ i $\theta>0$ jest nieznanym parametrem, zbudowono przedzia³ ufnoœci dla parametru $\theta$ na poziomie ufnoœci $1-\alpha$ postaci: $[T_X,aT_X]$ gdzie $T_X$ jest estymatorem najwiêkszej wiarogodnosci parametru $\theta$ na podstawie próby $X_1,\ldots,X_n$. \\
+Nastêpnie uzyskano niezale¿nie drug¹ próbê losow¹ $Y_1,\ldots,Y_m$ z tego samego rozk³adu i zbudowano przedzia³ ufnoœci dla parametru $\theta$ na poziomie ufnoœci $1-\alpha$ postaci $[T_{XY},bT_{XY}]$,\\
+gdzie $T_{XY}$ jest estymatorem najwiêkszej wiarogodnoœci parametru $\theta$ na podstawie próby $X_1,\ldots,X_n,Y_1,\ldots,Y_m$.\\
+\\
+Oblicz prawdopodobieñstwo, ¿e tak utworzone przedzia³y bêd¹ roz³¹czne.
+}\end{zad}
+
+\begin{roz}
+W rozk³adzie jednostajnym estymator najwiêkszej wiarygodnoœci parametru $\theta$ to maksimum. St¹d:
+$$T_X=\max(X_1,\ldots,X_n)=X_m$$
+$$T_{XY}=\max(X_1,\ldots,X_n,Y_1,\ldots,Y_n)$$
+Z pierwszego przedzia³u ufnoœci wiemy, ¿e
+$$P(X_m<\hat{\theta}<aX_m)$$
+mo¿emy narysowaæ ma³y rysunek pomocniczy. Teraz mamy okreœliæ prawdopodobieñstwo, ¿e przedzia³y bêd¹ roz³¹czne, oznacza to, ¿e 
+$$P(T_{XY}>aX_m)=P(Y_m>aX_m)$$
+bo, któryœ $Y_i$ musia³ zwiêkszyæ nasz estymator najwiêkszej wiarygodnoœci .
+Wyznaczymy najpierw $a$
+$$P(X_m<\hat{\theta}<aX_m)=1-\alpha$$
+$$P(X_m<\hat{\theta}<aX_m)=P(\hat{\theta}<aX_m)-\underbrace{P(\hat{\theta}<X_m)}_{=0}=1-\alpha$$
+Drugie p-p równe zero bo rozk³ad ci¹g³y.
+$$Pr\left(\frac{\hat{\theta}}{a}<X_m\right)=1-\alpha$$
+Rozk³ad maksimum $P(X_m<t)=(\frac{t}{\theta})^n$, $P(X_m>t)=1-(\frac{t}{\theta})^n$. St¹d
+$$1-\left(\frac{\theta/a}{\theta}\right)^n=1-\alpha\rightarrow \alpha=\left(\frac{1}{a}\right)^n\rightarrow a=\alpha^{-1/n}$$
+Dalej ju¿ prosto:
+$$P(Y_m>\alpha^{-1/n}X_m)=?$$
+Rysunek pomocniczy. Generalnie $P(X\le Y)=\int_0^\infty \int_0^y f(x)f(y) dx dy$. Mamy:
+$$f_{x_m}(x)=n\cdot \frac{x^{n-1}}{\theta^n}$$
+$$f_{y_m}(x)=m\cdot \frac{y^{m-1}}{\theta^m}$$
+$$\int_0^\theta \int_0^{y/a}n\cdot m \cdot \frac{x^{n-1}y^{m-1}}{\theta^{n+m}}dxdy=\frac{\alpha m}{m+n}$$
+\end{roz}
+
+
+
+% zadanie 5
+
+ \begin{zad}\textnormal{
+ Niech $Z_1,Z_2,\ldots,Z_n,\ldots$ bêd¹ niezale¿nymi zmiennymi losowymi o rozk³adzie Pareto o gêstoœci
+ \begin{equation*}
+ p_{\lambda,\theta}(x)=
+\begin{cases}
+\frac{\lambda^\theta \theta}{(x+\lambda)^{\theta+1}} & \text{dla } x>0\\
+0 & \text{dla } x \le 0
+\end{cases}
+\end{equation*}
+gdzie $\theta>1$, $\lambda>0$ s¹ ustalonymi liczbami. Niech $N$ bêdzie zmienn¹ losow¹ niezale¿n¹ od $Z_1,\ldots,Z_n,\ldots,$ o rozk³adzie gemetrycznym
+$$P(N=n)=(1-q)q^{n-1}$$
+gdy $n=1,2,3,\ldots,$, gdzie $q\in(0,1)$ jest ustalon¹ liczb¹.\\
+Wyznaczyæ $E(Z_1+Z_2+\ldots+Z_N| \min(Z_1,Z_2,\ldots,Z_N)=t)$, gdzie t jest ustalon¹ liczb¹ wiêksz¹ od 0.
+ }\end{zad} 
+ 
+ \begin{roz}
+ Wiemy, ¿e
+ $$E(Z_1+\ldots+Z_N|\min(Z_1,\ldots,Z_N)=t)=t+(N-1)EZ_1$$
+ pod warunkiem, ¿e $N$.\\
+ \\
+ Nale¿y zwróciæ uwagê, ¿e $\min(Z_1,\ldots,Z_N)=t$, czyli rozk³ad jest uciêty! Przeskalujemy gêstoœæ:
+ $$\int_t^\infty c\cdot \frac{\lambda^\theta}{(x+\lambda)^{\theta+1}}dx=1$$
+ st¹d
+ $$c=\frac{(t+\lambda)^\theta}{\lambda^\theta}$$
+ czyli przeskalowana gêstoœæ:
+ $$f(x)=\frac{(t+\lambda)^\theta \lambda}{(x+\lambda)^{\theta+1}}$$
+ dla $x>t$.\\
+ \\
+ Liczymy wartoœæ oczekiwan¹ z $Z_1$:
+ $$EZ_1=\int_t^\infty x \frac{(t+\lambda)^\theta \lambda}{(x+\lambda)^{\theta+1}}dx=(t+\lambda)^\theta \lambda\int_t^\infty \frac{x}{(x+\lambda)^{\theta+1}}dx=$$
+ Liczymy przez czêœci i dostajemy:
+ $$=\frac{\theta t+\lambda}{\theta-1}$$
+ Dla przypomnienia:\\
+ \\
+ \textbf{Rozk³ad gemetryczny}
+$$P(X=k)=(1-p)^{k-1}\cdot k$$
+dla $k=1,2,3,\ldots$. Intepretowany jako p-p pierwszego sukcesu w k-tej próbie 
+$$E(X)=\frac{1}{p}$$
+$$Var(X)=\frac{1-p}{p^2}$$
+ Liczona wartoœæ oczekiwana z pocz¹tku zadania by³a pod warunkiem N, wobec tego liczymy wartoœæ oczekiwan¹:
+ $$E(t+(N-1)EZ_1)=t+E(N)E(Z_1)-EZ_1=\frac{\lambda q+\theta t-(1-q)t}{(1-q)(\theta-1)}$$
+ \end{roz}
+ 
+ % zadanie 6
+ 
+ 
+ \begin{zad}\textnormal{
+ Niech $X$ bêdzie zmienn¹ losow¹ o funkcji gêstoœci
+\begin{equation*}
+f_\theta(x)=
+\begin{cases}
+\frac{1}{\theta^2}(\theta-|x|) & \text{gdy } |x|<\theta\\
+0 & \text{w przeciwnym wypadku }
+\end{cases}
+\end{equation*}
+gdzie $\theta>0$ jest nieznanym parametrem. Na podstawie pojedynczej obserwacji weryfikujemy hipotezê $H_0:\theta=1$ przy alternatywie $H_1:\theta \neq 1$ testem opartym na ilorazie wiarogodnoœci na poziomie istotnoœci $0.1$. Moc tego testu przy alternatywie $\theta=2$ jest równa ?.
+ }\end{zad}
+ 
+ \begin{roz}
+ Dla przypomnienia:\\
+ \\
+B³¹d I rodzaju: \textbf{odrzucenie $H_0$, gdy jest prawdziwa}\\
+\\
+B³¹d II rodzaju: \textbf{nie odrzucenie $H_0$, gdy jest fa³szywa}\\
+\\
+ \textbf{Moc testu statystycznego rozumiana jest jako prawdopodobieñstwo nieodrzucenia $H_1$ przy jej prawdziwoœci (odrzucenie $H_0$ przy jej fa³szywoœci)}.\\
+ \\
+ Test jest oparty na ilorazie wiarygodnoœci wiêc potrzebujemy dwóch funkcji wiarygodnoœci (i ich pochodnych do policzenia supremum):
+ $$L_0(x,\theta=1)=\frac{1}{1}(1-|x|)=1-|x|$$
+ $$L_1(x,\theta \neq 1)=\frac{1}{\theta^2}(\theta-|x|)$$
+ bo test oparty na ilorazie wiarygodnoœci:
+ $$\frac{\sup_{\theta \in \Theta_1 }L(\theta,x)}{\sup_{\theta \in \theta_0}L(\theta,x)}$$
+ Test oparty na ilorazie wiarygodnoœci: gdy wynik $L_1/L_0$ jest wiêkszy od pewnej liczby to \textbf{odrzucamy} hipotezê zerow¹. Tym samym, gdy $L_0/L_1$ mniejsze od tej liczy to równie¿ odrzucamy.
+ $$\frac{L_1}{L_0}=\frac{\frac{1}{\theta^2}(\theta-|x|)}{1-|x|}$$
+ Do testu potrzebujemy supremum
+ $$\sup_{\theta \in \Theta_0} L_0=1-|x|$$
+ $$\sup_{\theta \in \Theta_1}L_1=?$$
+ $$\frac{\partial}{\partial \theta}\left(\frac{1}{\theta^2}(\theta-|x|)\right)=-\frac{1}{\theta^2}+2\frac{|x|}{\theta^3}=0\rightarrow \theta=2|x|$$
+ wstawiamy to do ilorazu wiarygodnoœci i mamy:
+ $$\frac{L_1}{L_0}=\frac{1}{4(|x|-|x|^2)}$$
+ $H_0$ odrzucimy gdy
+ $$\frac{1}{4(|x|-|x|^2)}>\gamma$$
+ czyli
+ $$4(|x|-|x|^2)<\gamma$$
+ Przy $H_0$ mamy:
+ $$P(4|x|-|x|^2<\gamma |\theta=1)=0.1$$
+ sprawdŸmy dla jakich $\gamma$ powy¿sze zachodzi
+ $$|x|-|x|^2<\gamma/4 \rightarrow |x|-|x|^2-\gamma/4<0$$
+ $$|x_1|=1/2-1/2\sqrt{1-\gamma}$$
+ $$|x_2|=1/2+1/2\sqrt{1-\gamma}$$
+ to oznacza, ¿e pomiêdzy tymi dwoma punktami funkcja kwadratowa jest wieksza od zera co oznacza, ¿e w tym obszarze przyjmujemy $H_0$. Test jest dwustronny (mamy wartoœci bezwzglêdne), wiêc o ile dla ca³ego obszaru $P(x \in D)=1-0.1=0.9$ to dla powy¿szego jest to po³owa $P(x \in D)=0.45$. St¹d
+ gêstoœæ:
+ $$\frac{1}{\theta^2}(\theta-|x|)$$
+ przy $H_0:\theta=1$ jest $1-|x|$, w po³owie obszaru $1-x$
+ $$\int_{1/2-1/2\sqrt{1-\gamma}}^{1/2+1/2\sqrt{1-\gamma}}(1-x)dx=0.44\rightarrow \sqrt{1-\gamma}=0.9$$
+ Moc testu to odrzucenie $H_0$ przy jej fa³szywoœci czyli, 1 - przyjêcie $H_0$ przy $\theta=2$ czyli
+ $$\int_{1/2-1/2\sqrt{1-\gamma}}^{1/2+1/2\sqrt{1-\gamma}}\frac{1}{2^2}(2-|x|)dx=0.675$$
+ $$ODP=1-0.675=0.325$$
+ \end{roz}
+ 
+ % zadanie 7
+ 
+ \begin{zad}\textnormal{
+ Rozwazmy ci¹g niezale¿nych dwuwymiarowych zmiennych losowych $(X_n,Y_n)_{n=1}^{+\infty}$, gdzie $(X_n,Y_n)$ maj¹ rozk³ady jednostajne na zbiorze $[-2,2]x[-2,2]$. Niech
+ $$S_n=(S_{n,1},S_{n,2})=(\sum_{i=1}^n X_i,\sum_{i=1}^n Y_i)$$
+ oraz
+ $$|S_n|=\sqrt{S_{n,1}^2+S_{n,2}^2}$$
+ Sta³¹ $c$ dobrano tak, aby:
+ $$\lim_{n \rightarrow \infty} P(|S_n|<c\sqrt{n})=0.95$$
+ Sta³a c jest równa ?.
+ }\end{zad}
+ 
+ \begin{roz}
+ \textbf{Twierdzenia graniczne}\\
+\\
+\textbf{SUMA DU¯EJ LICZBY ZMIENNYCH LOSOWYCH Z JEDNAKOWEGO ROZK£ADU MA ROZK£AD NORMALNY}\\
+\\
+$S_{n,1}$ ma rozk³ad jednostajny o wartoœci oczekiwanej $\frac{-2+2}{2}=0$ oraz wariancji $Var(S_{n,1})=\frac{(b-a)^2}{12}=\frac{16}{12}=4/3$,  $S_{n,1}$ przy $n\rightarrow \infty$ bêdzie mia³a rozk³ad $N(0,4/3\cdot n)$ analogicznie $S_{n,2}$ bêdzie mia³a rozk³ad $N(0,4/3 \cdot n)$. Mamy:
+$$P(|S_n|<c\sqrt{n})=P\left(\sqrt{S_{n,1}^2+S_{n,2}^2}<c\sqrt{n}\right)=$$
+obie strony sa dodanie wiêc mo¿na podnieœc do kwadratu:
+$$=P(S_{n,1}^2+S_{n,2}^2<c^2\cdot n)$$
+Znormalizujmy $S_{n,1}$ i $S_{n,2}$:
+$$\frac{S_{n,1}}{\sqrt{4/3\cdot n}}\sim N(0,1)$$
+$$\frac{S_{n,2}}{\sqrt{4/3\cdot n}}\sim N(0,1)$$
+Je¿eli podniesiemy te zmienne do kwadratu to otrzymamy zmienne o rozk³adzie $\chi^2$:
+$$\left(\frac{S_{n,1}}{\sqrt{4/3\cdot n}}\right)^2\sim \chi^2(1)$$
+$$\left(\frac{S_{n,2}}{\sqrt{4/3\cdot n}}\right)^2\sim \chi^2(1)$$
+Rozk³ad $\chi^2$ to szczególny przypadek rozk³adu Gamma zachodzi: 
+$$\chi^2(n)+\chi^2(k)=\chi^2(n+k)$$
+czyli mamy:
+$$P\left(\underbrace{\frac{S_{n,1}^2}{4/3\cdot n}+\frac{S_{n,2}^2}{4/3\cdot n}}_{\sim\chi^2(2)}<\frac{c^2\cdot n}{4/3\cdot n}\right)=0.95$$
+Z tablic dla $\alpha=0.05$ wartoœci krytyczne to $5.99146$
+$$\frac{c^2}{4/3}=5.99146\rightarrow c=2.826$$
+ \end{roz}
+ 
+ % zadanie 8
+ 
+ \begin{zad}\textnormal{
+ Niech $X_1,\ldots,X_n,X_{n+1}$ bêd¹ niezale¿nymi zmiennymi losowymi o tym samym rozk³adzie jednostajnym na przedziale $(0,\theta)$. Parametr $\theta>0$ jest nieznany i jest realizacj¹ zmiennej losowej o rozk³adzie o gêstoœci 
+ \begin{equation*}
+p(\theta)=
+\begin{cases}
+\frac{4}{\theta^5} & \text{gdy } \theta>1,\\
+0 & \text{w przeciwnym przypadku }
+\end{cases}
+\end{equation*}
+Wyznaczamy predyktor bayesowski $\hat{X}_{n+1}$ zmiennej $X_{n+1}$ w oparciu o próbê $X_1,X_2,\ldots,X_n$ przy kwadratowej funkcji straty. Wartoœæ oczekiwana tego predyktora czyli wielkoœæ $E(\hat{X}_{n+1}|\theta)$ jest równa: ?.
+ }\end{zad}
+ 
+\begin{roz}
+ Kwadratowa funkcja straty, czyli bêdziemy minimalizowali b³¹d kwadratowy $E((\hat{X}_{n+1}-X_{n+1})^2)$. Bezpoœrednio jednak¿e w tym zadaniu nie skorzystamy z tego. Zmienna $X_{n+1}$ pochodzi z rozk³adu jednostajnego, wiêc moglibyœmy powiedzieæ, ¿e pod warunkiem, ¿e $\theta$ jest:
+ $$E(X_{n+1}|\theta)=\frac{\theta}{2}$$
+Przy kwadratowej funkcji straty \textbf{predyktor Bayesowski} to (korzystamy z iteracyjnoœci):
+$$\hat{X}_{n+1}=E(X_{n+1}|X_1,\ldots,X_n)=E(E(X_{n+1}|\theta)|X_1,\ldots,X_n)=E\left(\frac{\theta}{2}|X_1,\ldots,X_n\right)$$
+Iteracyjnoœæ:
+Gdy $$F_1 \subset F_2 \subset M \rightarrow E(Y | F_1)=E(E(Y|F_2)|F_1)=E(E(Y|F_1)|F_2)$$
+Rozk³ad $\theta$ jest zdefiniowany przez próbê $X_1,\ldots,X_n$, tzn. je¿eli okazuje siê, ¿e wszystkie $X_i$ s¹ bardzo ma³e, mo¿na spodziewaæ siê, ¿e $\theta$ te¿ jest ma³a. Potrzebne nam bêdzie:
+$$f(\theta|X_1,\ldots,X_n)\frac{f(\theta \land X_1,\ldots,X_n)}{f(X_1,\ldots,X_n)}=\frac{f(\theta\land X_1,\ldots,X_n)}{\int f(X_1,\ldots,X_n,\theta) d\theta}$$
+mamy:
+$$f(X_1,\ldots,X_n|\theta)=\frac{1}{\theta^n}$$
+$$f(X_1,\ldots,X_n \land \theta)=\frac{1}{\theta^n}\cdot \frac{4}{\theta^5}$$
+Musimy wyca³kowaæ ostatnie po $d\theta$, tutaj nale¿y ostro¿nie podejœæ do granic ca³kowania bo $\theta$ generalnie mo¿e byæ nie mniejsza ni¿ $x_{max}$, ale nale¿y zwróciæ uwagê, ¿e $x_m$ mo¿e byæ mniejsze od 1, wtedy $\theta$ i tak zgodnie z rozk³adem musi byæ wiêksza od 1. Wobec tego:
+$$\int_{x_m}^\infty \frac{4}{\theta^{n+5}}d\theta=\frac{4}{n+4}\cdot \frac{1}{x_n^{n+4}}$$
+$$\int_1^\infty \frac{4}{\theta^{n+5}}d\theta=\frac{4}{n+4}$$
+\begin{equation*}
+ f(\theta|X_1,\ldots,X_n)=
+\begin{cases}
+\frac{n+4}{\theta^{n+5}} & \text{gdy } x_m<1, \theta \in (1,\infty)\\
+\frac{(n+4)x_m^{n+4}}{\theta^{n+5}} & \text{gdy } x_m\ge 1, \theta \in(x_m,\infty)
+\end{cases}
+\end{equation*}
+Teraz jak wrócimy i policzymy ile równa siê $\hat{X}_{n+1}$ to mamy $E(\theta/2)$:
+$$\int_1^\infty \frac{\theta}{2} \frac{n+4}{\theta^{n+5}}d\theta=\frac{1}{2}\frac{n+4}{n+3}$$
+$$\int_{x_m}^\infty \frac{\theta}{2} \frac{(n+4)x_m^{n+4}}{\theta^{n+5}}=\frac{1}{2}\frac{n+4}{n+3}\cdot x_m$$
+Widaæ, ¿e wartoœæ oczekiwana zale¿y od $X_m$, mamy policzyæ 
+$$E(\hat{X}_{n+1}|\theta)=?$$
+Z Law of total expectations:
+$$E(\hat{X}_{n+1})=E(\hat{X}_{n+1}|x_m<1)\cdot P(x_m<1)+E(\hat{X}_{n+1}|x_m \ge 1)P(x_m \ge 1)$$
+Jaki rozk³ad ma $x_m$? 
+$$P(\max(X_1,\ldots,X_n)<t)=\left(\frac{x}{\theta}\right)^n$$
+$$f(x|\theta)=n\frac{x^{n-1}}{\theta^n}$$
+st¹d
+\begin{equation*}
+\hat{X}_{n+1}=
+\begin{cases}
+\frac{1}{2}\frac{n+4}{n+3} & \text{gdy } x_m<1, \text{ z p-p } \frac{1}{\theta^n}\\
+\frac{1}{2}\frac{n+4}{n+3}x_m & \text{gdy } x_m\ge1, \text{ z p-p } 1-\frac{1}{\theta^n}
+\end{cases}
+\end{equation*}
+$$E(\hat{X}_{n+1}|\theta)=\frac{1}{2}\frac{n+4}{n+3}\cdot \frac{1}{\theta^n} +E(\hat{X}_{n+1}|x_m\ge1)P(x_m \ge 1)=$$
+po prawej stronie zostanie tylko ca³ka z licznika. Mamy:
+$$=\frac{1}{2}\frac{n+4}{n+3}\cdot \frac{1}{\theta^n}+\int_1^\theta \frac{1}{2}\frac{n+4}{n+3}x \cdot n\cdot \frac{x^{n-1}}{\theta^n}dx=\frac{1}{2}\frac{n+4}{(n+3)(n+1)}\left(n\theta+\frac{1}{\theta^n}\right)$$
+\end{roz}
+ 
+ % zadanie 9
+
+\begin{zad}\textnormal{
+Rzucamy czterema symetrycznymi monetami. Nastêpnie rzucamy ponownie tymi monetami, na których nie wypad³y `or³y'. W trzeciej rundzie rzucamy tymi monetami, na których do tej pory nie wypadly `or³y'. Oblicz prawdopodbieñstwo, ¿e po trzech rundach na wszystkich monetach bêd¹ `or³y' (wybierz najbli¿sz¹ wartoœæ).}
+\end{zad}
+
+\begin{roz}
+Najpierw rozpatrzymy pojedyncz¹ monetê. Jakie jest p-p uzyskania or³a w 3 rzutach?:
+$$1-\left(\frac{1}{2}\right)^3=\frac{7}{8}$$
+Wobec tego jakie jest prawdopobieñstwo sukcesu dla 4 monet?
+$$\left(\frac{7}{8}\right)^4=0.586$$
+\end{roz}
+
+% zadanie 10
+
+\begin{zad}\textnormal{
+Niech $A$ i $C$ bêd¹ zdarzeniami niezale¿nymi oraz $P(A)=\frac{1}{3}$ i $P(A \cup C)=7/9$. Niech $P(B|A)=P(B|C)=P(B|A \cap C)=1/2$ i \\$P(B' | A' \cap C')=3/4$. Wtedy $P(A|B)$ jest równe.}
+\end{zad}
+
+\begin{roz} 
+Do takich zadañ podchodzi licz¹c siê wszystkie mo¿liwe prawdopodbieñstwa po drodze. Wa¿ne wzory:
+$$P(X \cup Y)=P(X)+P(Y)-P(X \cap Y)$$
+$$P(X\cup Y \cup Z)=P(X)+P(Y)+P(Z)-P(X \cap Y)-P(X \cap Z)-P(Y \cap Z)+P(X \cap Y \cap Z)$$
+$$P(X' \cap Y')=1-P(X \cup Y)$$
+ostatni wzór dzia³a równie¿ dla 3.\\
+\\
+mamy:
+$$P(B|A)=\frac{P(A \cap B)}{P(A)}=\frac{P(A \cap B)}{1/3}=1/2 \rightarrow P(A \cap B)=1/6$$
+$$P(A|B)=\frac{P(A\cap B)}{P(B)}=\frac{1/6}{P(B)}$$
+Z niezale¿noœci:
+$$P(A \cup C)=P(A)+P(C)-P(A\cap C)=P(A)+P(C)-P(A)\cdot P(C)=7/9$$
+St¹d 
+$$P(C)=2/3$$
+i st¹d
+$$P(B|C)=\frac{P(B \cap C)}{P(C)}=1/2 \rightarrow P(B \cap C)=1/3$$
+Dalej
+$$P(B | A \cap C)=\frac{P(A \cap B \cap C)}{P(A)\cdot P(C)}=1/2\rightarrow P(A\cap B \cap C)=1/2\cdot 1/3 \cdot 2/3=1/9$$
+Dalej
+$$P(B'|A' \cap C')=3/4=\frac{P(A' \cap B' \cap C')}{P(A' \cap C')}\rightarrow P(A' \cap B' \cap C')=1/6$$
+Z wzoru:
+$$P(A' \cap C')=1-P(A \cup C)=1-7/9=2/9$$
+$$1/6=P(A' \cap B' \cap C')=1-P(A \cup B \cup C)$$
+$$5/6=P(A \cup B \cup C)=P(A)+P(B)+P(C)-P(A\cap B)-P(A\cap C)- P(B \cap C)+P(A\cap B \cap C)$$
+st¹d
+$$P(B)=4/9$$
+czyli finalnie
+$$P(A|B)=\frac{P(A \cap B)}{P(B)}=3/8$$
+\end{roz}
+
+%------------------- EGZAMIN 15 czerwca 2015 ------------------
+\newpage
+\section{Egzamin z 15 czerwca2015}
+
+% zadanie 1
+
+\begin{zad}\textnormal{
+Niech $X_1,\ldots,X_9$ bêd¹ niezale¿nymi zmiennymi losowymi o jednakowym rozk³adzie prawdopodobieñstwa:
+$$P(X_i=1)=3/5 \hspace{15pt} \text{ i }\hspace{15pt} P(X_i=1)=2/5$$
+Niech $S_k=\sum_{i=1}^k X_i$ dla $k=1,2,\ldots,9$
+Prawdopodobieñstwo:
+$$P(S_9=3 \land S_1<5,S_2<5,\ldots,S_8<5)$$
+jest równe?
+}\end{zad}
+
+\begin{roz}
+Jakie jest prawdopodobieñstwo, ¿e $S_9=3$, ale bez dodakowych warunków na pozosta³e sumy? Tzn w 9 próbach mamy wylosowaæ 6 jedynek i 3 minus jedynki (jedyna opcja ¿eby uzyskaæ 3).
+$$P(S_9=3)= {9 \choose 6}\left(\frac{3}{5}\right)^6\left(\frac{2}{5}\right)^3$$
+gdzie ${9 \choose 6}$ odpowiada ze liczbê kombinacji, a pozosta³a czeœæ za prawdopodobieñstwo. Wobec tego musimy policzyæ kombinacje, które nie spe³niaj¹: niech 1 oznacza 1 a - oznacza -1: \\
+\\
+1) 1 1 1 1 1 1 - - -\\
+2) 1 1 1 1 1 - 1 - - \\
+3) 1 1 1 1 1 - - 1 - \\
+4) 1 1 1 1 1 - - - 1 \\
+5) 1 1 1 1 - 1 1 - - \\
+6) 1 1 1 - 1 1 1 - - \\
+7) 1 1 - 1 1 1 1 - - \\
+8) 1 - 1 1 1 1 1 - - \\
+9) - 1 1 1 1 1 1 - -\\
+\\
+Pozosta³e kombinacje nie odpadaj¹. Kombinacja np. nr 5 odpada bo mamy $S_1,S_2,\ldots,S_9$ równe odpowiednio $1,2,3,4,3,4,5,4,3$ w ci¹gu pojawia siê 5tka dlatego kombinacja musi odpaœæ. Mamy:
+$$P(S_9=3 \land S_1<5,S_2<5,\ldots,S_8<5)=$$
+$$=\left({9 \choose 6}-9\right)\left(\frac{3}{5}\right)^6\left(\frac{2}{5}\right)^3=0.2239$$
+\end{roz}
+
+% zadanie 2
+
+\begin{zad}\textnormal{
+W urnie znajduje siê 10 kul Zielonych, 10 kul Bia³ych i 10 kul Czarnych. Losujemy bez zwracania 9 kul. Niech
+\begin{itemize}
+\item $Z$ oznacza liczbê wylosowanych kul Zielonych,
+\item $B$ oznacza liczbê wylosowanych kul Bia³ych
+\item $C$ oznacza liczbê wylosowanych kul Czarnych
+\end{itemize}
+Wtedy wspó³czynnik kowriancji $Cov(Z,B)$ jest równy?
+}\end{zad}
+
+\begin{roz}
+Na cale za³ó¿my, ¿e kule s¹ ponumerowane i u³ozone w kolejnoœci:
+$$X_1,\ldots,X_{10},X_{11},\ldots,X_{20},X_{21},\ldots,X_{30}$$
+$X_1,\ldots,X_{10}$ to kule zielone, $X_{11},\ldots,X_{20}$ to kule bia³e, $X_{21},\ldots,X_{30}$ to kule czarne.
+Jakie jest prawdopodobieñstwo dla pojedynczej kulki, ¿e zostanie wylosowana (bez patrzenia na kolor)? Analogiczny przypadek to gdybym mia³ grupê 30 osób i na super wycieczke losowane by³o 9 osób. Jakie mam prawdopodbieñstwo, ¿e zostanê wylosowany? 
+$$P_1=\frac{{N-1 \choose k-1}}{{N \choose k}}=\frac{k}{N}$$
+Gdzie $k=9, N=30$. W liczniku s¹ wszystkie 9 osobowe dru¿yny w których ja jestem, w mianowniku s¹ wszystkie mo¿liwe dru¿yny. Niech teraz w klasie bêdzie 10 aktuariuszy. Ka¿dy aktuariusz ma prawdopodobieñstwo pojechania na wycieczkê $9/30$ jaka jest wartoœæ oczekiwana liczby wylosowanych aktuariuszy? Niech teraz w naszym przyk³adzie $X_i$ oznacza czy i-ty aktuariusz zosta³ wylosowany (przyjmuje wartoœci $0$ - nie wylosowany, $1$ - wylosowany; czyli rozk³ad dwupuntkowy). Wtedy $Z$ to liczba wylosowanych aktuariuszy i $Z$ jest sum¹ $X_i$ po $i=1,\ldots,10$. Wtedy:
+$$E(Z)=10\cdot E(X_i)=10\cdot \frac{9}{30}$$
+Powy¿sze rozumowanie stosujemy do kul i mamy 
+$$E(Z)=10\cdot \frac{9}{30}$$
+$$E(B)=10\cdot \frac{9}{30}$$
+Teraz wiemy z definicji kowariancji, ¿e 
+$$Cov(Z,B)=E(Z\cdot B)-E(Z)\cdot E(B)$$
+ale nie jesteœmy w stanie policzyæ $E(Z\cdot B)$. W zwi¹zku z tym podejdziemy do tematu inaczej:
+$$Var(B+Z)=Var(B)+Var(Z)+2Cov(Z,B)$$
+Potrzebujemy policzyæ $Var(B)$, wiemy, ¿e pojedyczna kulka ma rozk³ad dwupunktowy:
+$$P(X_i=1)=\frac{k}{N}$$
+$$P(X_i=0)=1-\frac{k}{N}$$
+Dla pojedycznej kulki
+$$E(X_i^2)=\frac{k}{N}$$
+a wariancja:
+$$Var(X_i)=\frac{k}{N}-\frac{k^2}{N^2}=\frac{k(N-k)}{N^2}$$
+Jaka jest wobec tego wariancja 
+$$Var(X_1+\ldots+X_n)=$$
+$$=Var(X_1)+Var(X_2)+\ldots+VarX_n + n\cdot (n-1) Cov(X_i,X_j)=$$
+$$=nVar(X_i)+n(n-1)Cov(X_i,X_j)$$
+przy za³o¿eniu, ¿e wszystkie wariancje i kowariancje pojedynczych zmiennych s¹ takie same (bo s¹). Liczba kowariancji wynika z faktu: $\sum2 Cov(X_i,X_j)=2\cdot {n \choose 2}=n(n-1)$
+Wariancje $X_i$ mamy to teraz jaka jest kowariancja
+$$Cov(X_i,X_j)=?$$
+Teraz:
+$$P(X_i\cdot X_j=1)=\frac{{2 \choose 2}{N-2 \choose k-2}}{{N \choose k}}=\frac{k}{N}\cdot \frac{k-1}{N-1}$$
+czyli wracaj¹c do przyk³adu z klas¹, je¿eli w klasie jest Jaœ i Ma³gosia i chcemy ¿eby oni zostali wylosowani, to interesuj¹ nas w liczniku wszystkie 9 osobowe dru¿yny, w których s¹ Jaœ i Ma³gosia a w mianowniku wszystkie mo¿liwe 9 osobowe dru¿yny.
+$$P(X_i\cdot X_j=0)=1-\frac{k}{N}\cdot \frac{k-1}{N-1}$$
+St¹d
+$$E(X_i \cdot X_j)=1\cdot \frac{k}{N}\cdot \frac{k-1}{N-1}$$
+$$Cov(X_i,X_j)=\frac{k}{N}\cdot \frac{k-1}{N-1}-\frac{k}{N}\cdot \frac{k}{N}$$
+Mamy:
+$$Var(B)=Var(X_{11}+\ldots+X_{20})=$$
+$$=10\cdot \frac{9(30-9)}{30^2}+10(10-1)\cdot (9/30\cdot 8/29 - 9^2/30^2)=\frac{42}{29}=Var(Z)$$
+$$Var(B+Z)=Var(X_1+\ldots+X_{20})=20\cdot \frac{9(30-9)}{30^2}+20(20-1)(9/30\cdot 8/29-9^2/30^2)=\frac{42}{29}$$
+$$Cov(Z,B)=\frac{Var(B_Z)-Var(B)-Var(Z)}{2}=-\frac{21}{29}$$
+Mo¿na to zadanie równie¿ rozwi¹zaæ bardzo sprytnie, zauwa¿aj¹c, ¿e 
+$$Var(B+Z+C)=0$$
+$$Var(B+Z+C)=3Var(B)+3\cdot 2 \cdot Cov(Z,B)=0$$
+st¹d
+$$Cov(Z,B)=-\frac{1}{2}Var(B)$$
+\end{roz}
+
+% zadanie 4
+
+\begin{zad}\textnormal{
+Zak³adaj¹c, ¿e obserwacje $x_1,x_2,\ldots,x_{12}$ stanowi¹ próbkê losow¹ z rozk³adu Pareto o gêstoœci
+\begin{equation*}
+ f_\theta(x)=
+\begin{cases}
+\frac{4^\theta\theta}{(4+x)^{\theta+1}} & \text{gdy } x>0,\\
+0 & \text{gdy } x \le 0
+\end{cases}
+\end{equation*}
+gdzie $\theta>0$ jest nieznanym parametrem, wyznaczono wartoœæ estymatora najwiêkszej wiarygodnoœci parametru $\theta$ i otrzymano $\hat{\theta}=1.5$. W próbce by³y dwie obserwacje o wartoœci 12, a pozosta³e dziesiêæ obserwacji mia³o wartoœci mniejsze od 12. Okaza³o siê, ¿e w rzeczywistoœci zaobserwowane wartoœci stanowi³y próbkê z uciêtego rozk³adu Pareto, czyli by³y realizacjami zmiennych losowych $X_i=\min\{Y_i,12\}$ gdzie $Y_i$, $i=1,2,\ldots,12$, s¹ niezale¿nymi zmiennymi losowymi z rozk³adu o gêstoœci $f_\theta$. Wyznaczyæ wartoœæ estymatora najwiêkszej wiarogodnoœci parametru $\theta$ po uwzglêdnieniu modifikacji za³o¿eñ.
+}\end{zad}
+
+\begin{roz}
+Funkcja wiarygodnoœci:
+$$L=\prod_{i=1}^{12} \frac{4^\theta \theta}{(4+x_i)^{\theta+1}}=\frac{4^{12\theta}\theta^{12}}{\prod_{i=1}^{12}(4+x_i)^{\theta+1}}$$ 
+logarytm z funkcji wiarygodnoœci
+$$\ln L=12\theta \ln 4+ 12 \ln \theta - \sum_{i=1}^n (\theta+1)\ln(4+x_i)$$
+Pochodna (maksymalizujemy funkcjê wiarygodnoœci):
+$$\frac{\partial L}{\partial \theta}=12\ln 4 + \frac{12}{\theta}-\sum_{i=1}^{12}\ln(4+x_i)=0$$
+st¹d
+$$\hat{\theta}=\frac{12}{\sum_{i=1}^n \ln(4+x_i)-12\ln 4}$$
+wiemy, z treœci, ¿e $\hat{\theta}=\frac{3}{2}$ st¹d:
+$$\frac{12}{\sum_{i=1}^n \ln(4+x_i)-12\ln 4}=\frac{3}{2}$$
+st¹d
+$$\frac{24}{3}+12\ln 4=\sum_{i=1}^{12}\ln(4+x_i)$$
+Teraz korzystaj¹c z treœci zadania wiemy, ¿e w rzeczywistoœci mamy rozk³ad uciêty Pareto, to znaczy, ¿e na przedziale $(0,12)$ istnieje gêstoœæ, a w punkcie $x=12$ mamy prawdopodobieñstwo punktowe. Obliczmy wobec tego
+$$P(X=12)=P(Y\ge 12)=\int_{12}^\infty \frac{4^\theta \theta}{(4+\theta)^{\theta+1}}dx=\frac{1}{4^\theta}$$
+Obliczymy wobec tego funkcjê wiarygodnoœci:
+$$L=\prod_{i=1}^{10} \frac{4^\theta\theta}{(4+x_i)^{\theta+1}} \cdot \prod_{i=1}^2 P(X_i=12)=$$
+$$=\frac{4^{10\theta}\theta^{10}}{\prod_{i=1}^{10}(4+x_i)^{\theta+1}}\cdot \frac{1}{4^{2\theta}}$$
+$$\ln L=10\theta \ln 4 + 10 \ln \theta-(\theta+1)\sum_{i=1}^{12}\ln(4+x_i)-2\theta \ln4=(*)$$
+Podstawimy teraz 
+$$\frac{24}{3}+12\ln 4=\sum_{i=1}^{12}\ln(4+x_i)$$
+czyli 
+$$\frac{24}{3}+12\ln 4=\sum_{i=1}^{10}\ln(4+x_i)+2\ln(4+12)$$
+$$\sum_{i=1}^{10}\ln(4+x_i)=\frac{24}{3}+12\ln 4-2\ln16$$
+$$(*)=10\theta \ln 4 + 10 \ln \theta-(\theta+1)\left(\frac{24}{3}+12\ln 4-2\ln16\right)-2\theta \ln4$$
+Pochodna:
+$$\frac{\partial L}{\partial \theta}=10\ln4+10\frac{1}{\theta}-\left(\frac{24}{3}+12\ln 4-2\ln16\right)-2\ln4=0$$
+$$\theta=\frac{10}{\left(\frac{24}{3}+12\ln 4-2\ln16\right)-10\ln4+2\ln4}=1.25$$
+\end{roz}
+
+% zadanie 5
+
+\begin{zad}\textnormal{
+Niech $X_1,X_2,\ldots,X_n,\ldots,$ $I_1,I_2,\ldots,I_n,\ldots,N$ bêd¹ niezale¿nymi zmiennymi losowymi. Zmienne $X_1,X_2,\ldots,X_n,\ldots$ maj¹ rozklad o wartoœci oczekiwanej 4 i wariancji 1. Zmienne $I_1,I_2,\ldots,I_n,\ldots$ maj¹ rozk³ad jednostajny na przedziale $(0,1)$. Zmienna $N$ ma rozk³ad ujemny dwumianowy:
+$$P(N=n)=\frac{\Gamma(2+n)}{n!}\left(\frac{3}{4}\right)^2\left(\frac{1}{4}\right)^n$$ 
+dla $n=0,1,2,\ldots$.Niech
+\begin{equation*}
+ S_N=
+\begin{cases}
+0 & \text{gdy } N=0,\\
+\sum_{i=1}^n I_i X_i & \text{gdy } N>0
+\end{cases}
+\end{equation*}
+Wtedy $Var(S_N)$
+}\end{zad}
+
+\begin{roz}
+\textbf{Rozk³ad ujemny dwumianowy}
+$$p_k=\frac{\Gamma(r+k)}{\Gamma(r)k!}p^r(1-p)^k$$
+$$E(X)=\frac{r(1-p)}{p}$$
+$$VAR(X)=\frac{r(1-p)}{p^2}$$
+Mamy:
+$$Var(S_N)=E(S_N^2)-(E(S_N))^2$$
+$$E(S_N)=E(E(S_N|N))$$
+$$E(S_N|N)=E\left(\sum_{i=1}^N I_iX_i\right)=N\cdot E(I_i)E(X_i)=N\cdot \frac{1}{2}\cdot 4=2N$$
+$$E(2N)=?$$
+Z wzoru na rozk³ad dwumianowy mamy: 
+$$E(N)=\frac{2(1-3/4)}{3/4}$$
+$$Var(N)=\frac{2(1-3/4)}{(3/4)^2}$$
+Czyli 
+$$E(2N)=2E(N)=2\frac{2(1-3/4)}{3/4}=\frac{4}{3}$$
+Dalej
+$$E(S_N^2)=E(E(S_N^2|N))$$
+$$E(S_N^2|N)=E\left(\left(\sum_{i=1}^N I_i X_i\right)^2\right)=NE(I_i^2X_i^2)+N(N-1)E(I_iX_i I_j X_j)=$$
+powy¿sze ³atwo zauwa¿yæ z rozpisania sumy, mamy dalej:
+$$=NE(I_i^2)E(X_i^2)+N(N-1)E(I_i)^2E(X_i)^2=(*)$$
+Teraz: wariancja w rozk³adzie jednostajnym to $(b-a)^2/12$, w naszym przypadku to $Var(I_i)=1/12$, skoro $E(I_i)=1/2$ to $E(I_i^2)=1/12+(1/2)^2=1/3$, dla $X_i$ mamy $E(X^2)=1+4^2=17$
+$$(*)=\frac{17}{3}N+N(N-1)\frac{1}{4}\cdot 16$$
+$$E\left(\frac{17}{3}N+N(N-1)4\right)=$$
+$$=\frac{17}{3}\cdot E(N)+E(N^2)\cdot 4-E(N)\cdot4=(*)$$
+$$E(N^2)=Var(N)+(E(N))^2=\frac{2(1-3/4)}{(3/4)^2}+\left(\frac{2(1-3/4)}{3/4}\right)^2=\frac{4}{3}$$
+$$E(N)=\frac{2(1-3/4)}{3/4}=\frac{2}{3}$$
+$$(*)=\frac{58}{9}$$
+$$Var(S_N)=\frac{58}{9}-(4/3)^2=\frac{14}{3}$$
+\end{roz}
+
+% zadanie 6
+
+\begin{zad}\textnormal{
+Niech $X_1,X_2,\ldots,X_n,\ldots$ bêd¹ niezale¿nymi zmiennymi losowymi o identycznym rozk³adzie o gêstoœci
+\begin{equation*}
+ f(x)=
+\begin{cases}
+\frac{3}{x^4} & \text{gdy } x>1,\\
+0 & \text{gdy } x \le 1
+\end{cases}
+\end{equation*}
+Niech $U_n=\left(X_1\cdot X_2\cdot \ldots\cdot X_N\right)^{\frac{1}{n}}$. Wtedy:
+\begin{enumerate}[(a)] % (a), (b), (c), ...
+\item $ \hspace{5pt} \lim_{n\rightarrow \infty}P\left((U_n-1.5)\sqrt{n}>\frac{9}{4}\right)=0.1587$
+\item $ \hspace{5pt} \lim_{n\rightarrow \infty}P\left((U_n-1.5)\sqrt{n}>3e^3\right)=0.1587$
+\item $ \hspace{5pt} \lim_{n\rightarrow \infty}P\left((U_n-e^{1/3})\sqrt{n}>3e^{-1/3}\right)=0.1587$
+\item $ \hspace{5pt} \lim_{n\rightarrow \infty}P\left((U_n-e^{-1/3})\sqrt{n}>3e^{1/3}\right)=0.1587$
+\item $ \hspace{5pt} \lim_{n\rightarrow \infty}P\left(3(U_n-e^{1/3})\sqrt{n}>e^{1/3}\right)=0.1587$
+\end{enumerate}
+}\end{zad}
+
+\begin{roz}
+Widaæ, ¿e mamy $U_n$ gdzie jest iloczyn, ¿eby to zmieniæ na sumê weŸmiemy logarytm z tej zmiennej
+$$\ln(U_n)=\frac{1}{n}\sum_{i=1}^n \ln X_i$$
+jaki rozk³ad ma $\ln X_i$? Skorzystajmy ze wzorów na transformacjê:
+$$Y=lnX$$
+$$X=e^Y \rightarrow h(y)=e^y$$
+Wtedy gêstoœæ ma postaæ:
+$$g(y)=f(h(y))\cdot |h'(y)|$$
+$$g(y)=\frac{3}{e^{4y}}\cdot e^y=\frac{3}{e^{3y}}=3\cdot e^{-3y}$$
+popatrzmy teraz czy gêstoœæ siê zgadza, $x>1$ to oznacza, ¿e $y$ zaczyna siê od zera. Jest ok. Widaæ, ¿e mamy rozk³ad Beta 
+$$EX=\frac{1}{3}$$
+$$VarX=\frac{1}{9}$$
+\textbf{Gdy n d¹¿y do nieskoñczonoœci suma zmiennych losowych o dowolnym rozk³adzie ma rozk³ad normalny.}\\
+\\
+Czyli $\sum lnX_i\sim N(1/3 n, 1/9n)$, a przed sum¹ mamy jeszcze $1/n$
+$$\ln U_n \sim N\left(\frac{1}{3},\frac{1}{9n}\right)$$
+Patrz¹c na odpowiedzi mamy:
+$$P\left((U_n-a)\sqrt{n}>b\right)=$$
+$$=P\left(U_n\sqrt{n}>b+a\sqrt{n}\right)=$$
+$$=P\left(\ln U_n>\ln\left(\frac{b+a\sqrt{n}}{\sqrt{n}}\right)\right)$$
+Znormalizujmy $\ln U_n$
+$$\frac{\ln U_n-1/3}{\frac{1}{3\sqrt{n}}}\sim N(0,1)$$
+$$P\left(\frac{\ln U_n-1/3}{\frac{1}{3\sqrt{n}}}>\frac{\ln\left(\frac{b+a\sqrt{n}}{\sqrt{n}}\right)-1/3}{\frac{1}{3\sqrt{n}}}\right)$$
+$$P(X>C)=0.1587$$
+z tablic rozk³adu normalnego $P(X<C)=0.8413$ wynika, ¿e C=1. Wszystko przy za³o¿eniu, ¿e $n\rightarrow \infty$
+$$\frac{\ln\left(\frac{b+a\sqrt{n}}{\sqrt{n}}\right)-1/3}{\frac{1}{3\sqrt{n}}}=1$$
+$$3\sqrt{n}\left(\ln\left(\frac{b+a\sqrt{n}}{\sqrt{n}}\right)-1/3\right)=1$$
+$$\left(3\sqrt{n}\ln\left(\frac{b+a\sqrt{n}}{\sqrt{n}}\right)-\sqrt{n}\right)=1$$
+$$\left(3\ln\left(\frac{b+a\sqrt{n}}{\sqrt{n}}\right)^{\sqrt{n}}-\sqrt{n}\right)=1$$
+rozwa¿my
+$$3\ln\left(\frac{b+a\sqrt{n}}{\sqrt{n}}\right)^{\sqrt{n}}=3\ln\left(a+\frac{b}{\sqrt{n}}\right)^{\sqrt{n}}=$$
+przypominamy sobie, ¿e $\lim_{n\rightarrow \infty}\left(1+\frac{k}{n}\right)^n = e^k$
+$$=3\cdot \ln\left(a\left(1+\frac{b}{a\sqrt{n}}\right)\right)^{\sqrt{n}}=3 \sqrt{n}\cdot\ln a + 3\cdot \ln(e^{b/a})$$
+mamy w granicy $n \rightarrow \infty$:
+$$3 \sqrt{n}\cdot\ln a + 3\cdot \frac{b}{a}-\sqrt{n}=1$$
+st¹d dochodzimy do wniosku 
+$$a=e^{1/3}$$
+st¹d 
+$$3\cdot \frac{b}{e^{1/3}}=1\rightarrow b=\frac{1}{3}\cdot e^{\frac{1}{3}}$$
+OdpowiedŸ E.
+\end{roz}
+
+% zadanie 7
+
+\begin{zad}\textnormal{
+Niech $X_1,\ldots,X_{10}$ bêd¹ niezale¿nymi zmiennymi losowymi o identycznym rozk³adzie normalnym $N(\mu,\sigma^2)$ z nienanymi parametrami $\mu \in R$ i $\sigma>0$. Budujemy przedzia³ ufnoœci dla parametru $\mu$ postaci:
+$$[X_{3:10},X_{7:10}],$$
+gdzie $X_{k:10}$ oznacza k-t¹ statystykê pozycyjn¹ z próby $X_1,X_2,\ldots,X_{10}$. Wtedy prawdopodobieñstwo 
+$$P_{\mu,\sigma}(\mu \in [X_{3:10},X_{7:10}])$$
+jest równe: ?.
+}\end{zad}
+
+\begin{roz}
+Tutaj mamy nastêpuj¹c¹ sytuacjê, szukamy:
+$$P(X_{3:10}\le\mu\le_{7:10})$$
+Z warunków zadania mamy:
+$$X_{3:10}\le\mu$$
+Wartoœci sa z rozk³adu normalnego wiêc nie ma prawdopodobieñstwa, ¿e liczba jest dok³adnie równa $\mu$. Dodatkowo rozk³ad jest symetryczny czyli 
+$$P(X_i<\mu)=1/2$$ 
+dla ka¿dego $i$. Warunek $X_{3:10}\le \mu$ oznacza, ¿e trzy najmniejsze zmienne musza byæ mniejsze od $\mu$, warunek $X_{7:10}$ oznacza, ¿e 4 najwiêksze zmienne musz¹ byæ wiêksze od $\mu$. Je¿eli u³o¿ymy (jedno z mo¿liwych losowañ) zmienne:
+$$\underbrace{X_1<X_2<X_3}_{X_3<\mu}<X_4<X_5<X_6<\underbrace{X_7<X_8<X_9<X_{10}}_{X_7>\mu}$$
+Rozpatrzmy wobec tego przypadki kiedy próbka nie spe³nia warunków, ¿eby byæ w przedziale ufnoœci. Nie mo¿e byæ:
+\begin{enumerate}
+\item 10 zmiennych wiêkszych od $\mu$, czyli p-p $(1/2)^{10}$, co oznacza, ¿e wszystkie s¹ mniejsze
+\item 9 zmiennych wiêkszych od $\mu$, czyli p-p ${10 \choose 9}\cdot (1/2)^{9}\cdot (1/2)^1$, co oznacza, ¿e tylko jedna jest mniejsza
+\item 8 zmiennych wiêkszych od $\mu$, czyli p-p ${10 \choose 8}\cdot (1/2)^{8}\cdot (1/2)^2$, co oznacza, ¿e tylko dwie s¹ mniejsze
+\item 10 zmiennych mniejszych od $\mu$, czyli p-p $(1/2)^{10}$
+\item 9 zmiennych mniejszych od $\mu$, czyli p-p ${10 \choose 9}\cdot (1/2)^9\cdot (1/2)^1$
+\item 8 zmiennych mniejszych od $\mu$, czyli p-p ${10 \choose 8}\cdot (1/2)^8\cdot (1/2)^2$
+\item 7 zmiennych mniejszych od $\mu$, czyli p-p ${10 \choose 7}\cdot (1/2)^7\cdot (1/2)^3$, co oznacza, ¿e tylko 3 s¹ wiêksze od $\mu$ 
+\end{enumerate}
+Suma powy¿szych prawodpodobieñstw da nam prawdopodbieñstwo $P(\not\in [X_{3:10},X_{7:10}])$. Mamy:
+$$P(\not\in [X_{3:10},X_{7:10}])=(1/2)^{10}(1+10+45+1+10+45+120)=\frac{29}{128}$$
+$$ODP=1-\frac{29}{128}=\frac{99}{128}$$
+\end{roz}
+
+% zadanie 8
+
+\begin{zad}\textnormal{
+Niech $(X,Y)$ bêdzie dwuwymiarow¹ zmienn¹ losow¹ z rozk³adu o gêstoœci 
+\begin{equation*}
+ p(x,y)=
+\begin{cases}
+2x & \text{gdy } x\in(0,1)\land y \in (0,1),\\
+0 & \text{w przeciwnym przypadku}
+\end{cases}
+\end{equation*}
+Niech $U=X+Y$ i $V=X-Y$. Wtedy $E\left(U|V=\frac{1}{3}\right)$ jest równa ?
+}\end{zad}
+
+\begin{roz}
+Mamy:
+$$E\left( X+Y | X-Y=\frac{1}{3}\right)=$$
+$$=E\left( X+Y | Y=X-\frac{1}{3}\right)=$$
+$$=E\left(2X-\frac{1}{3}| Y=X-\frac{1}{3}\right)$$
+Rysujemy rysunek pomocniczy i uwzglêdniamy, ¿e $x\in(0,1)\land y \in (0,1)$. Liczymy z definicji:
+$$E(2X-1/3|Y=X-1/3)=\frac{\int_{1/3}^1 (2x-1)\cdot 2x\cdot dx}{\int_{1/3}^1 2x\cdot dx}=\frac{10}{9}$$
+\end{roz}
+
+% zadanie 9
+
+\begin{zad}\textnormal{
+Niech $X_1,X_2,\ldots,X_{10}$ bed¹ niezale¿nymi zmiennymi losowymi o identycznym rozk³adzie Weibulla o gêstoœci
+\begin{equation*}
+ f_\theta(x)=
+\begin{cases}
+2\theta x \exp(-\theta x^2) & \text{gdy } x\in(0,+\infty)\\
+0 & \text{w przeciwnym przypadku}
+\end{cases}
+\end{equation*}
+gdzie $\theta>0$ jest nieznanym parametrem. Testem jednostajnie najmocniejszym na poziomie istotnoœci 0.05 weryfikujemy hipotezê $H_0:\theta \le 2$ przy alternatywie $H_1:\theta>2$. Niech $F_k(x)$ oznacza dystrybuantê rozk³adu chi-kwadrat z $k$ stopniami swobody w punkcie $x$.\\
+Moc tego testu przy alternatywie $H_1:\theta=6$ jest równa ?.
+}\end{zad}
+
+\begin{roz}
+ \textbf{Moc testu statystycznego rozumiana jest jako prawdopodobieñstwo nieodrzucenia $H_1$ przy jej prawdziwoœci (odrzucenie $H_0$ przy jej fa³szywoœci)}.\\
+ \\
+ Test jednostajnie najmocniejszy tworzymy poprzez zbudowanie ilorazu wiarygodnoœci. Gdy:
+ $$\frac{L_1}{L_0}>c$$
+ to odrzucamy $H_0$. Mamy:
+ $$L_1=\prod_{i=1}^{10}2\theta_1 e^{-\theta_1 x_i^2}=2^{10}\theta_1^{10}e^{-\sum_{i=1}^{10}\theta_1 x_i^2}$$
+ $$L_0=\prod_{i=1}^{10}2\theta_0 e^{-\theta_0 x_i^2}=2^{10}\theta_0^{10}e^{-\sum_{i=1}^{10}\theta_0 x_i^2}$$
+ mamy:
+ $$\frac{L_1}{L_0}=\frac{\theta_1^{10}}{\theta_0^{10}}e^{(\theta_0-\theta_1)\sum_{i=1}^{10}x_i^2}=$$
+ $$\frac{\theta_1^{10}}{\theta_0^{10}}\exp{\left((\theta_0-\theta_1)\cdot \sum_{i=1}^{10}x_i^2\right)}>c$$
+ st¹d mo¿emy podzieliæ przez $\theta_1^{10}/\theta_0^{10}$ a nastêpnie wzi¹æ logarytm i mamy:
+ $$(\theta_0-\theta_1)\cdot \sum_{i=1}^{10}x_i^2>c$$
+ wiemy z treœci, ¿e $\theta_0<\theta_1$ czyli po podzieleniu przez $(\theta_0-\theta_1)$ odwracamy znak nierównoœci:
+ $$\sum_{i=1}^{10}x_i^2<c$$
+ Jaki rozk³ad ma suma kwadratów zmiennych o rozk³adzie Weibulla? Wymyœlmy najpierw jaki rozk³ad ma $x_i^2$ Skorzystamy ze wzorów na transformacjê:
+ $$Y=X^2\rightarrow x=\sqrt{Y}$$
+ gêstoœæ $Y$:
+ $$g(y)=f(h(y))|h'(y)|$$
+ $$h(y)=\sqrt{y}$$
+ mamy:
+ $$h'(y)=\frac{1}{2\sqrt{y}}$$
+ $$g(y)=2\theta \cdot \sqrt{y}\cdot e^{-\theta x}\cdot \frac{1}{2\sqrt{y}}=\theta\cdot e^{-\theta x}$$
+ czyli 
+ $$g(y)=\theta \cdot e^{-\theta x}$$
+ co oznacza, ¿e $X_i^2$ ma rozk³ad wyk³adniczy z $\beta=\theta$, suma zmiennych o rozk³adzie wyk³adniczym daje rozk³ad Gamma:
+ $$\sum_{i=1}^{10}X_i^2\sim Gamma(10,\theta)$$
+ Wiêc chcemy wyznaczyæ $c$ gdy:
+ $$P\left(\sum_{i=1}^{10}X_i^2>c\right)=0.05$$
+ oczywiœcie nie mam tablic gamma, wiêc muszê przejœæ przez rozk³ad $\chi^2$. Gdy $\alpha=\frac{n}{2}$ oraz $\beta=\frac{1}{2}$ to mamy rozk³ad ch-kwadrat z n stopniami swobody. Niech $\sum_{i=1}^{10}X_i^2=Z$
+ $$2\theta\cdot Z\sim Gamma\left(10,\frac{\theta}{2\theta}\right)=\chi^2(20)$$
+ bo gdy $X \sim Gamma(a,b) \rightarrow kX \sim Gamma(a,\frac{b}{k})$
+ $$P(2\cdot \theta \cdot Z<2\theta c)=0.05 $$
+ z tablic 
+ $$2\cdot \theta \cdot c=10.8508$$
+ gdy podstawimy $\theta=2$ (z $H_0$) to mamy $2\cdot 2 \cdot c=10.8508$
+ Teraz gdy podstawimy $\theta=6$ mamy:
+ $$2\cdot 6 \cdot c = 10.8508\cdot 3=32.5524 $$
+ czyli prawdopodobieñstwo odrzucenia $H_0$ przy jej fa³szywoœci to:
+ $$F_{20}(32.5524)$$
+\end{roz}
+
+% zadanie 10
+
+\begin{zad}\textnormal{
+Za³ó¿my, ¿e $X_1,X_2,\ldots,X_n,\ldots$ s¹ niezale¿nymi zmiennymi losowymi o tym samym rozk³adzie jednostajnym na przedziale $[0;1]$, zaœ $N$ jest mzienn¹ losow¹ o rozk³adzie Poissona z wartoœci¹ oczekiwan¹ 2, niezale¿n¹ od zmiennych losowych $X_1,X_2,\ldots,X_n,\ldots$. Niech:
+\begin{equation*}
+ Y_N=
+\begin{cases}
+\min\{X_1,X_2,\ldots,X_N\} & \text{gdy } N>0,\\
+0 & \text{gdy} N=0
+\end{cases}
+\end{equation*}
+\begin{equation*}
+ Z_N=
+\begin{cases}
+\max\{X_1,X_2,\ldots,X_N\} & \text{gdy } N>0,\\
+0 & \text{gdy} N=0
+\end{cases}
+\end{equation*}
+Obliczyæ $E(Z_N-Y_N)$
+}\end{zad}
+
+\begin{roz}
+Czyli mamy obliczyæ: 
+$$E(Z_N-Y_N)=E(Z_N)-E(Y_N)$$
+Najpierw policzymy 
+$$E(Z_N)=E(E(Z_N|N))$$
+jaki rozk³ad ma maksimum? W³asnoœci maksimum i rozk³adu jednostajnego:
+$$P(\max\{X_1,\ldots,X_N\}<t)=P(X_i<t)^N=t^N$$
+$$f_{max}(x)=N\cdot t^{N-1}$$
+Przy okazji rozk³ad minimum:
+$$P(\min\{X_1,\ldots,X_N\}<t)=1-P(\min\{X_1,\ldots,X_N\}>t)=$$
+$$=1-P(X_i>t)^N=1-(1-t)^N$$
+$$f_{min}(x)=N\cdot(1-t)^{N-1}$$
+Wobec tego:
+$$E(Z_N|N)=\int_0^1 t\cdot N\cdot t^{N-1}dt=\frac{N}{N+1}$$
+tu nale¿y byæ ostro¿ny z przypadkiem co siê dzieje gdy $N=0$ widzimy, ¿e $Z_N$ przyjmuje wartoœæ zero wiêc jest ok.
+Z rozk³adu poissona $P(X=k)=\frac{\lambda^k e^{-\lambda}}{k!}$
+$$E\left(\frac{N}{N+1}\right)=\sum_{n=0}^\infty \frac{n}{n+1}\frac{2^ne^{-2}}{n!}=$$
+ma³y trick:
+$$=\sum_{n=0}^\infty \frac{n+1-1}{n+1}\frac{2^ne^{-2}}{n!}=\sum_{n=0}^\infty \frac{n+1}{n+1}\frac{2^ne^{-2}}{n!}-\sum_{n=0}^{\infty}\frac{1}{n+1}\frac{2^ne^{-2}}{n!}=$$
+$$=1-\sum_{n=0}^{\infty}\frac{1}{n+1}\frac{2^ne^{-2}}{n!}=(*)$$
+mamy:
+$$\sum_{n=0}^{\infty}\frac{1}{n+1}\frac{2^ne^{-2}}{n!}=\frac{1}{2}\sum_{n=0}^\infty \frac{2^{n+1}e^{-2}}{(n+1)!}=\frac{1}{2}\sum_{k=1}^\infty \frac{2^{k}e^{-2}}{k!}=\frac{1}{2}(1-e^{-2})$$
+st¹d
+$$(*)=1-\frac{1}{2}(1-e^{-2})=\frac{1}{2}+\frac{1}{2}e^{-2}$$
+Teraz 
+$$E(Y_N|N)=\int_0^1 t\cdot  N\cdot(1-t)^{N-1}dt=\frac{1}{N+1}$$
+i tu \textbf{mamy problem z zerem} bo gdy $N=0$ powinno byæ $E(Y_0)=0$. Powy¿sze rozwi¹zanie ca³ki jest prawd³owe gdy $N>0$. St¹d mamy:
+$$E(Y_N|N)=\underbrace{E(E(Y_N|N)|N=0)}_{=0}\cdot P(N=0)+E(E(Y_N|N)|N>0)\cdot P(N>0)=$$
+$$=0+\sum_{n=1}^\infty \frac{1}{n+1}\cdot \frac{2^ne^{-2}}{n!}=(*)$$
+Wiemy, ¿e od zera:
+$$\sum_{n=0}^{\infty}\frac{1}{n+1}\frac{2^ne^{-2}}{n!}=\frac{1}{2}(1-e^{-2})$$
+Wobec tego jak od wyniku odejmiemy pierwszy wyraz to mamy to co chcemy:
+$$\sum_{n=1}^\infty \frac{1}{n+1}\cdot \frac{2^ne^{-2}}{n!}=\frac{1}{2}(1-e^{-2})-e^{-2}$$
+$$(*)=\frac{1}{2}(1-e^{-2})-e^{-2}$$
+Czyli mamy:
+$$E(Z_N-Y_N)=E(Z_N)-E(Y_N)=\frac{1}{2}+\frac{1}{2}e^{-2}-\frac{1}{2}(1-e^{-2})+e^{-2}=2e^{-2}$$
+\end{roz}
+
+\end{document}
+
+

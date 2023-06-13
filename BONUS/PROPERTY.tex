@@ -1,0 +1,173 @@
+%& --translate-file=cp1250pl
+
+\documentclass{article}
+\usepackage[cp1250]{inputenc}
+\usepackage{polski}
+\usepackage{lifecon}
+\newtheorem{tw}{Twierdzenie}[section]
+\usepackage{dsfont}
+\usepackage{fancyheadings}
+\newtheorem{zad}{Zadanie}[section]
+\newtheorem{roz}{Rozwi¹zanie}[section]
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[CO,CE]{Matematyka ubezpieczeñ maj¹tkowych - wzory}
+\section{Podstawy}
+\textbf{1. Prawdopodobieñstwo warunkowe}\\
+\\
+Prawdopodobieñstwem warunkowym zajœcia zdarzenia  A  pod warunkiem zajœcia zdarzenia  B , gdzie $P(B)>0$ nazywamy liczbê
+
+$$P(A|B)=\frac{P(A \cap B)}{P(B)}$$
+\textbf{2. Wzór Newtona}
+$$(x+y)^n = \sum_{k=0}^n \binom{n}{k}x^{n-k}y^k.$$
+\textbf{3. Szeregi}
+$$I_0(v)=\sum_{n=0}^\infty v^n = \frac{1}{1-v}$$
+$$I_1(v)=\sum_{n=1}^{\infty} n v^n =\frac{v}{(1-v)^2}$$
+$$I_2(v)=\sum_{n=1}^\infty n^2 v^n=\frac{v(v+1)}{(1-v)^3}$$
+\textbf{4. Prawo wielkich liczb}
+$$    \Pr\!\left( \lim_{n\to\infty}\overline{X}_n = \mu \right) = 1.$$
+czyli, œrednia zbiega do wartoœci oczekiwanej! \\
+\\
+\textbf{5. Prawdopodobieñstwo ca³kowite}
+$$P(A)=\sum_{i \in I} P(A|H_i)P(H_i)$$
+\section{Rozk³ady}
+\textbf{Rozk³ad zero-jedynkowy}
+Rozk³ad zero-jedynkowy – dyskretny rozk³ad prawdopodobieñstwa, szczególny przypadek rozk³adu dwupunktowego, dla którego zmienna losowa przyjmuje tylko wartoœci: 0 i 1.\\
+\\
+Niech $X_1,\dots, X_n$ bêd¹ niezale¿nymi zmiennymi losowymi o takim samym rozk³adzie dwupunktowym. Wtedy suma:
+$$S_n = X_1 + \dots + X_n$$
+ma rozk³ad dwumianowy.\\
+\\
+\textbf{Rozk³ad dwumianowy}\\
+\\
+Dyskretny rozk³ad prawdopodobieñstwa opisuj¹cy liczbê sukcesów k w ci¹gu N niezale¿nych prób, z których ka¿da ma sta³e prawdopodobieñstwo sukcesu równe $p$.
+$$P(X=k)={n \choose k}p^k(1-p)^{n-k}$$
+dla $k=0,1,\ldots,n$
+$$E(X)=np$$
+$$Var(X)=np(1-p)$$
+\textbf{Rozk³ad ujemny dwumianowy}
+$$P(X=k) =  {k+r-1 \choose k}\cdot (1-p)^r p^k,\!$$
+$$EX=\frac{pr}{1-p}$$
+$$VarX=\frac{pr}{(1-p)^2}$$
+\textbf{Rozk³ad ujemny dwumianowy 2 (W. Wo³yñski za³¹cznik)}\\
+\\
+Zmienna losowa N ma rozk³ad ujemny dwumianowy z prametrami $(r,q)$, (oznaczamy $NB(r,q)$), jeœli 
+$$Pr(N=k)=\dbinom{r+k-1}{k} p^rq^k$$
+, $k=0,1,2,3,\ldots$. Inaczej:
+$$Pr(N=k)=\frac{\Gamma{(r+k)}}{\Gamma{(r)\cdot k!}}p^rq^k$$\\
+Wartoœæ oczekiwana i wariancja:
+$$EN=\frac{r(1-p)}{p}$$
+$$VarN=\frac{r(1-p)}{p^2}$$
+\textbf{Rozk³ad jednostajny ci¹g³y na przedziale $[a,b]$}
+$$f(x)=\frac{1}{b-a}$$
+$$F(x)=\frac{x-a}{b-a}$$
+$$E(X)=\frac{a+b}{2}$$
+$$VAR(X)=\frac{(b-a)^2}{12}$$
+\textbf{Rozk³ad wyk³adniczy}
+$$f(x)=\beta e^{-\beta x}$$
+$$E(X)=\frac{1}{\beta}$$
+$$VAR(X)=\frac{1}{\beta^2}$$
+\textbf{Rozk³ad Poissona}
+$$f(k,\lambda)=\frac{\lambda^k e^{-\lambda}}{k!}$$
+dla $k=0,1,2,\ldots$
+$$E(X)=\lambda$$
+$$Var(X)=\lambda$$
+Je¿eli $X \sim P(\lambda)$ i $Y \sim P(\mu)$ to $X+Y \sim P(\lambda+\mu)$\\
+\\
+\textbf{Rozk³ad Geometryczny}
+$$p_k=P(X=k)=(1-p)^k\cdot p$$
+dla $k=0,1,2,\ldots$
+$$E(X)=\frac{1-p}{p}$$
+$$Var(X)=\frac{1-p}{p^2}$$
+\textbf{Rozklad Gamma}
+$$f(x)=\frac{\beta^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x} \hspace{15pt} x>0$$
+$$E(X)=\frac{\alpha}{\beta}$$
+$$Var(X)=\frac{\alpha}{\beta^2}$$
+(1) gdy $X\sim Gamma(a_1,b)$, $Y\sim Gamma(a_2,b)$ to $X+Y \sim Gamma(a_1+a_2,b)$\\
+\\
+(2) gdy $\alpha=1$ to mamy rozk³ad wyk³adniczy $Exp(\beta)$\\
+\\
+(3) gdy $\alpha=\frac{n}{2}$ oraz $\beta=\frac{1}{2}$ to mamy rozk³ad ch-kwadrat z n stopniami swobody\\
+\\
+(4) gdy $X\sim Gamma(a,b) \rightarrow 2\cdot b \cdot X \sim \chi^2(n)$, $n=2\cdot a$\\
+\\
+Dla przypomnienia $F(n)=(n-1)!$, $F(n+1)=n!$
+\section{Wartoœæ oczekiwana}
+W klasycznym przypadku warunkowa wartoœæ oczekiwana:
+$$ E(X|A)=\frac{1}{P(A)}\int\limits_A X(\omega)d P$$
+Rozpisana:
+$$E(X|Y=y)=\int_{-\infty}^\infty xf(x|y)dx=\frac{1}{f_Y(y)}\int_{-\infty}^{\infty}xf(x,y)dx=\frac{\int_{-\infty}^\infty xf(x,y)dx}{\int_{-\infty}^\infty f(x,y)dx}$$
+\section{Model ryzyka ³¹cznego}
+Niech $$X=Y_1+Y_2+\ldots+Y_N$$
+wtedy
+$$EX=E(Y_1+\ldots+Y_N)=E(N)\cdot E(Y_1)$$
+Ze wzoru na dekompozycjê wariancji:
+$$Var(X)=E(Var(X|N))+Var(E(X|N))$$
+mamy:
+$$Var(X)=EN\cdot Var(Y)+Var(N)\cdot (EY)^2$$
+
+\section{Przypadek mieszaniny rozk³adów wyk³adniczych}
+\textbf{Rozk³ad wartoœci pojedynczej szkody dla mieszaniny portfeli (mieszanina rozk³adów wyk³adniczych)}
+\begin{equation*}
+ f_Y(x)=
+\begin{cases}
+\sum_{i=1}^n w \cdot \beta_i \cdot e^{-\beta_i \cdot x} & \text{dla } x>0,\\
+0 & \text{dla } x \le 0
+\end{cases}
+\end{equation*}
+gdzie $0<\beta_1<\beta_2<\ldots<\beta_n$ oraz wagi $w_i$ s¹ dodatnie i sumuj¹ siê do jednoœci. Wtedy prawdopodobieñstwo ruiny wyra¿a siê wzorem (p-p ruiny zak³adu ubezpieczeñ, $n$- liczba portfeli):
+$$\Psi(u)=\sum_{i=1}^n a_i \cdot \exp(-r_i \cdot u)$$
+gdzie $r_1,r_2,\ldots,r_n$ to $n$ najwiêkszych (ró¿nych) rozwi¹zañ równania
+$$\sum_{i=1}^n w_i \cdot \frac{\beta_i}{\beta_i-r}=1+(1+\theta)\cdot \mu \cdot r$$
+gdzie $0\le r_1<\beta_1<\ldots<r_n< \beta_n$ oraz gdzie $\mu$ to wysokoœæ œredniej szkody w portfelu. Wartoœci $a_1,a_2,\ldots,a_n$ otrzymamy rozwi¹zuj¹c uk³ad równañ liniowych, który daje siê zapisaæ w postaci:
+\begin{equation*}
+\begin{bmatrix}
+\frac{\beta_1}{\beta_1-r_1} & \frac{\beta_1}{\beta_1-r_2} & \ldots & \frac{\beta_1}{\beta_1-r_n} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\beta_n}{\beta_n-r_1} & \frac{\beta_n}{\beta_n-r_2} & \ldots & \frac{\beta_n}{\beta_n-r_n} 
+\end{bmatrix}\cdot
+\begin{bmatrix}
+a_{1} \\
+\vdots \\
+a_{n}
+\end{bmatrix}=
+\begin{bmatrix}
+1 \\
+\vdots \\
+1
+\end{bmatrix}
+\end{equation*}
+\section{Prawdopodobieñstwo ruiny}
+Rozwa¿my klasyczny model procesu nadwy¿ki $U(t)=u+ct-S_{N(t)}$, gdzie:
+\begin{itemize}
+\item $u$ to nadwy¿ka pocz¹tkowa
+\item $ct$ to suma sk³adek zgromadzonych do momentu $t$
+\item $S_n=\sum_{i=1}^n Y_i$ to ³¹czna wartoœæ szkód zasz³ych do momentu t,
+\item proces licz¹cy $N(t)$ oraz wartoœci poszczególnych szkód $Y_1,Y_2,Y_3,\ldots$ s¹ niezale¿ne, przy czym:
+\item $N(t)$ jest procesem Poissona z parametrem o intensywnoœci $\lambda$,
+\item wartoœci poszczególnych szkód $Y_1,Y_2,Y_3,\ldots$ maj¹ ten sam rozk³ad (przy czym zazwyczaj jest to rozk³ad wyk³adniczy)
+\item $c=(1+\theta)\cdot \lambda \cdot E(Y_1),\hspace{15pt} \theta>0$
+\end{itemize}
+Klasyczny model procesu nadwy¿ki:
+$$U(t)=u+ct-S_{N(t)}$$
+Prawdopodobieñstwo ruiny:
+$$\Psi(u)=\frac{e^{-Ru}}{E(e^{-RU(t)}|T <\infty)}$$
+gdzie $T$ - moment ruiny, $R$ - wspó³czynnik dopasowania. $R$ to dodatnie rozwi¹zanie równania:
+$$M_W(r)=e^{cr}$$
+czyli
+$$E(e^{rW})=e^{cr}$$
+gdzie $W$ mo¿na traktowaæ jako wysokoœæ pojedycznej szkody. \\
+\\
+Wyk³adniczy rozk³ad wartoœci przysz³ej szkody:
+$$f(y)=\beta \cdot e^{-\beta y}$$
+je¿eli intensywnoœæ sk³adki jest równa 
+$$c=\frac{\lambda(1+\theta)}{\beta}$$ to przy wyk³adiczym rozk³adzie wysokoœci szkód oraz procesie $N(t)$ (liczby szkód) bêd¹cym procesem Poissona mamy:
+$$\Psi(u)=\frac{e^{-Ru}}{1+\theta}$$
+$$R=\frac{\beta \theta}{1+\theta}$$
+Ogólny wzór na prawdopodobieñstwo, ¿e dojdzie do ruiny, a g³êbokoœæ bêdzie wiêksza równa h:
+$$G(0,h)=\frac{1}{1+\theta}\cdot \frac{E((Y-h)_+)}{E(Y)}$$
+Bardzo wa¿na uwaga, przy dowolnym rozk³adzie pojedycznej szkody
+$$\Psi(0)=\frac{1}{1+\theta}$$
+\end{document}

@@ -1,0 +1,1696 @@
+%& --translate-file=cp1250pl
+\documentclass{article}
+\usepackage[cp1250]{inputenc}
+\usepackage{polski}
+\usepackage{synttree}
+\usepackage{lifecon}
+%\usepackage{pdfpages}
+\newtheorem{tw}{Twierdzenie}[section]
+\usepackage{fancyheadings}
+\newtheorem{zad}{Zadanie}[section]
+\newtheorem{roz}{Rozwi¹zanie}[section]
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[CO,CE]{Matematyka ubezpieczeñ maj¹tkowych - egzaminy}
+Ostatni raz wygenerowano: \today. Kontakt: thasiow(at)onet.pl
+
+%------------------- EGZAMIN 15 grudnia 2008 ------------------
+
+
+\section{Egzamin z 15 grudnia 2008}
+
+% zad 5
+
+\begin{zad}\textnormal{
+Liczba szkód w ci¹gu roku w pewnym ubezpieczeniu równa jest:
+$$N=M_1+\ldots+M_K$$
+gdzie:
+\begin{itemize}
+\item $K,M_1,M_2,M_3,\ldots$ s¹ niezale¿nymi zmiennymi losowymi, zaœ $M_1,M_2,M_3,\ldots$ maj¹ identyczny rozk³ad prawdopodobieñstwa
+\item $K$ oznacza liczbê wypadków, i ma rozk³ad Poissona o wartoœci oczekiwanej $\lambda$,
+\item $M_i$ jest liczb¹ szkód z i-tego wypadku, i ma rozk³ad okreœlony na liczbach naturalnych (bez zera).
+\end{itemize}
+O rozk³adzie liczby szkód z jednego wypadku wiemy, ¿e:
+$$Pr(M_1=1)=p, \hspace{15pt} Pr(M_1>1)=1-p$$
+Prawdopodobieñstwo warunkowe i¿ w danym roku dosz³o jedynie do jednego wypadku pod warunkiem, i¿ wyst¹pi³a wiêcej ni¿ jedna szkoda:
+$$Pr(K=1|N>1)$$
+przy za³o¿eniach liczbowych $\lambda=\frac{1}{5}$, $p=\frac{4}{5}$ wynosi z dobrym przybli¿eniem: ?
+}\end{zad}
+
+\begin{roz}
+\textbf{Rozk³ad Poissona}
+$$P(K=k)=f(k,\lambda)=\frac{\lambda^k e^{-\lambda}}{k!}$$
+$$E(X)=\lambda$$
+$$Var(X)=\lambda$$
+Prawdopodbieñstwo warunkowe:
+$$Pr(K=1 | N>1)=\frac{Pr(K=1 \land N>1)}{Pr(N>1)}$$
+Prawdopodobieñstwo $P(N>1)$ to suma dwóch przypadków: zdarzy³ siê jeden wypadek z którego jest wiêcej ni¿ jedna szkoda, czyli $Pr(K=1 \land M_1>1)$ oraz prawdopodobieñstwa, ¿e zdarzy³ siê wiêcej ni¿ jeden wypadek (wtedy N automatycznie wiêksze od 1), czyli $Pr(K>2)$. Mamy:
+$$Pr(N>1)=Pr(K=1 \land M_1>1)+\underbrace{Pr(K>1)}_{1-Pr(K=0)-Pr(K=1)}=$$
+$$=Pr(K=1)Pr(M_1>1)+Pr(K>1)=$$
+$$=\frac{\lambda e^{-\lambda}}{1}\cdot (1-p)+(1-e^{-\lambda}-e^{-\lambda}\cdot \lambda)=$$
+$$=\frac{1}{5}e^{-1/5}\cdot \frac{1}{5}+\left(1-e^{-1/5}-\frac{1}{5}e^{-1/5}\right)=0.05027$$
+$$Pr(K=1 \land N>1)=P(K=1 \land M_1>1)=P(K=1)\cdot P(M_1>1)=0.03275$$ 
+$$Pr(K=1 | N>1) \approx 0.65$$
+\end{roz}
+
+% zad 7
+
+\begin{zad}
+O roozk³adzie zmiennej losowej X wiemy, ¿e:
+\begin{itemize}
+\item $Pr(X \in [0,10])=1$
+\item $E(X)=2$
+\item $Pr(X<2)\le \frac{1}{2}$
+\end{itemize}
+Przy tych za³ozeniach o rozk³adzie wariancja zmiennej X mo¿e przyjmowaæ ró¿ne wartoœci. Kres górny zbioru tych wartoœci równy jest:?
+\end{zad}
+
+\begin{roz}
+Rysujemy rysunek pomocniczy z 0, 2 i 10 na osi.Wariancja to klasyczna miara zmiennoœci. Intuicyjnie uto¿samiana ze zró¿nicowaniem zbiorowoœci; jest œredni¹ arytmetyczn¹ kwadratów odchyleñ (ró¿nic) poszczególnych wartoœci cechy od wartoœci oczekiwanej. \\
+\\
+Gdyby pomin¹æ trzeci warunek, to mo¿na by pomyœleæ o tym jak o rozk³adzie dwupunktowym gdzie czeœæ prawdopodobieñstwa idzie w 0, czêœæ 10 (wtedy wariancja byaby najwiêksza, czêœci p-p musz¹ byæ takie, ¿eby $EX=2$). Przy takim za³o¿eniu
+$P(X=0)=8/10$ oraz $P(X=10)=2/10$ i $EX=2$. \\
+\\
+Teraz musimy uwzglêdniæ warunek trzeci czyli, ¿e prawdopodobieñstwo $Pr(X<2)\le 1/2$. Zachowuj¹c powy¿sz¹ logikê chcemy aby jak najwiêcej prawdopodobieñstwa by³o w $X=0$, st¹d ustalamy $P(X=0)=1/2$. Dodatkowo chcemy, ¿eby by³o jak najwiêcej prawdopobieñstwa w 10, ale nie mo¿emy tam wrzuciæ $1/2$ bo wartoœæ oczekiwana by³aby wtedy 5. Dlatego musimy wrzuciæ mo¿liwie najwiêcej w 10 a potem mo¿liwie najmniej w 2, tak aby wartoœæ oczekiwana by³a 2 st¹d:
+$$P(X=2)\cdot 2 + P(X=10)\cdot 10 =2$$
+$$P(X=2)+P(X=10)=1/2$$
+st¹d 
+$$P(X=2)=3/8$$
+$$P(X=10)=1/8$$
+Czy to jest maksimum? Tak, bo gdybym mia³ dokonaæ przesuniêcia prawdopodobieñstwa pomiêdzy 2 i 10 musia³bym zachowaæ wartoœæ oczekiwan¹ 4 pomiêdzy tymi dwoma (tak, ¿eby zachowaæ $EX=2$), a to oznacza powtórzenie pocz¹tkowego rozumowania. Mamy:
+$$Var(X)=EX^2-(EX)^2=0^2\cdot \frac{1}{2}+2^2 \cdot \frac{3}{8}+10^2\cdot \frac{1}{8}-2^2=14-4=10$$
+Maksymalna wartoœæ wariancji wynosi 10.
+\end{roz}
+
+% zad 9
+
+\begin{zad}\textnormal{
+Niech:
+\begin{itemize}
+\item $N$ oznacza liczbê roszczeñ z jednego wypadku ubezpieczeniowego, zaœ:
+\item $T_1,T_2,\ldots,T_N$ oznacza czas, jaki up³ywa od momentu zajscia wypadku do zg³oszenia roszczenia odpowiednio 1-go, 2-go,..., N-tego (numeracja roszczeñ od 1-go do N-tego jest ca³kowicie przypadkowa, nie wynika wiêc z chronologii ich zg³aszania).
+\end{itemize}
+Za³ó¿my, ¿e:
+\begin{itemize}
+\item zmienne losowe $N,T_1,T_2,T_3,\ldots$ s¹ niezale¿ne,
+\item zmienne losowe $T_1,T_2,T_3,\ldots$ maj¹ identyczny rozk³ad wyk³adniczy o wartoœci oczekiwanej 1 (jednostk¹ pomiaru czasu jest miesi¹c)
+\item zmienna losowa N ma rozk³ad logarytmiczny dany wzorem:
+$$Pr(N=k)=\frac{1}{-\ln(1-c)}\frac{c^k}{k}, \hspace{10pt} k=1,2,3,\ldots$$
+z parametrem $c \in (0,1)$
+\end{itemize}
+Niech $A$ oznacza zdarzenie, i¿ w ci¹gu pierwszych 2 miesiêcy od zajœcia wypadku zg³oszono dok³adnie jedno roszczenie, a wiêc i¿ dok³adnie jedna liczba ze zbioru liczb $\lbrace T_1,T_2,\ldots,T_N\rbrace$, jest mniejsza lub równa 2. Prawdopodobieñstwo tego, ¿e wiêcej roszczen z tego wypadku ju¿ nie bêdzie, a wiêc:
+$$Pr(N=1|A)=?$$
+}\end{zad}
+
+\begin{roz}
+Mamy:
+$$Pr(N=1|A)=\frac{Pr(N=1 \land A)}{P(A)}$$
+$P(A)=?$. Policzmy prawdopobieñstwa dla poszczególnych $T_i$
+$$Pr(T_i<2)=\int_0^2 e^{-x}dx=1-e^{-2}$$
+$$Pr(T_i>2)=e^{-2}$$
+Przypominamy, ¿e dla rozk³adów ci¹g³ych p-p, ¿e $T_i=2$ równe zero.
+Teraz prawdopodobieñstwo, ¿e dok³adnie jedno $T_i<2$ wynosi:
+$$N(1-e^{-2})e^{-2(N-1)}$$
+bior¹c pod uwagê, ¿e to p-p jest równe powy¿szej wartoœci przy ustalonym N (z rozk³adu logarytmicznego), musimy skorzystaæ z prawdopobieñstwa ca³kowitego:
+$$P(A)=\sum_{k=1}^\infty P(A|N=k)P(N=k)=$$
+$$=\sum_{k=1}^\infty k(1-e^{-2})e^{-2(k-1)} \frac{1}{-\ln(1-c)}\frac{c^k}{k}=\frac{(1-e^{-2})e^2}{-\ln(1-c)}\underbrace{\sum_{i=1}^\infty (e^{-2}c)^k}_{=\frac{e^{-2}c}{1-e^{-2}c}}$$
+Szereg w powy¿szym równaniu to zwyk³y szereg geometryczny. Licznik prawdopobieñstwa warunkowego:
+$$P(A \land N=1)=P(A|N=1)\cdot P(N=1)=\frac{c}{-\ln(1-c)}(1-e^{-2})$$
+OdpowiedŸ:
+$$P(N=1|A)=1-ce^{-2}$$
+\end{roz}
+
+% zad 10
+
+\begin{zad}\textnormal{
+Niech $\theta$ bêdzie dodatni¹ liczb¹ rzeczywist¹. Rozwa¿my parê zmiennych losowych $T_\theta$ i $D$, oznaczaj¹cyh odpowiednio:
+\begin{itemize}
+\item $T_\theta$ - moment czasu, w którym zasz³a szkoda,
+\item $D$ - czas, jaki up³ywa od momentu zajœcia szkody do jej likwidacji.
+\end{itemize}
+Jednostk¹ pomiaru czasu jest jeden rok. Za³ó¿my, ze $T_\theta$ oraz $D$ s¹ niezale¿ne, przy czym:
+\begin{itemize}
+\item $T_\theta$ ma rozk³ad jednostajmy na odcinku $(0,\theta)$
+\item $D$ ma rozk³ad wyk³adniczy o wartoœci oczekiwanej równej jeden.
+\end{itemize}
+Sumê $(T_\theta+D)$ interpretujemy jako moment czasu, w którym zlikwidowano szkodê. \\
+\\
+Warunkow¹ wartoœæ oczekiwan¹ $E(D|T_\theta+D.\theta)$ interpretujemy jako oczekiwany odstêp w czasie pomiêdzy momentem zajœcia a momentem likwidacji szkody, pod warunkiem i¿ szkoda, do której dosz³o na odcinku czasu $(0,\theta)$, do koñca tego odcinka czasu zachowa³a status szkody niezlikwidowanej. Granica:
+$$\lim_{\theta \rightarrow \infty}E(D|T_\theta+D>\theta)$$
+wynosi:?.
+}\end{zad}
+\begin{roz}
+Wykonujemy rysunek pomocniczy dla $T_\theta+D>\theta$.\\
+\\
+\textbf{Rozk³ad jednostajny ci¹g³y na przedziale $[a,b]$}
+$$f(x)=\frac{1}{b-a}$$
+$$F(x)=\frac{x-a}{b-a}$$
+$$E(X)=\frac{a+b}{2}$$
+$$VAR(X)=\frac{(b-a)^2}{12}$$
+\textbf{Rozk³ad wyk³adniczy}
+$$f(x)=\beta e^{-\beta x}$$
+$$E(X)=\frac{1}{\beta}$$
+$$VAR(X)=\frac{1}{\beta^2}$$
+W klasycznym przypadku warunkowa wartoœæ oczekiwana:
+$$ E(X|A)=\frac{1}{P(A)}\int\limits_A X(\omega)d P$$
+Rozpisana:
+$$E(X|Y=y)=\int_{-\infty}^\infty xf(x|y)dx=\frac{1}{f_Y(y)}\int_{-\infty}^{\infty}xf(x,y)dx=\frac{\int_{-\infty}^\infty xf(x,y)dx}{\int_{-\infty}^\infty f(x,y)dx}$$
+W naszym przypadku musimy u¿yæ ca³ki podwojnej bo mamy obszar. I tak mianownik:
+$$Pr(T_\theta+D>\theta)=\int_0^\theta \int_{\theta-T}^\infty \frac{1}{\theta}\cdot e^{-D}\cdot dD\cdot dT=$$
+$$=\int_0^\theta \frac{1}{\theta}e^{-\theta}e^TdT=\frac{1-e^{-\theta}}{\theta}$$
+Licznik:
+$$\int_0^\theta \int_{\theta-T}^\infty D\cdot \frac{1}{\theta}e^{-D}dDdT=\frac{1}{\theta}\left[(1+\theta)(1-e^{-\theta})-(\theta-1+e^{-\theta})\right]$$
+St¹d
+$$E(D|T_\theta+D>\theta)=\frac{(1+\theta)(1-e^{-\theta})-(\theta-1+e^{-\theta})}{1-e^{-\theta}}$$
+$$\lim_{\theta \rightarrow \infty}\frac{(1+\theta)(1-e^{-\theta})-(\theta-1+e^{-\theta})}{1-e^{-\theta}}=2$$
+\end{roz}
+
+%------------------- EGZAMIN 15 marca 2010 ------------------
+
+\newpage
+\section{Egzamin z 15 marca 2010}
+
+% zadanie 1
+
+\begin{zad}\textnormal{
+Liczba szkod $N$ z pojedycznej umowy w pewnym ubezpieczeniu jest zmienn¹ losow¹ o rozk³adzie danym wzorem:
+$$Pr(N=0)=p$$
+$$Pr(N=k)=\frac{(1-p)\cdot \lambda^k}{(e^\lambda-1)\cdot k!}$$
+dla $k=1,2,3,\ldots$
+z nieznanymi parametrami $p \in [0,1]$, $\lambda>0$. Mamy próbkê $N_1,N_2,\ldots,N_{1000}$ obserwacji z 1000 takich umów ubezpieczeniowych. Zak³adamy niezale¿noœæ tych obserwacji.\\
+\\
+Niech $(\hat{p},\hat{\lambda})$ oznaczaj¹ estymatory parametrów $(p,\lambda)$ uzyskane metod¹ najwiêkszej wiarygodnoœci. Jeœli wiadomo, ¿e w próbce zaobserwowaliœmy ³¹cznie 463 szkody, przy czym wszystkie te szkody powsta³y z 400 umów (pozosta³e 600 okaza³o siê bezszkodowe), to wartoœæ estymatora $\lambda$ z dobrym przybli¿eniem wynosi:
+}\end{zad}
+\begin{roz}
+Funkcja wiarygodnoœci przedstawia siê nastêpuj¹co:
+$$L=\prod_{i=1}^{600} p \cdot \prod_{i=1}^{400}\frac{(1-p)\cdot \lambda^k}{(e^\lambda-1)\cdot k!}=$$
+$$=p^{600}\frac{(1-p)^{400}\lambda^{\sum_{i=1}^{400} k_i}}{(e^\lambda-1)^{400}\prod k!}$$
+Logarytm funkcji wiarygodnoœci:
+$$\ln L=600 \ln p + 400 \ln (1-p) + \underbrace{\sum_{i=1}^{400} k_i}_{=463} \cdot \ln \lambda-400 \ln(e^-\lambda - 1)+\ln \prod k!$$
+$$\frac{\partial L}{\partial \lambda}=463 \cdot \frac{1}{\lambda}-400 \frac{1}{e^\lambda-1}\cdot e^\lambda=0$$
+$$\hat{\lambda}=0.3$$
+\end{roz}
+
+% zadanie 2
+
+\begin{zad}\textnormal{
+Rozwa¿my klasyczny model procesu nadwy¿ki $U(t)=u+ct-S_{N(t)}$, gdzie:
+\begin{itemize}
+\item $u$ to nadwy¿ka pocz¹tkowa
+\item $ct$ to suma sk³adek zgromadzonych do momentu $t$
+\item $S_n=\sum_{i=1}^n Y_i$ to ³¹czna wartoœæ szkód zasz³ych do momentu t,
+\item proces licz¹cy $N(t)$ oraz wartoœci poszczególnych szkód $Y_1,Y_2,Y_3,\ldots$ s¹ niezale¿ne, przy czym:
+\item $N(t)$ jest procesem Poissona z parametrem o intensywnoœci $\lambda$,
+\item wartoœci poszczególnych szkód $Y_1,Y_2,Y_3,\ldots$ maj¹ ten sam rozk³ad wyk³adniczy o wartoœci oczekiwanej rownej 1
+\item $c=(1+\theta)\cdot \lambda \cdot E(Y_1),\hspace{15pt} \theta>0$
+\end{itemize}
+Wiadomo, ¿e zmienna losowa
+$$L:=\sup_{t>0}\lbrace u-U(t)\rbrace$$
+daje siê przedstawiæ jako zmienna o rozk³adzie z³o¿onym
+$$L=l_1+l_2+\ldots + l_N$$
+($L=0$ gdy $N=0$),\\
+gdzie sk³adnik $l_1$ jest zmienn¹ okreœlon¹ w przypadku, gdy nadwy¿ka spadnie poni¿ej u, i równy jest wtedy:
+$$l_1=u-U(t)$$, gdzie $t_1$ jest tym momentem czasu, kiedy po raz pierwszy do takiego spadku dosz³o.\\
+\\
+Warunkowa wartoœæ oczekiwana liczby takich spadków, pod warunkiem, ¿e nast¹pi³a ruina:
+$$E(N|L>u)=?$$
+Dana jest wzorem: ?.
+}\end{zad}
+\begin{roz}
+\textbf{Bardzo wa¿ny typ zadania. Wzory: patrz Otto rozdzia³ 9.6 strona 234}.\\
+\\
+\textbf{Wzory}\\
+\\
+Klasyczny model procesu nadwy¿ki:
+$$U(t)=u+ct-S_{N(t)}$$
+Prawdopodobieñstwo ruiny:
+$$\Psi(u)=\frac{e^{-Ru}}{E(e^{-RU(t)}|T <\infty)}$$
+gdzie $T$ - moment ruiny, $R$ - wspó³czynnik dopasowania. $R$ to dodatnie rozwi¹zanie równania:
+$$M_W(r)=e^{cr}$$
+czyli
+$$E(e^{rW})=e^{cr}$$
+gdzie $W$ mo¿na traktowaæ jako wysokoœæ pojedycznej szkody. \\
+\\
+Wyk³adniczy rozk³ad wartoœci przysz³ej szkody:
+$$f(y)=\beta \cdot e^{-\beta y}$$
+je¿eli intensywnoœæ sk³adki jest równa 
+$$c=\frac{\lambda(1+\theta)}{\beta}$$ to przy wyk³adiczym rozk³adzie wysokoœci szkód oraz procesie $N(t)$ (liczby szkód) bêd¹cym procesem Poissona mamy:
+$$\Psi(u)=\frac{e^{-Ru}}{1+\theta}$$
+$$R=\frac{\beta \theta}{1+\theta}$$
+Ogólny wzór na prawdopodobieñstwo, ¿e dojdzie do ruiny, a g³êbokoœæ bêdzie wiêksza równa h:
+$$G(0,h)=\frac{1}{1+\theta}\cdot \frac{E((Y-h)_+)}{E(Y)}$$
+Rozwi¹zanie:\\
+\\
+Co obliczyæ? $E(N|L>u)$, czyli wartoœæ oczekiwan¹ liczby spadków w procesach gdzie dosz³o do ruiny. Patrz rysunek z za³¹cznika.
+\\
+\\
+Jak podejœæ do zadania? Najlepiej rozdzieliæ na dwie czêœci:\\
+\\
+1. Oczekiwana liczba spadków razem z momentem ruiny\\
+\\
+2. Oczekiwana liczba spadków po momencie ruiny.
+\\
+\\Zaczynamy od czêœci 2. To jest to samo co liczba spadków w ogóle tylko trzeba zrozumieæ, ¿e proces startuje w innym momencie (g³êbokoœæ nas nie interesuje). Wobec tego jakie jest prawdopodobieñstwo spadku?\\
+\\
+\textbf{To jest prawdopobieñstwo ruiny przy przy zerowym kapitale pocz¹tkowym}\\
+\\
+Ze wzorów:
+$$R=\frac{\theta}{1+\theta}$$
+$$\Psi(u)=\frac{e^{-R\cdot u}}{1+\theta}=\frac{e^{-\frac{\theta u}{1+\theta}}}{1+\theta}$$
+$$\Psi(0)=\frac{e^{-R\cdot 0}}{1+\theta}=\frac{1}{1+\theta}$$
+co ciekawe powy¿sze zachodzi przy ka¿dym rozk³adzie, nie tylko wyk³adniczym (Patrz otto strona 239).\\
+\\
+Jakie jest prawdopobieñstwo, ¿e dojdzie do 1 spadku? P-p, ¿e dosz³o do 1 spadku * p-p ¿e nie dosz³o do spadku.
+$$\frac{1}{1+\theta}\cdot (1-\frac{1}{1+\theta})=$$
+Wyt³umaczenie: po spadku jestem na `nowym' poziomie zero, wiêc od tego momentu okreœlam prawdopobieñstwo, ¿e nigdy nie dosz³o do ruiny (od nowego poziomu zero).
+$$=\frac{1}{1+\theta}\frac{\theta}{1+\theta}$$
+Prawdopobieñstwo, ¿e bêd¹ dok³adnie dwa spadki:
+$$\frac{1}{1+\theta}\frac{1}{1+\theta}\cdot \frac{\theta}{1+\theta}$$
+Prawdopobieñstwo, ¿e bêdzie n-spadków:
+$$\frac{1}{(1+\theta)^n}\cdot \frac{\theta}{1+\theta}$$
+Wartoœæ oczekiwana liczby spadków po ruinie (dygresja: po zmianie oznaczeñ mo¿na traktowaæ jako rozk³ad geometryczny):
+$$\int_0^\infty n \frac{1}{(1+\theta)^n}\cdot \frac{\theta}{(1+\theta)}=\sum_{n=0}^\infty n \cdot p^n(1-p)=$$
+$$=(1-p)\sum_{n=0}^\infty np^n=(1-p)\frac{p}{(1-p)^2}=\frac{1}{\theta}$$
+Dla przypomnienia:
+$$I_0(v)=\sum_{n=0}^\infty v^n = \frac{1}{1-v}$$
+$$I_1(v)=\sum_{n=1}^{\infty} n v^n =\frac{v}{(1-v)^2}$$
+$$I_2(v)=\sum_{n=1}^\infty n^2 v^n=\frac{v(v+1)}{(1-v)^3}$$
+Liczba spadków ma rozk³ad gemetryczny. W szczególnoœci, gdyby nie by³o ¿adnych warunków mielibyœmy oczekiwan¹ liczbê spadków równ¹
+$$\frac{1}{\theta}$$
+Rozwa¿my dwie firmy A i B maj¹ce takie same procesy nadwy¿ki, gdy nic nie wiemy o ruinie to oczekiwana liczba spadków wynosi: $$\frac{1}{\theta}$$
+dla kazdej firmy.\\
+Natomiast gdy wiemy, ¿e do ruiny dosz³o to tak jakbyœmy wykluczyli z procesu wszystkie œcie¿ki bez ruiny (które zani¿aj¹ oczekiwan¹ wartoœæ liczby spadków). St¹d wniosek, ¿e $1/\theta$ to za ma³o. $\theta$ mówi o tym, o ile wy¿sza jest sk³adka od œredniej wartoœci szkody. Im wy¿sza $\theta$ to mniej spadków (co widzimy w wartoœci oczekiwanej $1/\theta$)\\
+\\
+Ruina zale¿y równie¿ od $u$ (im wiêcej mam na pocz¹tku, tym do wiêkszej liczby szkód mo¿e dojœæ do momentu ruiny). Liczba spadków pod warunkiem, ¿e dosz³o do ruiny bêdzie tym wiêksza im wiêkszy by³ kapit¹³ pocz¹tkowy.\\
+\\
+Widzê, ¿e moja wartoœæ oczekiwana jest zbyt ma³a wiêc muszê doliczyæ jeszcze spadki do spowodowania ruiny (pod warunkiem, ¿e do niej dosz³o). Teraz wchodzi w grê g³êbokoœæ spadków bo ruina zale¿y od $u$. Korzystam ze wzoru na prawdopodobieñstwo, ¿e dojdzie do ruiny, a g³êbokoœæ bêdzie wiêksza równa h:
+$$G(0,h)=\frac{1}{1+\theta}\cdot \frac{E((Y-h)_+)}{E(Y)}$$
+W naszym przyk³adzie:
+$$\frac{E((Y-h)_+)}{EY}=\frac{\int_0^h 0 \beta e^{-\beta t}dt+\int_h^\infty (t-h)\beta e^{-\beta t}dt}{1/\beta}=$$
+$$=\frac{\int_0^\infty t \beta e^{-\beta(t+h)}dt}{1/\beta}=\frac{e^{-\beta h}\int_0^\infty t \beta e^{-\beta t}dt}{1/\beta}=$$
+$$=\frac{e^{-\beta h }\cdot 1/\beta}{1/\beta}=e^{-\beta h}$$
+W zadaniu wartoœæ oczekiwana rozk³adu to 1, st¹d rozk³ad g³êbokoœci spadku (pod warunkiem, ¿e do niego dosz³o):
+$$f(h)=1\cdot e^{-h\cdot 1}$$
+Wiêc gdybym wiedzia³, ¿e dosz³o 1 spadku to ma on rozk³ad $e^{-h}$, gdybym widzia³, ¿e dosz³o do $N$ spadków mia³bym
+$$h_1+\ldots+h_N\sim G(N,1)$$
+funkcja gêstoœci rozk³adu gamma:
+$$f(h)=\frac{h^{N-1}}{\Gamma{(N)}}e^{-h}$$
+Policzmy prawdopodobieñstwo, ¿e ta suma przekroczy pewn¹ wartoœæ $u$
+$$P(H>u)=\int_u^{\infty}\frac{h^{N-1}}{(N-1)!e^{-h}}dh=$$
+$$=\frac{u^{N-1}e^{-u}}{(N-1)!}+\frac{u^{N-2}e^{-u}}{(N-2)!}+\ldots+\frac{ue^{-u}}{1}+e^{-u}$$
+wiemy, ¿e prawdopodobieñstwo, ¿e w dok³adnie jednym spadku osi¹gniemy (lub przekroczymy $u$) jest równe:
+$$P(h>u)=\int_u^\infty e^{-h}dh=e^{-u}$$
+dla sumy dwóch zmiennych losowych $h_1+h_2$ mielibyœmy zmienn¹ o rozk³adzie $G(2,1)$ i wtedy:
+$$P(h'>u)=\int_u^\infty x e^{-x}dx=ue^{-u}+e^{-u}$$
+skoro $e^{-u}$ to prawdopodobieñstwo, ¿e dok³adnie w 1 spadku, to $ue^{-u}$ jest prawdopodobieñstwem, ¿e dok³adnie w drugim spadku. St¹d elementy $P(H>u)$ to prawdopodobieñstwa, ¿e do ruiny dojdzie za dok³adnie i-tym razem, $i=1,\ldots,N$\\
+\\
+Wobec tego wartoœæ oczekiwana liczby spadków do momentu ruiny (wraz ze spadkiem powoduj¹cym ruinê):
+$$E(N|h_1+\ldots+h_n>u)=\frac{E_1}{\text{prawdopodobieñstwo, ¿e do ruiny dosz³o}}$$
+$$E_1=1\cdot Pr(N=1 \land h_1>u)+2\cdot Pr(N=2 \land h_1<u \land h_1+h_2>u)+\ldots=$$
+$$=1\cdot \frac{1}{1+\theta}e^{-u}+2\frac{1}{(1+\theta)^2}\frac{u e^{-u}}{1}+\ldots+N\frac{1}{(1+\theta)^N}\cdot \frac{u^{N-1}e^{-u}}{(N-1)!}+\ldots=$$
+$$=\sum_{n=1}^\infty n\cdot \frac{1}{(1+\theta)^n}\frac{u^{n-1}e^{-u}}{(n-1)!}=(*)$$
+Widzimy analogiê do rozk³adu Poissona\\
+\\
+Rozk³ad Poissona
+$$f(k,\lambda)=\frac{\lambda^k e^{-\lambda}}{k!}$$
+$$E(X)=\lambda$$
+$$Var(X)=\lambda$$
+dla $k=0,1,2,\ldots$
+$$(*)=\sum_{k=0}^\infty (k+1)\frac{1}{(1+\theta)^{k+1}}\frac{u^ke^{-u}}{k!}=$$
+$$=\frac{1}{1+\theta}e^{-u}\cdot e^{\frac{u}{1+\theta}}\left(\sum_{k=0}^\infty k\cdot \frac{(\frac{u}{1+\theta})^k e^{-\frac{u}{1+\theta}}}{k!} +\sum_{k=0}^\infty \frac{(\frac{u}{1+\theta})^k e^{-\frac{u}{1+\theta}}}{k!}\right)=$$
+W powy¿szym $\lambda'=\frac{u}{1+\theta}$, czyli mamy wartoœæ oczekiwan¹ i gêstoœæ:
+$$=\frac{e^{\frac{-u\theta}{1+\theta}}}{1+\theta}\left(\frac{u}{1+\theta}+1\right)$$
+Czyli mamy wartoœæ oczekiwan¹ po momencie ruiny+wartoœæ oczekiwan¹ do momentu ruiny
+$$E=\frac{1}{\theta}+\frac{E_1}{\Psi(u)}=$$
+Dla przypomnienia (wyprowadzone wy¿ej):
+$$\Psi(u)=\frac{e^{-R\cdot u}}{1+\theta}=\frac{e^{-\frac{\theta u}{1+\theta}}}{1+\theta}$$
+$$=\frac{1}{\theta}+\frac{\frac{e^{\frac{-u\theta}{1+\theta}}}{1+\theta}\left(\frac{u}{1+\theta}+1\right)}{\frac{e^{-\frac{\theta u}{1+\theta}}}{1+\theta}}=\frac{u}{1+\theta}+\frac{1+\theta}{\theta}$$
+\end{roz}
+
+% zadanie 4
+
+\begin{zad}\textnormal{
+Liczby szkód $N_1,\ldots,N_t,N_{t+1}$ w kolejnych latach s¹, dla ustalonej wartoœci parametru $\Lambda=\lambda$, niezale¿nymi zmiennymi losowymi o jednakowym rozk³adzie Poissona o wartoœci oczekiwanej $\lambda$. Niech $N=N_1+\ldots+N_t$. Parametr ryzka $\Lambda$ jest zmienn¹ losow¹ o rozk³adzie gamma o gêstoœci:
+$$f_{\Lambda}(x)=\frac{\beta^\alpha}{\Gamma(\alpha)}\cdot x^{\alpha-1}e^{-\beta x}$$ 
+gdzie $\alpha,\beta>0$. Jeœli przyjmiemy wartoœci parametrów $\alpha=2,\beta=10, t=10$, wtedy warunek konieczny i wystarczaj¹cy na to, aby zachodzi³a nierównoœæ:
+$$Var(N_{t+1}|N_1,\ldots,N_t)>Var(N_{t+1})$$
+jest postaci: $N>?$
+}\end{zad}
+
+\begin{roz}
+Analogiczne zadanie do zadania z 23 marca 2015.\\
+\\
+\textbf{Rozk³ad Poissona}
+$$f(k,\lambda)=\frac{\lambda^k e^{-\lambda}}{k!}$$
+$$E(X)=\lambda$$
+$$Var(X)=\lambda$$
+Je¿eli $X \sim P(\lambda)$ i $Y \sim P(\mu)$ to $X+Y \sim P(\lambda+\mu)$\\
+\\
+\textbf{Rozklad Gamma}
+$$f(x)=\frac{\beta^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x} \hspace{15pt} x>0$$
+$$E(X)=\frac{\alpha}{\beta}$$
+$$Var(X)=\frac{\alpha}{\beta^2}$$
+W zadaniu mamy:
+$t=10$, wiêc $N_1,\ldots,N_{11}$ oraz
+$$f_{\Lambda}(x)=\frac{10^2}{\Gamma(2)}x\cdot e^{-10x}=100 x e^{-10x}$$
+Rozpatrujemy warunek
+$$Var(N_{11}|N_1,\ldots,N_{10})>Var(N_{11})$$
+czyli
+$$E(N_{11}^2|N_1,\ldots,N_{10})-E(N_{t+1}|N_1,\ldots,N_t)^2>\underbrace{Var(N_{11})}_{=?}$$
+$$Var(N_{11})=E(N_{11}^2)-E(N_{11})^2=E(E(N_{11}^2|\Lambda=\lambda))-E(E(N_{11}|\Lambda=\lambda))^2=(*)$$
+bo $$E(N_{11})=E(E(N_{11}|\Lambda=\lambda))$$
+$$(*)=E(Var({N_{11}|\Lambda=\lambda})+E(N_{11}^2|\Lambda=\lambda))-E(E(N_{11}|\Lambda=\lambda))^2=$$
+$$=E(Var({N_{11}|\Lambda=\lambda}))+Var(E(N_{11}|\Lambda=\lambda))=$$
+$$=E(\lambda)+Var(\lambda)=(*)$$
+tutaj doszliœmy po drodze do czêsto u¿ywanego wzoru (tzw. Law of total variance):
+$$\operatorname{Var}(X) = \operatorname{E}(\operatorname{Var}(X \mid \mathcal{H})) + \operatorname{Var}(\operatorname{E}(X \mid \mathcal{H}))$$
+wartoœæ oczekiwana z $\lambda$
+$$E(\lambda)=\frac{\alpha}{\beta}=\frac{2}{10}=\frac{1}{5}$$
+wariancja z $\lambda$
+$$Var(\lambda)=\frac{\alpha}{\beta^2}=\frac{2}{100}$$
+Czyli mamy:
+$$E(N_{11}^2|N_1,\ldots,N_{10})-E(N_{11}|N_1,\ldots,N_{10})^2>0.22$$
+Dlaczego $E(N_{11}|N_1,\ldots,N_{10})$ jest warunkowe? Bo $N_1,\ldots,N_{10}$ wskazuje na wartoœæ $\lambda$. Mo¿emy zapisaæ
+$$E(N_{11}|N_1,\ldots,N_{10})=E(N_{11}|N)$$
+bo suma uchwyci wszystko. W tym wypadku to bêdzie liczba szkód do momentu $t=10$. Dalej
+$$E(N_{11}|N_1,\ldots,N_{10})=E(N_{11}|N)=E(E(N_{11}|N)|\Lambda=\lambda)=$$
+$$=E(\underbrace{E(N_{11}|\Lambda=\lambda)}_{=\lambda}|N)=E(\lambda|N)$$
+Skoro mamy $E(\lambda|N)$ to potrzebujemy `gêstoœæ' $f(\lambda|N)$
+$$f(\lambda|N)=\frac{f(\lambda,N)}{\int_0^\infty f(\lambda,n)d\lambda}$$
+suma $N_1+\ldots+N_{10}$ ma rozk³ad Poissona z parametrem $10\lambda$.
+$$f(\lambda,N)=Pr(N_1+\ldots+N_{10}=N \land \Lambda=\lambda)=$$
+$$=\frac{(10\lambda)^N e^{-\lambda}}{N!}\cdot \frac{10^2}{\Gamma(2)}\lambda e^{-10\lambda}=100\frac{10^N}{N!}\lambda^{N+1}e^{-20\lambda}$$
+$$\int_0^\infty 100\frac{10^N}{N!}\lambda^{N+1}e^{-20\lambda} d\lambda=100\frac{10^N}{N!}\int_0^\infty \lambda^{N+1}e^{-20\lambda}d\lambda=(*)$$
+Z w³asnoœci rozk³adu Gamma, dla którego $\alpha-1=N+1\rightarrow \alpha=N+2$ oraz $\beta=20$ i ca³kowania gêstoœci do jedynki:
+$$\frac{\Gamma(N+2)}{20^{N+2}}\cdot \underbrace{\int_0^\infty \lambda^{N+1}e^{-20\lambda} \cdot \frac{20^{N+2}}{\Gamma(N+2)}d\lambda}_{=1}$$
+st¹d
+$$(*)=100\frac{10^N}{N!}\cdot \frac{\Gamma(N+2)}{20^{N+2}}$$
+Dalej
+$$f(\lambda|N)=\frac{f(\lambda,N)}{\int_0^\infty f(\lambda,n)d\lambda}=\frac{100\frac{10^N}{N!}\lambda^{N+1}e^{-20\lambda}}{100\frac{10^N}{N!}\cdot \frac{\Gamma(N+2)}{20^{N+2}}}=$$
+$$=\frac{\lambda^{N+1}e^{-20\lambda}}{\Gamma(N+2)}20^{N+2}$$
+szukamy
+$$E(\lambda|N)=\int_0^\infty \lambda \cdot \frac{\lambda^{N+1}e^{-20\lambda}}{\Gamma(N+2)}20^{N+2} d\lambda=$$
+$$=\frac{20^{N+2}}{\Gamma(N+2)}\int_0^\infty \lambda^{N+2}e^{-20\lambda}d\lambda=(*)$$
+analogicznie jak wy¿ej $\alpha-1=N+2\rightarrow \alpha=N+3$, $\beta=20$ 
+$$(*)=\frac{20^{N+2}}{\Gamma(N+2)}\cdot \frac{\Gamma(N+3)}{20^{N+3}}=\frac{1}{20}\frac{(n+2)!}{(n+1)!}=\frac{(n+2)}{20}$$
+Teraz 
+$$E(N_{11}^2|N)=E(E(N^2_{11}|\Lambda=\lambda)|N)=E(\lambda+\lambda^2|N)=E(\lambda|N)+E(\lambda^2|N)$$
+$$E(\lambda^2|N)=\int_0^\infty \lambda^2 \cdot \frac{\lambda^{N+1}e^{-20\lambda}}{\Gamma(N+2)}20^{N+2}d\lambda=$$
+$$=\frac{20^{N+2}}{\Gamma(N+2)}\int_0^\infty\lambda^{N+3}e^{-20\lambda} d\lambda =$$
+widzimy, ¿e ca³ka przypomina rozk³ad Gamma z $\alpha-1=N+3\rightarrow \alpha=N+4$, $\beta=20$
+$$=\frac{20^{N+2}}{\Gamma(N+2)} \frac{\Gamma(N+4)}{20^{N+4}}\underbrace{\int_0^\infty \frac{20^{N+4}}{\Gamma(N+4)}\lambda^{N+3}e^{-20\lambda}d\lambda}_{=1}=$$
+$$\frac{20^{N+2}}{\Gamma(N+2)} \frac{\Gamma(N+4)}{20^{N+4}}=\frac{(n+2)(n+3)}{20^2}$$
+Wracamy do naszej pocz¹tkowej nierównoœci, zapisujemy j¹ jako:
+$$E(N_{11}^2|N)-E(N_{11}|N)^2>0.22$$
+$$E(\lambda|N)+E(\lambda^2|N)-E(\lambda|N)^2>0.22$$
+$$\frac{n+2}{20}+\frac{(n+2)(n+3)}{20^2}-\frac{(n+2)^2}{20^2}>0.22$$
+Po przekszta³ceniach
+$$N>2.19047619$$
+czyli 
+$$N>2$$
+\end{roz}
+
+% zadanie 5
+
+\begin{zad}\textnormal{
+W pewnym systemie bonus-malus mamy 4 klasy ponumerowane liczbami 1,2,3,4, oraz odpowiadaj¹ce im poziomy sk³adki $\Pi,\frac{8}{9}\Pi,(\frac{8}{9})^2\Pi,(\frac{8}{9})^3\Pi $.\\
+Zasady ruchu pomiêdzy klasami s¹ nastêpuj¹ce:
+\begin{itemize}
+\item Kierowca przesuwa siê do klasy 1 po ka¿dym roku, w którym zg³osi³ jedn¹ lub wiêcej szkód.
+\item Po roku bez zg³oszeñ szkód w klasie $i$ kierowca przesuwa siê do klasy o numerze $\min \lbrace i+1,4 \rbrace$
+\end{itemize}
+Niech liczby szkód zg³aszanych przez pewnego kierowcê w kolejnych latach bêd¹ niezale¿nymi zmiennymi losowymi, takimi, ¿e prawdopodobieñstwo zg³oszenia zera szkód w ci¹gu roku wynosi 0.9. Wartoœæ oczekiwana sk³adki p³aconej przez tego kierowcê w pi¹tym roku ubezpieczenia równa jest:?
+}\end{zad}
+\begin{roz}
+Zadanie zagadka logiczna.\\
+\\
+1. Szukamy p-p, ¿e bêdzie w 1 klasie w 5 roku. Bez zale¿noœci w której by³ klasie p-p ¿eby trafi³ do klasy 1, to p-p, ¿e zg³osi³ przynajmniej jedn¹ szkodê czyli $P_1=0.1$\\
+2. Prawdopodobieñstwo, ¿e bêdzie w drugiej klasie? to oznacza, ¿e w 4 roku musia³ zg³osiæ szkodê i trafi³ do pierwszej razy p-p, ¿e w 5tym roku nie zg³osi³ szkody czyli
+$$P_1=0.1\cdot 0.9$$
+3. Prawdopodbieñstwo, ¿e bêdzie w trzeciej klasie: czyli w trzecim roku musia³ byæ w klasie 1 wszej, a potem nie zg³aszaæ szkód
+$$P_3=0.1\cdot 0.9 \cdot 0.9$$
+4. Prawdopobieñstwo, ¿e by³ w czwartej klasie i zosta³ oraz p-p, ¿e przeszed³ z trzeciej. Mo¿na to przez ró¿nicê obliczyæ (1 odj¹æ p-p, ¿e jest w pozosta³ych klasach)
+$$P_4=1-0.1-0.1\cdot 0.9-0.1\cdot 0.9^2=0.729$$
+Wartoœæ oczekiwana:
+$$EX=P_1\cdot \Pi + P_2\cdot 8/9 \Pi+P_3\cdot (8/9)^2\Pi+P_4\cdot (8/9)^3 \Pi=0.756\Pi$$
+\end{roz}
+
+% zadanie 8
+
+\begin{zad}\textnormal{
+Szkody, od których dosz³o przed momentem czasu $t=0$ u pewnego ubezpieczyciela charakteryzuje para zmiennych losowych $(T,D)$ oznaczaj¹cych odpowiednio:
+\begin{itemize}
+\item $T$ - czas zajœcia szkody,
+\item $D$ - odstêp czasu pomiêdzy zajœciem szkody a jej likwidacj¹.
+\end{itemize}
+Jednostk¹ pomiary obu zmiennych jest 1 rok. Za³ó¿my, ¿e
+\begin{itemize}
+\item zmienne $T$ i $D$ s¹ niezale¿ne,\\
+ich rozk³ad prawdopodobieñstwa dane s¹ gêstoœciami, okreœlonymi odpowiednio na pó³osi ujemnej:
+\item $f_T(t)=r\cdot exp(rt)$ dla $t\in(-\infty,0)$, gdzie $r>0$,\\
+i dodatniej:
+\item $f_D(x)=\beta \cdot exp(-\beta x)$ dla $x\in(0,\infty)$, gdzie $\beta>0$
+\end{itemize}
+Stosunek oczekiwanej liczby szkód zasz³ych przed dniem bilansowym do oczekiwanej liczby szkód zasz³ych w ci¹gu roku poprzedzaj¹cego dzieñ bilansowy, który przy przyjêtych oznaczeniach wyra¿a siê w prosty sposób jako:
+$$\frac{Pr(T+D>0)}{Pr(T\in(-1,0))}$$
+wynosi: ?.
+}\end{zad}
+\begin{roz}
+W pierwszej kolejnoœci rysujemy rysunek pomoczniczy. Mamy:
+$$\frac{Pr(T+D>0)}{Pr(T\in(-1,0))}=\frac{Pr(T>-D)}{Pr(-1<T<0)}=$$
+$$=\frac{\int_0^\infty \int_{-x}^0 f_T(t)\cdot f_D(x)dtdx}{\int_{-1}^0 f_T(t)dt}=$$
+$$=\frac{\int_0^\infty \int_{-x}^0 r\cdot e^{rt}\cdot \beta \cdot e^{-\beta x}dtdx}{\int_{-1}^0 r\cdot e^{rt}dt}=\frac{\frac{r}{r+\beta}}{1-e^{-r}}=\frac{r}{(r+\beta)(1-e^{-r})}$$
+\end{roz}
+
+% zadanie 9
+
+\begin{zad}\textnormal{
+Ubezpieczony generuje szkody zgodnie z Procesem Poissona o parametrze intensywnoœci $\lambda$ rocznie, i wszystkie szkody, które mu siê przydarz¹, zg³asza ubezpieczycielowi.\\
+Sk³adka $\Pi_t$ p³acona przez ubezpieczonego w roku t wyznaczana jest nastêpuj¹co:
+\begin{itemize}
+\item wynosi $M$ dla $t=1$,  a wiêc w pierwszym roku ubezpieczenia, zaœ dla $t=2,3,4,\ldots:$
+\item wynosi $\Pi_t=m+w(\Pi_{t-1}-m)$, jeœli rok $t-1$ by³ bezszkodowy,
+\item wynosi $\Pi_t=M+W(\Pi_{t-1}-M)$, jesli w roku $t-1$ zdarzy³a siê co najmniej jedna szkoda.
+\end{itemize}
+Jeœli przyjmiemy wartoœci liczbowe parametrów formu³y sk³adki na poziomie: $M=100$, $W=0.4$, $m=20$, $w=0.8$, to dla ubezpieczonego o wartoœci parametru $\lambda$ równej $\ln(10/9)$ oczekiwana sk³adka w d³ugim okresie:
+$$\lim_{t\rightarrow \infty} E(\Pi_t)$$
+wynosi?
+}\end{zad}
+
+\begin{roz}
+\textbf{Rozk³ad Poissona}
+$$f(k,\lambda)=\frac{\lambda^k e^{-\lambda}}{k!}$$
+$$E(X)=\lambda$$
+$$Var(X)=\lambda$$
+Mamy:
+1. $E(\Pi_1)$=100 z treœci\\
+\\
+2. Gdy poprzedni rok bezszkodowy: 
+$$\Pi_t=20+0.8(\Pi_{t-1}-20)$$
+3. Gdy w poprzednim roku zdarzy³a siê co najmniej jedna szkoda:
+$$\Pi_t=100+0.4(\Pi_{t-1}-100)$$
+Jakie jest prawdopobieñstwo, ¿e nie zdarzy³a siê ¿adna szkoda?
+$$P(X=0)=\frac{\lambda^0e^{-\lambda}}{0!}=e^{-\lambda}=9/10$$
+Czyli prawdopobieñstwo, ¿e zdarzy³a siê przynajmniej jedna szkoda wynosi $1/10$. Jakie wartoœci mo¿e przyjmowaæ $\Pi_t$?
+\begin{equation*}
+ \Pi_t=
+\begin{cases}
+20+0.8(\Pi_{t-1}-20) & \text{z p-p } 9/10,\\
+100+0.4(\Pi_{t-1}-100) & \text{z p-p } 1/10
+\end{cases}
+\end{equation*}
+Mo¿na zapisaæ:
+\begin{equation*}
+E (\Pi_t)=
+\begin{cases}
+20+0.8(E(\Pi_{t-1})-20) & \text{z p-p } 9/10,\\
+100+0.4(E(\Pi_{t-1})-100) & \text{z p-p } 1/10
+\end{cases}
+\end{equation*}
+czyli mamy:
+$$E(\Pi_t)=0.9\cdot (20+0.8(E(\Pi_{t-1})-20)) + 0.1\cdot (100+0.4(E(\Pi_{t-1})-100))$$
+st¹d
+$$E(\Pi_t)=9.6+0.76 \cdot \Pi_{t-1}$$
+$$\lim_{t\rightarrow \infty}(E(\Pi_t)-0.76 E(\Pi_{t-1}))=9.6$$
+Bior¹c pod uwagê w³asnoœci granic to w nieskoñczonosci
+ $$\lim_{t \rightarrow \infty}E(\Pi_t)=\lim_{t \rightarrow \infty}E(\Pi_{t-1})$$
+$$\lim_{t \rightarrow \infty}(E(\Pi_t))=40$$
+\end{roz}
+
+%------------------- EGZAMIN 29 wrzeœnia 2014 ------------------
+
+% zadanie 1
+
+\newpage
+\section{Egzamin z 29 wrzeœnia 2014}
+\begin{zad}
+Zmienne losowe $X_1,X_2$ s¹ niezale¿ne i maj¹ rozk³ad z atomami:
+$$P(X_1=0)=3/8$$
+$$P(X_1=1)=1/8$$
+i gêstoœci¹ $f(x)=x$ na przedziale $(0,1)$. Wobec tego $Pr(X_1+X_2\le1)$ wynosi:?
+\end{zad}
+\begin{roz}
+Rysujemy rysunek pomocniczy dla $X_1+X_2 \le 1$. W pierwsyzm kroku liczymy:
+$$Pr(X_1=0 \lor X_2=0)=Pr(X_1=0)+Pr(X_2=0)-Pr(X_1=0 \land X_2=0)=\frac{117}{192}$$
+Czy istnieje przypadek, ¿e musimy rozwa¿yæ $X_1=1$? Nie bo wtedy $X_2=0$ i przypadek ten jest zawarty w obliczonym wczeœniej prawdopodobieñstwie.
+Liczymy obszar:
+$$\int_0^1\int_0^{1-x_1}x_1x_2dx_2dx_1=\frac{1}{24}$$
+Intepretacja geometryczna (przejœcie w 3 wymiar): jaka masa prawdopodobieñstwa znajduje siê nad intresuj¹cym nas obszarem? OdpowiedŸ to: $$\frac{1}{24}+\frac{117}{192}=\frac{125}{192}$$
+\end{roz}
+
+% zadanie 2
+
+\begin{zad}\textnormal{Pewne ryzyko generuje w kolejnych czterech kwata³ach roku szkody o ³acznej wartoœci odpowiednio $X_1,X_2,X_3,X_4$. Zmienne losowe $X_i$ maj¹ identyczny rozk³ad wyk³adniczy i s¹ nawzajem niezale¿ne.\\
+Ubezpieczyciel pokrywa ³¹czn¹ wartoœæ szkód za caly rok, ceduje jednak na reasekuratora ³¹czn¹ wartoœæ szkód z jednego, wybranego przez siebie ex post kwarta³u (oczywiœcie wybierze najgorszy z nich). Jaki jest udzia³ sk³adki reasekuracyjnej w sk³adce ubezpieczeniowej (obie sk³adki policzone s¹ wed³ug ich wartoœci oczekiwanej)?
+}\end{zad}
+
+\begin{roz}
+Mamy sk³adkê ubezpieczeniow¹:
+$$E(X_1+\ldots+X_4)=4\cdot E(X_1)=\frac{4}{\beta}$$
+bo $X_i$ maj¹ rozk³ad wyk³adniczy $f(x)=\beta\cdot e^{-\beta x}$
+Dystrybuanta:
+$$F(x)=\int_0^t \beta e^{-\beta x}=1-e^{-\beta t}$$
+Sk³adka reasekuracyjna:
+$$E(\max\{X_1,\ldots,X_4\})=?$$
+Rozk³ad maksimum:
+$$P(\max\{X_1,\ldots,X_4\}<t)=P(X_1<t)^4=(1-e^{-\beta t})^4$$
+$$f(t)=4(1-e^{-\beta t})^3 \cdot e^{-\beta t}\cdot \beta$$
+Liczymy:
+$$E(\max\{X_1,\ldots,X_4\})=\int_0^\infty t\cdot 4(1-e^{-\beta t})^3 \cdot e^{-\beta t}\cdot \beta \cdot dt=(*)$$
+Tutaj niestety trzeba podnieœæ ten nawias do potêgi trzeciej i obliczaæ ca³kê
+$$(*)=4\beta\left(\frac{1}{\beta^2}-3\frac{1}{4\beta^2}+3\frac{1}{9\beta^2}-\frac{1}{16\beta^2}\right)=4\cdot \frac{25}{48\beta}$$
+Liczymy udzia³ sk³adki reasekuracyjnej w sk³adce ubezpieczeniowej:
+$$ODP=\frac{4\cdot \frac{25}{48\beta}}{\frac{4}{\beta}}=\frac{25}{48}$$
+\end{roz}
+
+% zadanie 3
+
+\begin{zad}\textnormal{
+Liczba szkód $N$ z pewnego ryzyka ma rozk³ad Poissona z wartoœcia oczekiwan¹ równ¹ $\lambda$, a wartoœci kolejnych szkód $Y_1,Y_2,\ldots,Y_N$ s¹ zmiennymi losowymi o identycznym rozk³adzie. Zmienne $N$ oraz $Y_1,Y_2,\ldots,Y_N$ s¹ niezale¿ne.\\
+Rozk³ad wartoœci pojedycznej szkody okreœlony jest na przedziale $(0,1]$ i ma wartoœæ oczekiwan¹ równ¹ $\mu \in (0,1)$\\
+\\
+Ubezpieczyciel wystawia na to ryzyko polisê z sum¹ ubezpieczenia 1, z pokryciem ka¿dej kolejnej szkody proporcjonalnym do `nieskonsumowanej do tej pory' czêœci sumy ubezpieczenia, a wiêc:
+\begin{itemize}
+\item za (ewentualn¹) szkodê $Y_1$ wyp³aca odszkodowanie w pe³nej wysokoœci $Y_1$, po czym suma ubezpieczenia kurczy siê do kwoty $(1-Y_1)$ 
+\item za (ewentualn¹) szkodê $Y_2$ wyp³aca odszkodowanie w wysokoœci $(1-Y_1)\cdot Y_2$, po czym aktualna suma ubezpieczenia kurczy siê do kwoty $(1-Y_1)\cdot (1-Y_2)$
+\item za (ewentualn¹) szkodê $Y_3$ wyp³aca odszkodowanie w wysokoœci $(1-Y_1)\cdot (1-Y_2)\cdot Y_3$, po czym aktualna suma ubezpieczenia kurczy siê do kwoty $(1-Y_1)(1-Y_2)(1-Y_3)$, itd
+\end{itemize}
+Skladka netto za to ubezpieczenia wynosi: ?.
+}\end{zad}
+
+\begin{roz}
+Niech $W_i$ oznacza wartoœæ i-tej wyp³aty, mamy:
+$$SJN=E(W_1+\ldots W_N)=$$
+$$E(Y_1+(1-Y_1)\cdot Y_2+\ldots+(1-Y_1)(1-Y_2)\cdot \ldots\cdot (1-Y_{n-1})\cdot Y_N)$$
+Tego bezpoœrednio nie policzymy, wobec tego nale¿y rozpatrzyæ ile zostaje nam z sumy ubezpieczenia po wyp³acie $N$ szkód:\\
+\\
+Przy 1 szkodzie zostaje 
+$$1-Y_1$$
+Przy 2 szkodach zostaje
+$$1-Y_1-(1-Y_1)Y_2=(1-Y_1)(1-Y_2)$$
+Widaæ zasadê, wobec tego przy 3 szkodach zostaje
+$$(1-Y_1)(1-Y_2)(1-Y_3)$$
+a przy $N$ szkodach:
+$$(1-Y_1)(1-Y_2)(1-Y_3)\cdot \ldots \cdot (1-Y_n)$$
+Suma wyp³at jest oczywiœcie równa: suma ubezpieczenia - reszta z sumy ubezpieczenia po N wyp³atach
+wobec tego rozpatrujemy:
+$$JSN=E(E(1-(1-Y_1)(1-Y_2)(1-Y_3)\cdot \ldots \cdot (1-Y_N)|N))=$$
+$$=E(1-E(1-Y_1)^N)=E(1-(1-\mu)^N)=1-E((1-\mu)^N)=$$
+$$=\sum_{n=0}^\infty (1-\mu)^n \frac{\lambda^n e^{-\lambda}}{n!}=1-e^{-\lambda}e^{(1-\mu)\lambda}\underbrace{\sum_{n=0}^\infty \frac{((1-\mu)\lambda)^n e^{-(1-\mu)\lambda}}{n!}}_{=1}=$$
+powy¿sze $=1$ z rozk³adu Poissona.
+$$=1-e^{-\lambda}e^{\lambda(1-\mu)}=1-e^{-\lambda\mu}$$
+$$JSN=1-e^{-\lambda \mu}$$
+\end{roz}
+
+% zadanie 5
+
+\begin{zad}\textnormal{
+W pewnym rodzaju ubezpieczenia ka¿de ryzyko generuje szkodê (co najwyzej jedn¹) z takim samym prawdopodobieñstwem. Jeœli do szkody z pewnego ryzyka dojdzie, a wartoœæ parametru $B$ dla tego ryzyka wynosi $\beta$, to wartoœæ tej szkody jest zmienn¹ losow¹ o gêstoœci:
+$$f_{Y|B=\beta}(y)=\beta \cdot e^{-\beta \cdot y}.$$
+Populacja ryzyk charaktryzuje siê du¿ym zró¿nicowaniem. Parametr ryzyka $B$ ma w tej populacji rozk³ad jednostajny na przedziale $(0,1)$. Rozk³ad wartoœci szkody z losowo wybranego ryzyka z tej populacji, pod warunkiem, ¿e to ryzyko wygenerowa³o szkodê, dany jest gêstoœci¹: ?
+}\end{zad}
+
+\begin{roz}
+Wiemy, ¿e
+$$f(y|\beta)=\beta\cdot e^{-\beta y}=\frac{f(y,\beta)}{f(\beta)}=(*)$$
+Z treœci zadania wiemy, ¿e $B$ ma rozk³ad jednostajny i $B\in(0,1)$, wobec tego
+$$f(\beta)=1$$
+czyli $f_Y(y)$ to rozk³ad brzegowy z
+$$f(y,\beta)=\beta\cdot e^{-\beta \cdot y}\cdot 1$$
+czyli
+$$f(y)=\int_0^1 \beta\cdot e^{-\beta \cdot y}d\beta=\frac{1}{y^2}\left(1-e^{-y}-ye^{-y}\right)$$
+\end{roz}
+
+% zadnie 6
+
+\begin{zad}\textnormal{
+Rozwa¿my portfel sk³adaj¹cy siê z $n$ jednakowych, niezale¿nych ryzyk. Dla ka¿dego z tych ryzyk mo¿e wyst¹piæ co najwy¿ej jedna szkoda, a prawdopodobieñstwo jej wyst¹pienia wynosi $q$. Jesli do szkody dojdzie, to jej wartoœæ jest zmienn¹ losow¹ o gêstoœci:
+\begin{equation*}
+ f(x)=
+\begin{cases}
+\frac{1}{(1+x)^2} &  x>0,\\
+0 & x\le 0
+\end{cases}
+\end{equation*}
+Niech $M$ oznacza najwiêksz¹ ze szkód z tego portfela (lub zero, jeœli ³aczna liczba szkód wynios³a zero).\\
+Jeœli przyjmiemy:\\
+$n=16$, oraz\\
+$q=0.424$,\\
+to mediana zmiennej $M$ w przybli¿eniu wyniesie: ?
+}\end{zad}
+
+\begin{roz} Wiemy, ¿e
+$$\int_0^{med}f(x)dx=0.5$$
+W naszym przypadku mamy:
+$$M=\max\{X_1,\ldots,X_{16}\}$$
+Rozwa¿my rozk³ad maksimum
+$$P(\max\{X_1,\ldots,X_{16}\}=P(X_1<t)^{16}=(*)$$
+Wiemy, ¿e z prawdopodobieñstwem $1-q$ szkoda nie wystêpuje, a wiêc
+$$P(X_1=0)=q$$
+Z prawdopodobieñstwa ca³kowitego:
+$$P(A)=P(A|\text{szkoda zasz³a})\cdot P(\text{szkoda zasz³a})+P(A|\text{szkoda nie zasz³a})\cdot P(\text{szkoda nie zasz³a})$$
+a wiêc mamy:
+$$P(X_1<t)=q\int_0^t\frac{1}{(1+x)^2}dx+1\cdot (1-q)=q\cdot \frac{t}{1+t}+(1-q)$$
+wracaj¹c
+$$(*)=\left((1-q)+q\left(\frac{t}{1+t}\right)\right)^{16}$$
+Wobec tego mamy
+$$P(M<med)=\left((1-0.424)+0.424\left(\frac{med}{1+med}\right)\right)^{16}=0.5$$
+Rozwi¹zujemy (kalkulator) st¹d
+$$med=9$$
+\end{roz}
+
+% zadanie 7
+
+\begin{zad}\textnormal{
+Dla rozk³adu liczby szkód $N\in\{0,1,2,3,\ldots\}$ spe³nione jest równanie rekurencyjne:
+$$Pr(N=n)=\left(a+\frac{b}{n}\right)Pr(N=n-1)$$
+dla $n=1,2,3,\ldots$.\\
+\\
+Niech $p_0(1,b)$ wyra¿a prawdopodobieñstwo i¿ nie zajdzie ¿adna szkoda jako funkcjê parametrów równania $a$ i $b$. Wobec tego $p_0(-2,10)$ wynosi: ?
+}\end{zad}
+
+\begin{roz}
+Oprócz rozwi¹zania dodatkowo patrz Otto strona 94, 95 (typy rozk³adów zapamiêtaæ).\\
+\\
+mamy znaleŸæ $p_0(-2,10)$, wobec tego równanie rekurencyjne jest postaci:
+$$Pr(N=n)=\left(-2+\frac{10}{n}\right)Pr(N=n-1)$$
+widaæ, ¿e n musi byæ skoñczone bo przy $n=5$ prawdopodobieñstwo $P(N=5)=0$, a dalsze by³yby ujemne! Wobec tego rozpiszmy:
+$$p_0=?$$
+$$p_1=8\cdot p_0$$
+$$p_2=3\cdot p_1$$
+$$p_3=\frac{4}{3} p_2$$
+$$p_4=\frac{1}{2}p_3$$
+$$p_5=0$$
+Dalej
+$$p_0=?$$
+$$p_1=8\cdot p_0$$
+$$p_2=3\cdot 8\cdot p_0$$
+$$p_3=\frac{4}{3} \cdot 3\cdot 8\cdot p_0$$
+$$p_4=\frac{1}{2}\cdot \frac{4}{3} \cdot 3\cdot 8\cdot p_0$$
+$$p_5=0$$
+oraz
+$$p_1+p_2+p_3+p_4+p_5=0$$
+st¹d po podstawieniu $p_0=1/81$
+\end{roz}
+
+% zadanie 8
+
+\begin{zad}\textnormal{
+Liczby szkód $N_1,\ldots,N_t,N_{t+1},N_{t+2}$ w kolejnych latach s¹, dla ustalonej wartoœci parametru $\Lambda=\lambda$, warunkowo niezale¿nymi zmiennymi losowymi o jednakowym rozk³adzie Poissona z wartoœci¹ oczekiwan¹ $\lambda$. Niech $N=N_1+\ldots+N_t$. Parametr $\Lambda$ jest zmienn¹ losow¹ o rozk³adzie gamma o gêstoœci:
+$$f(\lambda)=\frac{\beta^\alpha}{\Gamma(\alpha)}\cdot \lambda^{\alpha-1}e^{-\beta \cdot \lambda}, \hspace{15pt} \lambda>0$$
+z parametrami $(\alpha,\beta)$ o wartoœciach dodatnich. Warunkowa kowariancja:
+$$Cov(N_{t+1},N_{t+2}|N_1,N_2,\ldots,N_t)$$
+wynosi: ?.
+}\end{zad}
+
+\begin{roz}
+Warunkowa kowariancja:
+$$Cov(N_{t+1},N_{t+2}|N_1,N_2,\ldots,N_t)=$$
+$$=E(N_{t+1}\cdot N_{t+2}|N_1,\ldots,N_t)-E(N_{t+1}|N_1,\ldots,N_t)\cdot E(N_{t+2}|N_1,\ldots,N_t)=$$
+Mo¿emy przepisaæ, ¿e
+$$=E(N_{t+1}\cdot N_{t+2}|N)-E(N_{t+1}|N)\cdot E(N_{t+2}|N)$$
+dlatego, ¿e nie jest dla nas istotne kiedy ile szkód siê wydarzy³o, ale jaka by³a ich suma (je¿eli by³o ich bardzo du¿o w przesz³oœci, mo¿na spodziewaæ siê, ¿e wynika to z du¿ej $\lambda$).
+Bêdziemy chcieli policzyæ 
+$$E(N_{t+1}|N)=\int_0^\infty \sum_{N_{t+1}}N_{t+1}f(N_{t+1},\lambda|N) d\lambda$$
+bo w ogólnoœci gdy mamy np.$f(x,y,z,u,v)$ to
+$$E(X)=\int\int\int\int\int x \cdot f(x,y,z,u,v) dx dy dz du dv$$
+zeby to zrobiæ potrzebujemy rozk³ad $f(N_{t+1},\lambda|N)$ najpierw rozk³ad ³¹czny
+$$f(N_{t+1},N,\lambda)=\frac{e^{-\lambda}\lambda^{N_{t+1}}}{(N_{t+1})!}\cdot \frac{(\lambda t)^N e^{-\lambda t}}{N!}\cdot \frac{\beta^\alpha}{\Gamma(\alpha)} \lambda^{\alpha-1}\cdot e^{-\beta \alpha}$$
+Teraz wyliczymy rozk³ad brzegowy
+$$f(N)=\int_0^\infty \sum_{N_{t+1}}f(N_{t+1},N,\lambda)d\lambda=\int_0^\infty \frac{(\lambda t)^N e^{-\lambda t}}{N!}\cdot \frac{\beta^\alpha}{\Gamma(\alpha)} \lambda^{\alpha-1}\cdot e^{-\beta \alpha} d\lambda=$$
+$$=\int_0^\infty \frac{\beta^\alpha t^N}{\Gamma(\alpha)N!}\cdot \lambda^{N+\alpha-1}\cdot e^{-(\beta+t)\lambda}d\lambda=$$
+po drodze korzystamy z gêstoœci rozk³adu Gamma ¿eby zwin¹æ ca³kê do 1 i mamy:
+$$=\frac{\beta^\alpha t^N}{\Gamma(\alpha)N!}\cdot \frac{\Gamma(N+\alpha)}{(\beta+t)^{N+\alpha}}$$
+Wobec tego
+$$f(N_{t+1},\lambda|N)=\frac{f(N_{t+1},N,\lambda)}{f(N)}=$$
+$$=\frac{e^{-\lambda}\lambda^{N_{t+1}}}{(N_{t+1})!}\cdot e^{-\lambda t}\cdot \lambda^{N+\alpha-1}\cdot e^{-\beta \lambda}\cdot \frac{(\beta+t)^{N+\alpha}}{\Gamma(N+\alpha)}$$
+Mo¿emy teraz policzyæ 
+$$E(N_{t+1}|N)=\int_0^\infty \sum_{N_{t+1}}N_{t+1}f(N_{t+1},\lambda|N) d\lambda=$$
+$$=E(N_{t+1}|N)=\int_0^\infty \sum_{N_{t+1}}N_{t+1} \frac{e^{-\lambda}\lambda^{N_{t+1}}}{(N_{t+1})!}\cdot e^{-\lambda t}\cdot \lambda^{N+\alpha-1}\cdot e^{-\beta \lambda}\cdot \frac{(\beta+t)^{N+\alpha}}{\Gamma(N+\alpha)} d\lambda$$
+widaæ, ¿e suma zwinie siê do wartoœci oczekiwanej czyli $\lambda$, zostaje ca³ka:
+$$=\int_0^\infty \lambda \cdot \frac{(\beta+t)^{N+\alpha}}{\Gamma(N+\alpha)} \cdot e^{-(\beta+t)\lambda}\lambda^{N+\alpha-1}d\lambda=$$
+widaæ, ¿e to jest po prostu rozk³ad $Gamma(N+\alpha,\beta+t)$
+$$=\frac{N+\alpha}{\beta+t}$$
+Dla 
+$$f(N_{t+1},N_{t+2},\lambda,N)$$
+sytuacja by³aby analogiczna tzn:
+$$f(N_{t+1},N_{t+2},\lambda,N)=$$
+$$=\frac{e^{-\lambda}\lambda^{N_{t+1}}}{(N_{t+1})!}\cdot \frac{e^{-\lambda}\lambda^{N_{t+1}}}{(N_{t+1})!} \cdot e^{-\lambda(\beta+t)}\lambda^{N+\alpha-1}\cdot \frac{(\beta+t)^{N+\alpha}}{\Gamma(N+\alpha)}$$
+$$E(N_{t+1}\cdot N_{t+2}|N)=\int_0^\infty \lambda^2 e^{-\lambda t}\lambda^{N+\alpha-1}e^{-\beta \lambda}\frac{(\beta+t)^{N+\alpha}}{\Gamma(N+\alpha)}d\lambda$$
+$$Var(\lambda)=\frac{N+\alpha}{(\beta+t)^2}$$
+$$E(\lambda^2)=\frac{N+\alpha}{(\beta+t)^2}+\frac{(N+\alpha)^2}{(\beta+t)^2}$$
+$$Cov(N_{t+1},N_{t+2}|N)=\frac{N+\alpha}{(\beta+t)^2}$$
+\end{roz}
+
+% zadanie 9
+
+\begin{zad}\textnormal{
+W pewnym ubezpieczeniu liczba szkód, które w ci¹gu $t$ lat wygeneruje ubezpieczony charakteryzuj¹cy siê wartoœci¹ $\lambda$ paramteru ryzyka $\Lambda$ jest procesem Poissona o intensywnoœci $\lambda$ (rocznie).\\
+Zak³adamy, ¿e rozk³ad wartoœci parametru ryzyka $\Lambda$ w populacji wszystkich ubezpieczonych (tak naszych, jak i tych którzy ubezpieczaj¹ siê u konkurentów) dany jest na pó³osi dodatniej gêstoœci¹:
+$$f_\Lambda(\lambda)=\frac{\beta^\alpha}{\Gamma(\alpha)\lambda^{\alpha-1}\exp(-\beta \lambda)}$$
+gdzie $(\alpha,\beta)=(2,9)$.\\
+\\
+Za³ó¿my, ¿e w pierwszym roku tak nasza firma, jak i firmy konkurencyjne proponowa³y wszystkim ubezpieczenie w zamian za t¹ sam¹ sk³adkê. W drugim roku nasza forma kontynuuje praktykê z roku poprzedniego, natomiast konkurenci wprowadzili sk³adki nizsze od przeciêtnej za bezszkodowy przebieg ubezpieczenia w pierwszym roku, zaœ wy¿sze od przeciêtnej odpowiednio dla ubezpieczonych, którzy mieli w pierwszym roku szkody. Zak³adaj¹c, ¿e wszyscy ubezpieczeni wybior¹ tego ubezpieczyciela, który jest dla nich tañszy, oczekiwana wartoœæ szkód w drugim roku (w przeliczeniu na jednego ubezpieczonego) w naszej firmie wzroœnie w stosunku do pierwszego roku o:\\
+\\
+(poprawna odpowiedŸ to: wskaŸnik mieszcz¹cy siê pomiêdzy 40\% a 44\%)
+}\end{zad}
+
+\begin{roz}
+Mamy:
+$$f_\Lambda(\lambda)=\frac{9^2}{\Gamma(2)} \lambda e^{-9\lambda}$$
+œrednio szkód na osobê jest:
+$$E(\lambda)=\frac{2}{9}$$
+Wiemy, ¿e kazdy cz³owiek ma dwie charakterystyki:
+\begin{itemize}
+\item $N_1$ - liczba szkód w 1 roku
+\item $N_2$ - liczba szkód w 2 roku
+\end{itemize}
+Powy¿sze potwierdza
+$$E(N_1)=\int\int\int N_1\cdot f(N_1,N_2,\lambda)dN_1dN_2d\lambda=\frac{2}{9}$$
+Jaka jest gêstoœæ ³¹czna dla liczby szkód:
+$$f(N_1,N_2,\lambda)=?$$
+Mamy:
+$$f(N_1,N_2,\lambda)=\frac{\lambda^{N_1}e^{-\lambda}}{N_1!}\cdot \frac{\lambda^{N_2 e^{-\lambda}}}{N_2!}\cdot\frac{9^2}{\Gamma(2)} \lambda e^{-9\lambda} $$
+Bêdziemy chcieli obliczyæ
+$$E(N_2|N_1=0)$$
+Potrzebujemy rozklad warunkowy
+$$f(N_2,\lambda|N_1)=?$$
+$$f(N_1=0)=\int \sum_{N_2} \frac{\lambda^{N_1}e^{-\lambda}}{N_1!}\cdot \frac{\lambda^{N_2 e^{-\lambda}}}{N_2!}\cdot\frac{9^2}{\Gamma(2)} \lambda e^{-9\lambda} d\lambda=$$
+suma zwija siê do 1
+$$=\int  \frac{\lambda^{N_1}e^{-\lambda}}{N_1!}\cdot\frac{9^2}{\Gamma(2)} \lambda e^{-9\lambda}d\lambda=$$
+pamiêtam, ¿e $N_1=0$, zostanie sk³adnik $e^{-\lambda}$ z rozk³adu Poissona, wobec tego:
+$$=\int \frac{9^2}{\Gamma(2)}\lambda e^{-10\lambda}d\lambda=$$
+to po przekszta³ceniu da rozk³ad Gamma (gêstoœæ zca³kuje siê do jedynki)
+$$=\frac{81}{100}$$
+od razu nale¿y zwróciæ uwagê, ¿e prawdopodobieñstwo, ¿e liczba szkód w 1 roku wyniesie 0 to $81/100$ to oznacza, ¿e na 100 kierowców 81 nie mia³o szkody.
+Liczymy 
+$$f(N_2,\lambda|N_1=0)=\frac{=\frac{\lambda^{N_1}e^{-\lambda}}{N_1!}\cdot \frac{\lambda^{N_2 e^{-\lambda}}}{N_2!}\cdot\frac{9^2}{\Gamma(2)} \lambda e^{-9\lambda}}{\frac{81}{100}}=$$
+$$=100\cdot \frac{\lambda^{n_1}e^{-\lambda}}{n_1!}\cdot \frac{\lambda^{n_2}e^{-\lambda}}{n_2!}\lambda e^{-9\lambda}$$
+Wobec tego
+$$E(N_2|N_1=0)=\int \sum_{N_2} 100\cdot \frac{\lambda^{n_1}e^{-\lambda}}{n_1!}\cdot \frac{\lambda^{n_2}e^{-\lambda}}{n_2!}\lambda e^{-9\lambda} d\lambda=$$
+$$\int 100 \lambda^2 e^{-10\lambda}=\frac{1}{10}\Gamma(3)=0.2$$
+powy¿ej ponownie zwiniêcie do Gamma.\\
+\\
+Czyli osoby które przejd¹ do konkurencji bêd¹ mia³y szkodowoœæ $0.2$. Wobec tego mieliœmy w pierwszym roku szkodowoœæ ³¹czn¹ $2/9$, która podzieli³a siê na dwie grupy:
+$$\frac{2}{9}=0.2\cdot \frac{81}{100}+x\cdot \frac{19}{100}$$
+st¹d $x=0.317\%$ to nasza szkodowoœæ nowa! O ile wzroœnie?
+$$\frac{2}{9}\cdot (1+z\%)=0.317\%\rightarrow z=42.6\%$$
+co daje odpowiedŸ
+\end{roz}
+
+% zadanie 10
+
+\begin{zad}\textnormal{
+Niech N oznacza liczbê szkód zasz³ych w ci¹gu roku z pewnego ubezpieczenia, z czego:
+\begin{itemize}
+\item $M$ to liczba szkód zg³oszonych przed koñcem tego roku
+\item $K$ to liczba szkód które zostan¹ zg³oszone w ci¹gu lat nastepnych.
+\end{itemize}
+Jest sum¹ sk³adników, z których ka¿dy przyjmuje wartoœæ jeden gdy dan¹ szkodê zg³oszono w ci¹gu roku, zaœ zero, gdy zg³oszenie nast¹pi³o póŸniej.
+Przyjmujemy, ¿e $M$ ma rozk³ad z³o¿ony (a wiêc liczba sk³adników oraz wartoœæ ka¿dego z nich to niezale¿ne zmienne losowe, zaœ wszystkie sk³adniki maj¹ ten sam rozk³ad).\\
+\\
+Za³ó¿my, ¿e liczba szkód zasz³ych $N$ ma rozk³ad dwumianowy o parametrach $(n,q)=(10,\frac{2}{5})$, z wartoœci¹ oczekiwan¹ równ¹ 4, zaœ zmienna wskazuj¹ca na zgloszenie szkody w ci¹gu danego roku ma tak¿e rozk³ad dwumianowy o parametrach $(n,q)=\left(1,\frac{1}{2}\right)$, a wiêc prawdopodobieñstwo zg³oszenia szkody w ci¹gu roku wynosi $1/2$.\\
+Wobec tego warunkowa wartoœæ oczekiwana $E(K|M=3)$ wynosi: ?.
+}\end{zad}
+
+\begin{roz}
+To zadanie wymaga tylko jednego tricku, liczymy p-p warunkowe:
+$$P(\text{szkoda zasz³a}|\text{szkoda nie zosta³a zg³oszona})=\frac{P(\text{zasz³a i nie zg³oszona})}{P(\text{szkoda nie zosta³a zg³oszona})}=$$
+$$=\frac{\frac{3}{5}\cdot \frac{1}{2}}{\frac{2}{5}\cdot \frac{1}{2}+\frac{3}{5}}=\frac{1}{4}$$
+Z rozk³adu liczby szkód wiemy, ¿e mamy 10 `potencjalnych' szkód, które mog¹ siê zdarzyæ i zg³osiæ, wobec tego 
+$$E(K|M=0)=10\cdot \frac{1}{4}=\frac{10}{4}$$
+W naszym przypadku wiemy, ¿e ju¿ siê zg³osi³y 3 wiêc mamy 7 potencjalnych szkód st¹d:
+$$E(K|M=3)=7\cdot \frac{1}{4}=\frac{7}{4}$$
+\end{roz}
+
+%------------------- EGZAMIN 8 grudnia 2014 ------------------
+
+\newpage
+\section{Egzamin z 8 grudnia 2014}
+
+% zadanie 1
+
+\begin{zad}\textnormal{
+Zmienne losowe $X_1,X_2$ s¹ niezale¿ne i maj¹ taki sam rozk³ad z atomami:
+$$Pr(X_1=0)=6/10$$
+$$Pr(X_1=1)=1/10$$
+i gêstoœci¹ $f(x)=3/10$ na przedziale $(0,1)$
+Wobec tego $Pr(X_1+X_2\le5/3)$ wynosi:?
+}\end{zad}
+\begin{roz}
+Rysujemy rysunek pomocniczy dla $X_1+X_2\le5/3$ z uwzglêdnieniem faktu, ¿e gêstoœæ istnieje na przedziale $(0,1)$. Nastêpnie liczymy 
+$$P(X_1=0 \lor X_2=0)=P(X_1=0)+P(X_2=0)-P(X_1=0 \land X_2=0)=$$
+$$=6/10+6/10-36/100=21/25$$
+Doliczamy obszar:
+$$\int_0^{2/3}\int_0^1 \frac{3}{10}\cdot \frac{3}{10}dx_2dx_1+\int_{2/3}^1\int_{0}^{5/3-x_1}\frac{3}{10}\frac{3}{10}dx_2dx_1=0.06+0.025=0.085$$
+Dodaj¹c te dwie czêœci mamy $0.925$ i to jest jeszcze za ma³o bo musimy uwzglêdniæ
+$$P(X_2=1 \land 0<X_1\le2/3)=\frac{1}{10}\cdot \int_0^{2/3}\frac{3}{10}dx_1=0.02$$
+$$P(X_1=1 \land 0<X_2\le2/3)=0.02$$
+Razem:
+$Pr(X_1+X_2\le5/3)=0.084+0.085+0.02+0.02=0.965$
+\end{roz}
+
+% zadanie 2
+
+\begin{zad}\textnormal{
+Pewien podmiot posiada wyjœciowy maj¹tek o wartoœci $w$, i nara¿ony jest na stratê $X$. Strata X jest zmienn¹ losow¹ o rozk³adzie dwupunktowym:
+$$Pr(X=1)=q, Pr(X=0)=1-q$$
+Podmiot ten postêpuje racjonalnie, a w swoich decyzjach kieruje siê maksymalizacj¹ oczekiwanej u¿ytecznoœci, przy czym jego funkcja u¿ytecznoœci jest postaci:
+$$u(x)=-exp(-x)$$
+Rynek ubezpieczeniowy oferuje kontrakty ubezpieczeniowe wyp³acaj¹ce $\alpha X$ za szkodê w wysokoœci X dla dowolonych $\alpha \in (0,1]$, w zamian za sk³adkê w wysokoœci $(1+\theta)\alpha E(X)$.\\
+\\
+Jeœli za³o¿ymy, ¿e $\theta=25\%$, zaœ $q=20\%$ wtedy dla podmiotu, o którym mowa, optymalny poziom parametru $\alpha$ wynosi (wybierz najbli¿sze przybli¿enie): ?
+}\end{zad}
+
+\begin{roz}
+Co to funkcja u¿ytecznoœci? Wstawiamy do niej wartoœæ maj¹tku i liczymy 
+$$E(u(x))$$
+chcemy aby ta wartoœæ oczekiwana by³a maksymalna. \\
+\\
+W zadaniu mamy maj¹tek nara¿ony na stratê $X$ i tak:\\
+\\
+1. Z prawdopodieñstem 0.2 do szkody dochodzi (szkoda ma wartoœæ 1), wtedy wartoœæ maj¹tku wynosi:
+$$w-1+\alpha-0.25\alpha$$
+2. Z prawdopobieñstwem 0.8 do szkody nie dochodzi, wtedy wartoœæ maj¹tku wynosi:
+$$w-0.25\alpha$$
+Wartoœæ oczekiwana
+$$E(u(W))=-e^{-(w-1+\alpha-0.25\alpha)}\cdot\frac{1}{5}-e^{-(w-0.25\alpha)}\cdot \frac{4}{5}=f(\alpha)$$
+to chcemy maksymalizowaæ po $\alpha$
+$$\frac{\partial f}{\partial \alpha}=-\frac{1}{5}e^{-(w-1+0.75\alpha)}\cdot (-0.75)-\frac{4}{5}e^{-(w-0.25\alpha)}\cdot 0.25=0$$
+St¹d 
+$$\alpha=0.71232$$
+\end{roz}
+
+% zadanie 3
+
+\begin{zad}\textnormal{
+Niech $T$ oznacza moment zajœcia szkody, zaœ $T+X$ moment jej likwidacji. Zak³adamy, ¿e moment zajœcia szkody $T$ jest zmienn¹ losow¹ o rozk³adzie jednostajnym na odcinku $(0,t_0)$, zaœ okres czasu $X$, jaki up³wa od zajœcia do likwidacji szkody, jest zmienn¹ losow¹ o rozk³adzie wyk³adniczym z wartoœci¹ oczekiwan¹ równ¹ 2. Zak³adamy, ¿e zmienne losowe $T$ oraz $X$ s¹ niezale¿ne.\\
+Warunkow¹ wartoœæ oczekiwan¹ $E(X|X+T>t_0)$ intepretujemy jako oczekiwany ca³kowity czas likwidacji takiej szkody, która w momencie czasu $t_0$ wci¹¿ oczekuje na likwidacjê. Granica 
+$$\lim_{t_0 \rightarrow \infty}E(X|X+T>t_0)$$ wynosi: ?.
+}\end{zad}
+
+\begin{roz}
+To zadanie mo¿na rozwi¹zaæ standardowo tzn:\\
+\\
+W klasycznym przypadku warunkowa wartoœæ oczekiwana:
+$$ E(X|A)=\frac{1}{P(A)}\int\limits_A X(\omega)d P$$
+Rozpisana:
+$$E(X|Y=y)=\int_{-\infty}^\infty xf(x|y)dx=\frac{1}{f_Y(y)}\int_{-\infty}^{\infty}xf(x,y)dx=\frac{\int_{-\infty}^\infty xf(x,y)dx}{\int_{-\infty}^\infty f(x,y)dx}$$
+My mamy dwie zmienne losowe wiêc bêdzie ca³ka podwójna:
+$$E(X|X+T > t_0)=\frac{\int\int x \cdot f(x,t)dxdt}{\underbrace{\int\int f(x,t)dxdt}_{=P(X+T>t_0)}}$$
+wa¿ne jest okreœlenie granic ca³kowania. Rysujemy rysunek pomocniczy. Mamy:
+$$P(X+T>t_0)=\int_0^t \int_{-t+t_0}^\infty \frac{1}{2}e^{-\frac{1}{2}x}\cdot \frac{1}{t_0}dxdt=\frac{2}{t_0}\left(1-e^{-\frac{1}{2}t_0}\right)$$
+Licznik:
+$$\int_0^{t_0}\int_{-t+t_0}^\infty x \cdot \frac{1}{2}\cdot e^{-\frac{1}{2}x}\cdot \frac{1}{t_0}dxdt=\frac{1}{t_0}(8-8e^{-\frac{1}{2}t_0-2t_0e^{-\frac{1}{2}t_0}})$$
+$$E(X|X+T>t_0)=\frac{\frac{1}{t_0}(8-8e^{-\frac{1}{2}t_0-2t_0e^{-\frac{1}{2}t_0}})}{\frac{2}{t_0}\left(1-e^{-\frac{1}{2}t_0}\right)}\xrightarrow{t_0 \rightarrow \infty}4$$
+\end{roz}
+
+% zadanie 4 
+
+\begin{zad}\textnormal{
+W pewnym ubezpieczeniu proces pojawiania siê szkód jest procesem Poissona z oczekiwan¹ liczb¹ szkód w ci¹gu roku równ¹ 2, a wartosci pojedynczych szkód (niezale¿ne nawzajem i od procesu pojawiania siê szkód) maj¹ rozk³ad jednostajny na przedziale $(0,1)$.\\
+\\
+Ubezpieczony stosuje nastêpuj¹c¹ strategiê zg³aszania szkód w ci¹gu roku:
+\begin{itemize}
+\item Nie zg³asza szkód, dopóki nie zdarzy mu siê szkoda o wartoœci przekraczaj¹cej $1/2$
+\item Zg³asza pierwsz¹ szkodê, która przekroczy³a wartoœæ $1/2$, po czym zg³asza ewentualnie nastêpne szkody bez wzgledu na to, jaka jest ich wartoœæ.
+\end{itemize}
+Charakter ubezpieczenia jest przy tym taki, ¿e decyzja o niezg³oszeniu danej szkody jest nieodwa³alna - nie ma wiêc mo¿liwoœci zg³oszenia danej szkody dopiero wtedy, kiedy zajdzie któraœ z nastêpnych szkód.\\
+\\
+Oczekiwana liczba szkód zg³oszonych w ci¹gu roku z tego ubezpieczenia wynosi (z dobrym przybli¿eniem)
+}\end{zad}
+
+\begin{roz}
+To zadanie jest troszkê trickowe. Trzeba je rozwi¹zaæ przy za³o¿eniu, ¿e zasz³o $N$ szkód. Tzn. Niech $K$ oznacza liczbê szkód zg³oszonych w ci¹gu roku z ubezpieczenia:
+$$E(K)=E(E(K|N))$$ 
+Rozk³ad poissona:
+$$P(X=n)=\frac{\lambda^ne^{-\lambda}}{n!}$$
+gdy $\lambda=2$ to
+$$P(X=n)=\frac{2^ne^{-2}}{n!}$$
+Rozwa¿my prawdopobieñstwa, niech $X$ oznacza wysokoœæ szkody (rozk³ad jednostajny):
+$$P\left(X>\frac{1}{2}\right)=q=\frac{1}{2}$$
+$$P\left(X<\frac{1}{2}\right)=1-q=\frac{1}{2}$$
+Je¿eli za³ozymy, ¿e by³o $N$ szkód to mamy nastêpuj¹ce prawdopobieñstwa zg³oszenia:\\
+\\
+1. Zg³osi siê 0 szkód gdy: $(1-q)^N$ (¿adna nie przekroczy $1/2$)\\
+\\
+2. Zg³osi siê 1 szkoda gdy: $(1-q)^{N-1}\cdot q$ ($N-1$ pierwszych szkód mniejszych od $1/2$ ostatnia wiêksza)\\
+\\
+3. Zg³osz¹ siê 2 szkody gdy: $(1-q)^{N-2}\cdot q$ ($N-2$ pierwszych szkód mniejszych od $1/2$ potem jedna wiêksza, a dalej to ju¿ zg³aszaj¹ siê wszystkie z p-p 1\\
+\\
+4. Zg³osi siê k szkód pod warunkiem, ¿e zasz³o N szkód:
+\begin{equation*}
+ Pr(k|n)=
+\begin{cases}
+(1-q)^{n-k}\cdot q & \text{dla } k=1,2,\ldots,n,\\
+(1-q)^n & \text{dla } k=0
+\end{cases}
+\end{equation*}
+Mamy:
+$$E(k|N)=\sum_{i=1}^N k (1-q)^{N-k}\cdot q=q(1-q)^N=q(1-q)^N\sum_{k=1}^N k\left(\frac{1}{1-q}\right)^k$$
+Dygresja: jak wysumowaæ $\sum_{i=1}^N kx^k$?. WeŸmy
+$$g(x)=\sum_{k=0}^N x^k =\frac{1-x^{N+1}}{1-x}$$
+$$g'(x)=\sum_{k=1}^N k x^k$$
+$$\sum_{k=1}^N kx^k=xg'(x)=x\cdot \left(\frac{1-x^{N-1}}{1-x}\right)'=(*)$$
+$$ \left(\frac{1-x^{N+1}}{1-x}\right)'=\frac{(1-x^{N+1})'(1-x)-(1-x^{N+1})(1-x)'}{(1-x)^2}=$$
+$$=\frac{1-(N+1)x^N+Nx^{N+1}}{(1-x)^2}$$
+$$(*)=\frac{x-(N+1)x^{N+1}+Nx^{N+2}}{(1-x)^2}=$$
+wstawiamy za $x=\frac{1}{1-q}$ i mamy
+$$E(k|N)=\frac{Nq-(1-q)+(1-q)^{N+1}}{q}$$
+dla $q=1/2$ jest:
+$$E(k|N)=N-1+\left(\frac{1}{2}\right)^N$$
+$$E(N)=2$$
+$$E\left(\frac{1}{2^N}\right)=\sum_{i=0}^\infty \left( \frac{1}{2}\right)^k e^{-2}\frac{2^k}{k!}=e^{-1}\sum_{k=0}^\infty e^{-1}\frac{1^k}{k!}=e^{-1}$$
+St¹d
+$$E(k)=E(E(k|N))=2-1+e^{-1}=1.37$$
+\end{roz}
+
+% zadanie 5
+
+\begin{zad}\textnormal{
+Warunkowy rozk³ad wartoœci szkód generowanych przez pojedyczne ryzko z pewnej populacji przy danej wartoœci $\lambda$ parametru ryzyka $\Lambda$ jest z³o¿onym rozk³adem Poissona
+\begin{itemize}
+\item z oczekiwan¹ liczba szkód równ¹ $\lambda$, oraz
+\item z wartoœci¹ oczekiwan¹ pojedycnzje szkody równ¹ $10+\lambda$
+\end{itemize}
+Rozk³ad parametru ryzyka $\Lambda$ w populacji jest rozk³adem Gamma o wartoœci oczekiwanej równej $3/10$ oraz wariancji równej $3/100$. Losujemy z tej populacji (ca³kowicie przypadkowo) $n$ ryzyk, które nastêpnie generuj¹ $N_n$ szkód o ³¹cznej wartoœci $S_n$. Rozwa¿my zachowanie siê zmiennej losowej $S_N/N_n$ okreœlonej oczywiœcie o ile liczba szkód jest wiêksza od zera. Granica
+$$\lim_{n \rightarrow \infty }E\left(\frac{S_n}{N_n}|N_n>0\right)$$
+wynosi: ?
+}\end{zad}
+
+\begin{roz}
+Wartoœæ szkody wygenerowana przez 1 ryzyko:
+$$\lambda_1 \cdot (10+\lambda_1)$$
+Wartoœci szkód wygenerowanych przez $n$ ryzyk: 
+$$\lambda_1(10+\lambda_1)+\lambda_2(10+\lambda_2)+\lambda_3(10+\lambda_3)+\ldots+\lambda_n(10+\lambda_n)=$$
+$$10\lambda_1+\lambda_1^2+\ldots+10\lambda_n+\lambda_n^2$$
+Liczba szkód wygenerowanych przez n ryzyk:
+$$\lambda_1+\lambda_2+\ldots+\lambda_n$$
+Prawo wielkich liczb:
+$$    \Pr\!\left( \lim_{n\to\infty}\overline{X}_n = \mu \right) = 1.$$
+czyli, œrednia zbiega do wartoœci oczekiwanej! \\
+\\
+St¹d w wartoœci oczekiwanej:
+$$E\left(\frac{10\lambda_1+\lambda_1^2+\ldots+10\lambda_n+\lambda_n^2}{\lambda_1+\lambda_2+\ldots+\lambda_n}\right)=10+E\left(\frac{\lambda_1^2+\ldots+\lambda_n^2}{\lambda_1+\ldots+\lambda_n}\right)=$$
+$$=10+E\left(\frac{\frac{\lambda_1^2+\ldots+\lambda_n^2}{n}}{\frac{\lambda_1+\ldots+\lambda_n}{n}}\right)\xrightarrow{n \rightarrow \infty}10+E\left(\frac{E(\lambda^2)}{E(\lambda)}\right)=(*)$$
+$$E(\lambda)=3/10$$
+$$Var(\lambda)=3/100$$
+$$E(\lambda^2)=\frac{3}{100}+\frac{9}{100}=\frac{12}{100}$$
+$$(*)=10+\frac{12}{100}\cdot \frac{10}{3}=10.4$$
+\end{roz}
+
+% zadanie 6
+
+\begin{zad}\textnormal{
+Rozwa¿my klasyczny model procesu nadwy¿ki ubezpieczyciela z czasem ci¹g³ym:
+\begin{itemize}
+\item skumulowana wartoœæ szkód $S(t)$ jest procesem z³o¿onym Poissona, w którym intensywnoœæ pojawiania siê szkód wynosi $\lambda=300$, zaœ rozk³ad wartoœci pojedycznej szkody dany jest na pó³osi dodaniej gêstoœci¹:
+$$f_Y(x)=\frac{1}{12}[\exp(-x/4)+\exp(-x/8)]$$
+\item intensywnoœæ sk³adki (nap³ywaj¹cej w sposób ci¹g³y) wynosi $c=2500$
+\end{itemize}
+Wiadomo, ¿e przy takich za³o¿eniach funkcja prawdopodobieñstwa ruiny (jako funkcja wysokoœci nadwy¿ki pocz¹tkowej u) jest postaci:
+$$\Psi(u)=a_1\exp(-r_1\cdot u)+a_2\exp(-r_2\cdot u)$$
+Suma parametrów tego wzoru $(a_1+a_2)$ wynosi: ?
+}\end{zad}
+
+\begin{roz}
+Klasyczny model procesu nadwy¿ki:
+$$U(t)=u+ct-S_{N(t)}$$
+$ct$ - suma sk³adek zgromadzonych do momentu $t$
+$$c=(1+\theta)\lambda E(Y_1)$$
+Wiemy, ¿e dla dowolnego rozk³adu
+$$\Psi(0)=\frac{1}{1+\theta}$$
+$$\Psi(0)=a_1\cdot e^{-r_1\cdot 0}+a_2\cdot e^{-r_2\cdot 0}=a_1+a_2$$
+$$\frac{1}{1+\theta}=a_1+a_2$$
+Ile wynosi $\theta?$ z wzoru na $c$ mamy:
+$$2500=(1+\theta)\cdot 300 \cdot E(Y_1)$$
+$$E(Y_1)=\frac{1}{12}\int_0^\infty xe^{-x/4}+xe^{-x/8}=\frac{1}{12}(16+64)=\frac{20}{3}$$
+$$\frac{2500}{300\cdot \frac{20}{3}}=1+\theta$$
+$$a_1+a_2=\frac{1}{1.25}=\frac{4}{5}$$
+\end{roz}
+
+% zadanie 7
+
+\begin{zad}\textnormal{
+Wiemy, ¿e rozk³ad liczby szkód $N$ okreœlony na zbiorze $\{0,1,2,3,\ldots\}$ jest rozk³adem niezdegenerowanym, a ci¹g prawodopodobieñstw tego rozk³adu spe³nia równanie:
+$$Pr(N=n)=\left(a+\frac{b}{n}\right)Pr(N=n-1)$$
+dla $n=1,2,3,\ldots$. Wobec tego wariancja zmiennej losowej $N$ dana jest wzorem:?
+}\end{zad}
+
+\begin{roz}
+Mamy liczyæ wariancjê wiêc najpierw wartoœæ oczekiwana:
+$$EN=\sum_{n=0}^\infty n P(N=n)=\sum_{n=1}^\infty n \cdot \left(\frac{an+b}{n}\right)Pr(N=n-1)=$$
+$$=\sum_{n=1}^\infty (an+b)Pr(N=n-1)=\sum_{n=0}^\infty (an+a+b)Pr(N=n)=$$
+$$=aEN+a+b$$
+$$EN=\frac{a+b}{1-a}$$
+oczywiœcie $a\neq1$. Dalej
+$$EN^2=\sum_{n=0}^\infty n^2 P(N=n)=\sum_{n=1}^\infty n(an+b)P(N=n-1)=$$
+$$=\sum_{n=0}^\infty (n+1)(an+a+b)P(N=n)=$$
+$$=\sum_{n=0}^\infty n(an+a+b)P(N=n)+\underbrace{\sum_{n=0}^\infty (an+a+b)P(N=n)}_{=aEN+a+b}=$$
+$$=aE(N^2)+(a+b)EN+aEN+a+b=aE(N^2)+\frac{(a+b)(a+b+1)}{1-a}$$
+$$E(N^2)=\frac{(a+b)(a+b+1)}{(1-a)^2}$$
+$$Var(N)=E(N^2)-(EN)^2=\frac{a+b}{(1-a)^2}$$
+\end{roz}
+
+% zadanie 8
+
+\begin{zad}\textnormal{
+Kierowca, którego charakteryzuje wartoœæ $q$ parametru ryzyka $Q$, zg³asza szkody (jedn¹ lub wiêcej) w ci¹gu roku z prawdopodobieñstwem $q$, zaœ nie zg³asza szkód z prawdopodobieñstwem $p=1-q$, przy czym zdarzenia te w kolejnych latach s¹ zdarzeniami niezale¿nymi. Jeœli kierowcê z tej populacji przypadkowo wylosujemy, to charakteryzuj¹c¹ go wartoœæ parametru $q$ traktujemy jako realizacjê zmiennej losowej $Q$. Populacja jest niejednorodna, w zwi¹zku z czym $Var(Q)>0$\\
+\\
+Zak³adamy, ¿e populacja jest zamkniêta (starzy kierowcy nie znikaj¹, nowi siê nie pojawiaj¹). Kierowcy migruj¹ pomiêdzy klasami bardzo prostego, 3-klasowego systemu bonus-malus. W systemie tym ka¿dy kierowca, który w danym roku zg³osi³ jedn¹ lub wiêcej szkód, l¹duje w roku nastêpnym w klasie pierwszej (z najwy¿sz¹ sk³adk¹). Jeœli jednak nie zg³osi³ ¿adnej szkody, wtedy:
+\begin{itemize}
+\item L¹duje w klasie drugiej, o ile w danym roku by³ w klasie pierwszej;
+\item L¹duje w klasie trzeciej, o ile w danym roku by³ w klasie drugiej lub trzeciej.
+\end{itemize}
+Na podstawie obserwacji ustaliliœmy, ¿e fakcja kierowców z tej populacji przebywaj¹cych w klasie pierwszej wynosi $20\%$, w klasie drugiej $8\%$, zaœ w klasie trzeciej $72\%$. Oczywiœcie pominêliœmy przy tym obserwacjê z pierwszych paru lat funkcjonowanai systemu bonus-malus, kiedy przynale¿noœæ do klasy zale¿a³a jeszcze od klasy startowej.\\
+Jeœli przymiemy, ¿e nasze oceny $20\%, 8\%$ oraz $72\%$ nie s¹ obarczone b³êdem to wynika z tego, ¿e $Var(Q)$ wynosi: ? 
+}\end{zad}
+
+\begin{roz}
+Prawdopodobieñstwo, ¿e ktoœ przebywa w klasie pierwszej:
+$$P_1=q$$
+Prawdopodobieñstwo, ¿e ktoœ przebywa w klasie drugiej:
+$$P_2=q(1-q)$$
+Prawdopodobieñstwo, ¿e ktoœ przebywa w klasie trzeciej:
+$$P_3=1-q-q(1-q)=(1-q)^2$$
+Z treœci zadania widzimy, ¿e frakcja kierowców przebywaj¹cych w klasie 1 wynosi $20\%$, powy¿ej wyliczyliœmy, ¿e z jednego kierowcy spodziewamy siê, ¿e w klasie pierwszej bêdzie $q$, a ¿e $q$ jest realizacj¹ zmiennej losowje $Q$ to w wartoœci oczekiwanej z jednego kierowcy w klasie pierwszej spodziewam siê: 
+$$E(Q)=0.2$$
+Frakcja dla przebywaj¹cych w klasie drugiej:
+$$E(Q(1-Q))=E(Q)-E(Q^2)=0.08 \rightarrow E(Q^2)=0.2-0.08=0.12$$
+$$Var(Q)=0.12-0.2^2=0.08$$
+\end{roz}
+
+% zadanie 9
+
+\begin{zad}\textnormal{
+Modelujemy przebiegaj¹cy w czasie proces œci¹gania nale¿noœci regresowych przez ubezpieczyciela. Niech $T$ oznacza zmienn¹ losow¹ o rozk³adzie
+\begin{itemize}
+\item ci¹g³ym na przedziale $(0,+\infty)$
+\item z pewn¹ mas¹ prawdopodobieñstwa w punkcie $+\infty$
+\end{itemize}
+reprezentuj¹c¹ czas œci¹gniêcia nale¿noœci regresowej (liczony od momenty powstania prawa do regresu). Niech $f_T$, $F_T$ oraz $h_T$ oznaczaj¹ odpowiednio funkcjê gêstoœci, dystrybuantê oraz funkcjê hazardu zamiennej $T$. Dystrybuancie oraz funkcji hazardu nadajemy nastêpuj¹c¹ intepretacjê:
+\begin{itemize}
+\item $F_T(t)=\int_0^t f_T(s)ds$ to wskaŸnik œci¹galnoœci do czasu t (oczywiœcie \\$F_T(0)=0$)
+\item $\lim_{t \rightarrow \infty}F_T(t)=Pr(T < \infty)$ to wskaŸnik œci¹galnoœci ostatecznej
+\item $h_T(t)=\frac{f_T(t)}{1-F_T(t)}$ dla $t>0$ to natê¿enie procesu œci¹gania (gêstoœæ œci¹gania nale¿noœci, które do momentu $t$ pozostaj¹ jeszcze nie œci¹gniête)
+\end{itemize}
+Za³ó¿my, ¿e natê¿enie procesu œci¹gania dane jest funkcj¹ hazardu okreœlon¹ na pó³osi dodaniej nastêpujaco:
+$$h_T(t)=\frac{2}{2+\exp(t)}$$
+Wtedy wskaŸnik œci¹galnoœci ostatecznej
+}\end{zad}
+\begin{roz}
+mamy:
+$$h_T(t)=\frac{2}{2+e^t}=\frac{f_T(t)}{1-F_t(t)}$$
+$$h=\frac{F'}{1-F}\rightarrow F'\rightarrow h(1-F)$$
+wiemy, ¿e $F'=\frac{dF}{dt}$
+$$\frac{1}{1-F}dF=h \cdot dt$$
+ca³kujemy:
+$$ln(1-F)=-\int h\cdot dt$$
+$$1-F=e^{\int h dt}\rightarrow F=1-e^{-\int h \cdot dt}$$
+$$F(t)=1-e^{-\int h dt+c}$$
+ca³ka doœæ sprytnie:
+$$\int \frac{2}{2+e^t}dt=\int \frac{2+e^t-e^t}{2+e^t}dt=$$
+$$\int \frac{2+e^t}{2+e^t}-\int \frac{e^t}{2+e^t}=$$
+$$=t-\ln(2+e^t)+c$$
+mamy
+$$F(0)=1-e^{-\int hdt+c}=0$$
+czyli 
+$$0=\int h dt= 0-\ln(2+e^0)+c$$
+st¹d $c=\ln3$
+mamy:
+$$F(t)=1-e^{-(t-\ln(2+e^t)+\ln3)}=1-e^{-t}e^{\ln(2+e^t)}e^{-\ln3}=$$
+$$=1-e^{-t}(2+e^t))\frac{1}{3}=1-\frac{1}{3}(2e^{-t}+1)\xrightarrow{t \to \infty}\frac{2}{3}$$
+\end{roz}
+
+% zadanie 10
+
+\begin{zad}\textnormal{
+Niech $N$ oznacza liczbê szkód zasz³ych w ci¹gu roku z pewnego ubezpieczenia, z czego:
+\begin{itemize}
+\item $M$ to liczba szkód zg³oszonych przed koñcem tego roku,
+\item $K$ to liczba szkod które zostan¹ zg³oszone w ci¹gu lat nastêpnych,
+\item Zachodzi oczywiœcie $N=M+K$.
+\end{itemize}
+Liczba szkód zg³oszonych przed koñcem roku:
+$$M=Z_1+Z_2+\ldots+Z_N$$
+jest sum¹ sk³adników, z których ka¿dy przyjmuje wartoœæ jeden gdy dan¹ szkodê zg³oszono w ci¹gu roku, zaœ zero, gdy zg³oszenie nast¹pi³o póŸniej. Przyjmujemy, ¿e zmienne losowe $N,Z_1,Z_2,Z_3,\ldots$ s¹ niezale¿ne, oraz i¿ $Z_1,Z_2,Z_3,\ldots$ maj¹ taki sam rozk³ad
+$$Pr(Z_1=1)=1/4$$
+$$Pr(Z_1=0)=3/4$$
+Jeœli teraz za³o¿my, ¿e liczba szkód zasz³ych w ci¹gu roku ma rozk³ad ujemny dwumianowy o postaci:
+$$Pr(N=n)=(n+1)\left(\frac{2}{3}\right)^2\left(\frac{1}{3}\right)^n$$
+$n=0,1,2,\ldots,$ to prawdopodobieñstwo warunkowe $Pr(K=1|M=1)$ wyniesie: ?
+}\end{zad}
+
+\begin{roz}
+Dla przypomnienia:\\
+\\
+\textbf{Rozk³ad ujemny dwumianowy}
+$$P(X=k) =  {k+r-1 \choose k}\cdot (1-p)^r p^k,\!$$
+$$EX=\frac{pr}{1-p}$$
+$$VarX=\frac{pr}{(1-p)^2}$$
+W zadaniu mamy:
+$$Pr(K=1|M=1)=\frac{Pr(K=1\land M=1)}{P(M=1)}$$
+Rozwa¿my $Pr(K=1 \land M=1)$
+to oznacza, ¿e $N=2$ i jednoczeœnie $M=Z_1+Z_2$ skoro $K=1$ to oznacza, ¿e jedna z szkód $Z_i$ siê niezg³osi³a (Zg³asza siê $Z_1$ niezg³asza $Z_2$ lub odwrotnie). St¹d
+$$P(K=1 \land M=1)=P(N=1)\cdot (P(Z_1=1,Z_2=0)+P(Z_1=0,Z_2=1)=$$
+$$=(2+1)\left(\frac{2}{3}\right)^2\left(\frac{1}{3}\right)^2\cdot 2\cdot \frac{1}{4}\cdot\frac{3}{4}=\frac{1}{18}$$
+Teraz rozwa¿my $P(M=1)$ jakie jest prawdopodoboieñstwa ca³kowitego:
+$$P(A)=\sum_{i \in I} P(A|H_i)P(H_i)$$
+czyli 
+$$P(M=1)=\sum_{k=0}^\infty P(M=1|N=k)\cdot P(N=k)$$
+Rozwa¿my $P(M=1|N)$ to oznacza, ¿e wœród N szkód zg³osi³a siê przed koñcem roku tylko 1. Mamy wiêc klasyczny przyk³ad rozk³adu dwumianowego
+$$P(M=1|N)={N \choose 1}\left(\frac{1}{4}\right)^1\cdot \left(\frac{3}{4}\right)^{N-1}$$
+dalej
+$$P(M=1)=\sum_{k=0}^\infty k\left(\frac{1}{4}\right)\cdot \left(\frac{3}{4}\right)^{k-1} \cdot (k+1)\left(\frac{2}{3}\right)^2\left(\frac{1}{3}\right)^k=$$
+$$\frac{1}{4}\cdot \frac{4}{9}\cdot \frac{4}{3}\sum k(k+1)\frac{3^k}{4^k}\cdot \frac{1}{3^k}=$$
+$$=\frac{1}{4}\cdot \frac{4}{9}\cdot \frac{4}{3}\sum k(k+1)\left(\frac{1}{4}\right)^k=(*)$$
+Teraz trzeba skojarzyæ, ¿e mo¿na u¿yæ rozk³adu ujemnego dwumianowego:
+$${k+r-1 \choose k}=\frac{(k+r-1)!}{k!(r-1)!}$$
+przy r=2 daje:
+$$=\frac{(k+1)!}{k!}=k+1$$
+czyli je¿eli do powy¿szego zaaplikujemy jeszcze sk³adnik $$(1-p)^r=(1-1/4)^2=(3/4)^2$$
+$$(*)=\frac{4}{27} (4/3)^2 \sum k \cdot (k+1)(3/4)^2(1/4)^k=(*)$$
+to mamy wartoœæ oczekiwan¹ dla rozk³adu o $p=1/3$ oraz $r=2$, ze wzoru:
+$$EX=\frac{pr}{1-p}=\frac{(1/4)\cdot 2}{3/4}=2/3$$
+$$(*)=\frac{4}{27}\cdot \frac{16}{9}\cdot \frac{2}{3}=\frac{128}{729}$$
+Wobec tego:
+$$Pr(K=1|M=1)=\frac{Pr(K=1\land M=1)}{P(M=1)}=\frac{1/18}{128/729}=81/256$$
+\end{roz}
+
+%------------------- EGZAMIN 23 marca 2015 ------------------
+
+\newpage
+\section{Egzamin z 23 marca 2015}
+
+% zadanie 2
+
+\begin{zad}\textnormal{
+Pewne ryzyko generuje w kolejnych szeœciu okresach dwu-miesiêcznych szkody o ³¹cznej wartoœci odpowiednio $X_1,\ldots,X_6$. Zmienne losowe $X_i$ maj¹ identyczny rozk³ad wyk³adniczy i s¹ nawzajem niezale¿ne.\\
+Ubezpieczyciel pokrywa ³¹czn¹ wartoœæ szkód za c³¹y rok, ceduje jednak na reasekuratora ³¹czn¹ wartoœæ szkód z jednego, wybranego przez siebie ex post okresu (oczywiœcie wybierze najgorszy z nich). Jaki jest udzia³ sk³adki reasekuracyjnej w sk³adce ubezpieczeniowej (obie sk³adki policzone s¹ wed³ug ich wartoœci oczekiwanej)?
+}\end{zad}
+
+\begin{roz}
+Sk³adka ubezpieczeniowa:
+$$E(X_1+\ldots+X_6)=\frac{6}{\beta}$$
+Sk³adka reasekuracyjna:
+$$E(\max(X_1,\ldots,X_6))=?$$
+potrzebujemy rozk³ad maksimum:
+$$F(X<t)=\int_0^t \beta e^{-\beta x}dx=1-e^{-\beta t}$$
+$$f_{X_{6:6}}(t)=6(1-e^{-\beta t})^5 e^{-\beta t}\cdot \beta$$
+$$E(X_{6:6})=\int_0^\infty t \cdot 6(1-e^{-\beta t})^5 e^{-\beta t}\cdot \beta \cdot dt=(*)$$
+\textbf{Wzór Newtona (kluczowy trick)}
+$$(x+y)^n = \sum_{k=0}^n \binom{n}{k}x^{n-k}y^k$$
+$$(1-e^{-\beta t})^5=1\cdot 1^5-5\cdot 1^4 \cdot e^{-\beta t}+10\cdot 1^3 \cdot e^{-2\beta t}-10\cdot 1^2 e^{-3\beta t}+5\cdot 1\cdot e^{-4 \beta t}-1\cdot 1^0 \cdot e^{-5\beta t}$$
+$$(*)=6 \beta \int_0^\infty t e^{-\beta t}(1-5e^{-\beta t}+10 e^{-2\beta t}-10e^{-3\beta t}+5e^{-4\beta t}-e^{-5\beta t})dt=$$
+$$=\frac{6}{\beta}(49/120)$$
+Udzia³:
+$$ODP=\frac{6\beta \cdot 49/120}{6 / \beta}= \frac{49}{120}$$
+\end{roz}
+
+% zadanie 3
+
+\begin{zad}\textnormal{
+Zmienna losowa $X$ jest sum¹ trzech niezale¿nych zmiennych losowych o rozk³adach z³o¿onych Poissona z parametrami odpowiednio $(\lambda_1,F_1)$, $(\lambda_2,F_2)$, oraz $(\lambda_3,F_3)$. Wartoœci parametrów czêstotliwoœci $\lambda_1,\lambda_2,\lambda_3$, oraz dystrybuanty $F_1,F_2,F_3$, dane s¹ wzorami:
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+i  & $\lambda_i$   &  $F_i(x)$ dla $x<1$   & $F_i(x)$ dla $x\in[1,2)$     & $F_i(x)$ dla $x\ge 2$   \\ \hline
+1 & 3/2 & 0 & 8/10 & 1 \\ \hline
+2 & 1   & 0 & 6/10 & 1 \\ \hline
+3 & 1/2 & 0 & 4/10 & 1 \\ \hline
+\end{tabular}
+\end{table}
+Wobec tego $Pr(X=4)$ wynosi: ?
+}\end{zad}
+
+\begin{roz}
+Pierwsza uwaga: rozk³ad z³o¿ony Poissona zawiera w sobie zarówno czêstotliwoœæ jak i wysokoœæ szkód. $X_i$ to suma wysokoœci szkód\\
+\\
+Druga uwaga: suma zmiennych o rozk³adzie z³o¿onym Poissona ma rozk³ad z³o¿ony Poissona z czêstoœci¹ = sumie czêstoœci oraz prawdopodobieñstwem wysokoœci bêd¹cym œredni¹ wa¿on¹ prawdopodieñstw (z czêstoœciami jako wagami).\\
+\\
+Trzecia uwaga: tabela wskazuje, ¿e wysokoœci szkód maj¹ rozk³ad dwupuntowy (szkody mog¹ byæ równe albo 1 albo 2.\\
+\\
+Mamy:
+$$P(X_1=1)=8/10$$
+$$P(X_1=2)=2/10$$
+$$P(X_2=1)=6/10$$
+$$P(X_2=2)=4/10$$
+$$P(X_3=1)=4/10$$
+$$P(X_3=2)=6/10$$
+Niech $Z$ oznacza zmienn¹ losow¹ dotycz¹c¹ wysokoœci szkód po tym jakbyœmy `kupili' trzech ubezpieczycieli maj¹cych szkody $X_1$, $X_2$, $X_3$. Zgodnie z uwag¹ trzeci¹ czêstoœæ bêdzie mia³a rozk³ad $P(3)$ natomiast wysokoœæ okreœla siê przy pomocy nastêpuj¹cych prawdopodobieñstw:
+$$P(Z=1)=\frac{\lambda_1P(X_1=1)+\lambda_2 P(X_2=1)+\lambda_3P(X_3=1)}{\lambda_1+\lambda_2+\lambda_3}=\frac{2}{3}$$
+Wobec tego 
+$$P(Z=2)=1/3$$
+szukamy:
+$$P(\underbrace{X}_{\text{=suma szkód}}=4)$$
+Rozk³ad poissona z $\lambda=3$
+$$P(Y=k)=\frac{\lambda^ke^{-\lambda}}{k!}$$
+Prawdopodbieñstwo, ¿e suma szkód jest równa 4 jest równe: rozwa¿my przypadki:
+\begin{itemize}
+\item 4 szkody o wartoœci 1
+\item 2 szkody o wartoœci 2 ka¿da
+\item 3 szkody z czego jedna o wartoœci 2 a dwie pozosta³e o wartoœci 1 ka¿da
+\end{itemize}
+Zapisujemy:
+$$e^{-3}\left(\frac{3^4}{4!}\cdot(2/3)^4+\frac{3^2}{2!}\cdot (1/2)^2+\frac{3^3}{3!}(1/3)(2/3)^2 \cdot \underbrace{3}_{\text{bo mamy 3 przypadki}} \right)=\frac{19}{6}e^{-3}$$
+co daje odpowiedŸ.\\
+\\
+3 przypadki mo¿liwe do wylosowania w ostatnim wyrazie bo: DDM, DMD, MDD, gdize D- du¿a szkoda, M- ma³a szkoda.
+\end{roz}
+
+% zadanie 4
+
+\begin{zad}\textnormal{
+Niech $T_n$ oznacza moment zajœcia n-tej szkody,  w procesie pojawiania siê szkód, który startuje w momencie $T_0=0$. Poniewa¿ szkody numerujemy wed³ug kolejnoœci zajœcia, wobec tego zachodzi $0<T_1<T_2<\ldots$\\
+Likwidacja n-tej szkody nastêpuje w momencie $T_n+D_n$.\\
+Za³ó¿my, ¿e zmienne losowe $T_1,D_1,(T_2-T_1),D_2,(T_3-T_2),D_3,\ldots$
+\begin{itemize}
+\item s¹ niezale¿ne
+\item maj¹ taki sam rozk³ad wyk³adniczy o wartoœci oczekiwanej $1/2$no 
+\end{itemize}
+Niech $N(t)$ oznacza liczbê szkód zlikwidowanych do momentu t. Wobec tego oczekiwana liczba szkód zlikwidowana na odcinku czasu $1<t \le 2$, a wiêc
+$$E[N(2)-N(1)]$$
+wynosi:?.
+}\end{zad}
+\begin{roz}
+\textbf{WA¯NE ZADANIE!}
+Rozk³ad wyk³adniczy:
+$$f(x)=\beta \cdot e^{-\beta x}=2e^{-2x}$$
+$$P(X<t)=\int_0^t \beta e^{-\beta x}dx=1-e^{-\beta \cdot t}$$
+W zadaniu:
+$$f_D(x)=\beta e^{-\beta x}$$
+$$f_{T_{i+1}-T_i}(x)=\lambda e^{-\lambda x}$$
+St¹d wynika, ¿e prawdopodobieñstwo, ¿e czas od zg³oszenia do likwidacji bêdzie mniejszy ni¿ t jest równe:
+$$1-e^{-\beta x}$$
+W pierwszym roku zg³osz¹ siê szkody, które zostan¹ zlikwidowane w pierwszym roku, oraz takie których likwidacja przejdzie na nastêpny rok. Je¿eli szkoda powsta³a w momencie T to p-p, ¿e zostanie zlikwidowana do do momentu 1 wynosi:
+$$1-e^{-\beta (1-T)}$$
+Informacyjnie Jeœli liczba zajœæ zdarzenia w danym przedziale czasu $[0,t]$ jest zgodna z rozk³adem Poissona, ze œredni¹ = $\lambda t$ , wtedy d³ugoœæ okresu oczekiwania pomiêdzy zajœciami zdarzenia ma rozk³ad wyk³adniczy ze œredni¹ $1/\lambda$.\\
+\\
+W zadaniu mamy: wartoœæ oczekiwana szkód, które zd¹¿¹ siê zlikwidowaæ do momentu 1:
+$$\int_0^1 \lambda (1-e^{-\beta(1-T)})dT=1.135335$$
+gdzie $\lambda$ - nale¿y traktowaæ jako `intensywnoœæ' zachodzenia szkód. Wartoœæ oczekiwana szkód, które nie zda¿¹ siê zlikwidowaæ:
+$$\int_0^1 \lambda \cdot e^{-\beta (1-T)}=0.86466$$
+Teraz chcemy policzyæ ile z tych szkód zlikwiduje siê w trakcie drugiego roku. P-p, ¿e czas ¿ycia szkód mniejszy ni¿ rok wynosi:
+$$1-e^{-2\cdot 1}$$
+Stad
+$$0.86466 \cdot (1-e^{-2})=0.7477641$$
+Wiemy, ¿e w kolejnym roku powstanie i zostaie zlikwidowanych $1.135335$, st¹d wartoœæ oczekiwana zlikwidowanych w trakcie 2 roku:
+$$0.7477641+1.135335=1.882975994$$
+\end{roz}
+
+% zadanie 8
+
+\begin{zad}
+W klasycznym modelu procesu nadwy¿ki $U(t)=u+ct-S_{N(t)}$
+\begin{itemize}
+\item $u$ jest nadwy¿k¹ pocz¹tkow¹,
+\item $ct$ jest sum¹ sk³adek zgromadzonych do momentu $t$,
+\item $S_n=\sum_{i=1}^n Y_i$ jest sum¹ wyp³at, 
+\item proces $N(t)$ i pojedyczne wyp³aty $Y_1,Y_2,Y_3,\ldots$ s¹ niezale¿ne
+\end{itemize}
+Niech $L$ oznacza maksymaln¹ stratê, $F_L$ jej dystrubantê, zaœ $\Psi(u)$ prawdopodobieñstwo ruiny przy nadwy¿ce pocz¹tkowej $u$. Wiadomo, ¿e zachodzi:
+$$F_L(u)=1-\Psi(u)=Pr(\forall t \ge 0,  U(t) \ge 0)$$
+Za³ó¿my, ¿e wyp³aty $Y_i$ maj¹ rozk³ad wyk³adniczy z wartoœci¹ oczekiwan¹ $\mu$, oraz i¿ parametr intensywnoœci $c$ sk³adki wynosi $110\% \lambda \mu$.\\
+\\
+Wartoœæ funkcji $\Psi(u)$ w punkcie $u=E(L)+1.645\sqrt{Var(L)}$ wynosi: ?.
+\end{zad}
+
+\begin{roz}
+\textbf{Wzory z teorii ruiny:}\\
+\\
+Prawodpodbieñstwo ruiny:
+$$\Psi(u)=\frac{e^{-Ru}}{E(e^{-RU(T)})|T<\infty}$$
+$T$ - moment ruiny, $R$ - wspó³czynnik dopasowania. \\
+\\
+\textbf{Przy wyk³adniczym rozk³adzie pojedynczej szkody:}
+$$c=\frac{\lambda(1+\theta)}{\beta}$$
+$$\Psi(u)=\frac{e^{-Ru}}{1+\theta}$$
+$$R=\frac{\beta \theta}{1+\theta}$$
+W zadaniu mamy:
+$Y_i$ maj¹ rozk³ad wyk³adniczy $\frac{1}{\mu}e^{-\frac{1}{\mu}y}$ wiemy, ¿e $c=1.1 \lambda \mu$, obliczymy $\theta$ z powy¿szych wzorów:
+$$1.1\lambda\mu=\frac{\lambda(1+\theta)}{\frac{1}{\mu}}\rightarrow \theta=0.1$$
+$$\Psi(u)=\frac{e^{-Ru}}{1+\theta}=\frac{e^{-Ru}}{1.1}$$
+$$R=\frac{\beta\theta}{1+\theta}=\frac{1}{11\mu}$$
+$$\Psi(u)=\frac{e^{-u\frac{1}{11\mu}}}{1.1}$$
+$$F_L(u)=1-\Psi(u)=1-\frac{e^{-u\frac{1}{11\mu}}}{1.1}$$
+$$f(l)=\frac{1}{1.1}\cdot \frac{1}{11\mu}\cdot e^{-l\cdot \frac{1}{11\mu}}$$
+widaæ, ¿e gêstoœæ jest podobna do gêstoœci rozk³adu wykladniczego, ale nale¿y zwróciæ uwagê, ¿e $l$ nie nale¿y do przedzia³u $(0,\infty)$ (nie wyca³kuje siê do 1)!. \textbf{Trzeba uœwiadomiæ sobie, ¿e z pewnym prawdopobieñstwem punktowym $L=0$}.
+$$P(L\le 0)=1-\Psi(u)=1-\frac{1}{1.1}=\frac{1}{1.1}$$
+$L$ nie mo¿e byæ mniejsze ni¿ zero wiêc $P(L=0)=\frac{1}{11}$, dalej liczymy
+$$E(L)=E(L|L=0)\cdot P(L=0)+E(L|L>0)P(L>0)=$$
+$$=0\cdot \frac{1}{11}+\frac{\int_0^\infty l \cdot \frac{1}{1.1}\frac{1}{11\mu}e^{-\frac{l}{11\mu}}dl}{P(L>0)}\cdot P(L>0)=10 \mu$$
+$$Var(L)=E(L^2)-(EL)^2$$
+Z wariancji rozk³adu wyk³adniczego (poni¿sze uwzglêdnia ju¿ warunki na L):
+$$E(L^2)= \frac{10}{11}\left(\frac{1}{(\frac{1}{11\mu})^2}+\frac{1}{(\frac{1}{11\mu})^2}\right)=220\mu^2$$
+$$Var(L)=220\mu^2-100\mu^2=120\mu^2$$
+$$\Psi(u)=\frac{e^{-\frac{1}{11\mu}}(10\mu+1.645\sqrt{120}\mu)}{1.1}\approx 7.1 \%$$
+Mo¿na te¿ skorzystaæ ze wzorów Otto strona 267.
+\end{roz}
+
+% zadanie 9
+
+\begin{zad}\textnormal{
+Liczby szkód $N_1,\ldots,N_{10},N_{11}$ w kolejnych latach s¹, dla ustalonej wartoœci parametru $Q=q$, niezale¿nymi zmiennymi losowymi o jednakowym rozk³adzie dwumianowym z parametrami $(1,q)$, a wiêc przyjmuj¹ wartoœæ 1 z prawdopodobieñstwem q, zaœ wartoœæ 0 z prawdopodobieñstwem $(1-q)$. Niech $N=N_1+\ldots+N_{10}$. Parametr ryzyka $Q$ jest zmienn¹ losow¹ o gêstoœci na przedziale $(0,1)$ okreœlonej wzorem:
+$$f_Q(x)=4\cdot (1-x)^3$$
+Warunek konieczny i wystarczaj¹cy na to, aby zachodzi³a nierównoœæ:
+$$Var(N_{11}|N_1,\ldots,N_{10})>Var(N_11)$$
+jest postaci
+$$N>?$$
+}\end{zad}
+
+\begin{roz}
+PODOBNE DO 30.11.2009.\\
+\\
+Wzór na wariancjê warunkow¹:
+$$Var(N_{11}|N_1,\ldots,N_{10})=E(N_{11}^2|N_1,\ldots,N_{10})-E(N_{11}|N_1,\ldots,N_{10})^2$$
+czyli mamy sprawdziæ:
+$$E(N_{11}^2|N_1,\ldots,N_{10})-E(N_{11}|N_1,\ldots,N_{10})^2>E(N_{11}^2)-(E(N_{11}))^2$$
+Mamy:
+$$E(N_{11}|Q=q)=q$$
+oraz
+$$E(N_{11}^2|Q=q)=1^2\cdot q$$
+pod warunkiem, ¿e $q$. Oczywiœcie $E(N_{11})=E(E(N_{11}|Q=q))$, czyli musimy jeszcze policzyæ wartoœæ oczekiwan¹:
+$$E(q)=\int_0^1 4(1-x)^3 \cdot x \cdot dx=0.2$$
+st¹d $$E(N_{11})-E(N_{11}^2)=0.16$$
+czyli mamy:
+$$E(N_{11}^2|N_1,\ldots,N_{10})-E(N_{11}|N_1,\ldots,N_{10})^2>0.16$$
+Dlaczego $E(N_{11}|N_1,\ldots,N_{10})$ jest warunkowe? Bo $N_1,\ldots,N_{10}$ wskazuje na wartoœæ $q$.
+$$E(N_{11}|N_1,\ldots,N_{10})=E(N_{11}|N)$$
+bo suma uchwyci wszystko co nas interesuje. Dalej
+$$E(N_{11}|N_1,\ldots,N_{10})=E(N_{11}|N)=E(E(N_{11}|N)|Q=q)=$$
+$$=E(\underbrace{E(N_{11}|Q=q)}_{=q}|N)=E(q|N)$$
+Powy¿sze wynika z w³asnoœci warunkowej wartoœci oczekiwanej (tzw. iteracyjnoœæ)
+$$E(X|Y)=E(E(X|Y)|Z)=E(E(X|Z)|Y)$$
+Skoro mamy $E(q|N)$ to potrzebujemy `gêstoœæ' $f(q|N)$
+$$f(q|N)=\frac{f(q,N)}{f(N)}=\frac{f(q,N)}{\int_0^1 f(q,n) dq}$$
+$$f(q,N)=Pr(N_1+\ldots+N_{10}=N \land Q=q)=$$
+suma $N_1+\ldots N_{10}$ ma rozk³ad dwumianowy z prawdopodobieñstwem $q$. Czyli:
+$$={10 \choose N}q^N(1-q)^{10-N}\cdot 4(1-q)^3=4{10 \choose N}q^N(1-q)^{13-N}$$
+Powy¿sze wynika z faktu, ¿e 
+$$Pr(N_1+\ldots+N_{10}|Q=q)=\frac{Pr(N_1+\ldots+N_{10}\land Q=q)}{Pr(Q=q)}$$
+¯eby otrzymaæ:
+$$\int_0^1 f(q,n) dq=\int_0^1 4{10 \choose N}q^N(1-q)^{13-N} dq$$
+Przeanalizujemy ca³kê 
+$$\int_0^1 q^N(1-q)^{13-N} dq=?$$
+Mamy:\\
+\\
+1.
+$$\int_0^1 (1-q)^K dq=\frac{1}{K+1}$$
+2.
+$$\int_0^1 q(1-q)^K dq=\left.-q\frac{(1-q)^{K+1}}{K+1}\right|_0^1+\int_0^1 \frac{(1-q)^{K+1}}{K+1}dq=$$
+$$=\frac{1}{K+1}\frac{1}{K+2}$$
+3.
+$$\int_0^1 q^2(1-q)^K dq=\ldots=\int_0^1 2q\frac{(1-q)^{K+1}}{K+1}dq=\frac{2}{K+1}\frac{1}{K+2}\frac{1}{K+3}=$$
+$$=\frac{2! K!}{(K+N+1)!}$$
+co nasuwa wniosek, ¿e:
+$$\int_0^1 q^N (1-q)^K=\frac{N!\cdot K!}{(K+N+1)!}$$
+St¹d
+$$\int_0^1 q^N(1-q)^{13-N} dq=\frac{N! (13-N)!}{14!}$$
+Dalej:
+$$f(q|N)=\frac{f(q,N)}{f(N)}=\frac{f(q,N)}{\int_0^1 f(q,n) dq}=\frac{4{10 \choose N}q^N(1-q)^{13-N}}{4{10 \choose N}\frac{N! (13-N)!}{14!}}=$$
+$$=\frac{q^N (1-q)^{13-N}\cdot 14!}{N!(13-N)!}$$
+Jak ju¿ do tego doszliœmy, to Potrzebujemy obliczyæ to czego szukaliœmy czyli $E(q|N)$. Mamy:
+$$E(q|N)=\int_0^1 q\frac{q^N (1-q)^{13-N}14!}{N!(13-N)!}dq=\frac{14!}{N!(13-N)!}\int_0^1 q^{N+1}(1-q)^{13-Ndq}=$$
+$$=\ldots=\frac{N+1}{15}$$
+Teraz
+$$E(N_{11}^2|N)=E(E(N_{11}^2|Q=q)|N)=E(q|N)=\frac{N+1}{15}$$
+Czyli wracaj¹c do pocz¹tkowej nierównoœci:
+$$\frac{N+1}{15}-\frac{(N+1)^2}{15^2}>0.16$$
+$$-(N-11)(N-2)>0$$
+st¹d
+$$N>2$$
+\end{roz}
+
+%------------------- EGZAMIN 15 czerwca 2015 ------------------
+
+\newpage
+\section{Egzamin z 15 czerwca 2015}
+
+% zadanie 2
+
+\begin{zad}\textnormal{
+Mamy dany ci¹g liczb $\{q_1,q_2,\ldots,q_n\}$ z przedzia³u $(0,1)$. Rozwa¿my dwie zmienne losowe.
+\begin{itemize}
+\item $Y$ o rozk³adzie dwumianowym i parametrach $(n,\bar{q})$, gdzie $\bar{q}=\frac{1}{n}\sum_{i=1}^n q_i$
+\item $Z$, której warunkowy rozk³ad (przy danej wartoœci $Q$) jest ozk³adem dwumianowym z parametrami $(n,Q)$, zaœ zmienna $Q$ ma rozk³ad n-punktowy taki, ¿e $Pr(Q=q_i)=\frac{1}{n}$, dla $i=1,2,\ldots,n$
+\end{itemize}
+Wariancje tych dwóch zmiennych zwi¹zane s¹ równoœci¹:
+$$Var(Z)=Var(Y)+a\sum_{i=1}^n(q_i-\bar{q})^2$$
+Sta³a $a$ wystêpuj¹ca w tej równoœci wynosi: ?
+}\end{zad}
+
+\begin{roz}
+Z rozk³adu dwumianowego o parametrach $(n,p)$: 
+$$Var(X)=np(1-p)$$
+mamy
+$$Var(Y)=n\bar{q}(1-\bar{q})$$
+Dalej
+$$Var(Z)=E(Z^2)-(EZ)^2$$
+$$E(Z)=E(E(Z|Q))$$
+$$E(Z|Q)=nQ$$
+$$E(nQ)=n\bar{q}\rightarrow E(Z)=n\bar{q}$$
+$$E(Z^2|Q)=Var(Z|Q)+(E(Z|Q))^2=nQ(1-Q)+(nQ)^2$$
+$$E(nQ(1-Q)+(nQ)^2)=E(nQ-nQ^2+(nQ)^2)=n\bar{q}-\sum_{i=1}^n q_i^2+n\sum_{i=1}^nq_i^2$$
+St¹d
+$$Var(Z)=n\bar{q}-\sum_{i=1}^n q_i^2+n\sum_{i=1}^nq_i^2-n^2\bar{q}^2$$
+Wstawiamy do równania z zadania i mamy:
+$$n\bar{q}-\sum_{i=1}^n q_i^2+n\sum_{i=1}^nq_i^2-n^2\bar{q}^2=n\bar{q}(1-\bar{q})+a\sum_{i=1}^n (q_i-\bar{q})^2$$
+Przekszta³camy, po drodze zauwa¿aj¹c, ¿e $\sum_{i=1}^n \bar{q}^2=n\bar{q}^2$
+i dostajemy:
+$$(n-1)(\sum q_i^2-n \bar{q}^2)=a(\sum q_i^2-nq^2)$$
+st¹d 
+$$a=n-1$$
+\end{roz}
+
+% zadanie 3
+
+\begin{zad}\textnormal{
+Pary zmiennych losowych $(N_1,X_1)$ oraz $(N_2,X_2)$ s¹ niezale¿ne, i oznaczaj¹ odpowiednio liczbê i wartoœæ szkód dla dwóch ryzyk. Wartoœæ szkód w obu przypadkach ma z³o¿ony rozk³ad Poissona z parametrami odpowiednio $\lambda_1,F_1$ oraz $\lambda_2,F_2$. Oczekiwane liczby szkód $\lambda_1,\lambda_2$ oraz dystrybuanty $F_1,F_2$ dane s¹ wzorami:
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+i  & $\lambda_i$   &  $F_i(x)$ dla $x<1$   & $F_i(x)$ dla $x\in[1,2)$     & $F_i(x)$ dla $x\ge 2$   \\ \hline
+1 & 3 & 0 & 7/10 & 1 \\ \hline
+2 & 1   & 0 & 3/10 & 1 \\ \hline
+\end{tabular}
+\end{table}
+\\
+Wobec tego:
+$$E(N_1+N_2|X_1+X_2=3)$$ wynosi: ?.
+}\end{zad}
+
+\begin{roz}
+1. $X_1+X_2$
+ma rozk³ad z³o¿ony Poissona. Prawdopodobieñstwa s¹ nastêpuj¹ce:
+$$P(X_1=1)=7/10$$
+$$P(X_1=2)=3/10$$
+$$P(X_2=1)=3/10$$
+$$P(X_2=2)=7/10$$
+Dla z³ozonego Poissona wysokoœæ szkód pozostaje ta sama, ale prawdopodobieñstwa liczymy nastêpuj¹co:
+$$P(Z=1)=\frac{\lambda_1P(X_1=1)+\lambda_2P(X_2=1)}{\lambda_1+\lambda_2}=0.6$$
+$$P(Z=2)=0.4$$
+Wiêc teraz prawdopodobieñstwo, ¿e suma szkod jest równa 3: rozwa¿amy przypadki:
+\begin{itemize}
+\item 3 szkody o wartoœci 1
+\item 2 szkody z czego 1 o wartoœci 1 a druga o wartoœci 2 (DM, MD)
+\end{itemize}
+Z³ozony Poisson ma czêstoœæ: $\lambda_1+\lambda_2=4$
+$$P(X_1+X_2=3)=e^{-4}\left(\frac{4^3}{3!}\cdot (0.6)^3+\frac{4^2}{2!}(0.6)\cdot (0.4)\cdot 2\right)=e^{-4}\cdot 6.144$$
+Wiemy, ¿e $N_1+N_2$ ma rozk³ad Poissona z czêstoœci¹ $\lambda=1+3=4$ i mo¿e przyjmowaæ wartoœci 2 lub 3
+$$E(N_1+N_2|X_1+X_2=3)= 2\cdot P(N_1+N_2=2 | X_1+X_2=3)+3\cdot P(N_1+N_2=3 | X_1+X_2=3)$$
+$$=2\cdot \frac{\cdot P(N_1+N_2 \land X_1+X_2=3)}{P(X_1+X_2=3)}+3\cdot \frac{P(N_1+N_2=3\land X_1+X_2=3)}{P(X_1+X_2=3)}=$$
+$$=\frac{3\cdot e^{-4}\frac{4^3}{3!}0.6^3+2\cdot e^{-4}\frac{4^2}{2!}\cdot 0.6\cdot 0.4\cdot2 }{P(X_1+X_2=3)}=$$
+$$=\frac{3\cdot e^{-4}\frac{4^3}{3!}0.6^3+2\cdot e^{-4}\frac{4^2}{2!}\cdot 0.6\cdot 0.4\cdot 2 }{e^{-4}\cdot 6.144}=2.375=\frac{19}{8}$$
+\end{roz}
+
+% zadanie 4
+
+\begin{zad}\textnormal{
+£¹czna wartoœæ szkód $X$ ma z³o¿ony rozk³ad ujemny dwumianowy. Liczba szkód ma wartoœæ oczekiwan¹ równ¹ $1/2$ i wariancjê równ¹ $2/3$. Rozk³ad wartoœci pojedynczej szkody:
+\begin{itemize}
+\item ma na przedziale $(0,5)$ gêstoœæ dan¹ wzorem $f(x)=0.25-0.03x$,
+\item oraz w punkcie 5 masê prawdopodobieñstwa równ¹ 0.125
+\end{itemize}
+Wariancja zmiennej X wynosi:
+}\end{zad}
+
+\begin{roz}
+\textbf{Model ryzyka ³¹cznego}
+Niech $$X=Y_1+Y_2+\ldots+Y_N$$
+wtedy
+$$EX=E(Y_1+\ldots+Y_N)=E(N)\cdot E(Y_1)$$
+Ze wzoru na dekompozycjê wariancji:
+$$Var(X)=E(Var(X|N))+Var(E(X|N))$$
+mamy:
+$$Var(X)=EN\cdot Var(Y)+Var(N)\cdot (EY)^2$$
+W zadaniu mamy:
+$$EN=1/2$$
+$$VarN=2/3$$
+$$X=W_1+\ldots+W_N$$
+$$VarX=EN\cdot Var W_1+VarN\cdot (EW_1)^2=(*)$$
+$$EW_1=\int_0^5 (0.25-0.03x)\cdot x\cdot dx+5 \cdot 0.125=2.5$$
+$$E(W_1^2)=\int_0^5 (0.25-0.03x)\cdot x^2\cdot dx+5^2 \cdot 0.125=425/48$$
+$$VarW_1=125/48$$
+$$(*)=\frac{1}{2}\cdot \frac{125}{48}+\frac{2}{3}2.5^2=\frac{25\cdot 21}{98}$$
+St¹d:
+\end{roz}
+
+% zadanie 6
+
+\begin{zad}\textnormal{
+Kierowca, którego charakteryzuje wartoœæ $q$ parametru ryzyka $Q$, zg³asza szkody (jedn¹ lub wiêcej) w ci¹gu roku z prawdopodobieñstwem $q$, zaœ nie zg³asza szkód z prawdopodobieñstwem $p=1-q$, przy czym zdarzenia te w kolejnych latach s¹ zdarzeniami niezale¿nymi. Rozk³ad parametru ryzyka $Q$ w populacji kierowców jest na przedziale $(0,1)$ dany gêstoœci¹:
+$$f_Q(x)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta-1}$$
+Zak³adamy, ¿e populacja jest zamkniêta (starzy kierowcy nie znikaj¹, nowi siê nie pojawiaj¹). Kierowcy migruj¹ pomiêdzy klasami bardzo prostego, 4-klasowego systemu bonus-malus. W systemie tym ka¿dy kierowca, który w danym roku zg³osi³ jedn¹ lub wiêcej szkód, l¹duje w roku nastêpnym w klasie pierwszej (z najwy¿sz¹ sk³adk¹). Jeœli jednak nie zg³osi³ ¿adnej szkody, wtedy:
+\begin{itemize}
+\item L¹duje w klasie drugiej, o ile w danym roku by³ w klasie pierwszej;
+\item L¹duje w klasie trzeciej, o ile w danym roku by³ w klasie drugiej;
+\item L¹duje w klasie czwartej, o ile w danym roku by³ w klasie trzeciej lub czwartej.
+\end{itemize}
+Wiadomo, ¿e rozk³ad prawdopodobieñstwa na przestrzeni klas dla dowolonego kierowcy w takim systemie bonus-malus stabilizuje siê (przestaje zale¿eæ od klasy startowej) po up³ywaie kilku pierwszych lat. Oznaczmy przez $p_4$ wartoœæ oczekiwan¹ udzia³u kierowców przebywaj¹cych w klasie czwartej w ca³kowitej liczebnoœci kierówców w tej populacji, po osi¹gniêciu ww. stabilizacji.\\
+Przyjmijmy, ze parametry $(\alpha,\beta)=(2,8)$. Wobec tego $p_4$ wynosi: ?
+}\end{zad}
+
+\begin{roz}
+Jakie jest prawdopodobieñstwo przebywania w klasie 4? Rozwa¿my pozosta³e prawdopodobieñstwa:
+\\
+\\
+1. Przebywanie w klasie 1: $q$ (zg³osi³ szkodê rok temu)\\
+\\
+2. Przebywanie w klasie 2: $q\cdot (1-q)$ zg³osi³ szkodê dwa lata temu i rok temu nie zg³osi³\\
+\\
+3. Przebywanie w klasie 3: $q \cdot (1-q)\cdot (1-q)$ zg³osi³ szkodê trzy lata temu i przez nastêpne dwa lata nie zg³osi³\\
+\\
+4. Przebywanie w klasie 4: $1 - q - q(1-q)-q(1-q)(1-q)=(1-q)^3$
+Mamy policzyæ wartoœæ oczekiwan¹:
+$$E((1-q)^3)=\int_0^1 (1-q)^3 \frac{\Gamma(10)}{\Gamma(2)\Gamma(8)}q^1(1-q)^7dq=72/132=30/55$$
+\end{roz}
+
+% zadanie 8
+
+\begin{zad}\textnormal{
+Ubezpieczyciel prowadzi dwa portfele ubezpieczeñ. W ka¿dym z portfeli pojedyncze ryzyko generuje szkody zgodnie ze z³o¿onym procesem Poissona z tak¹ sam¹ intensywnoœci¹ $\lambda$. Portfele ró¿ni¹ siê rozk³adem wartoœci pojedycznej szkody i liczb¹ ryzyk w portfelu ($n_1$ i $n_2$ odpowiednio). Stosunkowy narzut na sk³adkê netto dla ryzyk w obu portfelach jest ten sam i wynosi $\theta$. W rezultacie parametry modelu s¹ nastêpuj¹ce:\\
+\\
+1. Portfel:\\
+intensywnoœæ ³¹czna $n_1\lambda$, rozk³ad wartoœci pojedycznej szkody o gêstoœci \\$f(y)=2\exp(-2y)$, sk³adka za jedno ryzyko $(1+\theta)\frac{\lambda}{2}$;\\
+\\
+2. Portfel:\\
+intensywnoœæ ³¹cnza $n_2\lambda$, rozk³ad wartoœci pojedynczej szkody o gêstoœci \\$f(y)=5 \exp(-5y)$, sk³adka za jedno ryzyko $(1+\theta)\frac{\lambda}{5}$.\\
+\\
+Jeœli wiemy, ¿e funkcja prawdopodobieñstwa ruiny ubezpieczyciela jest postaci:
+$$\Psi(u)=\frac{2}{3}\exp(-u)+\frac{1}{12}\exp\left(-\frac{5}{2}u\right),$$
+to wartoœci parametrów modelu $\left(\theta,\frac{n_1}{n_1+n_2}\right)$ wynosz¹: ?.
+}\end{zad}
+
+\begin{roz}
+To typowe zadanie na wzór (mo¿na analogiczn¹ teoriê zastosowaæ do zadania 6 z 8 grudnia 2014). Teoria: Otto strona 260 (uwaga mog¹ byæ b³êdy w ksi¹¿ce we wzorach, w zale¿noœci od wydania).\\
+\\
+\textbf{Przypadek mieszaniny rozk³adów wyk³adniczych}
+\\
+\\
+\textbf{Rozk³ad wartoœci pojedynczej szkody dla mieszaniny portfeli (mieszanina rozk³adów wyk³adniczych)}
+\begin{equation*}
+ f_Y(x)=
+\begin{cases}
+\sum_{i=1}^n w \cdot \beta_i \cdot e^{-\beta_i \cdot x} & \text{dla } x>0,\\
+0 & \text{dla } x \le 0
+\end{cases}
+\end{equation*}
+gdzie $0<\beta_1<\beta_2<\ldots<\beta_n$ oraz wagi $w_i$ s¹ dodatnie i sumuj¹ siê do jednoœci. Wtedy prawdopodobieñstwo ruiny wyra¿a siê wzorem (p-p ruiny zak³adu ubezpieczeñ, $n$- liczba portfeli):
+$$\Psi(u)=\sum_{i=1}^n a_i \cdot \exp(-r_i \cdot u)$$
+gdzie $r_1,r_2,\ldots,r_n$ to $n$ najwiêkszych (ró¿nych) rozwi¹zañ równania
+$$\sum_{i=1}^n w_i \cdot \frac{\beta_i}{\beta_i-r}=1+(1+\theta)\cdot \mu \cdot r$$
+gdzie $0\le r_1<\beta_1<\ldots<r_n <\beta_n$ oraz gdzie $\mu$ to wysokoœæ œredniej szkody w portfelu. Wartoœci $a_1,a_2,\ldots,a_n$ otrzymamy rozwi¹zuj¹c uk³ad równañ liniowych, który daje siê zapisaæ w postaci:
+\begin{equation*}
+\begin{bmatrix}
+\frac{\beta_1}{\beta_1-r_1} & \frac{\beta_1}{\beta_1-r_2} & \ldots & \frac{\beta_1}{\beta_1-r_n} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\beta_n}{\beta_n-r_1} & \frac{\beta_n}{\beta_n-r_2} & \ldots & \frac{\beta_n}{\beta_n-r_n} 
+\end{bmatrix}\cdot
+\begin{bmatrix}
+a_{1} \\
+\vdots \\
+a_{n}
+\end{bmatrix}=
+\begin{bmatrix}
+1 \\
+\vdots \\
+1
+\end{bmatrix}
+\end{equation*}
+W zadaniu mamy $\lambda_1=\lambda_2$:
+$$w_1=\frac{n_1\lambda_1}{n_1\lambda_2+n_2\lambda_2}=\frac{n_1}{n_1+n_2}$$
+$$w_2=\frac{n_2\lambda_2}{n_1\lambda_2+n_2\lambda_2}=\frac{n_2}{n_1+n_2}$$
+F-cja p-p ruiny ubezpieczyciela z zadania:
+$$\Psi(u)=\frac{2}{3}e^{-u}+\frac{1}{12}e^{-\frac{5}{2}u}$$
+Z teorii:
+$$\Psi(u)=a_1 e^{-r_1 \cdot u}+a_2 e^{-r_2\cdot u}$$
+W portfelu 1: $\beta_1=2$, w portfelu 2: $\beta_2=5$, czyli 
+$$r_1=1<\beta_1=2<r_2=\frac{5}{2}<\beta_2=5$$
+natomiast 
+$$a_1=\frac{2}{3} \hspace{15pt} a_2=\frac{1}{12}$$ Mamy $r_1$ i $r_2$ czyli rozwi¹zania teoretycznego równania (patrz wy¿ej). St¹d:
+$$w_1 \frac{\beta_1}{\beta_1-r_1}+w_2\frac{\beta_2}{\beta_2-r_1}=1+(1+\theta)r_1$$
+$$w_1 \frac{\beta_1}{\beta_1-r_2}+w_2\frac{\beta_2}{\beta_2-r_2}=1+(1+\theta)r_2$$
+mo¿emy zapisaæ $w_2=1-w_1$. Mamy:
+$$w_1 \frac{2}{2-1}+(1-w_1)\frac{5}{5-1}=1+(1+\theta)\mu \cdot 1$$
+$$w_1 \frac{2}{2-5/2}+(1-w_1)\frac{5}{5-5/2}=1+(1+\theta)\mu \cdot \frac{5}{2}$$
+Rozwi¹zujemy równanie (pierwsze razy 5 drugie razy 2) i mamy:
+$$\omega_1=\frac{1}{21}$$
+co daje odpowiedŸ. Ale mo¿emy kontynuoowaæ $\mu$ to œrednia szkoda w portfelu czyli
+$$\mu=E(Z)=\frac{n_1\cdot\lambda_1\cdot E(X_1)}{n_1\lambda_1+n_2\lambda_2}+\frac{n_2\cdot\lambda_2\cdot E(X_2)}{n_1\lambda_1+n_2\lambda_2}=\frac{3}{14}$$
+Podstawiaj¹c do jednego z równañ mamy:
+$$\frac{1}{21}\cdot 2+\frac{20}{21}\cdot \frac{5}{4}=1+(1+\theta)\cdot \frac{3}{14}\rightarrow \theta=\frac{1}{3}$$
+Mo¿na te¿ inaczej: wiemy, ¿e prawdopodobieñstwo ruiny przy $u=0$ wynosi zawsze:
+$$\Psi(0)=\frac{1}{1+\theta}$$
+z treœci zadania 
+$$\Psi(u)=\frac{2}{3}e^{-u}+\frac{1}{12}e^{-\frac{5}{2}u}$$
+przy $u=0$
+$$\psi(u)=a_1+a_2=\frac{2}{3}+\frac{1}{12}=\frac{3}{4}=\frac{1}{1+\theta}\rightarrow \theta=\frac{1}{3}$$
+\end{roz}
+
+% zadanie 9
+
+\begin{zad}\textnormal{
+Niech $N$ oznacza liczbê szkód zasz³ych w ci¹gu roku z pewnego ubezpieczenia, z czego:
+\begin{itemize}
+\item $M$ to liczba szkód zg³oszonych przed koñcem tego roku,
+\item $K$ to liczba szkód które zostan¹ zg³oszone w ci¹gu lat nastêpnych,
+\item Zachodzi oczywiœcie $N=M+K$
+\end{itemize}
+Liczba szkód zg³oszonych przed koñcem roku:
+$$M=Z_1+Z_2+\ldots+Z_N$$
+jest sum¹ sk³adnikow, z których ka¿dy przyjmuje wartoœæ jeden gdy dan¹ szkodê zg³osozno w ci¹gu roku zaœ zero, gdy zg³oszenie nast¹pi³o póŸniej. Przejmujemy, ¿e zmienne losowe $N,Z_1,Z_2,Z_3,\ldots$ s¹ niezale¿ne, oraz i¿ $Z_1,Z_2,Z_3,\ldots$ maj¹ taki sam rozk³ad:
+$$Pr(Z_1=1)=1/2 \hspace{15pt} Pr(Z_1=0)=1/2$$
+Jeœli teraz za³o¿ymy, ¿e liczba szkód zasz³ych w ci¹gu roku ma rozk³ad dwumianowy o postaci:
+$$Pr(N=n)={10 \choose n}\left(\frac{1}{5}\right)^n \left(\frac{4}{5}\right)^{10-n}$$
+gdzie $n=0,1,2,\ldots,10$ to warunkowa wartoœæ oczekiana $E(K|M=0)$ wyniesie? 
+}\end{zad}
+
+\begin{roz}
+Prawdopodobieñstwo, ¿e szkoda zajdzie: $p_1=1/5$ z rozk³adu dwumianowego. Prawdopodobieñstwo, ¿e szkoda siê zg³osi: $p=1/2$. Warunek $M=0$ z treœci zadania sugeruje, ¿e skoro w pierwszym roku zg³osi³o siê ma³o, to  w kolejnych latach bêdzie mniej. Tutaj nale¿y uwa¿nie rozwa¿yæ sytuacjê. Jest ona nastêpuj¹ca: mamy momenty czasu:
+$$ [ ], [ ], [ ],\ldots,[ ]$$ 
+z prawdopodobieñstwem $1/5$ do szkody zajdzie ($X$), a z p-p $4/5$ szkoda nie zajdzie ($0$): 
+$$[X], [X], [ 0 ],\ldots $$
+Z tych szkód czêœæ siê zg³osi do koñca roku, a czêœæ póŸniej
+$$[Z], [0], [0],\ldots$$
+ Jakie jest prawdopodobieñstwo, ¿e szkoda nie jest zg³oszona? To suma prawdopodobieñstwa, ¿e szkoda nie zaistnia³a i prawdopodobieñstwa ¿e szkoda zainstnia³a ale nie zosta³a zg³oszona:
+ $$P(\text{szkoda nie zg³osi³a siê})=(1-p_1)+p_1(1-p_2)$$
+ My szukamy wartoœci oczekiwanej $E(K|M=0)$ widaæ, z rozk³adu dwumianowego, ¿e mo¿e zajœæ 10 szkód w ci¹gu roku. Teraz wiemy, ¿e ka¿da z tych szkód je¿eli zajdzie to kiedyœ siê zg³osi.  Jakie jest wiêc prawdopodobieñstwo, ¿e szkoda zasz³a pod warunkiem, ¿e siê nie zg³osi³a?
+$$ P(\text{A: szkoda zasz³a}|\text{B: szkoda nie zg³osi³a siê})=$$
+$$=\frac{p_1(1-p_2)}{(1-p_1)+p_1(1-p_2)}=\frac{1/5\cdot(1-1/2)}{4/5+1/5\cdot 1/2}=1/9$$
+Wiêc mam potencjalnie 10 szkód, ka¿da ma prawdopodobieñstwo zajœcia warunkowe $1/9$ wobec tego
+$$E(K|M=0)=10\cdot \frac{1}{9}=\frac{10}{9}$$
+\end{roz}
+
+% zadanie 10
+\begin{zad}
+Zadanie 10 jest analogiczne do zadania 2 z marca 2010.
+\end{zad}
+
+
+\end{document}
+
+

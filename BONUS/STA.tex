@@ -1,0 +1,319 @@
+%& --translate-file=cp1250pl
+\documentclass{article}
+\usepackage[cp1250]{inputenc}
+\usepackage{polski}
+\usepackage{lifecon}
+\newtheorem{tw}{Twierdzenie}[section]
+\usepackage{dsfont}
+\usepackage{fancyheadings}
+\newtheorem{zad}{Zadanie}[section]
+\newtheorem{roz}{Rozwi¹zanie}[section]
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[CO,CE]{Prawdopodobieñstwo i statystyka - wzory}
+Ostatni raz wygenerowano: \today. Kontakt: thasiow(at)onet.pl
+
+% podstawowe pojêcia
+
+\section{Podstawowe pojêcia}
+
+% kwantyl
+
+\textbf{1. Kwantyl}\\
+\\
+Kwantylem rzêdu $p$, gdzie $0 \le p \le 1$, w rozk³adzie empirycznym  $P_{X}$  zmiennej losowej X nazywamy tak¹ wartoœæ zmiennej losowej $x_{p}$, dla której spe³nione s¹ nierównoœci
+$$P_X((-\infty, x_p]) \ge p$$
+oraz
+$$P_X([x_p,\infty)) \ge 1-p.$$
+W szczególnoœci, kwantylem rzêdu $p$ jest taka wartoœæ $x_{p}$ zmiennej losowej, ¿e wartoœci mniejsze lub równe od $x_{p}$ s¹ przyjmowane z prawdopodobieñstwem co najmniej $p$, zaœ wartoœci wiêksze lub równe od $x_{p}$ s¹ przyjmowane z prawdopodobieñstwem co najmniej $1-p$.\\
+\\
+%statystyki pozycyjne
+\textbf{2. Statystyki pozycyjne}\\
+\\
+Niech $X_{1:n}\le X_{2:n}\le \ldots \le X_{n:n}$ bêdzie ci¹giem zmiennych losowych powsta³ych z $X_1,\ldots,X_n$, po ich uporz¹dkowaniu w ci¹g niemalej¹cy. Zmienn¹ $X_{k:n}$, $k=1,\ldots,n$, nazywamy k-t¹ statystyk¹ pozycyjn¹. W szczególnoœci
+$$X_{1:n}=\min{(X_1,\ldots,X_n)}$$
+$$X_{n:n}=\max{(X_1,\ldots,X_n)}$$
+k-ta statystyka pozycyjna ma dystrybuantê:
+$$F_{k:n}(x)=P(X_{k:n}\le x)=\sum_{i=k}^n {n \choose i}F(x)^i(1-F(x))^{n-i}$$
+\textbf{3. Transformacja zmiennych losowych}\\
+\\
+Niech $X$ - zmienna o gêstoœci $f$. ¯eby obliczyæ gêstoœæ zmiennej $Y$ zdefiniowanej jako:
+$$Y=g(x)$$
+u¿ywamy nastêpuj¹cego wzoru:
+$$g(y)=f(h(y))|h'(y)|$$
+gdzie $h$ - funkcja odwrotna do g (tzn. $h(g(t))=t$). \\
+\\
+Dla przyk³adu je¿eli $Y=aX+b$ to $$g(y)=f\left(\frac{y-b}{a}\right)\frac{1}{|a|}$$
+% momenty\\
+\\
+\textbf{4. Momenty i wspó³czynniki}\\
+\\
+Moment zwyk³y rzêdu k:
+$$m_k=E(X^k)=\int_{-\infty}^\infty x^k f(x)dx$$
+Moment centralny rzêdu $k$
+$$\mu_k=E((X-(EX))^k)$$
+Wspo³czynnik asymetrii:
+$$A=\frac{M_3}{\sigma^3}$$
+gdzie $M_3$ - 3 moment centralny, $s$ - odchylenie standardowe 
+Kurtoza:
+$$A=\frac{M_4}{\sigma^4}-3$$
+W³asnoœci:\\
+\\
+(1) je¿eli $X$ i $Y$ niezale¿ne to 3 moment centralny ich sumy równa siê sumie trzecich momentów centralnych. Czyli $E((X+Y-E(X+Y))^3)=E((X-EX)^3)+E((Y-EY)^3)$
+% gamma
+\\
+\\
+\textbf{5. Funkcja Gamma}\\
+\\
+$$\Gamma(n)=(n-1)!$$
+$$\Gamma(1/2)=\sqrt{\pi}$$
+$$\Gamma(1)=1$$
+$$\Gamma(n+1/2)=\frac{(2n-1)!!}{2^n}\sqrt{\pi}$$
+Silnia podwójna z krokiem dwa np. $9!!=9\cdot 7 \cdot 5 \cdot 3\cdot 1$\\
+\\
+\textbf{6. B³¹d œredniokwadratowy estymatora}
+$$\operatorname{MSE}(\hat{\theta})=\operatorname{E}((\hat{\theta}-\theta)^2)$$
+\textbf{7. Twierdzenia graniczne}\\
+\\
+\textbf{SUMA DU¯EJ LICZBY ZMIENNYCH LOSOWYCH Z JEDNAKOWEGO ROZK£ADU MA ROZK£AD NORMALNY}\\
+\\
+$$\lim_{n\rightarrow \infty}\left(1+\frac{k}{n}\right)^n = e^k$$
+% ROZK£ADY
+
+\section{Rozk³ady}{}
+\textbf{Rozk³ad Poissona}
+$$f(k,\lambda)=\frac{\lambda^k e^{-\lambda}}{k!}$$
+$$E(X)=\lambda$$
+$$Var(X)=\lambda$$
+\textbf{Rozk³ad jednostajny ci¹g³y na przedziale $[a,b]$}
+$$f(x)=\frac{1}{b-a}$$
+$$F(x)=\frac{x-a}{b-a}$$
+$$E(X)=\frac{a+b}{2}$$
+$$VAR(X)=\frac{(b-a)^2}{12}$$
+Dla rozk³adu jednostajnego na przedziale $[0,\theta]$ estymator najwiêkszej wiarygodnoœci to: $\hat{\theta}=\max\{ x_1,\ldots,x_n \}$\\
+\\
+\textbf{Rozklad Gamma}
+$$f(x)=\frac{\beta^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x} \hspace{15pt} x>0$$
+$$E(X)=\frac{\alpha}{\beta}$$
+$$Var(X)=\frac{\alpha}{\beta^2}$$
+(1) gdy $X\sim Gamma(a_1,b)$, $Y\sim Gamma(a_2,b)$ to $X+Y \sim Gamma(a_1+a_2,b)$\\
+\\
+(2) gdy $\alpha=1$ to mamy rozk³ad wyk³adniczy $Exp(\beta)$\\
+\\
+(3) gdy $\alpha=\frac{n}{2}$ oraz $\beta=\frac{1}{2}$ to mamy rozk³ad ch-kwadrat z n stopniami swobody\\
+\\
+Rozk³ad $\chi^2$ to szczególny przypadek rozk³adu Gamma zachodzi: 
+$$\chi^2(n)+\chi^2(k)=\chi^2(n+k)$$
+(4) gdy $X\sim Gamma(a,b) \rightarrow 2\cdot b \cdot X \sim \chi^2(n)$, $n=2\cdot a$\\
+\\
+(5) gdy $X \sim Gamma(a,b) \rightarrow kX \sim Gamma(a,\frac{b}{k})$\\
+\\
+Dla przypomnienia $F(n)=(n-1)!$, $F(n+1)=n!$\\
+\\
+\textbf{Rozk³ad wyk³adniczy}
+$$f(x)=\beta e^{-\beta x}$$
+$$E(X)=\frac{1}{\beta}$$
+$$VAR(X)=\frac{1}{\beta^2}$$
+W³asnoœci:\\
+\\
+(1) gdy $X\sim Exp(\beta)$ to $kX\sim Exp(\beta/k)$.\\
+\\
+(2) gdy $X\sim Exp(\beta)$ i $Y\sim Exp(\beta)$ to $X+Y \sim G(1+1,\beta)$\\
+\\
+(3) je¿eli $X_i\sim Exp(\beta)$ to $\min(X_1,\ldots,X_n)\sim Exp(\beta_1+...+\beta_2)$
+\\
+\\
+\textbf{Rozk³ad ujemny dwumianowy}
+$$P(X=k) =  {k+r-1 \choose k}\cdot (1-p)^r p^k,\!$$
+$$EX=\frac{pr}{1-p}$$
+$$VarX=\frac{pr}{(1-p)^2}$$
+\textbf{Rozk³ad ujemny dwumianowy 2 (W. Wo³yñski za³¹cznik)}
+$$p_k=\frac{\Gamma(r+k)}{\Gamma(r)k!}p^r(1-p)^k$$
+$$E(X)=\frac{r(1-p)}{p}$$
+$$VAR(X)=\frac{r(1-p)}{p^2}$$
+gdzie $$\frac{\Gamma(r+k)}{\Gamma(r)k!}=\frac{(r+k-1)!}{(r-1)!k!}={r+k-1 \choose k}$$
+\textbf{Rozk³ad dwumianowy}
+$$p_k={n \choose k} p^k(1-p)^{n-k}$$
+gdzie $k=0,1,\ldots,n$
+$$E(X)=np$$
+$$Var(X)=np(1-p)$$
+\\
+\\
+\textbf{Rozk³ad normalny}
+$$f(x)=\frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{-(x-\mu)^2}{2\sigma}}$$
+\\
+\\
+\textbf{Rozk³ad log-normalny}
+$$f(x)=\frac{1}{\sqrt{2\pi}\sigma x}e^{-\frac{(\ln(x)-\mu)^2}{2\sigma^2}}$$
+$$E(X)=e^{\mu+\frac{\sigma^2}{2}}$$
+$$Var(X)=\left(e^{\sigma^2-1}\right)e^{2\mu+\sigma^2}$$
+\\
+\\
+\textbf{Rozk³ad geometryczny}
+$$P(X=k)=(1-p)^{k-1}\cdot p$$
+dla $k=1,2,3,\ldots$. Intepretowany jako p-p pierwszego sukcesu w k-tej próbie 
+$$E(X)=\frac{1}{p}$$
+$$Var(X)=\frac{1-p}{p^2}$$
+\textbf{Rozk³ad geometryczny 2}
+$$P(X=k)=(1-p)^{k}\cdot p$$
+dla $k=0,1,2,3,\ldots$. Intepretowany jako liczba pora¿ek z rzêdu przed pojawieniem siê sukcesu
+$$E(X)=\frac{1-p}{p}$$
+$$Var(X)=\frac{1-p}{p^2}$$
+\textbf{Rozk³ad F Snedecora}\\
+\\
+Je¿eli X i Y s¹ niezale¿ne oraz  $X \sim \chi^2(n_1)$  i $ Y \sim \chi^2(n_2)$ , to:
+ $$\frac{\frac{X}{n_1}}{\frac{Y}{n_2}} \sim F(n_1,n_2)$$
+% W£ASNOŒCI ROZK£ADÓW
+\\
+\textbf{W³asnoœci rozk³adów}\\
+\\
+1. Je¿eli $Z$ i $Y$ s¹ niezale¿nymi zmiennymi losowymi przy czym $Z\sim N(0,1)$ i $Y \sim \chi^2(n)$ to
+$$T=\frac{Z}{\sqrt{\frac{Y}{n}}}\sim T(n)$$
+czyli zmienna $T$ ma rozk³ad t-studenta\\
+\\
+2. 
+$$\frac{\sqrt{n}(\overline{X}-\mu)}{S}\sim T(n-1)$$
+gdzie $S^2=\frac{1}{n-1}\sum_{i=1}^n (X_i-\overline{X})^2$\\
+\\
+3. 
+$$\frac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)$$
+$$\frac{1}{\sigma^2}\sum(X_i-\overline{X})^2\sim \chi^2(n-1)$$
+\section{Wartoœæ oczekiwana}
+$$E(g(X_1,\ldots,X_n))=\int_{-\infty}^{\infty}\ldots \int_{-\infty}^{\infty}g(X_1,\ldots,X_n)\cdot f(X_1,\ldots,X_n)dx_1\ldots dx_2$$
+
+% WARUNKOWA WARTOŒÆ OCZEKIWANA
+\section{Kowariancja}
+$$COV(S,T)=E(S \cdot T)-ES\cdot ET$$
+\section{Warunkowa wartoœæ oczekiwana}
+Gêstoœæ warunkowa:\\
+\\
+Dla wektora losowego $(X,Y)$ gêstoœæ warunkow¹ zmiennej losowej $X$ przy warunku $Y=y$ nazywamy funkcjê
+$$f_{X|Y}(x|y)=\frac{f(x,y)}{f_Y(y)}$$
+Warunkowa wartoœæ oczekiwana:
+$$E(X|Y=y)=\int_{-\infty}^{\infty} x f(x|y)dx=\frac{1}{f_Y(y)}\int_{-\infty}^{\infty} xf(x,y)=\frac{\int_{-\infty}^{\infty}xf(x,y)dx}{\int_{-\infty}^{\infty}f(x,y)dx}$$
+https://www.youtube.com/watch?v=Ki2HpTCPwhM\\
+\\
+\textbf{Iteracyjnoœæ oraz Law of total expectation:}\\
+\\
+Iteracyjnoœæ (law of iterated expectation)
+$$E(E(Y|X))=EY$$
+Gdy $$F_1 \subset F_2 \subset M \rightarrow E(Y | F_1)=E(E(Y|F_2)|F_1)=E(E(Y|F_1)|F_2)$$
+Uogólniona iteracyjnoœæ:
+$$E(Y|X)=E(E(Y|Z)|X)$$
+One special case states that if $A_1, A_2, \ldots, A_n$ is a partition of the whole outcome space, i.e. these events are mutually exclusive and exhaustive, then
+$$\operatorname{E} (X) = \sum_{i=1}^{n}{\operatorname{E}(X \mid A_i) \operatorname{P}(A_i)}.$$
+Others
+$$E(X+Y|X)=X+EY$$
+$$E(XY | X)=X\cdot EY$$
+The following formulation of the law of iterated expectations plays an important role in many economic and finance models:
+$$\operatorname{E} (X \mid I_1) = \operatorname{E} ( \operatorname{E} ( X \mid I_2) \mid I_1),$$
+\section{Testowanie hipotez statystycznych}
+Testowanie hipotez statystycznych - na podstawie WYK£ADY ZE STATYSTYKI MATEMATYCZNEJ (II rok WNE), Agata Boratyñska (s.76).\\
+\\
+Niech:\\
+$K$ - zbiór krytyczny, zbiór wyników obserwacji przy których odrzucamy $H_0$\\
+$A$ - zbiór afirmacji, zbiór wyników, przy których nie odrzucamy $H_0$\\
+Je¿eli mamy $K$ to mamy test statystyczny: 
+$$K=\lbrace T(x)>c \rbrace,$$
+,co oznacza: odrzuæ $H_0$, gdy obliczona wartoœæ funkcji $T(x)$ jest wieksza ni¿ $c$. $T$ to statystyka testowa, $c$ to wartoœæ krytyczna.\\
+\\
+B³¹d I rodzaju: \textbf{odrzucenie $H_0$, gdy jest prawdziwa}\\
+B³¹d II rodzaju: \textbf{nie odrzucenie $H_0$, gdy jest fa³szywa}\\
+\\
+Uwaga: zmniejszenie prawdopodobieñstwa b³êdu I rodzaju powoduje wzrost prawdopodobieñstwa b³êdu II rodzaju.\\
+\\
+Prawdopodbieñstwo b³êdu I rodzaju:
+$$P_\theta(K), \hspace{15pt} \theta \in \Theta_0$$
+gdzie $H_0:\theta \in \Theta_0$, $H_1: \theta \in \Theta_1$.\\
+\\
+Prawdopodobieñstwo b³êdu II rodzaju:
+$$P_\theta(A)=1-P_\theta(K) \hspace{15pt} \theta \in \Theta_1$$
+Test jest na poziomie $\alpha$, jeœli:
+$$\forall_{\theta \in \Theta_0} \hspace{5pt} P_\theta(K) \le \alpha$$
+Wielkoœæ $P_\theta(K)$ nazywamy \textbf{moc¹ testu} przy alternatywie $\theta \in \Theta_1$.\\
+\\
+\textbf{Moc testu statystycznego rozumiana jest jako prawdopodobieñstwo nieodrzucenia $H_1$ przy jej prawdziwoœci (odrzucenie $H_0$ przy jej fa³szywoœci)}.\\
+\\
+Test o obszarze krytycznym $K_1$ jest mocniejszy ni¿ test o obszarze krytycznym $K_2$ gdy
+$$\forall_{\theta \in \Theta_0} P_\theta(K_1) \le \alpha \textnormal{ i } P_0(K_2) \le \alpha $$
+$$\forall_{\theta \in \Theta_1} P_\theta(K_1) \ge P_\theta(K_2)$$
+co oznacza,  ¿e je¿eli $H_0$ jest prawdziwe to wiêksze prawdopodobieñstwo odrzucenia gdy jest fa³szywa.
+$$\exists_{\theta_1 \in \Theta_1} P_{\theta_1(K_1) > P_{\theta_1}(K_2)}$$
+\textbf{Test jednostajnie najmocniejszy}
+$$\forall_{K \subset X} P_\theta(K) \le \alpha \hspace{10pt} \textnormal{ gdy } \theta \in \Theta_0$$
+ zachodzi:
+$$\forall_{\theta \in \Theta_1} P_\theta(K^*) \ge P_\theta(K)$$
+Test jednostajnie najmocniejszy liczymy przez badanie ilorazu funkcji wiarygidnoœci (bez pochodnych, przekszta³camy do skutku). Test oparty na ilorazie wiarogodnoœci potrzebuje pochodnych.
+% ---- METODA NAJWIÊKSZEJ WIARYGODNOŒCI ----
+\section{Metoda najwiêkszej wiarygodnoœci}
+Funkcja wiarygodnoœci:
+$$L(x_1,\ldots,x_n; \theta_1,\ldots,\theta_r)=\prod_{i=1}^n f(x_i;\theta_1,\ldots,\theta_r)$$
+Przyk³ad wyznaczania parametrów metod¹ najwiêkszej wiarygodnoœci:\\
+Niech
+$$f(x;\mu;\sigma^2)=\frac{1}{\sigma\sqrt{{2\pi}}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}$$
+Wyznaczamy $L$:
+$$L(x_1,\ldots,x_N;\mu,\sigma^2)=\prod_{i=1}^N f(x_i,\mu,\sigma)$$
+ Nastêpnie wyznaczmay $\ln{L}$ (funkcje $\ln L(\theta)$ i  $L(\theta)$ osi¹gaj¹ maksimum dla tej samej wartoœci, a czêsto zamiast $L(\theta)$ wygodniej jest u¿ywaæ logarytmu funkcji wiarygodnoœci).
+ $$\ln{L(x_1,\ldots,x_N;\mu,\sigma^2)}=\sum_{i=1}^N \ln{f(x_i;\mu,\sigma^2)}$$
+$$\ln{f(x;\mu;\sigma^2)}=-\ln{\sigma\sqrt{2\pi}}-\frac{(x-\mu)^2}{2\sigma^2}$$
+Maksymalizujemy $L$ ze wzglêdu na $\mu$ i mamy:
+$$0=\frac{\partial \ln L}{\partial \mu}=\sum_{i=1}^N \frac{\partial \ln{f(x,\mu,\sigma^2)}}{\partial \mu}=\sum_{i=1}^N\frac{x_i-\mu}{\sigma^2}=\frac{1}{\sigma^2}\left( \left(\sum_{i=1}^N x_i\right)-N\cdot \mu\right)$$
+St¹d estymatorem $\mu$ jest:
+$$m=\frac{1}{N}\sum_{i=1}^N x_i$$
+Postêpuj¹c w analogiczny sposób dla $\sigma^2$ otrzymujemy estymator dla wariancji:
+$$\sigma^2=\frac{1}{N}\sum_{i=1}^N (x_i-\mu)^2$$
+% ---- PRZEDZIA£Y UFNOŒCI ----
+\section{Przedzia³y ufnoœci}
+Niech cecha X ma rozk³ad w populacji z nieznanym parametrem $\theta$. Z populacji wybieramy próbê losow¹ $(X_1, X_2, ..., X_n)$. Przedzia³em ufnoœci o wspó³czynniku ufnoœci $1 - \alpha$ nazywamy taki przedzia³ $(\theta_1, \theta_2)$, który spe³nia warunek:
+$$P(\theta_1 < \theta < \theta_2) = 1 - \alpha$$
+gdzie $\theta_1$ i $\theta_2$ s¹ funkcjami wyznaczonymi na podstawie próby losowej.\\
+\\
+\textbf{Przedzia³ ufnoœci dla wartoœci oczekiwanej}\\
+\\
+Jeœli $X$ jest prób¹ prost¹ z rozk³adu normalnego z nieznanym parametrem $\mu$ i znanym $\sigma$ , to przedzia³ ufnoœci dla $\mu$ na poziomie $1-\alpha$ ma postaæ:
+$$\bar{X}_n \pm u_{1-\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}}$$
+czyli
+$$P\left( \overline{X}_n - u_{1-\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}} < \mu < \overline{X}_n + u_{1-\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}} \right) = 1 - \alpha$$
+gdzie $u_p$ oznacza kwantyl rzêdu $p$ w rozk³adzie normalnym $N(0,1)$.\\
+\\
+Gdy $\sigma$ jest nieznane, do oszacowania $\mu$ u¿ywamy przedzia³u 
+$$\bar{X}_n \pm t_{1-\frac{\alpha}{2}}\frac{S_n}{\sqrt{n}}$$
+gdzie $t_p(n-1)$ jest kwantylem rzedu $p$ w rozk³adzie t-Studenta z $n-1$ stopniami swobody i $S_n=\sqrt{S_n^2}$, gdzie $S_n^2$ jest dane wzorem:
+$$S_n^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X}_n)^2$$
+\section{Estymatory}
+\subsection{Estymatory uzyskane metod¹ najwiêkszych kwadratów}
+$$a=\frac{SS_XY}{SS_X}=\frac{Cov(X,Y)}{Var(X)}$$
+$$b=\overline{y}-a\cdot \overline{x}$$
+$$SS_{XY}=\sum_{i=1}^n(x_i-\overline{x})(y_i-\overline{y})$$
+$$SS_{X}=\sum_{i=1}^n(x_i-\overline{x})^2$$
+$$SS_{Y}=\sum_{i=1}^n(y_i-\overline{y})^2$$
+\subsection{Nieobci¹¿onoœæ}
+Estymator jest nieobci¹¿ony, jeœli wartoœæ oczekiwana rozk³adu estymatora jest równa wartoœci szacowanego parametru:
+    $$E\ (\hat{\theta})\ =\ \theta$$
+Jeœli ró¿nica pomiêdzy wartoœci¹ oczekiwan¹ rozk³adu estymatora a wartoœci¹ szacowanego parametru jest zale¿na funkcyjnie od estymatora:
+    $$E\ (\hat{\theta})\ - \ \theta \ =\ b\ (\hat{\theta})$$
+to estymator nazywamy obci¹¿onym, zaœ sam¹ ró¿nicê nazywamy obci¹¿eniem estymatora.
+\subsection{Asymptotyczna nieobci¹¿onoœæ}
+Estymator nazywamy asymptotycznie nieobci¹¿onym, jeœli obci¹¿enie estymatora d¹¿y do zera przy rosn¹cej liczebnoœci próby:
+$$\lim_{n \to \infty} b\ (\hat{\theta})\ =\ 0$$
+Ka¿dy estymator nieobci¹¿ony jest estymatorem asymptotycznie nieobci¹¿onym.
+\subsection{Zgodnoœæ}
+Estymator nazywamy zgodnym, jeœli jest stochastycznie zbie¿ny do szacowanego parametru:
+    $$\bigwedge\limits_{\varepsilon > 0 } \ \lim_{n \to \infty} P \ \{|\hat{\theta}-\theta| < \epsilon\} = 1$$
+Oznacza to, ¿e jeœli roœnie liczebnoœæ próby, roœnie te¿ prawdopodobieñstwo, ¿e oszacowanie przy pomocy estymatora bêdzie przyjmowaæ wartoœci coraz bli¿sze wartoœci szacowanego parametru. Inaczej: zwiêkszaj¹c liczebnoœæ próby, zmniejszamy ryzyko pope³nienia b³êdu wiêkszego ni¿ pewna ustalona wielkoœæ.
+\subsection{Efektywnoœæ}
+Spoœród zbioru wszystkich nieobci¹¿onych estymatorów $\hat{\theta}_1,\hat{\theta}_2,\dots,\hat{\theta}_r$ najefektywniejszym nazywamy estymator o najmniejszej wariancji. Definicja ta jest bardzo niewygodna, poniewa¿ do wyznaczenia najefektywniejszego estymatora potrzebna jest znajomoœæ wariancji wszystkich estymatorów nieobci¹¿onych danego parametru rozk³adu. W praktyce o wiele ³atwiej jest skorzystaæ z nierównoœci Rao-Cramera.
+\subsection{Asymptotyczna efektywnoœæ}
+Estymator $\hat{\theta}$ jest asymptotycznie najefektywniejszy, jeœli przy wzrastaj¹cej liczebnoœci próby wariancja estymatora $\hat{\theta}$ d¹¿y do wariancji estymatora najefektywniejszego $\hat{\theta}^*$:
+    $$\lim_{n \to \infty} \frac{D^2(\hat{\theta})}{D^2(\hat{\theta}^*)} = 1$$
+gdzie $D^2(\hat{\theta})$ oznacza wariancjê estymatora.
+\subsection{Dostatecznoœæ}
+Estymator $\hat{\theta}$ jest dostateczny, jeœli mo¿na, ze wzglêdu na niego dokonaæ faktoryzacji (roz³o¿enia na iloczyn) ³¹cznej funkcji gêstoœci $f(x)$ wektora wyników próby $X=(X_1,X_2,\dots,X_n)$
+    $$f\ (x,\theta)\ =\ f(\hat{\theta},\theta) g(x,\hat{\theta})$$
+gdzie $g(x,\hat{\theta})$ jest funkcj¹ niezale¿n¹ od parametru $\theta$.
+\subsection{Funkcja wiarygodnoœci}
+$$L(x_1, ..., x_n; \theta_1, ..., \theta_r) = \prod_{i=1}^{n} f(x_i; \theta_1, ..., \theta_r)$$
+
+\end{document}
